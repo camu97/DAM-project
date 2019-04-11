@@ -1,6 +1,6 @@
 ﻿namespace SportGest
 {
-    partial class TeamManager
+    partial class GestionEquipo
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,14 @@
         {
             this.SuspendLayout();
             // 
-            // TeamManager
+            // GestionEquipo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(370, 430);
-            this.Name = "TeamManager";
-            this.Text = "TeamManager";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Name = "GestionEquipo";
+            this.Text = "Gestión de equipo";
             this.ResumeLayout(false);
 
         }

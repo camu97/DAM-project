@@ -46,55 +46,57 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Equipo.cs" />
+    <Compile Include="Jugador.cs" />
+    <Compile Include="Principal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Principal.Designer.cs">
+      <DependentUpon>Principal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="Seguridad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="Seguridad.Designer.cs">
+      <DependentUpon>Seguridad.cs</DependentUpon>
     </Compile>
-    <Compile Include="History.cs">
+    <Compile Include="Historial.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="History.Designer.cs">
-      <DependentUpon>History.cs</DependentUpon>
+    <Compile Include="Historial.Designer.cs">
+      <DependentUpon>Historial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Match.cs">
+    <Compile Include="Partido.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Match.Designer.cs">
-      <DependentUpon>Match.cs</DependentUpon>
+    <Compile Include="Partido.Designer.cs">
+      <DependentUpon>Partido.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TeamManager.cs">
+    <Compile Include="GestionEquipo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TeamManager.Designer.cs">
-      <DependentUpon>TeamManager.cs</DependentUpon>
+    <Compile Include="GestionEquipo.Designer.cs">
+      <DependentUpon>GestionEquipo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Trainning.cs">
+    <Compile Include="Entrenamiento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Trainning.Designer.cs">
-      <DependentUpon>Trainning.cs</DependentUpon>
+    <Compile Include="Entrenamiento.Designer.cs">
+      <DependentUpon>Entrenamiento.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Principal.resx">
+      <DependentUpon>Principal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="Seguridad.resx">
+      <DependentUpon>Seguridad.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="History.resx">
-      <DependentUpon>History.cs</DependentUpon>
+    <EmbeddedResource Include="Historial.resx">
+      <DependentUpon>Historial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Match.resx">
-      <DependentUpon>Match.cs</DependentUpon>
+    <EmbeddedResource Include="Partido.resx">
+      <DependentUpon>Partido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -106,11 +108,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="TeamManager.resx">
-      <DependentUpon>TeamManager.cs</DependentUpon>
+    <EmbeddedResource Include="GestionEquipo.resx">
+      <DependentUpon>GestionEquipo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Trainning.resx">
-      <DependentUpon>Trainning.cs</DependentUpon>
+    <EmbeddedResource Include="Entrenamiento.resx">
+      <DependentUpon>Entrenamiento.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

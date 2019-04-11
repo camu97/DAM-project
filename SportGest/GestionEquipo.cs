@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SportGest
 {
-    public partial class Trainning : Form
+    public partial class GestionEquipo : Form
     {
-        public Trainning()
+        public GestionEquipo()
         {
             InitializeComponent();
         }

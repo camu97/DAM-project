@@ -1,6 +1,6 @@
 ﻿namespace SportGest
 {
-    partial class Trainning
+    partial class Historial
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // Trainning
+            // History
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(478, 372);
-            this.Name = "Trainning";
-            this.Text = "Trainning";
+            this.ClientSize = new System.Drawing.Size(483, 385);
+            this.Name = "History";
+            this.Text = "History";
             this.ResumeLayout(false);
 
         }

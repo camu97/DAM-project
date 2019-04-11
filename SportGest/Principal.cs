@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,11 +11,11 @@ using System.Windows.Forms;
 
 namespace SportGest
 {
-    public partial class Form1 : Form
+    public partial class Principal : Form
     {
         public string language = "";
         bool end = false, error_ = false;
-        public Form1()
+        public Principal()
         {
             InitializeComponent();
         }
@@ -29,9 +30,14 @@ namespace SportGest
             }
         }
 
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
-            Form2 securityForm = new Form2(this);
+            Seguridad securityForm = new Seguridad(this);
             securityForm.ShowDialog();
         }
     }

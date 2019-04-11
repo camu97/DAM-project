@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SportGest
 {
-    public partial class History : Form
+    public partial class Partido : Form
     {
-        public History()
+        public Partido()
         {
             InitializeComponent();
         }

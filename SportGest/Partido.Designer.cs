@@ -1,6 +1,6 @@
 ﻿namespace SportGest
 {
-    partial class Match
+    partial class Partido
     {
         /// <summary>
         /// Required designer variable.
@@ -30,12 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // Match
+            // Partido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(453, 388);
-            this.Name = "Match";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Name = "Partido";
             this.Text = "Match";
             this.ResumeLayout(false);
 
