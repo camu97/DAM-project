@@ -54,6 +54,11 @@
     <Compile Include="Principal.Designer.cs">
       <DependentUpon>Principal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Seguridad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,14 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="GestionEquipo.resx">
       <DependentUpon>GestionEquipo.cs</DependentUpon>
     </EmbeddedResource>
@@ -128,7 +128,25 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\campo de futbol.jpg" />
+    <None Include="Resources\campo de futbol - horizontal.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\campo de futbol - vertical.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cono_azul.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cono_rojo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jugaodr_.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\balon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\campo_vertical.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

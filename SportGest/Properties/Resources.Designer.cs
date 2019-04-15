@@ -63,9 +63,49 @@ namespace SportGest.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap campo_de_futbol {
+        internal static System.Drawing.Bitmap balon {
             get {
-                object obj = ResourceManager.GetObject("campo de futbol", resourceCulture);
+                object obj = ResourceManager.GetObject("balon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap campo_vertical {
+            get {
+                object obj = ResourceManager.GetObject("campo_vertical", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cono_azul {
+            get {
+                object obj = ResourceManager.GetObject("cono_azul", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cono_rojo {
+            get {
+                object obj = ResourceManager.GetObject("cono_rojo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap jugaodr_ {
+            get {
+                object obj = ResourceManager.GetObject("jugaodr_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

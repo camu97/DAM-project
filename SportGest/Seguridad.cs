@@ -45,7 +45,7 @@ namespace SportGest
         {
             try
             {
-                using (StreamReader srUser = new StreamReader("users.txt"))
+                using (StreamReader srUser = new StreamReader("usuarios.txt"))
                 {
                     string user_read = srUser.ReadLine();
                     string pass_read;
@@ -54,7 +54,7 @@ namespace SportGest
                     {
                         if (user_read.Equals(tbUser.Text))
                         {
-                            using (StreamReader srPass = new StreamReader("passwords.txt"))
+                            using (StreamReader srPass = new StreamReader("contraseñas.txt"))
                             {
                                 for (int i = 0; i < x; i++)
                                 {
