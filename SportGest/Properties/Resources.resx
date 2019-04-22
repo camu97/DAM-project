@@ -118,19 +118,55 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="cono_rojo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cono_rojo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="aros_grupo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\aros_grupo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pica_vertical" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pica_vertical.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="picas_grupo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\picas_grupo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="valla" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\valla.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pica_horizontal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pica_horizontal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\aro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="setas_amarillos_grupo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\setas_amarillos_grupo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="seta_roja" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\seta_roja.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="escalera" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\escalera.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="seta_amarilla" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\seta_amarilla.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="campo_vertical" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\campo_vertical.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="jugaodr_" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\jugaodr_.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="conos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\conos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cono_azul" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cono_azul.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pelota" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pelota.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="balon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\balon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="jugador" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\jugador.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cono" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cono.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="setas_rojas_grupo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\setas_rojas_grupo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="setas_grupo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\setas_grupo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

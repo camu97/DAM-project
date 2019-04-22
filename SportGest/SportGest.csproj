@@ -127,26 +127,27 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <None Include="Resources\campo de futbol - horizontal.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\campo de futbol - vertical.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cono_azul.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cono_rojo.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\jugaodr_.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\balon.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\campo_vertical.jpg" />
+    <None Include="Resources\aro.png" />
+    <None Include="Resources\aros_grupo.png" />
+    <Content Include="Resources\campo_horizontal.jpg" />
+    <Content Include="Resources\campo_vertical.jpg" />
+    <None Include="Resources\valla.png" />
+    <None Include="Resources\seta_amarilla.png" />
+    <None Include="Resources\jugador.png" />
+    <None Include="Resources\conos.png" />
+    <None Include="Resources\cono.png" />
+    <None Include="Resources\escalera.png" />
+    <Content Include="Resources\pelota.png" />
+    <Content Include="Resources\picas_grupo.png" />
+    <Content Include="Resources\pica_horizontal.png" />
+    <Content Include="Resources\pica_vertical.png" />
+    <Content Include="Resources\setas_amarillos_grupo.png" />
+    <Content Include="Resources\setas_grupo.jpg" />
+    <None Include="Resources\setas_grupo.png" />
+    <Content Include="Resources\setas_rojas_grupo.png" />
+    <Content Include="Resources\seta_roja.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

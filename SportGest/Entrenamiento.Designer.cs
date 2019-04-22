@@ -70,50 +70,74 @@
             this.cancelarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.imgBalonCalentamiento = new System.Windows.Forms.PictureBox();
-            this.imgJugadorCalentamiento = new System.Windows.Forms.PictureBox();
-            this.imgConoAzulCalentamiento = new System.Windows.Forms.PictureBox();
-            this.imgConoRojoCalentamiento = new System.Windows.Forms.PictureBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.imgBalonPrincipal = new System.Windows.Forms.PictureBox();
-            this.imgJugadorPrincipal = new System.Windows.Forms.PictureBox();
-            this.imgConoAzulPrincipal = new System.Windows.Forms.PictureBox();
-            this.imgConoRojoPrincipal = new System.Windows.Forms.PictureBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.imgBalonCalma = new System.Windows.Forms.PictureBox();
-            this.imgJugadorCalma = new System.Windows.Forms.PictureBox();
-            this.imgConoAzulCalma = new System.Windows.Forms.PictureBox();
-            this.imgConoRojoCalma = new System.Windows.Forms.PictureBox();
-            this.imgCampoCalma = new System.Windows.Forms.PictureBox();
-            this.imgCampoCalentamiento = new System.Windows.Forms.PictureBox();
-            this.imgCampoPrincipal = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.pictureBox15 = new System.Windows.Forms.PictureBox();
+            this.pictureBox16 = new System.Windows.Forms.PictureBox();
+            this.pictureBox17 = new System.Windows.Forms.PictureBox();
+            this.pictureBox18 = new System.Windows.Forms.PictureBox();
+            this.pictureBox21 = new System.Windows.Forms.PictureBox();
+            this.pictureBox22 = new System.Windows.Forms.PictureBox();
+            this.pictureBox25 = new System.Windows.Forms.PictureBox();
+            this.pictureBox26 = new System.Windows.Forms.PictureBox();
+            this.pictureBox27 = new System.Windows.Forms.PictureBox();
+            this.pictureBox28 = new System.Windows.Forms.PictureBox();
+            this.pictureBox29 = new System.Windows.Forms.PictureBox();
+            this.pictureBox30 = new System.Windows.Forms.PictureBox();
+            this.pictureBox20 = new System.Windows.Forms.PictureBox();
+            this.pictureBox19 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.imgCampoCalma = new System.Windows.Forms.PictureBox();
+            this.imgCampoCalentamiento = new System.Windows.Forms.PictureBox();
+            this.imgCampoPrincipal = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgBalonCalentamiento)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgJugadorCalentamiento)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgConoAzulCalentamiento)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgConoRojoCalentamiento)).BeginInit();
-            this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgBalonPrincipal)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgJugadorPrincipal)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgConoAzulPrincipal)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgConoRojoPrincipal)).BeginInit();
-            this.groupBox6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgBalonCalma)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgJugadorCalma)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgConoAzulCalma)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgConoRojoCalma)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgCampoCalma)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgCampoCalentamiento)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgCampoPrincipal)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox30)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgCampoCalma)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgCampoCalentamiento)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgCampoPrincipal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -210,7 +234,6 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(522, 31);
             this.textBox2.TabIndex = 8;
-            this.textBox2.Text = "Control orientado";
             // 
             // label3
             // 
@@ -338,7 +361,7 @@
             // tbTiempoCalentamiento
             // 
             this.tbTiempoCalentamiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTiempoCalentamiento.Location = new System.Drawing.Point(139, 36);
+            this.tbTiempoCalentamiento.Location = new System.Drawing.Point(131, 33);
             this.tbTiempoCalentamiento.Name = "tbTiempoCalentamiento";
             this.tbTiempoCalentamiento.Size = new System.Drawing.Size(48, 26);
             this.tbTiempoCalentamiento.TabIndex = 25;
@@ -346,7 +369,7 @@
             // tbTiempoPrincipal
             // 
             this.tbTiempoPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTiempoPrincipal.Location = new System.Drawing.Point(132, 30);
+            this.tbTiempoPrincipal.Location = new System.Drawing.Point(127, 29);
             this.tbTiempoPrincipal.Name = "tbTiempoPrincipal";
             this.tbTiempoPrincipal.Size = new System.Drawing.Size(48, 26);
             this.tbTiempoPrincipal.TabIndex = 26;
@@ -354,7 +377,7 @@
             // tbTiempoCalma
             // 
             this.tbTiempoCalma.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTiempoCalma.Location = new System.Drawing.Point(155, 32);
+            this.tbTiempoCalma.Location = new System.Drawing.Point(157, 27);
             this.tbTiempoCalma.Name = "tbTiempoCalma";
             this.tbTiempoCalma.Size = new System.Drawing.Size(48, 26);
             this.tbTiempoCalma.TabIndex = 27;
@@ -501,210 +524,26 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.imgBalonCalentamiento);
-            this.groupBox4.Controls.Add(this.imgJugadorCalentamiento);
-            this.groupBox4.Controls.Add(this.imgConoAzulCalentamiento);
-            this.groupBox4.Controls.Add(this.imgConoRojoCalentamiento);
+            this.groupBox4.Controls.Add(this.pictureBox20);
+            this.groupBox4.Controls.Add(this.pictureBox19);
+            this.groupBox4.Controls.Add(this.pictureBox6);
+            this.groupBox4.Controls.Add(this.pictureBox5);
+            this.groupBox4.Controls.Add(this.pictureBox4);
+            this.groupBox4.Controls.Add(this.pictureBox3);
+            this.groupBox4.Controls.Add(this.pictureBox2);
+            this.groupBox4.Controls.Add(this.pictureBox1);
             this.groupBox4.Location = new System.Drawing.Point(225, 326);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(105, 133);
+            this.groupBox4.Size = new System.Drawing.Size(105, 225);
             this.groupBox4.TabIndex = 40;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Herramientas";
-            // 
-            // imgBalonCalentamiento
-            // 
-            this.imgBalonCalentamiento.Image = ((System.Drawing.Image)(resources.GetObject("imgBalonCalentamiento.Image")));
-            this.imgBalonCalentamiento.Location = new System.Drawing.Point(56, 87);
-            this.imgBalonCalentamiento.Name = "imgBalonCalentamiento";
-            this.imgBalonCalentamiento.Size = new System.Drawing.Size(30, 26);
-            this.imgBalonCalentamiento.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgBalonCalentamiento.TabIndex = 3;
-            this.imgBalonCalentamiento.TabStop = false;
-            this.imgBalonCalentamiento.Click += new System.EventHandler(this.imgBalon_Click);
-            // 
-            // imgJugadorCalentamiento
-            // 
-            this.imgJugadorCalentamiento.Image = ((System.Drawing.Image)(resources.GetObject("imgJugadorCalentamiento.Image")));
-            this.imgJugadorCalentamiento.Location = new System.Drawing.Point(6, 87);
-            this.imgJugadorCalentamiento.Name = "imgJugadorCalentamiento";
-            this.imgJugadorCalentamiento.Size = new System.Drawing.Size(40, 26);
-            this.imgJugadorCalentamiento.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgJugadorCalentamiento.TabIndex = 2;
-            this.imgJugadorCalentamiento.TabStop = false;
-            this.imgJugadorCalentamiento.Click += new System.EventHandler(this.imgJugador_Click);
-            // 
-            // imgConoAzulCalentamiento
-            // 
-            this.imgConoAzulCalentamiento.Image = ((System.Drawing.Image)(resources.GetObject("imgConoAzulCalentamiento.Image")));
-            this.imgConoAzulCalentamiento.Location = new System.Drawing.Point(54, 34);
-            this.imgConoAzulCalentamiento.Name = "imgConoAzulCalentamiento";
-            this.imgConoAzulCalentamiento.Size = new System.Drawing.Size(30, 29);
-            this.imgConoAzulCalentamiento.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgConoAzulCalentamiento.TabIndex = 1;
-            this.imgConoAzulCalentamiento.TabStop = false;
-            this.imgConoAzulCalentamiento.Click += new System.EventHandler(this.imgConoAzul_Click);
-            // 
-            // imgConoRojoCalentamiento
-            // 
-            this.imgConoRojoCalentamiento.Image = ((System.Drawing.Image)(resources.GetObject("imgConoRojoCalentamiento.Image")));
-            this.imgConoRojoCalentamiento.Location = new System.Drawing.Point(6, 34);
-            this.imgConoRojoCalentamiento.Name = "imgConoRojoCalentamiento";
-            this.imgConoRojoCalentamiento.Size = new System.Drawing.Size(30, 26);
-            this.imgConoRojoCalentamiento.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgConoRojoCalentamiento.TabIndex = 0;
-            this.imgConoRojoCalentamiento.TabStop = false;
-            this.imgConoRojoCalentamiento.Click += new System.EventHandler(this.imgConoRojo_Click);
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.imgBalonPrincipal);
-            this.groupBox5.Controls.Add(this.imgJugadorPrincipal);
-            this.groupBox5.Controls.Add(this.imgConoAzulPrincipal);
-            this.groupBox5.Controls.Add(this.imgConoRojoPrincipal);
-            this.groupBox5.Location = new System.Drawing.Point(634, 326);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(106, 133);
-            this.groupBox5.TabIndex = 41;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Herramientas";
-            // 
-            // imgBalonPrincipal
-            // 
-            this.imgBalonPrincipal.Image = ((System.Drawing.Image)(resources.GetObject("imgBalonPrincipal.Image")));
-            this.imgBalonPrincipal.Location = new System.Drawing.Point(72, 87);
-            this.imgBalonPrincipal.Name = "imgBalonPrincipal";
-            this.imgBalonPrincipal.Size = new System.Drawing.Size(28, 26);
-            this.imgBalonPrincipal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgBalonPrincipal.TabIndex = 3;
-            this.imgBalonPrincipal.TabStop = false;
-            this.imgBalonPrincipal.Click += new System.EventHandler(this.imgBalon_Click);
-            // 
-            // imgJugadorPrincipal
-            // 
-            this.imgJugadorPrincipal.Image = ((System.Drawing.Image)(resources.GetObject("imgJugadorPrincipal.Image")));
-            this.imgJugadorPrincipal.Location = new System.Drawing.Point(6, 87);
-            this.imgJugadorPrincipal.Name = "imgJugadorPrincipal";
-            this.imgJugadorPrincipal.Size = new System.Drawing.Size(40, 26);
-            this.imgJugadorPrincipal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgJugadorPrincipal.TabIndex = 2;
-            this.imgJugadorPrincipal.TabStop = false;
-            this.imgJugadorPrincipal.Click += new System.EventHandler(this.imgJugador_Click);
-            // 
-            // imgConoAzulPrincipal
-            // 
-            this.imgConoAzulPrincipal.Image = ((System.Drawing.Image)(resources.GetObject("imgConoAzulPrincipal.Image")));
-            this.imgConoAzulPrincipal.Location = new System.Drawing.Point(67, 37);
-            this.imgConoAzulPrincipal.Name = "imgConoAzulPrincipal";
-            this.imgConoAzulPrincipal.Size = new System.Drawing.Size(33, 29);
-            this.imgConoAzulPrincipal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgConoAzulPrincipal.TabIndex = 1;
-            this.imgConoAzulPrincipal.TabStop = false;
-            this.imgConoAzulPrincipal.Click += new System.EventHandler(this.imgConoAzul_Click);
-            // 
-            // imgConoRojoPrincipal
-            // 
-            this.imgConoRojoPrincipal.Image = ((System.Drawing.Image)(resources.GetObject("imgConoRojoPrincipal.Image")));
-            this.imgConoRojoPrincipal.Location = new System.Drawing.Point(6, 37);
-            this.imgConoRojoPrincipal.Name = "imgConoRojoPrincipal";
-            this.imgConoRojoPrincipal.Size = new System.Drawing.Size(30, 26);
-            this.imgConoRojoPrincipal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgConoRojoPrincipal.TabIndex = 0;
-            this.imgConoRojoPrincipal.TabStop = false;
-            this.imgConoRojoPrincipal.Click += new System.EventHandler(this.imgConoRojo_Click);
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.imgBalonCalma);
-            this.groupBox6.Controls.Add(this.imgJugadorCalma);
-            this.groupBox6.Controls.Add(this.imgConoAzulCalma);
-            this.groupBox6.Controls.Add(this.imgConoRojoCalma);
-            this.groupBox6.Location = new System.Drawing.Point(1091, 326);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(105, 133);
-            this.groupBox6.TabIndex = 41;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Herramientas";
-            // 
-            // imgBalonCalma
-            // 
-            this.imgBalonCalma.Image = ((System.Drawing.Image)(resources.GetObject("imgBalonCalma.Image")));
-            this.imgBalonCalma.Location = new System.Drawing.Point(72, 87);
-            this.imgBalonCalma.Name = "imgBalonCalma";
-            this.imgBalonCalma.Size = new System.Drawing.Size(27, 26);
-            this.imgBalonCalma.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgBalonCalma.TabIndex = 3;
-            this.imgBalonCalma.TabStop = false;
-            this.imgBalonCalma.Click += new System.EventHandler(this.imgBalon_Click);
-            // 
-            // imgJugadorCalma
-            // 
-            this.imgJugadorCalma.Image = ((System.Drawing.Image)(resources.GetObject("imgJugadorCalma.Image")));
-            this.imgJugadorCalma.Location = new System.Drawing.Point(6, 87);
-            this.imgJugadorCalma.Name = "imgJugadorCalma";
-            this.imgJugadorCalma.Size = new System.Drawing.Size(43, 26);
-            this.imgJugadorCalma.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgJugadorCalma.TabIndex = 2;
-            this.imgJugadorCalma.TabStop = false;
-            this.imgJugadorCalma.Click += new System.EventHandler(this.imgJugador_Click);
-            // 
-            // imgConoAzulCalma
-            // 
-            this.imgConoAzulCalma.Image = ((System.Drawing.Image)(resources.GetObject("imgConoAzulCalma.Image")));
-            this.imgConoAzulCalma.Location = new System.Drawing.Point(66, 37);
-            this.imgConoAzulCalma.Name = "imgConoAzulCalma";
-            this.imgConoAzulCalma.Size = new System.Drawing.Size(33, 29);
-            this.imgConoAzulCalma.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgConoAzulCalma.TabIndex = 1;
-            this.imgConoAzulCalma.TabStop = false;
-            this.imgConoAzulCalma.Click += new System.EventHandler(this.imgConoAzul_Click);
-            // 
-            // imgConoRojoCalma
-            // 
-            this.imgConoRojoCalma.Image = ((System.Drawing.Image)(resources.GetObject("imgConoRojoCalma.Image")));
-            this.imgConoRojoCalma.Location = new System.Drawing.Point(6, 40);
-            this.imgConoRojoCalma.Name = "imgConoRojoCalma";
-            this.imgConoRojoCalma.Size = new System.Drawing.Size(30, 26);
-            this.imgConoRojoCalma.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgConoRojoCalma.TabIndex = 0;
-            this.imgConoRojoCalma.TabStop = false;
-            this.imgConoRojoCalma.Click += new System.EventHandler(this.imgConoRojo_Click);
-            // 
-            // imgCampoCalma
-            // 
-            this.imgCampoCalma.Image = ((System.Drawing.Image)(resources.GetObject("imgCampoCalma.Image")));
-            this.imgCampoCalma.Location = new System.Drawing.Point(912, 326);
-            this.imgCampoCalma.Name = "imgCampoCalma";
-            this.imgCampoCalma.Size = new System.Drawing.Size(158, 225);
-            this.imgCampoCalma.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.imgCampoCalma.TabIndex = 21;
-            this.imgCampoCalma.TabStop = false;
-            // 
-            // imgCampoCalentamiento
-            // 
-            this.imgCampoCalentamiento.Image = global::SportGest.Properties.Resources.campo_vertical;
-            this.imgCampoCalentamiento.Location = new System.Drawing.Point(49, 326);
-            this.imgCampoCalentamiento.Name = "imgCampoCalentamiento";
-            this.imgCampoCalentamiento.Size = new System.Drawing.Size(158, 225);
-            this.imgCampoCalentamiento.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.imgCampoCalentamiento.TabIndex = 20;
-            this.imgCampoCalentamiento.TabStop = false;
-            // 
-            // imgCampoPrincipal
-            // 
-            this.imgCampoPrincipal.Image = ((System.Drawing.Image)(resources.GetObject("imgCampoPrincipal.Image")));
-            this.imgCampoPrincipal.Location = new System.Drawing.Point(455, 326);
-            this.imgCampoPrincipal.Name = "imgCampoPrincipal";
-            this.imgCampoPrincipal.Size = new System.Drawing.Size(158, 225);
-            this.imgCampoPrincipal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.imgCampoPrincipal.TabIndex = 19;
-            this.imgCampoPrincipal.TabStop = false;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.lblCalentamiento);
             this.groupBox1.Controls.Add(this.tbTiempoCalentamiento);
-            this.groupBox1.Location = new System.Drawing.Point(46, 203);
+            this.groupBox1.Location = new System.Drawing.Point(46, 204);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(284, 68);
             this.groupBox1.TabIndex = 42;
@@ -748,18 +587,323 @@
             this.textBox1.Size = new System.Drawing.Size(75, 26);
             this.textBox1.TabIndex = 46;
             // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.pictureBox9);
+            this.groupBox6.Controls.Add(this.pictureBox10);
+            this.groupBox6.Controls.Add(this.pictureBox15);
+            this.groupBox6.Controls.Add(this.pictureBox16);
+            this.groupBox6.Controls.Add(this.pictureBox17);
+            this.groupBox6.Controls.Add(this.pictureBox18);
+            this.groupBox6.Controls.Add(this.pictureBox21);
+            this.groupBox6.Controls.Add(this.pictureBox22);
+            this.groupBox6.Location = new System.Drawing.Point(1093, 326);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(105, 225);
+            this.groupBox6.TabIndex = 41;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Herramientas";
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.pictureBox7);
+            this.groupBox7.Controls.Add(this.pictureBox8);
+            this.groupBox7.Controls.Add(this.pictureBox25);
+            this.groupBox7.Controls.Add(this.pictureBox26);
+            this.groupBox7.Controls.Add(this.pictureBox27);
+            this.groupBox7.Controls.Add(this.pictureBox28);
+            this.groupBox7.Controls.Add(this.pictureBox29);
+            this.groupBox7.Controls.Add(this.pictureBox30);
+            this.groupBox7.Location = new System.Drawing.Point(635, 326);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(105, 225);
+            this.groupBox7.TabIndex = 41;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Herramientas";
+            // 
+            // pictureBox15
+            // 
+            this.pictureBox15.Image = global::SportGest.Properties.Resources.escalera;
+            this.pictureBox15.Location = new System.Drawing.Point(59, 122);
+            this.pictureBox15.Name = "pictureBox15";
+            this.pictureBox15.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox15.TabIndex = 7;
+            this.pictureBox15.TabStop = false;
+            // 
+            // pictureBox16
+            // 
+            this.pictureBox16.Image = global::SportGest.Properties.Resources.aros_grupo;
+            this.pictureBox16.Location = new System.Drawing.Point(6, 122);
+            this.pictureBox16.Name = "pictureBox16";
+            this.pictureBox16.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox16.TabIndex = 6;
+            this.pictureBox16.TabStop = false;
+            // 
+            // pictureBox17
+            // 
+            this.pictureBox17.Image = global::SportGest.Properties.Resources.pelota;
+            this.pictureBox17.Location = new System.Drawing.Point(59, 168);
+            this.pictureBox17.Name = "pictureBox17";
+            this.pictureBox17.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox17.TabIndex = 5;
+            this.pictureBox17.TabStop = false;
+            // 
+            // pictureBox18
+            // 
+            this.pictureBox18.Image = global::SportGest.Properties.Resources.jugador;
+            this.pictureBox18.Location = new System.Drawing.Point(6, 168);
+            this.pictureBox18.Name = "pictureBox18";
+            this.pictureBox18.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox18.TabIndex = 4;
+            this.pictureBox18.TabStop = false;
+            // 
+            // pictureBox21
+            // 
+            this.pictureBox21.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox21.Image")));
+            this.pictureBox21.Location = new System.Drawing.Point(59, 76);
+            this.pictureBox21.Name = "pictureBox21";
+            this.pictureBox21.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox21.TabIndex = 3;
+            this.pictureBox21.TabStop = false;
+            // 
+            // pictureBox22
+            // 
+            this.pictureBox22.Image = global::SportGest.Properties.Resources.picas_grupo;
+            this.pictureBox22.Location = new System.Drawing.Point(6, 76);
+            this.pictureBox22.Name = "pictureBox22";
+            this.pictureBox22.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox22.TabIndex = 2;
+            this.pictureBox22.TabStop = false;
+            // 
+            // pictureBox25
+            // 
+            this.pictureBox25.Image = global::SportGest.Properties.Resources.escalera;
+            this.pictureBox25.Location = new System.Drawing.Point(59, 122);
+            this.pictureBox25.Name = "pictureBox25";
+            this.pictureBox25.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox25.TabIndex = 7;
+            this.pictureBox25.TabStop = false;
+            // 
+            // pictureBox26
+            // 
+            this.pictureBox26.Image = global::SportGest.Properties.Resources.aros_grupo;
+            this.pictureBox26.Location = new System.Drawing.Point(6, 122);
+            this.pictureBox26.Name = "pictureBox26";
+            this.pictureBox26.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox26.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox26.TabIndex = 6;
+            this.pictureBox26.TabStop = false;
+            // 
+            // pictureBox27
+            // 
+            this.pictureBox27.Image = global::SportGest.Properties.Resources.pelota;
+            this.pictureBox27.Location = new System.Drawing.Point(59, 168);
+            this.pictureBox27.Name = "pictureBox27";
+            this.pictureBox27.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox27.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox27.TabIndex = 5;
+            this.pictureBox27.TabStop = false;
+            // 
+            // pictureBox28
+            // 
+            this.pictureBox28.Image = global::SportGest.Properties.Resources.jugador;
+            this.pictureBox28.Location = new System.Drawing.Point(6, 168);
+            this.pictureBox28.Name = "pictureBox28";
+            this.pictureBox28.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox28.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox28.TabIndex = 4;
+            this.pictureBox28.TabStop = false;
+            // 
+            // pictureBox29
+            // 
+            this.pictureBox29.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox29.Image")));
+            this.pictureBox29.Location = new System.Drawing.Point(59, 76);
+            this.pictureBox29.Name = "pictureBox29";
+            this.pictureBox29.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox29.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox29.TabIndex = 3;
+            this.pictureBox29.TabStop = false;
+            // 
+            // pictureBox30
+            // 
+            this.pictureBox30.Image = global::SportGest.Properties.Resources.picas_grupo;
+            this.pictureBox30.Location = new System.Drawing.Point(6, 76);
+            this.pictureBox30.Name = "pictureBox30";
+            this.pictureBox30.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox30.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox30.TabIndex = 2;
+            this.pictureBox30.TabStop = false;
+            // 
+            // pictureBox20
+            // 
+            this.pictureBox20.Image = global::SportGest.Properties.Resources.escalera;
+            this.pictureBox20.Location = new System.Drawing.Point(59, 122);
+            this.pictureBox20.Name = "pictureBox20";
+            this.pictureBox20.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox20.TabIndex = 7;
+            this.pictureBox20.TabStop = false;
+            // 
+            // pictureBox19
+            // 
+            this.pictureBox19.Image = global::SportGest.Properties.Resources.aros_grupo;
+            this.pictureBox19.Location = new System.Drawing.Point(6, 122);
+            this.pictureBox19.Name = "pictureBox19";
+            this.pictureBox19.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox19.TabIndex = 6;
+            this.pictureBox19.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::SportGest.Properties.Resources.pelota;
+            this.pictureBox6.Location = new System.Drawing.Point(59, 168);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 5;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::SportGest.Properties.Resources.jugador;
+            this.pictureBox5.Location = new System.Drawing.Point(6, 168);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 4;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(59, 76);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 3;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::SportGest.Properties.Resources.picas_grupo;
+            this.pictureBox3.Location = new System.Drawing.Point(6, 76);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 2;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::SportGest.Properties.Resources.setas_grupo;
+            this.pictureBox2.Location = new System.Drawing.Point(6, 30);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SportGest.Properties.Resources.conos;
+            this.pictureBox1.Location = new System.Drawing.Point(59, 30);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // imgCampoCalma
+            // 
+            this.imgCampoCalma.Image = ((System.Drawing.Image)(resources.GetObject("imgCampoCalma.Image")));
+            this.imgCampoCalma.Location = new System.Drawing.Point(912, 326);
+            this.imgCampoCalma.Name = "imgCampoCalma";
+            this.imgCampoCalma.Size = new System.Drawing.Size(158, 225);
+            this.imgCampoCalma.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.imgCampoCalma.TabIndex = 21;
+            this.imgCampoCalma.TabStop = false;
+            // 
+            // imgCampoCalentamiento
+            // 
+            this.imgCampoCalentamiento.Image = global::SportGest.Properties.Resources.campo_vertical;
+            this.imgCampoCalentamiento.Location = new System.Drawing.Point(49, 326);
+            this.imgCampoCalentamiento.Name = "imgCampoCalentamiento";
+            this.imgCampoCalentamiento.Size = new System.Drawing.Size(158, 225);
+            this.imgCampoCalentamiento.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.imgCampoCalentamiento.TabIndex = 20;
+            this.imgCampoCalentamiento.TabStop = false;
+            // 
+            // imgCampoPrincipal
+            // 
+            this.imgCampoPrincipal.Image = ((System.Drawing.Image)(resources.GetObject("imgCampoPrincipal.Image")));
+            this.imgCampoPrincipal.Location = new System.Drawing.Point(455, 326);
+            this.imgCampoPrincipal.Name = "imgCampoPrincipal";
+            this.imgCampoPrincipal.Size = new System.Drawing.Size(158, 225);
+            this.imgCampoPrincipal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.imgCampoPrincipal.TabIndex = 19;
+            this.imgCampoPrincipal.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::SportGest.Properties.Resources.setas_grupo;
+            this.pictureBox7.Location = new System.Drawing.Point(6, 30);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox7.TabIndex = 9;
+            this.pictureBox7.TabStop = false;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = global::SportGest.Properties.Resources.conos;
+            this.pictureBox8.Location = new System.Drawing.Point(59, 30);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox8.TabIndex = 8;
+            this.pictureBox8.TabStop = false;
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Image = global::SportGest.Properties.Resources.setas_grupo;
+            this.pictureBox9.Location = new System.Drawing.Point(6, 30);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox9.TabIndex = 9;
+            this.pictureBox9.TabStop = false;
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.Image = global::SportGest.Properties.Resources.conos;
+            this.pictureBox10.Location = new System.Drawing.Point(59, 30);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox10.TabIndex = 8;
+            this.pictureBox10.TabStop = false;
+            // 
             // Entrenamiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1217, 782);
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.ClientSize = new System.Drawing.Size(1217, 749);
+            this.Controls.Add(this.groupBox6);
+            this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.groupBox6);
-            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.btnProgramarSesion);
             this.Controls.Add(this.btnDerCalma);
@@ -803,29 +947,41 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.imgBalonCalentamiento)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgJugadorCalentamiento)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgConoAzulCalentamiento)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgConoRojoCalentamiento)).EndInit();
-            this.groupBox5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.imgBalonPrincipal)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgJugadorPrincipal)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgConoAzulPrincipal)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgConoRojoPrincipal)).EndInit();
-            this.groupBox6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.imgBalonCalma)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgJugadorCalma)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgConoAzulCalma)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgConoRojoCalma)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgCampoCalma)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgCampoCalentamiento)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgCampoPrincipal)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox30)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgCampoCalma)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgCampoCalentamiento)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgCampoPrincipal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -877,24 +1033,36 @@
         private System.Windows.Forms.ToolStripMenuItem cancelarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.PictureBox imgBalonCalentamiento;
-        private System.Windows.Forms.PictureBox imgJugadorCalentamiento;
-        private System.Windows.Forms.PictureBox imgConoAzulCalentamiento;
-        private System.Windows.Forms.PictureBox imgConoRojoCalentamiento;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.PictureBox imgBalonCalma;
-        private System.Windows.Forms.PictureBox imgJugadorCalma;
-        private System.Windows.Forms.PictureBox imgConoAzulCalma;
-        private System.Windows.Forms.PictureBox imgConoRojoCalma;
-        private System.Windows.Forms.PictureBox imgBalonPrincipal;
-        private System.Windows.Forms.PictureBox imgJugadorPrincipal;
-        private System.Windows.Forms.PictureBox imgConoAzulPrincipal;
-        private System.Windows.Forms.PictureBox imgConoRojoPrincipal;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox20;
+        private System.Windows.Forms.PictureBox pictureBox19;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.PictureBox pictureBox15;
+        private System.Windows.Forms.PictureBox pictureBox16;
+        private System.Windows.Forms.PictureBox pictureBox17;
+        private System.Windows.Forms.PictureBox pictureBox18;
+        private System.Windows.Forms.PictureBox pictureBox21;
+        private System.Windows.Forms.PictureBox pictureBox22;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.PictureBox pictureBox25;
+        private System.Windows.Forms.PictureBox pictureBox26;
+        private System.Windows.Forms.PictureBox pictureBox27;
+        private System.Windows.Forms.PictureBox pictureBox28;
+        private System.Windows.Forms.PictureBox pictureBox29;
+        private System.Windows.Forms.PictureBox pictureBox30;
+        private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox pictureBox8;
     }
 }
