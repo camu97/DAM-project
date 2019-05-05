@@ -15,4 +15,3 @@ D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGes
 D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGest\obj\Debug\SportGest.csprojAssemblyReference.cache
 D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGest\obj\Debug\SportGest.NuevoEquipo.resources
 D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGest\obj\Debug\SportGest.NuevoJugador.resources
-D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGest\obj\Debug\SportGest.Admin.resources

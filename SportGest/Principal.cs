@@ -14,6 +14,8 @@ namespace SportGest
     public partial class Principal : Form
     {
         public string language = "";
+        public bool salir_login = false;
+        public const string PIN= "0000";
         public Principal()
         {
             InitializeComponent();
@@ -27,12 +29,13 @@ namespace SportGest
 
         private void Principal_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (DialogResult.No == MessageBox.Show
-                ("¿Deseas abandonar la aplicación?", "Salir", MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question))
-            {
-                e.Cancel = true;
-            }
+            if (!salir_login)
+                if (DialogResult.No == MessageBox.Show
+                    ("¿Deseas abandonar la aplicación?", "Salir", MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question))
+                {
+                    e.Cancel = true;
+                }
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

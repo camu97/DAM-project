@@ -30,9 +30,7 @@
         {
             this.btnEnter = new System.Windows.Forms.Button();
             this.lblUsuario = new System.Windows.Forms.Label();
-            this.lblPassword = new System.Windows.Forms.Label();
-            this.tbUsuario = new System.Windows.Forms.TextBox();
-            this.tbContraseña = new System.Windows.Forms.TextBox();
+            this.tbPin = new System.Windows.Forms.TextBox();
             this.lblError = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -52,35 +50,22 @@
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(78, 9);
+            this.lblUsuario.Location = new System.Drawing.Point(87, 19);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(43, 13);
+            this.lblUsuario.Size = new System.Drawing.Size(25, 13);
             this.lblUsuario.TabIndex = 1;
-            this.lblUsuario.Text = "Usuario";
+            this.lblUsuario.Text = "PIN";
             // 
-            // lblPassword
+            // tbPin
             // 
-            this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(69, 48);
-            this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(61, 13);
-            this.lblPassword.TabIndex = 2;
-            this.lblPassword.Text = "Contraseña";
-            // 
-            // tbUsuario
-            // 
-            this.tbUsuario.Location = new System.Drawing.Point(49, 25);
-            this.tbUsuario.Name = "tbUsuario";
-            this.tbUsuario.Size = new System.Drawing.Size(100, 20);
-            this.tbUsuario.TabIndex = 3;
-            // 
-            // tbContraseña
-            // 
-            this.tbContraseña.Location = new System.Drawing.Point(49, 64);
-            this.tbContraseña.Name = "tbContraseña";
-            this.tbContraseña.PasswordChar = '*';
-            this.tbContraseña.Size = new System.Drawing.Size(100, 20);
-            this.tbContraseña.TabIndex = 4;
+            this.tbPin.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPin.Location = new System.Drawing.Point(49, 46);
+            this.tbPin.Name = "tbPin";
+            this.tbPin.PasswordChar = '*';
+            this.tbPin.Size = new System.Drawing.Size(100, 44);
+            this.tbPin.TabIndex = 3;
+            this.tbPin.Text = "8888";
+            this.tbPin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblError
             // 
@@ -94,13 +79,10 @@
             // Seguridad
             // 
             this.AcceptButton = this.btnEnter;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.ClientSize = new System.Drawing.Size(208, 144);
             this.Controls.Add(this.lblError);
-            this.Controls.Add(this.tbContraseña);
-            this.Controls.Add(this.tbUsuario);
-            this.Controls.Add(this.lblPassword);
+            this.Controls.Add(this.tbPin);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.btnEnter);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -109,7 +91,10 @@
             this.Name = "Seguridad";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.Text = "SportGest";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "SportGest - Login";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Seguridad_FormClosing);
             this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -120,9 +105,7 @@
 
         private System.Windows.Forms.Button btnEnter;
         private System.Windows.Forms.Label lblUsuario;
-        private System.Windows.Forms.Label lblPassword;
-        private System.Windows.Forms.TextBox tbUsuario;
-        private System.Windows.Forms.TextBox tbContraseña;
+        private System.Windows.Forms.TextBox tbPin;
         private System.Windows.Forms.Label lblError;
     }
 }

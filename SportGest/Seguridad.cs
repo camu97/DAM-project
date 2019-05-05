@@ -14,89 +14,74 @@ namespace SportGest
 {
     public partial class Seguridad : Form
     {
-        const int TRES =3;
-        bool usuario_error;
-        int cont_fallos;
+        const int FALLOS_POSIBLES = 3;
+        bool pinCorrecto = false;
+        int cont_fallos = 0;
         Principal form1;
         public Seguridad(Principal f)
         {
-            form1 = f;
             InitializeComponent();
+            form1 = f;
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
             cont_fallos = 0;
-            string language = CultureInfo.InstalledUICulture.IetfLanguageTag;
-            if (language.Equals("es"))
-            {
-                form1.language = "es";
-                lblPassword.Text = "Contraseña";
-                lblUsuario.Text = "Usuario";
-            }
-            else
-            {
-                form1.language = "en";
-                lblPassword.Text = "Password";
-                lblUsuario.Text = "User";
-            }
+            //string language = cultureinfo.installeduiculture.ietflanguagetag;
+            //if (language.equals("es"))
+            //{
+            //    form1.language = "es";
+            //    lblpassword.text = "contraseña";
+            //    lblusuario.text = "usuario";
+            //}
+            //else
+            //{
+            //    form1.language = "en";
+            //    lblpassword.text = "password";
+            //    lblusuario.text = "user";
+            //}
         }
 
         private void btnEnter_Click(object sender, EventArgs e)
         {
-            try
+            if (tbPin.Equals("0000"))
             {
-                using (StreamReader srUsuario = new StreamReader("usuarios.txt"))
-                {
-                    string usuario_leer = srUsuario.ReadLine();
-                    string contraseña_leer;
-                    int x = 0;
-                    while (usuario_leer != null)
-                    {
-                        if (usuario_leer.Equals(tbUsuario.Text))
-                        {
-                            using (StreamReader srContraseña = new StreamReader("contraseñas.txt"))
-                            {
-                                for (int i = 0; i < x; i++)
-                                {
-                                    srContraseña.ReadLine();
-                                }
-                                contraseña_leer = srContraseña.ReadLine();
-                                if (contraseña_leer != null && tbContraseña.Equals(contraseña_leer))
-                                {
-                                    usuario_error = false;
-                                }
-                                else
-                                {
-                                    usuario_error = true;
-                                }
-                            }
-                        }
-                        else
-                        {
-                            usuario_error = true;
-                        }
-                        x++;
-                        usuario_leer = srUsuario.ReadLine();
-                    }
-                }
+                pinCorrecto = true;
+                this.Dispose();
             }
-            catch (IOException) { }
-
-            if (usuario_error)
+            else
             {
                 cont_fallos++;
                 if (cont_fallos == 3)
                 {
                     form1.Close();
                 }
-                if (form1.language.Equals("es"))
+                //if (form1.language.Equals("es"))
+                //{
+                lblError.Text = (FALLOS_POSIBLES - cont_fallos) + " intentos";
+                //}
+                //else
+                //{
+                //    lblError.Text = (TRES - cont_fallos) + " attemps";
+                //}
+            }
+            tbPin.Clear();
+        }
+
+        private void Seguridad_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (cont_fallos != 3)
+            {
+                if (DialogResult.No == MessageBox.Show
+                    ("¿Deseas abandonar la aplicación?", "Salir", MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question))
                 {
-                    lblError.Text = (TRES - cont_fallos) + " intentos";
+                    e.Cancel = true;
                 }
                 else
                 {
-                    lblError.Text = (TRES - cont_fallos) + " attemps";
+                    form1.salir_login = true;
+                    form1.Close();
                 }
             }
         }
