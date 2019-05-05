@@ -16,5 +16,17 @@ namespace SportGest
         {
             InitializeComponent();
         }
+
+        private void nuevoEquipoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            NuevoEquipo ne = new NuevoEquipo();
+            ne.ShowDialog();
+        }
+
+        private void nuevoJugadorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NuevoJugador nj = new NuevoJugador();
+            nj.ShowDialog();
+        }
     }
 }
