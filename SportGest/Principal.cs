@@ -48,7 +48,12 @@ namespace SportGest
         private void Form1_Load(object sender, EventArgs e)
         {
             Seguridad securityForm = new Seguridad(this);
-            //securityForm.ShowDialog();
+            securityForm.ShowDialog();
+        }
+
+        private void btnAñadirNota_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

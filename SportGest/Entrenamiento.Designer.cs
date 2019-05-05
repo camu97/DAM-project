@@ -162,7 +162,7 @@
             // 
             // tbTiempoSesion
             // 
-            this.tbTiempoSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTiempoSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbTiempoSesion.Location = new System.Drawing.Point(693, 53);
             this.tbTiempoSesion.Name = "tbTiempoSesion";
             this.tbTiempoSesion.Size = new System.Drawing.Size(37, 26);
@@ -190,7 +190,7 @@
             // 
             // cbCategoria
             // 
-            this.cbCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbCategoria.FormattingEnabled = true;
             this.cbCategoria.Items.AddRange(new object[] {
             "Minis",
@@ -208,7 +208,7 @@
             // 
             // cbEquipos
             // 
-            this.cbEquipos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbEquipos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbEquipos.FormattingEnabled = true;
             this.cbEquipos.Location = new System.Drawing.Point(82, 49);
             this.cbEquipos.Name = "cbEquipos";
@@ -247,7 +247,7 @@
             // 
             // timePIcker
             // 
-            this.timePIcker.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timePIcker.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.timePIcker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.timePIcker.Location = new System.Drawing.Point(889, 51);
             this.timePIcker.Name = "timePIcker";
@@ -267,7 +267,7 @@
             // 
             // tbDescripcionObjectivo
             // 
-            this.tbDescripcionObjectivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbDescripcionObjectivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbDescripcionObjectivo.Location = new System.Drawing.Point(689, 105);
             this.tbDescripcionObjectivo.Multiline = true;
             this.tbDescripcionObjectivo.Name = "tbDescripcionObjectivo";
@@ -276,7 +276,7 @@
             // 
             // tbDescipcionCalentamiento
             // 
-            this.tbDescipcionCalentamiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbDescipcionCalentamiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbDescipcionCalentamiento.Location = new System.Drawing.Point(46, 603);
             this.tbDescipcionCalentamiento.Multiline = true;
             this.tbDescipcionCalentamiento.Name = "tbDescipcionCalentamiento";
@@ -285,7 +285,7 @@
             // 
             // tbDescripcionCalma
             // 
-            this.tbDescripcionCalma.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbDescripcionCalma.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbDescripcionCalma.Location = new System.Drawing.Point(912, 603);
             this.tbDescripcionCalma.Multiline = true;
             this.tbDescripcionCalma.Name = "tbDescripcionCalma";
@@ -294,7 +294,7 @@
             // 
             // tbDescripcionPrincipal
             // 
-            this.tbDescripcionPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbDescripcionPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbDescripcionPrincipal.Location = new System.Drawing.Point(456, 603);
             this.tbDescripcionPrincipal.Multiline = true;
             this.tbDescripcionPrincipal.Name = "tbDescripcionPrincipal";
@@ -360,7 +360,7 @@
             // 
             // tbTiempoCalentamiento
             // 
-            this.tbTiempoCalentamiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTiempoCalentamiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbTiempoCalentamiento.Location = new System.Drawing.Point(131, 33);
             this.tbTiempoCalentamiento.Name = "tbTiempoCalentamiento";
             this.tbTiempoCalentamiento.Size = new System.Drawing.Size(48, 26);
@@ -368,7 +368,7 @@
             // 
             // tbTiempoPrincipal
             // 
-            this.tbTiempoPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTiempoPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbTiempoPrincipal.Location = new System.Drawing.Point(127, 29);
             this.tbTiempoPrincipal.Name = "tbTiempoPrincipal";
             this.tbTiempoPrincipal.Size = new System.Drawing.Size(48, 26);
@@ -376,7 +376,7 @@
             // 
             // tbTiempoCalma
             // 
-            this.tbTiempoCalma.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTiempoCalma.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbTiempoCalma.Location = new System.Drawing.Point(157, 27);
             this.tbTiempoCalma.Name = "tbTiempoCalma";
             this.tbTiempoCalma.Size = new System.Drawing.Size(48, 26);
@@ -515,6 +515,7 @@
             this.cancelarToolStripMenuItem.Name = "cancelarToolStripMenuItem";
             this.cancelarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cancelarToolStripMenuItem.Text = "Cancelar";
+            this.cancelarToolStripMenuItem.Click += new System.EventHandler(this.cancelarToolStripMenuItem_Click);
             // 
             // ayudaToolStripMenuItem
             // 
@@ -661,7 +662,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(1121, 51);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(75, 26);

@@ -31,8 +31,8 @@
             this.btnEnter = new System.Windows.Forms.Button();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
-            this.tbUser = new System.Windows.Forms.TextBox();
-            this.tbPassword = new System.Windows.Forms.TextBox();
+            this.tbUsuario = new System.Windows.Forms.TextBox();
+            this.tbContraseña = new System.Windows.Forms.TextBox();
             this.lblError = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -67,19 +67,20 @@
             this.lblPassword.TabIndex = 2;
             this.lblPassword.Text = "Contraseña";
             // 
-            // tbUser
+            // tbUsuario
             // 
-            this.tbUser.Location = new System.Drawing.Point(49, 25);
-            this.tbUser.Name = "tbUser";
-            this.tbUser.Size = new System.Drawing.Size(100, 20);
-            this.tbUser.TabIndex = 3;
+            this.tbUsuario.Location = new System.Drawing.Point(49, 25);
+            this.tbUsuario.Name = "tbUsuario";
+            this.tbUsuario.Size = new System.Drawing.Size(100, 20);
+            this.tbUsuario.TabIndex = 3;
             // 
-            // tbPassword
+            // tbContraseña
             // 
-            this.tbPassword.Location = new System.Drawing.Point(49, 64);
-            this.tbPassword.Name = "tbPassword";
-            this.tbPassword.Size = new System.Drawing.Size(100, 20);
-            this.tbPassword.TabIndex = 4;
+            this.tbContraseña.Location = new System.Drawing.Point(49, 64);
+            this.tbContraseña.Name = "tbContraseña";
+            this.tbContraseña.PasswordChar = '*';
+            this.tbContraseña.Size = new System.Drawing.Size(100, 20);
+            this.tbContraseña.TabIndex = 4;
             // 
             // lblError
             // 
@@ -97,8 +98,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(208, 144);
             this.Controls.Add(this.lblError);
-            this.Controls.Add(this.tbPassword);
-            this.Controls.Add(this.tbUser);
+            this.Controls.Add(this.tbContraseña);
+            this.Controls.Add(this.tbUsuario);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.btnEnter);
@@ -120,8 +121,8 @@
         private System.Windows.Forms.Button btnEnter;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Label lblPassword;
-        private System.Windows.Forms.TextBox tbUser;
-        private System.Windows.Forms.TextBox tbPassword;
+        private System.Windows.Forms.TextBox tbUsuario;
+        private System.Windows.Forms.TextBox tbContraseña;
         private System.Windows.Forms.Label lblError;
     }
 }

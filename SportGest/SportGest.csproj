@@ -149,7 +149,9 @@
   <ItemGroup>
     <None Include="Resources\aro.png" />
     <None Include="Resources\aros_grupo.png" />
+    <None Include="Resources\campo_cesped.jpeg" />
     <Content Include="Resources\campo_horizontal.jpg" />
+    <None Include="Resources\campo_verdeOscuro.jpg" />
     <Content Include="Resources\campo_vertical.jpg" />
     <None Include="Resources\valla.png" />
     <None Include="Resources\seta_amarilla.png" />

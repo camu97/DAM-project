@@ -38,7 +38,7 @@ namespace SportGest
 
         private void imgConoRojo_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void imgConoAzul_Click(object sender, EventArgs e)
@@ -54,6 +54,14 @@ namespace SportGest
         private void imgBalon_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void cancelarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Cancelar entrenamiento", "¿Deseas cancelar la preparación de este entrenamiento? Perderás todo lo que hayas hecho", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }

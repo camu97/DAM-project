@@ -14,8 +14,9 @@ namespace SportGest
 {
     public partial class Seguridad : Form
     {
-        bool user_error;
-        int fail_counter;
+        const int TRES =3;
+        bool usuario_error;
+        int cont_fallos;
         Principal form1;
         public Seguridad(Principal f)
         {
@@ -25,7 +26,7 @@ namespace SportGest
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            fail_counter = 0;
+            cont_fallos = 0;
             string language = CultureInfo.InstalledUICulture.IetfLanguageTag;
             if (language.Equals("es"))
             {
@@ -45,58 +46,57 @@ namespace SportGest
         {
             try
             {
-                using (StreamReader srUser = new StreamReader("usuarios.txt"))
+                using (StreamReader srUsuario = new StreamReader("usuarios.txt"))
                 {
-                    string user_read = srUser.ReadLine();
-                    string pass_read;
+                    string usuario_leer = srUsuario.ReadLine();
+                    string contraseña_leer;
                     int x = 0;
-                    while (user_read != null)
+                    while (usuario_leer != null)
                     {
-                        if (user_read.Equals(tbUser.Text))
+                        if (usuario_leer.Equals(tbUsuario.Text))
                         {
-                            using (StreamReader srPass = new StreamReader("contraseñas.txt"))
+                            using (StreamReader srContraseña = new StreamReader("contraseñas.txt"))
                             {
                                 for (int i = 0; i < x; i++)
                                 {
-                                    srPass.ReadLine();
+                                    srContraseña.ReadLine();
                                 }
-                                pass_read = srPass.ReadLine();
-                                if (pass_read != null && tbPassword.Equals(pass_read))
+                                contraseña_leer = srContraseña.ReadLine();
+                                if (contraseña_leer != null && tbContraseña.Equals(contraseña_leer))
                                 {
-                                    user_error = false;
+                                    usuario_error = false;
                                 }
                                 else
                                 {
-                                    user_error = true;
+                                    usuario_error = true;
                                 }
                             }
                         }
                         else
                         {
-                            user_error = true;
+                            usuario_error = true;
                         }
                         x++;
-                        user_read = srUser.ReadLine();
+                        usuario_leer = srUsuario.ReadLine();
                     }
                 }
             }
             catch (IOException) { }
 
-            if (user_error)
+            if (usuario_error)
             {
-                fail_counter++;
-                if (fail_counter == 3)
+                cont_fallos++;
+                if (cont_fallos == 3)
                 {
-                    this.Close();
                     form1.Close();
                 }
                 if (form1.language.Equals("es"))
                 {
-                    lblError.Text = "Tiene " + (3 - fail_counter) + " intentos";
+                    lblError.Text = (TRES - cont_fallos) + " intentos";
                 }
                 else
                 {
-                    lblError.Text = "You have " + (3 - fail_counter) + " attemps";
+                    lblError.Text = (TRES - cont_fallos) + " attemps";
                 }
             }
         }

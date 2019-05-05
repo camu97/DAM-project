@@ -153,6 +153,7 @@
             this.btnAñadirNota.TabIndex = 12;
             this.btnAñadirNota.Text = "Añadir";
             this.btnAñadirNota.UseVisualStyleBackColor = true;
+            this.btnAñadirNota.Click += new System.EventHandler(this.btnAñadirNota_Click);
             // 
             // label1
             // 

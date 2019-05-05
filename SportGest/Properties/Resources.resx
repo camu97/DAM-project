@@ -163,13 +163,19 @@
   <data name="setas_rojas_grupo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\setas_rojas_grupo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="campo_horizontal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\campo_horizontal.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="cono" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cono.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="setas_grupo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\setas_grupo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="campo_horizontal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\campo_horizontal.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="campo_cesped" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\campo_cesped.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="campo_verdeOscuro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\campo_verdeOscuro.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
