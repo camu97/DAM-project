@@ -12,7 +12,6 @@ namespace SportGest
 {
     public partial class Entrenamiento : Form
     {
-        bool seleccionado = false;
         public Entrenamiento()
         {
             InitializeComponent();
