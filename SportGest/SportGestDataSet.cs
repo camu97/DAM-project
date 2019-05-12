@@ -4,5 +4,8 @@
 
     partial class SportGestDataSet
     {
+        partial class NotasDataTable
+        {
+        }
     }
 }

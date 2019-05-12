@@ -17,6 +17,7 @@ namespace SportGest
         public string language = "";
         public bool salir_login = false;
         public const string PIN = "0000";
+        private bool foco_nueva_nota = false;
         public Principal()
         {
             InitializeComponent();
@@ -52,22 +53,24 @@ namespace SportGest
             string sCnn;
             sCnn = "Data Source = (localdb)\\mssqllocaldb; Initial Catalog = SportGest; Integrated Security = True; Pooling = False";
 
-            string sSel = "SELECT * FROM Notas";
-
-            SqlDataAdapter da;
-            DataTable dt = new DataTable();
-
-            try
+            using (SqlConnection connection = new SqlConnection(sCnn))
             {
-                da = new SqlDataAdapter(sSel, sCnn);
-                da.Fill(dt);
-                foreach (DataRow dr in dt.Rows)
+                connection.Open();
+                DataTable dt = new DataTable();
+
+                try
                 {
-                    ListaMensajes.Items.Add(dr["fecha"].ToString() + " - " + dr["nota"].ToString());
+                    dt = notas_adapter.GetData();
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        ListaMensajes.Items.Add(dr["fecha"].ToString() + " - " + dr["nota"].ToString());
+                    }
                 }
-            }
-            catch (Exception ex)
-            {
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
             }
 
         }
@@ -76,38 +79,31 @@ namespace SportGest
         {
             if (tbNuevaNota.Text.Length != 0)
             {
-                //if (tbNuevaNota.Text.Length > 20)
-                //{
-                //    ListaMensajes.Items.Add(tbNuevaNota.Text.Substring(0, 20));
-                //}
-                //else
-                //{
-                ListaMensajes.Items.Add(tbNuevaNota.Text);
-                //}
                 string sCnn;
                 sCnn = "Data Source = (localdb)\\mssqllocaldb; Initial Catalog = SportGest; Integrated Security = True; Pooling = False";
-                SqlDataAdapter da;
                 DataTable dt = new DataTable();
 
-                string s_cmd = "INSERT INTO Notas values(datetime(now()),'" + tbNuevaNota.Text + "')";
-
-
-                SqlConnection connection = new SqlConnection(sCnn);
-                connection.Open();
-
-
-                try
+                using (SqlConnection connection = new SqlConnection(sCnn))
                 {
-                    
-                }
-                catch (Exception ex)
-                {
+                    connection.Open();
+                    try
+                    {
+                        notas_adapter.Insert(tbNuevaNota.Text);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
 
                 }
-                finally
+                tbNuevaNota.Clear();
+                ListaMensajes.Items.Clear();
+                dt = notas_adapter.GetData();
+                foreach (DataRow dr in dt.Rows)
                 {
-                    connection.Close();
+                    ListaMensajes.Items.Add(dr["fecha"].ToString() + " - " + dr["nota"].ToString());
                 }
+                ListaMensajes.Refresh();
 
             }
         }
@@ -130,12 +126,51 @@ namespace SportGest
 
         private void ListaMensajes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            tbLeerNotas.Text = ListaMensajes.SelectedItem.ToString();
+            try
+            {
+                string[] nota_mostrar = ListaMensajes.SelectedItem.ToString().Split('-');
+                tbLeerNotas.Text = nota_mostrar[0] + "\n" + nota_mostrar[1];
+            }
+            catch (NullReferenceException) { }
         }
 
         private void itemSobre_Click(object sender, EventArgs e)
         {
             MessageBox.Show("SpotGest\nDesarrollador: Javier Cameselle", "Sobre...", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void btnEliminarNota_Click(object sender, EventArgs e)
+        {
+            ListaMensajes.Items.Remove(ListaMensajes.SelectedItem);
+            ListaMensajes.Refresh();
+            ListaMensajes.SelectedItem = null;
+            tbLeerNotas.Clear();
+            notas_adapter.Delete(ListaMensajes.SelectedIndex + 1);
+        }
+
+        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.notas_adapter.FillBy(this.sportGestDataSet.Notas);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+
+
+        //private void tbNuevaNota_Enter(object sender, EventArgs e)
+        //{
+        //    foco_nueva_nota = true;
+        //}
+
+        //private void tbNuevaNota_Leave(object sender, EventArgs e)
+        //{
+        //    foco_nueva_nota = false;
+        //}
     }
 }

@@ -276,6 +276,52 @@ SELECT num, nombre, apellidos, posicion, fecha_nacimiento, equipo, observaciones
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="NotasTableAdapter" GeneratorDataComponentClassName="NotasTableAdapter" Name="Notas" UserDataComponentName="NotasTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="SportGestConnectionString (Settings)" DbObjectName="SportGest.dbo.Notas" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText />
+                    <Parameters />
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText />
+                    <Parameters />
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        id, nota
+FROM            Notas</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText />
+                    <Parameters />
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="nota" DataSetColumn="nota" />
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="SportGestConnectionString (Settings)" DbObjectName="SportGest.dbo.Notas" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        id, nota
+FROM            Notas</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -284,7 +330,7 @@ SELECT num, nombre, apellidos, posicion, fecha_nacimiento, equipo, observaciones
   <xs:element name="SportGestDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="SportGestDataSet" msprop:Generator_UserDSName="SportGestDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Entrenamientos" msprop:Generator_TableClassName="EntrenamientosDataTable" msprop:Generator_TableVarName="tableEntrenamientos" msprop:Generator_TablePropName="Entrenamientos" msprop:Generator_RowDeletingName="EntrenamientosRowDeleting" msprop:Generator_RowChangingName="EntrenamientosRowChanging" msprop:Generator_RowEvHandlerName="EntrenamientosRowChangeEventHandler" msprop:Generator_RowDeletedName="EntrenamientosRowDeleted" msprop:Generator_UserTableName="Entrenamientos" msprop:Generator_RowChangedName="EntrenamientosRowChanged" msprop:Generator_RowEvArgName="EntrenamientosRowChangeEvent" msprop:Generator_RowClassName="EntrenamientosRow">
+        <xs:element name="Entrenamientos" msprop:Generator_TableClassName="EntrenamientosDataTable" msprop:Generator_TableVarName="tableEntrenamientos" msprop:Generator_RowChangedName="EntrenamientosRowChanged" msprop:Generator_TablePropName="Entrenamientos" msprop:Generator_RowDeletingName="EntrenamientosRowDeleting" msprop:Generator_RowChangingName="EntrenamientosRowChanging" msprop:Generator_RowEvHandlerName="EntrenamientosRowChangeEventHandler" msprop:Generator_RowDeletedName="EntrenamientosRowDeleted" msprop:Generator_RowClassName="EntrenamientosRow" msprop:Generator_UserTableName="Entrenamientos" msprop:Generator_RowEvArgName="EntrenamientosRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -329,7 +375,7 @@ SELECT num, nombre, apellidos, posicion, fecha_nacimiento, equipo, observaciones
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Equipos" msdata:CaseSensitive="False" msprop:Generator_TableClassName="EquiposDataTable" msprop:Generator_TableVarName="tableEquipos" msprop:Generator_TablePropName="Equipos" msprop:Generator_RowDeletingName="EquiposRowDeleting" msprop:Generator_RowChangingName="EquiposRowChanging" msprop:Generator_RowEvHandlerName="EquiposRowChangeEventHandler" msprop:Generator_RowDeletedName="EquiposRowDeleted" msprop:Generator_UserTableName="Equipos" msprop:Generator_RowChangedName="EquiposRowChanged" msprop:Generator_RowEvArgName="EquiposRowChangeEvent" msprop:Generator_RowClassName="EquiposRow">
+        <xs:element name="Equipos" msdata:CaseSensitive="False" msprop:Generator_TableClassName="EquiposDataTable" msprop:Generator_TableVarName="tableEquipos" msprop:Generator_RowChangedName="EquiposRowChanged" msprop:Generator_TablePropName="Equipos" msprop:Generator_RowDeletingName="EquiposRowDeleting" msprop:Generator_RowChangingName="EquiposRowChanging" msprop:Generator_RowEvHandlerName="EquiposRowChangeEventHandler" msprop:Generator_RowDeletedName="EquiposRowDeleted" msprop:Generator_RowClassName="EquiposRow" msprop:Generator_UserTableName="Equipos" msprop:Generator_RowEvArgName="EquiposRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre" minOccurs="0">
@@ -365,7 +411,7 @@ SELECT num, nombre, apellidos, posicion, fecha_nacimiento, equipo, observaciones
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Partidos" msprop:Generator_TableClassName="PartidosDataTable" msprop:Generator_TableVarName="tablePartidos" msprop:Generator_TablePropName="Partidos" msprop:Generator_RowDeletingName="PartidosRowDeleting" msprop:Generator_RowChangingName="PartidosRowChanging" msprop:Generator_RowEvHandlerName="PartidosRowChangeEventHandler" msprop:Generator_RowDeletedName="PartidosRowDeleted" msprop:Generator_UserTableName="Partidos" msprop:Generator_RowChangedName="PartidosRowChanged" msprop:Generator_RowEvArgName="PartidosRowChangeEvent" msprop:Generator_RowClassName="PartidosRow">
+        <xs:element name="Partidos" msprop:Generator_TableClassName="PartidosDataTable" msprop:Generator_TableVarName="tablePartidos" msprop:Generator_RowChangedName="PartidosRowChanged" msprop:Generator_TablePropName="Partidos" msprop:Generator_RowDeletingName="PartidosRowDeleting" msprop:Generator_RowChangingName="PartidosRowChanging" msprop:Generator_RowEvHandlerName="PartidosRowChangeEventHandler" msprop:Generator_RowDeletedName="PartidosRowDeleted" msprop:Generator_RowClassName="PartidosRow" msprop:Generator_UserTableName="Partidos" msprop:Generator_RowEvArgName="PartidosRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -402,7 +448,7 @@ SELECT num, nombre, apellidos, posicion, fecha_nacimiento, equipo, observaciones
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Jugadores" msprop:Generator_TableClassName="JugadoresDataTable" msprop:Generator_TableVarName="tableJugadores" msprop:Generator_TablePropName="Jugadores" msprop:Generator_RowDeletingName="JugadoresRowDeleting" msprop:Generator_RowChangingName="JugadoresRowChanging" msprop:Generator_RowEvHandlerName="JugadoresRowChangeEventHandler" msprop:Generator_RowDeletedName="JugadoresRowDeleted" msprop:Generator_UserTableName="Jugadores" msprop:Generator_RowChangedName="JugadoresRowChanged" msprop:Generator_RowEvArgName="JugadoresRowChangeEvent" msprop:Generator_RowClassName="JugadoresRow">
+        <xs:element name="Jugadores" msprop:Generator_TableClassName="JugadoresDataTable" msprop:Generator_TableVarName="tableJugadores" msprop:Generator_RowChangedName="JugadoresRowChanged" msprop:Generator_TablePropName="Jugadores" msprop:Generator_RowDeletingName="JugadoresRowDeleting" msprop:Generator_RowChangingName="JugadoresRowChanging" msprop:Generator_RowEvHandlerName="JugadoresRowChangeEventHandler" msprop:Generator_RowDeletedName="JugadoresRowDeleted" msprop:Generator_RowClassName="JugadoresRow" msprop:Generator_UserTableName="Jugadores" msprop:Generator_RowEvArgName="JugadoresRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="num" msprop:Generator_ColumnVarNameInTable="columnnum" msprop:Generator_ColumnPropNameInRow="num" msprop:Generator_ColumnPropNameInTable="numColumn" msprop:Generator_UserColumnName="num" type="xs:int" />
@@ -445,6 +491,20 @@ SELECT num, nombre, apellidos, posicion, fecha_nacimiento, equipo, observaciones
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="Notas" msprop:Generator_TableClassName="NotasDataTable" msprop:Generator_TableVarName="tableNotas" msprop:Generator_TablePropName="Notas" msprop:Generator_RowDeletingName="NotasRowDeleting" msprop:Generator_RowChangingName="NotasRowChanging" msprop:Generator_RowEvHandlerName="NotasRowChangeEventHandler" msprop:Generator_RowDeletedName="NotasRowDeleted" msprop:Generator_UserTableName="Notas" msprop:Generator_RowChangedName="NotasRowChanged" msprop:Generator_RowEvArgName="NotasRowChangeEvent" msprop:Generator_RowClassName="NotasRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nota" msprop:Generator_ColumnVarNameInTable="columnnota" msprop:Generator_ColumnPropNameInRow="nota" msprop:Generator_ColumnPropNameInTable="notaColumn" msprop:Generator_UserColumnName="nota" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -463,11 +523,15 @@ SELECT num, nombre, apellidos, posicion, fecha_nacimiento, equipo, observaciones
       <xs:selector xpath=".//mstns:Jugadores" />
       <xs:field xpath="mstns:num" />
     </xs:unique>
+    <xs:unique name="Constraint2" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Notas" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="Entrenamientos_Equipo" msdata:parent="Entrenamientos" msdata:child="Equipos" msdata:parentkey="equipo" msdata:childkey="nombre" msprop:Generator_UserChildTable="Equipos" msprop:Generator_ChildPropName="GetEquiposRows" msprop:Generator_UserRelationName="Entrenamientos_Equipo" msprop:Generator_ParentPropName="EntrenamientosRow" msprop:Generator_RelationVarName="relationEntrenamientos_Equipo" msprop:Generator_UserParentTable="Entrenamientos" />
-      <msdata:Relationship name="Jugadores_Equipo" msdata:parent="Jugadores" msdata:child="Equipos" msdata:parentkey="equipo" msdata:childkey="nombre" msprop:Generator_UserChildTable="Equipos" msprop:Generator_ChildPropName="GetEquiposRows" msprop:Generator_UserRelationName="Jugadores_Equipo" msprop:Generator_RelationVarName="relationJugadores_Equipo" msprop:Generator_UserParentTable="Jugadores" msprop:Generator_ParentPropName="JugadoresRow" />
+      <msdata:Relationship name="Entrenamientos_Equipo" msdata:parent="Entrenamientos" msdata:child="Equipos" msdata:parentkey="equipo" msdata:childkey="nombre" msprop:Generator_UserChildTable="Equipos" msprop:Generator_ChildPropName="GetEquiposRows" msprop:Generator_UserRelationName="Entrenamientos_Equipo" msprop:Generator_RelationVarName="relationEntrenamientos_Equipo" msprop:Generator_UserParentTable="Entrenamientos" msprop:Generator_ParentPropName="EntrenamientosRow" />
+      <msdata:Relationship name="Jugadores_Equipo" msdata:parent="Jugadores" msdata:child="Equipos" msdata:parentkey="equipo" msdata:childkey="nombre" msprop:Generator_UserChildTable="Equipos" msprop:Generator_ChildPropName="GetEquiposRows" msprop:Generator_UserRelationName="Jugadores_Equipo" msprop:Generator_ParentPropName="JugadoresRow" msprop:Generator_RelationVarName="relationJugadores_Equipo" msprop:Generator_UserParentTable="Jugadores" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
