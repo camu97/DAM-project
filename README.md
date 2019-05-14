@@ -6,3 +6,5 @@ o
 22/4 y 23/4 - OPtimización de pantalla de menú principal, de entrenamiento. Creación de algunas tablas en la base de datos.
 5/5 - Implementación de pantallas como: NuevoJugador o NuevoEquipo que nos dará la opción de introducir un nuevo equipo/jugador en la base de datos. Pequeñas modificaciones para la mejora de la pantalla de entrenamiento.
 6/5 - Modificada la pantalla de seguridad (fallos).Cambiado sistema de entrada.
+11/5 - Añadida base de datos al programa.
+13/5 - Implementado el trabajo con bases de datos en la pantalla principal.

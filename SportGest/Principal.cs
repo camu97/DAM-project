@@ -88,7 +88,7 @@ namespace SportGest
                     connection.Open();
                     try
                     {
-                        notas_adapter.Insert(tbNuevaNota.Text);
+                        notasTableAdapter.Insert(DateTime.Now, tbNuevaNota.Text);
                     }
                     catch (Exception ex)
                     {
@@ -98,7 +98,7 @@ namespace SportGest
                 }
                 tbNuevaNota.Clear();
                 ListaMensajes.Items.Clear();
-                dt = notas_adapter.GetData();
+                dt = notasTableAdapter.GetData();
                 foreach (DataRow dr in dt.Rows)
                 {
                     ListaMensajes.Items.Add(dr["fecha"].ToString() + " - " + dr["nota"].ToString());
@@ -145,20 +145,7 @@ namespace SportGest
             ListaMensajes.Refresh();
             ListaMensajes.SelectedItem = null;
             tbLeerNotas.Clear();
-            notas_adapter.Delete(ListaMensajes.SelectedIndex + 1);
-        }
-
-        private void fillByToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.notas_adapter.FillBy(this.sportGestDataSet.Notas);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
+           notasTableAdapter.Delete(ListaMensajes.SelectedIndex + 1);
         }
 
 

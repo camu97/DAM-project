@@ -44,13 +44,10 @@
             this.itemSobre = new System.Windows.Forms.ToolStripMenuItem();
             this.tbLeerNotas = new System.Windows.Forms.TextBox();
             this.btnEliminarNota = new System.Windows.Forms.Button();
-            this.notas_adapter = new SportGest.SportGestDataSetTableAdapters.NotasTableAdapter();
             this.sportGestDataSet = new SportGest.SportGestDataSet();
-            this.fillByToolStrip = new System.Windows.Forms.ToolStrip();
-            this.fillByToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.notasTableAdapter = new SportGest.SportGestDataSetTableAdapters.NotasTableAdapter();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sportGestDataSet)).BeginInit();
-            this.fillByToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnNuevoPartido
@@ -244,32 +241,14 @@
             this.btnEliminarNota.UseVisualStyleBackColor = false;
             this.btnEliminarNota.Click += new System.EventHandler(this.btnEliminarNota_Click);
             // 
-            // notas_adapter
-            // 
-            this.notas_adapter.ClearBeforeFill = true;
-            // 
             // sportGestDataSet
             // 
             this.sportGestDataSet.DataSetName = "SportGestDataSet";
             this.sportGestDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // fillByToolStrip
+            // notasTableAdapter
             // 
-            this.fillByToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fillByToolStripButton});
-            this.fillByToolStrip.Location = new System.Drawing.Point(0, 0);
-            this.fillByToolStrip.Name = "fillByToolStrip";
-            this.fillByToolStrip.Size = new System.Drawing.Size(111, 25);
-            this.fillByToolStrip.TabIndex = 18;
-            this.fillByToolStrip.Text = "fillByToolStrip";
-            // 
-            // fillByToolStripButton
-            // 
-            this.fillByToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.fillByToolStripButton.Name = "fillByToolStripButton";
-            this.fillByToolStripButton.Size = new System.Drawing.Size(39, 22);
-            this.fillByToolStripButton.Text = "FillBy";
-            this.fillByToolStripButton.Click += new System.EventHandler(this.fillByToolStripButton_Click);
+            this.notasTableAdapter.ClearBeforeFill = true;
             // 
             // Principal
             // 
@@ -278,7 +257,6 @@
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(605, 475);
-            this.Controls.Add(this.fillByToolStrip);
             this.Controls.Add(this.btnEliminarNota);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbLeerNotas);
@@ -308,8 +286,6 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sportGestDataSet)).EndInit();
-            this.fillByToolStrip.ResumeLayout(false);
-            this.fillByToolStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -331,11 +307,9 @@
         private System.Windows.Forms.ToolStripMenuItem itemSobre;
         private System.Windows.Forms.ToolStripMenuItem itemSalir;
         private System.Windows.Forms.TextBox tbLeerNotas;
-        private SportGestDataSetTableAdapters.NotasTableAdapter notas_adapter;
         private System.Windows.Forms.Button btnEliminarNota;
         private SportGestDataSet sportGestDataSet;
-        private System.Windows.Forms.ToolStrip fillByToolStrip;
-        private System.Windows.Forms.ToolStripButton fillByToolStripButton;
+        private SportGestDataSetTableAdapters.NotasTableAdapter notasTableAdapter;
     }
 }
 
