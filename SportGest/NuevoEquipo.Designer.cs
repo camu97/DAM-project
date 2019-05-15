@@ -31,18 +31,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.lbObjetivos = new System.Windows.Forms.ListBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.tbNombre = new System.Windows.Forms.TextBox();
+            this.tbLiga = new System.Windows.Forms.TextBox();
+            this.tbObservaciones = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnAñadirobjetivo = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAñadirEquipo = new System.Windows.Forms.Button();
+            this.cbCategoria = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tbNumero = new System.Windows.Forms.TextBox();
+            this.equiposTableAdapter1 = new SportGest.SportGestDataSetTableAdapters.EquiposTableAdapter();
             this.SuspendLayout();
             // 
             // label1
@@ -72,129 +69,106 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Liga:";
             // 
-            // label4
+            // tbNombre
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 103);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(31, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Tipo:";
+            this.tbNombre.Location = new System.Drawing.Point(100, 17);
+            this.tbNombre.MaxLength = 50;
+            this.tbNombre.Name = "tbNombre";
+            this.tbNombre.Size = new System.Drawing.Size(190, 20);
+            this.tbNombre.TabIndex = 6;
             // 
-            // label5
+            // tbLiga
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(13, 128);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Objetivos:";
+            this.tbLiga.Location = new System.Drawing.Point(48, 72);
+            this.tbLiga.Name = "tbLiga";
+            this.tbLiga.Size = new System.Drawing.Size(242, 20);
+            this.tbLiga.TabIndex = 8;
             // 
-            // lbObjetivos
+            // tbObservaciones
             // 
-            this.lbObjetivos.FormattingEnabled = true;
-            this.lbObjetivos.Location = new System.Drawing.Point(12, 153);
-            this.lbObjetivos.Name = "lbObjetivos";
-            this.lbObjetivos.Size = new System.Drawing.Size(120, 95);
-            this.lbObjetivos.TabIndex = 5;
-            this.lbObjetivos.SelectedIndexChanged += new System.EventHandler(this.lbObjetivos_SelectedIndexChanged);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(100, 17);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(190, 20);
-            this.textBox1.TabIndex = 6;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(75, 43);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(145, 20);
-            this.textBox2.TabIndex = 7;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(48, 72);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(172, 20);
-            this.textBox3.TabIndex = 8;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Fútbol 8",
-            "Fútbol 11"});
-            this.comboBox1.Location = new System.Drawing.Point(49, 98);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 9;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(75, 125);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(215, 20);
-            this.textBox4.TabIndex = 10;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(138, 179);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(221, 69);
-            this.textBox5.TabIndex = 11;
+            this.tbObservaciones.Location = new System.Drawing.Point(15, 143);
+            this.tbObservaciones.Multiline = true;
+            this.tbObservaciones.Name = "tbObservaciones";
+            this.tbObservaciones.Size = new System.Drawing.Size(344, 59);
+            this.tbObservaciones.TabIndex = 11;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(139, 152);
+            this.label6.Location = new System.Drawing.Point(13, 127);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(81, 13);
             this.label6.TabIndex = 12;
             this.label6.Text = "Observaciones:";
             // 
-            // btnAñadirobjetivo
+            // btnAñadirEquipo
             // 
-            this.btnAñadirobjetivo.Location = new System.Drawing.Point(296, 123);
-            this.btnAñadirobjetivo.Name = "btnAñadirobjetivo";
-            this.btnAñadirobjetivo.Size = new System.Drawing.Size(49, 23);
-            this.btnAñadirobjetivo.TabIndex = 13;
-            this.btnAñadirobjetivo.Text = "Añadir objetivo";
-            this.btnAñadirobjetivo.UseVisualStyleBackColor = true;
+            this.btnAñadirEquipo.Location = new System.Drawing.Point(145, 218);
+            this.btnAñadirEquipo.Name = "btnAñadirEquipo";
+            this.btnAñadirEquipo.Size = new System.Drawing.Size(75, 23);
+            this.btnAñadirEquipo.TabIndex = 14;
+            this.btnAñadirEquipo.Text = "Añadir equipo";
+            this.btnAñadirEquipo.UseVisualStyleBackColor = true;
+            this.btnAñadirEquipo.Click += new System.EventHandler(this.btnAñadirEquipo_Click);
             // 
-            // button1
+            // cbCategoria
             // 
-            this.button1.Location = new System.Drawing.Point(145, 254);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Añadir equipo";
-            this.button1.UseVisualStyleBackColor = true;
+            this.cbCategoria.FormattingEnabled = true;
+            this.cbCategoria.Items.AddRange(new object[] {
+            "MINIS",
+            "PREBENJAMIN",
+            "BENJAMIN",
+            "ALEVIN",
+            "INFANTIL",
+            "CADETE",
+            "JUVENIL",
+            "SENIOR",
+            "FEMENINO"});
+            this.cbCategoria.Location = new System.Drawing.Point(75, 43);
+            this.cbCategoria.Name = "cbCategoria";
+            this.cbCategoria.Size = new System.Drawing.Size(145, 21);
+            this.cbCategoria.TabIndex = 15;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 103);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(111, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Número de jugadores:";
+            // 
+            // tbNumero
+            // 
+            this.tbNumero.Location = new System.Drawing.Point(129, 100);
+            this.tbNumero.MaxLength = 2;
+            this.tbNumero.Name = "tbNumero";
+            this.tbNumero.Size = new System.Drawing.Size(24, 20);
+            this.tbNumero.TabIndex = 16;
+            // 
+            // equiposTableAdapter1
+            // 
+            this.equiposTableAdapter1.ClearBeforeFill = true;
             // 
             // NuevoEquipo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(371, 287);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnAñadirobjetivo);
+            this.ClientSize = new System.Drawing.Size(371, 251);
+            this.Controls.Add(this.tbNumero);
+            this.Controls.Add(this.cbCategoria);
+            this.Controls.Add(this.btnAñadirEquipo);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.lbObjetivos);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.tbObservaciones);
+            this.Controls.Add(this.tbLiga);
+            this.Controls.Add(this.tbNombre);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "NuevoEquipo";
             this.Text = "Nuevo equipo";
+            this.Load += new System.EventHandler(this.NuevoEquipo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,17 +179,14 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ListBox lbObjetivos;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox tbNombre;
+        private System.Windows.Forms.TextBox tbLiga;
+        private System.Windows.Forms.TextBox tbObservaciones;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btnAñadirobjetivo;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAñadirEquipo;
+        private System.Windows.Forms.ComboBox cbCategoria;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox tbNumero;
+        private SportGestDataSetTableAdapters.EquiposTableAdapter equiposTableAdapter1;
     }
 }

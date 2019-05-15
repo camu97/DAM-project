@@ -193,14 +193,15 @@
             this.cbCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbCategoria.FormattingEnabled = true;
             this.cbCategoria.Items.AddRange(new object[] {
-            "Minis",
-            "Prebenjamines",
-            "Benjamines",
-            "Alevines",
-            "Infantiles",
-            "Cadetes",
-            "Juveniles",
-            "Senior"});
+            "MINIS",
+            "PREBENJAMINES",
+            "BENJAMINES",
+            "ALEVINES",
+            "INFANTILES",
+            "CADETES",
+            "JUVENILES",
+            "SENIOR",
+            "FEMENMINO"});
             this.cbCategoria.Location = new System.Drawing.Point(360, 50);
             this.cbCategoria.Name = "cbCategoria";
             this.cbCategoria.Size = new System.Drawing.Size(140, 28);
@@ -477,7 +478,7 @@
             // 
             // btnProgramarSesion
             // 
-            this.btnProgramarSesion.Location = new System.Drawing.Point(1009, 736);
+            this.btnProgramarSesion.Location = new System.Drawing.Point(997, 735);
             this.btnProgramarSesion.Name = "btnProgramarSesion";
             this.btnProgramarSesion.Size = new System.Drawing.Size(208, 23);
             this.btnProgramarSesion.TabIndex = 37;
@@ -507,13 +508,13 @@
             // progarmarSeseiónToolStripMenuItem
             // 
             this.progarmarSeseiónToolStripMenuItem.Name = "progarmarSeseiónToolStripMenuItem";
-            this.progarmarSeseiónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.progarmarSeseiónToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.progarmarSeseiónToolStripMenuItem.Text = "Progarmar seseión";
             // 
             // cancelarToolStripMenuItem
             // 
             this.cancelarToolStripMenuItem.Name = "cancelarToolStripMenuItem";
-            this.cancelarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cancelarToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.cancelarToolStripMenuItem.Text = "Cancelar";
             this.cancelarToolStripMenuItem.Click += new System.EventHandler(this.cancelarToolStripMenuItem_Click);
             // 
@@ -665,7 +666,7 @@
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(1121, 51);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(75, 26);
+            this.textBox1.Size = new System.Drawing.Size(84, 26);
             this.textBox1.TabIndex = 46;
             // 
             // groupBox6
@@ -897,7 +898,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(1229, 771);
+            this.ClientSize = new System.Drawing.Size(1229, 770);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.textBox1);

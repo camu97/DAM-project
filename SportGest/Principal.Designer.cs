@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnNuevoPartido = new System.Windows.Forms.Button();
             this.btnGestionEquipo = new System.Windows.Forms.Button();
             this.btnHistorial = new System.Windows.Forms.Button();
             this.btnNuevoEntrenamiento = new System.Windows.Forms.Button();
             this.calendar = new System.Windows.Forms.MonthCalendar();
             this.ListaMensajes = new System.Windows.Forms.ListBox();
+            this.notasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sportGestDataSet = new SportGest.SportGestDataSet();
             this.tbNuevaNota = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnAñadirNota = new System.Windows.Forms.Button();
@@ -44,10 +47,10 @@
             this.itemSobre = new System.Windows.Forms.ToolStripMenuItem();
             this.tbLeerNotas = new System.Windows.Forms.TextBox();
             this.btnEliminarNota = new System.Windows.Forms.Button();
-            this.sportGestDataSet = new SportGest.SportGestDataSet();
             this.notasTableAdapter = new SportGest.SportGestDataSetTableAdapters.NotasTableAdapter();
-            this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.notasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sportGestDataSet)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnNuevoPartido
@@ -134,6 +137,16 @@
             this.ListaMensajes.Size = new System.Drawing.Size(346, 132);
             this.ListaMensajes.TabIndex = 7;
             this.ListaMensajes.SelectedIndexChanged += new System.EventHandler(this.ListaMensajes_SelectedIndexChanged);
+            // 
+            // notasBindingSource
+            // 
+            this.notasBindingSource.DataMember = "Notas";
+            this.notasBindingSource.DataSource = this.sportGestDataSet;
+            // 
+            // sportGestDataSet
+            // 
+            this.sportGestDataSet.DataSetName = "SportGestDataSet";
+            this.sportGestDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tbNuevaNota
             // 
@@ -241,11 +254,6 @@
             this.btnEliminarNota.UseVisualStyleBackColor = false;
             this.btnEliminarNota.Click += new System.EventHandler(this.btnEliminarNota_Click);
             // 
-            // sportGestDataSet
-            // 
-            this.sportGestDataSet.DataSetName = "SportGestDataSet";
-            this.sportGestDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // notasTableAdapter
             // 
             this.notasTableAdapter.ClearBeforeFill = true;
@@ -283,9 +291,10 @@
             this.Text = "SportGest";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Principal_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.notasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sportGestDataSet)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sportGestDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -310,6 +319,7 @@
         private System.Windows.Forms.Button btnEliminarNota;
         private SportGestDataSet sportGestDataSet;
         private SportGestDataSetTableAdapters.NotasTableAdapter notasTableAdapter;
+        private System.Windows.Forms.BindingSource notasBindingSource;
     }
 }
 

@@ -28,8 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.gbCambios = new System.Windows.Forms.GroupBox();
+            this.cbCambio2 = new System.Windows.Forms.CheckBox();
+            this.cbCambio3 = new System.Windows.Forms.CheckBox();
+            this.cbCambio4 = new System.Windows.Forms.CheckBox();
+            this.cbCambio5 = new System.Windows.Forms.CheckBox();
+            this.cbCambio1 = new System.Windows.Forms.CheckBox();
             this.minCambio5 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -56,36 +62,58 @@
             this.cbCambio12 = new System.Windows.Forms.ComboBox();
             this.cbCambio11 = new System.Windows.Forms.ComboBox();
             this.gbAtaque = new System.Windows.Forms.GroupBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gbDefensa = new System.Windows.Forms.GroupBox();
-            this.cbCambio1 = new System.Windows.Forms.CheckBox();
-            this.cbCambio5 = new System.Windows.Forms.CheckBox();
-            this.cbCambio4 = new System.Windows.Forms.CheckBox();
-            this.cbCambio3 = new System.Windows.Forms.CheckBox();
-            this.cbCambio2 = new System.Windows.Forms.CheckBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
+            this.listJugadores = new System.Windows.Forms.ListBox();
+            this.menuEquipoTitular = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.seleccionarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminarDelEquipoTitularToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.jugadoresAdapter = new SportGest.SportGestDataSetTableAdapters.JugadoresTableAdapter();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.tbLocal = new System.Windows.Forms.TextBox();
+            this.resultLocal = new System.Windows.Forms.TextBox();
+            this.resultVisitante = new System.Windows.Forms.TextBox();
+            this.tbVisitante = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbVisitante = new System.Windows.Forms.RadioButton();
+            this.rbLocal = new System.Windows.Forms.RadioButton();
+            this.label21 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.cbEquipo = new System.Windows.Forms.ComboBox();
+            this.equiposAdapter = new SportGest.SportGestDataSetTableAdapters.EquiposTableAdapter();
+            this.label25 = new System.Windows.Forms.Label();
             this.gbCambios.SuspendLayout();
             this.gbAtaque.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gbDefensa.SuspendLayout();
+            this.menuEquipoTitular.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(535, 29);
+            this.label1.Location = new System.Drawing.Point(535, 113);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 13);
             this.label1.TabIndex = 1;
@@ -123,15 +151,66 @@
             this.gbCambios.Controls.Add(this.label2);
             this.gbCambios.Controls.Add(this.cbCambio12);
             this.gbCambios.Controls.Add(this.cbCambio11);
-            this.gbCambios.Location = new System.Drawing.Point(27, 298);
+            this.gbCambios.Location = new System.Drawing.Point(27, 377);
             this.gbCambios.Name = "gbCambios";
-            this.gbCambios.Size = new System.Drawing.Size(282, 156);
+            this.gbCambios.Size = new System.Drawing.Size(283, 156);
             this.gbCambios.TabIndex = 3;
             this.gbCambios.TabStop = false;
             this.gbCambios.Text = "Cambios";
             // 
+            // cbCambio2
+            // 
+            this.cbCambio2.AutoSize = true;
+            this.cbCambio2.Location = new System.Drawing.Point(252, 48);
+            this.cbCambio2.Name = "cbCambio2";
+            this.cbCambio2.Size = new System.Drawing.Size(15, 14);
+            this.cbCambio2.TabIndex = 29;
+            this.cbCambio2.UseVisualStyleBackColor = true;
+            this.cbCambio2.CheckedChanged += new System.EventHandler(this.cbCambio2_CheckedChanged);
+            // 
+            // cbCambio3
+            // 
+            this.cbCambio3.AutoSize = true;
+            this.cbCambio3.Location = new System.Drawing.Point(252, 75);
+            this.cbCambio3.Name = "cbCambio3";
+            this.cbCambio3.Size = new System.Drawing.Size(15, 14);
+            this.cbCambio3.TabIndex = 28;
+            this.cbCambio3.UseVisualStyleBackColor = true;
+            this.cbCambio3.CheckedChanged += new System.EventHandler(this.cbCambio3_CheckedChanged);
+            // 
+            // cbCambio4
+            // 
+            this.cbCambio4.AutoSize = true;
+            this.cbCambio4.Location = new System.Drawing.Point(252, 102);
+            this.cbCambio4.Name = "cbCambio4";
+            this.cbCambio4.Size = new System.Drawing.Size(15, 14);
+            this.cbCambio4.TabIndex = 27;
+            this.cbCambio4.UseVisualStyleBackColor = true;
+            this.cbCambio4.CheckedChanged += new System.EventHandler(this.cbCambio4_CheckedChanged);
+            // 
+            // cbCambio5
+            // 
+            this.cbCambio5.AutoSize = true;
+            this.cbCambio5.Location = new System.Drawing.Point(252, 129);
+            this.cbCambio5.Name = "cbCambio5";
+            this.cbCambio5.Size = new System.Drawing.Size(15, 14);
+            this.cbCambio5.TabIndex = 26;
+            this.cbCambio5.UseVisualStyleBackColor = true;
+            this.cbCambio5.CheckedChanged += new System.EventHandler(this.cbCambio5_CheckedChanged);
+            // 
+            // cbCambio1
+            // 
+            this.cbCambio1.AutoSize = true;
+            this.cbCambio1.Location = new System.Drawing.Point(252, 22);
+            this.cbCambio1.Name = "cbCambio1";
+            this.cbCambio1.Size = new System.Drawing.Size(15, 14);
+            this.cbCambio1.TabIndex = 25;
+            this.cbCambio1.UseVisualStyleBackColor = true;
+            this.cbCambio1.CheckedChanged += new System.EventHandler(this.cbCambio1_CheckedChanged);
+            // 
             // minCambio5
             // 
+            this.minCambio5.Enabled = false;
             this.minCambio5.Location = new System.Drawing.Point(199, 126);
             this.minCambio5.Name = "minCambio5";
             this.minCambio5.Size = new System.Drawing.Size(26, 20);
@@ -140,6 +219,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.Enabled = false;
             this.label10.Location = new System.Drawing.Point(169, 129);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(27, 13);
@@ -149,6 +229,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
+            this.label11.Enabled = false;
             this.label11.Location = new System.Drawing.Point(69, 129);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(22, 13);
@@ -157,6 +238,7 @@
             // 
             // cbCambio52
             // 
+            this.cbCambio52.Enabled = false;
             this.cbCambio52.FormattingEnabled = true;
             this.cbCambio52.Location = new System.Drawing.Point(97, 126);
             this.cbCambio52.Name = "cbCambio52";
@@ -165,6 +247,7 @@
             // 
             // cbCambio51
             // 
+            this.cbCambio51.Enabled = false;
             this.cbCambio51.FormattingEnabled = true;
             this.cbCambio51.Location = new System.Drawing.Point(6, 126);
             this.cbCambio51.Name = "cbCambio51";
@@ -173,6 +256,7 @@
             // 
             // minCambio4
             // 
+            this.minCambio4.Enabled = false;
             this.minCambio4.Location = new System.Drawing.Point(199, 99);
             this.minCambio4.Name = "minCambio4";
             this.minCambio4.Size = new System.Drawing.Size(26, 20);
@@ -181,6 +265,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.Enabled = false;
             this.label8.Location = new System.Drawing.Point(169, 102);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(27, 13);
@@ -190,6 +275,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.Enabled = false;
             this.label9.Location = new System.Drawing.Point(69, 102);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(22, 13);
@@ -198,6 +284,7 @@
             // 
             // cbCambio42
             // 
+            this.cbCambio42.Enabled = false;
             this.cbCambio42.FormattingEnabled = true;
             this.cbCambio42.Location = new System.Drawing.Point(97, 99);
             this.cbCambio42.Name = "cbCambio42";
@@ -206,6 +293,7 @@
             // 
             // cbCambio41
             // 
+            this.cbCambio41.Enabled = false;
             this.cbCambio41.FormattingEnabled = true;
             this.cbCambio41.Location = new System.Drawing.Point(6, 99);
             this.cbCambio41.Name = "cbCambio41";
@@ -214,6 +302,7 @@
             // 
             // minCambio3
             // 
+            this.minCambio3.Enabled = false;
             this.minCambio3.Location = new System.Drawing.Point(199, 72);
             this.minCambio3.Name = "minCambio3";
             this.minCambio3.Size = new System.Drawing.Size(26, 20);
@@ -222,6 +311,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Enabled = false;
             this.label6.Location = new System.Drawing.Point(169, 75);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(27, 13);
@@ -231,6 +321,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.Enabled = false;
             this.label7.Location = new System.Drawing.Point(69, 75);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(22, 13);
@@ -239,6 +330,7 @@
             // 
             // cbCambio32
             // 
+            this.cbCambio32.Enabled = false;
             this.cbCambio32.FormattingEnabled = true;
             this.cbCambio32.Location = new System.Drawing.Point(97, 72);
             this.cbCambio32.Name = "cbCambio32";
@@ -247,6 +339,7 @@
             // 
             // cbCambio31
             // 
+            this.cbCambio31.Enabled = false;
             this.cbCambio31.FormattingEnabled = true;
             this.cbCambio31.Location = new System.Drawing.Point(6, 72);
             this.cbCambio31.Name = "cbCambio31";
@@ -255,6 +348,7 @@
             // 
             // minCambio2
             // 
+            this.minCambio2.Enabled = false;
             this.minCambio2.Location = new System.Drawing.Point(199, 45);
             this.minCambio2.Name = "minCambio2";
             this.minCambio2.Size = new System.Drawing.Size(26, 20);
@@ -263,6 +357,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Enabled = false;
             this.label4.Location = new System.Drawing.Point(169, 48);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(27, 13);
@@ -272,6 +367,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Enabled = false;
             this.label5.Location = new System.Drawing.Point(69, 48);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(22, 13);
@@ -280,6 +376,7 @@
             // 
             // cbCambio22
             // 
+            this.cbCambio22.Enabled = false;
             this.cbCambio22.FormattingEnabled = true;
             this.cbCambio22.Location = new System.Drawing.Point(97, 45);
             this.cbCambio22.Name = "cbCambio22";
@@ -288,6 +385,7 @@
             // 
             // cbCambio21
             // 
+            this.cbCambio21.Enabled = false;
             this.cbCambio21.FormattingEnabled = true;
             this.cbCambio21.Location = new System.Drawing.Point(6, 45);
             this.cbCambio21.Name = "cbCambio21";
@@ -296,6 +394,7 @@
             // 
             // minCambio1
             // 
+            this.minCambio1.Enabled = false;
             this.minCambio1.Location = new System.Drawing.Point(199, 19);
             this.minCambio1.Name = "minCambio1";
             this.minCambio1.Size = new System.Drawing.Size(26, 20);
@@ -304,6 +403,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Enabled = false;
             this.label3.Location = new System.Drawing.Point(169, 22);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(27, 13);
@@ -313,6 +413,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Enabled = false;
             this.label2.Location = new System.Drawing.Point(69, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(22, 13);
@@ -321,6 +422,7 @@
             // 
             // cbCambio12
             // 
+            this.cbCambio12.Enabled = false;
             this.cbCambio12.FormattingEnabled = true;
             this.cbCambio12.Location = new System.Drawing.Point(97, 19);
             this.cbCambio12.Name = "cbCambio12";
@@ -329,6 +431,7 @@
             // 
             // cbCambio11
             // 
+            this.cbCambio11.Enabled = false;
             this.cbCambio11.FormattingEnabled = true;
             this.cbCambio11.Location = new System.Drawing.Point(6, 19);
             this.cbCambio11.Name = "cbCambio11";
@@ -341,54 +444,31 @@
             this.gbAtaque.Controls.Add(this.textBox1);
             this.gbAtaque.Controls.Add(this.label16);
             this.gbAtaque.Controls.Add(this.label15);
-            this.gbAtaque.Location = new System.Drawing.Point(332, 298);
+            this.gbAtaque.Location = new System.Drawing.Point(316, 381);
             this.gbAtaque.Name = "gbAtaque";
-            this.gbAtaque.Size = new System.Drawing.Size(224, 156);
+            this.gbAtaque.Size = new System.Drawing.Size(163, 152);
             this.gbAtaque.TabIndex = 4;
             this.gbAtaque.TabStop = false;
             this.gbAtaque.Text = "Ataque";
             // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(44, 91);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(110, 20);
-            this.textBox4.TabIndex = 9;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(59, 55);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(95, 20);
-            this.textBox3.TabIndex = 8;
-            // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(44, 96);
+            this.textBox2.Location = new System.Drawing.Point(52, 92);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(98, 20);
             this.textBox2.TabIndex = 7;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(54, 60);
+            this.textBox1.Location = new System.Drawing.Point(62, 56);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(88, 20);
             this.textBox1.TabIndex = 6;
             // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(6, 94);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(38, 13);
-            this.label17.TabIndex = 5;
-            this.label17.Text = "Estilo: ";
-            // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(6, 63);
+            this.label16.Location = new System.Drawing.Point(14, 59);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(53, 13);
             this.label16.TabIndex = 4;
@@ -397,16 +477,39 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(6, 99);
+            this.label15.Location = new System.Drawing.Point(14, 95);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(38, 13);
             this.label15.TabIndex = 3;
             this.label15.Text = "Estilo: ";
             // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(56, 92);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(110, 20);
+            this.textBox4.TabIndex = 9;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(71, 56);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(95, 20);
+            this.textBox3.TabIndex = 8;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(18, 95);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(38, 13);
+            this.label17.TabIndex = 5;
+            this.label17.Text = "Estilo: ";
+            // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(6, 58);
+            this.label14.Location = new System.Drawing.Point(18, 59);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(53, 13);
             this.label14.TabIndex = 2;
@@ -415,7 +518,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::SportGest.Properties.Resources.campo_cesped;
-            this.pictureBox1.Location = new System.Drawing.Point(27, 29);
+            this.pictureBox1.Location = new System.Drawing.Point(27, 113);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(486, 246);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -428,70 +531,25 @@
             this.gbDefensa.Controls.Add(this.textBox4);
             this.gbDefensa.Controls.Add(this.label17);
             this.gbDefensa.Controls.Add(this.textBox3);
-            this.gbDefensa.Location = new System.Drawing.Point(575, 298);
+            this.gbDefensa.Location = new System.Drawing.Point(485, 381);
             this.gbDefensa.Name = "gbDefensa";
-            this.gbDefensa.Size = new System.Drawing.Size(227, 156);
+            this.gbDefensa.Size = new System.Drawing.Size(182, 152);
             this.gbDefensa.TabIndex = 10;
             this.gbDefensa.TabStop = false;
             this.gbDefensa.Text = "Defensa";
             // 
-            // cbCambio1
-            // 
-            this.cbCambio1.AutoSize = true;
-            this.cbCambio1.Location = new System.Drawing.Point(252, 22);
-            this.cbCambio1.Name = "cbCambio1";
-            this.cbCambio1.Size = new System.Drawing.Size(15, 14);
-            this.cbCambio1.TabIndex = 25;
-            this.cbCambio1.UseVisualStyleBackColor = true;
-            // 
-            // cbCambio5
-            // 
-            this.cbCambio5.AutoSize = true;
-            this.cbCambio5.Location = new System.Drawing.Point(252, 129);
-            this.cbCambio5.Name = "cbCambio5";
-            this.cbCambio5.Size = new System.Drawing.Size(15, 14);
-            this.cbCambio5.TabIndex = 26;
-            this.cbCambio5.UseVisualStyleBackColor = true;
-            // 
-            // cbCambio4
-            // 
-            this.cbCambio4.AutoSize = true;
-            this.cbCambio4.Location = new System.Drawing.Point(252, 102);
-            this.cbCambio4.Name = "cbCambio4";
-            this.cbCambio4.Size = new System.Drawing.Size(15, 14);
-            this.cbCambio4.TabIndex = 27;
-            this.cbCambio4.UseVisualStyleBackColor = true;
-            // 
-            // cbCambio3
-            // 
-            this.cbCambio3.AutoSize = true;
-            this.cbCambio3.Location = new System.Drawing.Point(252, 75);
-            this.cbCambio3.Name = "cbCambio3";
-            this.cbCambio3.Size = new System.Drawing.Size(15, 14);
-            this.cbCambio3.TabIndex = 28;
-            this.cbCambio3.UseVisualStyleBackColor = true;
-            // 
-            // cbCambio2
-            // 
-            this.cbCambio2.AutoSize = true;
-            this.cbCambio2.Location = new System.Drawing.Point(252, 48);
-            this.cbCambio2.Name = "cbCambio2";
-            this.cbCambio2.Size = new System.Drawing.Size(15, 14);
-            this.cbCambio2.TabIndex = 29;
-            this.cbCambio2.UseVisualStyleBackColor = true;
-            // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(27, 479);
+            this.textBox5.Location = new System.Drawing.Point(27, 558);
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(513, 161);
+            this.textBox5.Size = new System.Drawing.Size(791, 96);
             this.textBox5.TabIndex = 11;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(24, 461);
+            this.label12.Location = new System.Drawing.Point(24, 540);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(136, 13);
             this.label12.TabIndex = 12;
@@ -499,17 +557,17 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(727, 661);
+            this.button1.Location = new System.Drawing.Point(614, 672);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(204, 23);
             this.button1.TabIndex = 13;
-            this.button1.Text = "Aceptar";
+            this.button1.Text = "Cerrar y añadir entrenamiento";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(553, 461);
+            this.label13.Location = new System.Drawing.Point(673, 377);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(143, 13);
             this.label13.TabIndex = 14;
@@ -517,17 +575,246 @@
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(556, 479);
+            this.textBox6.Location = new System.Drawing.Point(676, 399);
             this.textBox6.Multiline = true;
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(246, 161);
+            this.textBox6.Size = new System.Drawing.Size(142, 134);
             this.textBox6.TabIndex = 15;
+            // 
+            // listJugadores
+            // 
+            this.listJugadores.ContextMenuStrip = this.menuEquipoTitular;
+            this.listJugadores.FormattingEnabled = true;
+            this.listJugadores.Location = new System.Drawing.Point(538, 129);
+            this.listJugadores.Name = "listJugadores";
+            this.listJugadores.Size = new System.Drawing.Size(280, 225);
+            this.listJugadores.TabIndex = 16;
+            // 
+            // menuEquipoTitular
+            // 
+            this.menuEquipoTitular.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.seleccionarToolStripMenuItem,
+            this.eliminarDelEquipoTitularToolStripMenuItem});
+            this.menuEquipoTitular.Name = "menuEquipoTitular";
+            this.menuEquipoTitular.Size = new System.Drawing.Size(118, 48);
+            this.menuEquipoTitular.Text = "Equipo titular";
+            // 
+            // seleccionarToolStripMenuItem
+            // 
+            this.seleccionarToolStripMenuItem.Name = "seleccionarToolStripMenuItem";
+            this.seleccionarToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.seleccionarToolStripMenuItem.Text = "Incluir";
+            // 
+            // eliminarDelEquipoTitularToolStripMenuItem
+            // 
+            this.eliminarDelEquipoTitularToolStripMenuItem.Name = "eliminarDelEquipoTitularToolStripMenuItem";
+            this.eliminarDelEquipoTitularToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.eliminarDelEquipoTitularToolStripMenuItem.Text = "Eliminar";
+            // 
+            // jugadoresAdapter
+            // 
+            this.jugadoresAdapter.ClearBeforeFill = true;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(24, 53);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(41, 13);
+            this.label18.TabIndex = 17;
+            this.label18.Text = "LOCAL";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(546, 53);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(63, 13);
+            this.label19.TabIndex = 18;
+            this.label19.Text = "VISITANTE";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(300, 53);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(10, 13);
+            this.label20.TabIndex = 19;
+            this.label20.Text = "-";
+            // 
+            // tbLocal
+            // 
+            this.tbLocal.Location = new System.Drawing.Point(71, 50);
+            this.tbLocal.Name = "tbLocal";
+            this.tbLocal.ReadOnly = true;
+            this.tbLocal.Size = new System.Drawing.Size(199, 20);
+            this.tbLocal.TabIndex = 20;
+            // 
+            // resultLocal
+            // 
+            this.resultLocal.Location = new System.Drawing.Point(279, 50);
+            this.resultLocal.Name = "resultLocal";
+            this.resultLocal.Size = new System.Drawing.Size(15, 20);
+            this.resultLocal.TabIndex = 21;
+            // 
+            // resultVisitante
+            // 
+            this.resultVisitante.Location = new System.Drawing.Point(316, 50);
+            this.resultVisitante.Name = "resultVisitante";
+            this.resultVisitante.Size = new System.Drawing.Size(15, 20);
+            this.resultVisitante.TabIndex = 22;
+            // 
+            // tbVisitante
+            // 
+            this.tbVisitante.Location = new System.Drawing.Point(341, 50);
+            this.tbVisitante.Name = "tbVisitante";
+            this.tbVisitante.Size = new System.Drawing.Size(199, 20);
+            this.tbVisitante.TabIndex = 23;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rbVisitante);
+            this.groupBox1.Controls.Add(this.rbLocal);
+            this.groupBox1.Location = new System.Drawing.Point(619, 34);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(199, 36);
+            this.groupBox1.TabIndex = 24;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Condición";
+            // 
+            // rbVisitante
+            // 
+            this.rbVisitante.AutoSize = true;
+            this.rbVisitante.Location = new System.Drawing.Point(98, 13);
+            this.rbVisitante.Name = "rbVisitante";
+            this.rbVisitante.Size = new System.Drawing.Size(65, 17);
+            this.rbVisitante.TabIndex = 1;
+            this.rbVisitante.Text = "Visitante";
+            this.rbVisitante.UseVisualStyleBackColor = true;
+            this.rbVisitante.CheckedChanged += new System.EventHandler(this.rbVisitante_CheckedChanged);
+            // 
+            // rbLocal
+            // 
+            this.rbLocal.AutoSize = true;
+            this.rbLocal.Checked = true;
+            this.rbLocal.Location = new System.Drawing.Point(15, 13);
+            this.rbLocal.Name = "rbLocal";
+            this.rbLocal.Size = new System.Drawing.Size(51, 17);
+            this.rbLocal.TabIndex = 0;
+            this.rbLocal.TabStop = true;
+            this.rbLocal.Text = "Local";
+            this.rbLocal.UseVisualStyleBackColor = true;
+            this.rbLocal.CheckedChanged += new System.EventHandler(this.rbLocal_CheckedChanged);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(24, 87);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(71, 13);
+            this.label21.TabIndex = 25;
+            this.label21.Text = "Competición: ";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Liga",
+            "Copa",
+            "Torneo"});
+            this.comboBox1.Location = new System.Drawing.Point(99, 84);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(82, 21);
+            this.comboBox1.TabIndex = 26;
+            // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(248, 84);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(376, 20);
+            this.textBox11.TabIndex = 27;
+            // 
+            // textBox12
+            // 
+            this.textBox12.Location = new System.Drawing.Point(702, 84);
+            this.textBox12.MaxLength = 5;
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(116, 20);
+            this.textBox12.TabIndex = 28;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(660, 87);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(36, 13);
+            this.label22.TabIndex = 29;
+            this.label22.Text = "Hora: ";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(196, 87);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(46, 13);
+            this.label23.TabIndex = 30;
+            this.label23.Text = "Campo: ";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(203, 9);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(212, 33);
+            this.label24.TabIndex = 32;
+            this.label24.Text = "Hoja de partido";
+            // 
+            // cbEquipo
+            // 
+            this.cbEquipo.FormattingEnabled = true;
+            this.cbEquipo.Location = new System.Drawing.Point(668, 12);
+            this.cbEquipo.Name = "cbEquipo";
+            this.cbEquipo.Size = new System.Drawing.Size(150, 21);
+            this.cbEquipo.TabIndex = 33;
+            this.cbEquipo.SelectedIndexChanged += new System.EventHandler(this.cbEquipo_SelectedIndexChanged);
+            // 
+            // equiposAdapter
+            // 
+            this.equiposAdapter.ClearBeforeFill = true;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(616, 15);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(46, 13);
+            this.label25.TabIndex = 34;
+            this.label25.Text = "Equipo: ";
             // 
             // Partido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(830, 696);
+            this.ClientSize = new System.Drawing.Size(845, 709);
+            this.Controls.Add(this.label25);
+            this.Controls.Add(this.cbEquipo);
+            this.Controls.Add(this.label24);
+            this.Controls.Add(this.label23);
+            this.Controls.Add(this.label22);
+            this.Controls.Add(this.textBox12);
+            this.Controls.Add(this.textBox11);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label21);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.tbVisitante);
+            this.Controls.Add(this.resultVisitante);
+            this.Controls.Add(this.resultLocal);
+            this.Controls.Add(this.tbLocal);
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.listJugadores);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.button1);
@@ -541,6 +828,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Partido";
             this.Text = "Partido";
+            this.Load += new System.EventHandler(this.Partido_Load);
             this.gbCambios.ResumeLayout(false);
             this.gbCambios.PerformLayout();
             this.gbAtaque.ResumeLayout(false);
@@ -548,6 +836,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gbDefensa.ResumeLayout(false);
             this.gbDefensa.PerformLayout();
+            this.menuEquipoTitular.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -602,5 +893,30 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.ListBox listJugadores;
+        private System.Windows.Forms.ContextMenuStrip menuEquipoTitular;
+        private System.Windows.Forms.ToolStripMenuItem seleccionarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eliminarDelEquipoTitularToolStripMenuItem;
+        private SportGestDataSetTableAdapters.JugadoresTableAdapter jugadoresAdapter;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox tbLocal;
+        private System.Windows.Forms.TextBox resultLocal;
+        private System.Windows.Forms.TextBox resultVisitante;
+        private System.Windows.Forms.TextBox tbVisitante;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton rbVisitante;
+        private System.Windows.Forms.RadioButton rbLocal;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.ComboBox cbEquipo;
+        private SportGestDataSetTableAdapters.EquiposTableAdapter equiposAdapter;
+        private System.Windows.Forms.Label label25;
     }
 }

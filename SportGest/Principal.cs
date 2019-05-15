@@ -60,10 +60,10 @@ namespace SportGest
 
                 try
                 {
-                    dt = notas_adapter.GetData();
+                    dt = notasTableAdapter.GetData();
                     foreach (DataRow dr in dt.Rows)
                     {
-                        ListaMensajes.Items.Add(dr["fecha"].ToString() + " - " + dr["nota"].ToString());
+                        ListaMensajes.Items.Add(dr["id"].ToString() + " - " + dr["fecha"].ToString().Split(' ')[0] + " - " + dr["nota"].ToString());
                     }
                 }
                 catch (Exception ex)
@@ -88,7 +88,7 @@ namespace SportGest
                     connection.Open();
                     try
                     {
-                        notasTableAdapter.Insert(DateTime.Now, tbNuevaNota.Text);
+                        notasTableAdapter.Insert(DateTime.Now.Date, tbNuevaNota.Text);
                     }
                     catch (Exception ex)
                     {
@@ -101,7 +101,7 @@ namespace SportGest
                 dt = notasTableAdapter.GetData();
                 foreach (DataRow dr in dt.Rows)
                 {
-                    ListaMensajes.Items.Add(dr["fecha"].ToString() + " - " + dr["nota"].ToString());
+                    ListaMensajes.Items.Add(dr["id"].ToString() + " - " + dr["fecha"].ToString().Split(' ')[0] + " - " + dr["nota"].ToString());
                 }
                 ListaMensajes.Refresh();
 
@@ -115,6 +115,8 @@ namespace SportGest
 
         private void btnHistorial_Click(object sender, EventArgs e)
         {
+            Historial h = new Historial();
+            h.ShowDialog();
 
         }
 
@@ -129,7 +131,7 @@ namespace SportGest
             try
             {
                 string[] nota_mostrar = ListaMensajes.SelectedItem.ToString().Split('-');
-                tbLeerNotas.Text = nota_mostrar[0] + "\n" + nota_mostrar[1];
+                tbLeerNotas.Text = nota_mostrar[0] + " - " + nota_mostrar[1] + "\r\n" + nota_mostrar[2];
             }
             catch (NullReferenceException) { }
         }
@@ -141,11 +143,11 @@ namespace SportGest
 
         private void btnEliminarNota_Click(object sender, EventArgs e)
         {
+            notasTableAdapter.Delete(int.Parse(ListaMensajes.SelectedItem.ToString().Split('-')[0]));
             ListaMensajes.Items.Remove(ListaMensajes.SelectedItem);
             ListaMensajes.Refresh();
             ListaMensajes.SelectedItem = null;
             tbLeerNotas.Clear();
-           notasTableAdapter.Delete(ListaMensajes.SelectedIndex + 1);
         }
 
 
