@@ -35,20 +35,21 @@ namespace SportGest
         {
             using (SqlConnection connection = new SqlConnection(sCnn))
             {
-                connection.Open();
-                DataTable dt = new DataTable();
-                //try
+                try
                 {
+                    connection.Open();
+                    DataTable dt = new DataTable();
+
                     dt = equiposTableAdapter.GetData();
                     foreach (DataRow dr in dt.Rows)
                     {
-                        listEquipos.Items.Add(dr["Id"].ToString() + "-" + dr["nombre"].ToString() + "-" + dr["categoria"].ToString());
+                        listEquipos.Items.Add(dr["Id"].ToString() + " - " + dr["nombre"].ToString() + "    [" + dr["categoria"].ToString() + " ]");
                     }
                 }
-                //catch (Exception ex)
-                //{
-                //    MessageBox.Show(ex.Message);
-                //}
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
 
             }
 
@@ -102,10 +103,11 @@ namespace SportGest
                         }
                     }
                 }
-                catch (Exception ex)
+                catch (SqlException ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
+                catch (NullReferenceException) { }
 
             }
         }
@@ -115,38 +117,50 @@ namespace SportGest
             this.Dispose();
         }
 
-        private void btnBorrar_Click(object sender, EventArgs e)
+        private void btnBorrarJugador_Click(object sender, EventArgs e)
         {
-            jugadoresTableAdapter1.Delete(int.Parse(listJugadores.SelectedItem.ToString().Split('-')[0]));
-            listJugadores.Items.Remove(listJugadores.SelectedItem);
-            listJugadores.Refresh();
-            listJugadores.SelectedItem = null;
+            if (listJugadores.SelectedIndices.Count > 1)
+            {
+                jugadoresTableAdapter1.Delete(int.Parse(listJugadores.SelectedItem.ToString().Split('-')[0]));
+                listJugadores.Items.Remove(listJugadores.SelectedItem);
+                listJugadores.Refresh();
+                listJugadores.SelectedItem = null;
+            }
         }
 
         private void editarJugador_Click(object sender, EventArgs e)
         {
-            NuevoJugador nj = new NuevoJugador();
-            nj.editar = true;
-            nj.id = listJugadores.SelectedItem.ToString().Split('-')[0].Trim();
-            nj.ShowDialog();
-            this.Refresh();
+            if (listJugadores.SelectedIndices.Count > 1)
+            {
+                NuevoJugador nj = new NuevoJugador();
+                nj.editar = true;
+                nj.id = listJugadores.SelectedItem.ToString().Split('-')[0].Trim();
+                nj.ShowDialog();
+                this.Refresh();
+            }
         }
 
         private void editarEquipo_Click(object sender, EventArgs e)
         {
-            NuevoEquipo ne = new NuevoEquipo();
-            ne.editar = true;
-            ne.id = listEquipos.SelectedItem.ToString().Split('-')[0].Trim();
-            ne.ShowDialog();
-            this.Refresh();
+            if (listEquipos.SelectedIndices.Count > 1)
+            {
+                NuevoEquipo ne = new NuevoEquipo();
+                ne.editar = true;
+                ne.id = listEquipos.SelectedItem.ToString().Split('-')[0].Trim();
+                ne.ShowDialog();
+                this.Refresh();
+            }
         }
 
         private void borrarEquipo_Click(object sender, EventArgs e)
         {
-            equiposTableAdapter.Delete(int.Parse(listEquipos.SelectedItem.ToString().Split('-')[0]));
-            listEquipos.Items.Remove(listJugadores.SelectedItem);
-            listEquipos.Refresh();
-            listEquipos.SelectedItem = null;
+            if (listEquipos.SelectedIndices.Count > 1)
+            {
+                equiposTableAdapter.Delete(int.Parse(listEquipos.SelectedItem.ToString().Split('-')[0]));
+                listEquipos.Items.Remove(listJugadores.SelectedItem);
+                listEquipos.Refresh();
+                listEquipos.SelectedItem = null;
+            }
         }
     }
 }

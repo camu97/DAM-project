@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,27 +13,11 @@ namespace SportGest
 {
     public partial class Entrenamiento : Form
     {
+        bool error = false;
+        string sCnn = "Data Source = (localdb)\\mssqllocaldb; Initial Catalog = SportGest; Integrated Security = True; Pooling = False";
         public Entrenamiento()
         {
             InitializeComponent();
-        }
-
-        private void cbCalentamiento_CheckedChanged(object sender, EventArgs e)
-        {
-            btnIzqCalentamiento.Visible = !btnIzqCalentamiento.Visible;
-            btnDerCalentamiento.Visible = !btnDerCalentamiento.Visible;
-        }
-
-        private void cbPrincipal_CheckedChanged(object sender, EventArgs e)
-        {
-            btnIzqPrincipal.Visible = !btnIzqPrincipal.Visible;
-            btnDerPrincipal.Visible = !btnDerPrincipal.Visible;
-        }
-
-        private void cbCalma_CheckedChanged(object sender, EventArgs e)
-        {
-            btnIzqCalma.Visible = !btnIzqCalma.Visible;
-            btnDerCalma.Visible = !btnDerCalma.Visible;
         }
 
         private void imgConoRojo_Click(object sender, EventArgs e)
@@ -61,6 +46,47 @@ namespace SportGest
             {
                 this.Close();
             }
+        }
+
+        private void añadirAMaterialToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnProgramarSesion_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < this.Controls.Count; i++)
+            {
+                if (this.Controls[i] is TextBox && this.Controls[i].Text.Equals(""))
+                {
+                    error = true;
+                }
+            }
+            if (!error)
+            {
+                using (SqlConnection connection = new SqlConnection(sCnn))
+                {
+                    try
+                    {
+                        connection.Open();
+                        entrenamientosAdapter.Insert();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Algún campo vacío", "Erorr", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Entrenamiento_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -139,6 +139,9 @@
   <data name="seta_roja" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\seta_roja.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="campo_verdeOscuro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\campo_verdeOscuro.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="pica_vertical" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pica_vertical.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -175,7 +178,7 @@
   <data name="campo_cesped" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\campo_cesped.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="campo_verdeOscuro" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\campo_verdeOscuro.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="opciones" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\opciones.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -29,8 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionEquipo));
             this.listJugadores = new System.Windows.Forms.ListBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.borrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listEquipos = new System.Windows.Forms.ListBox();
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -48,41 +55,82 @@
             this.atrásToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label6 = new System.Windows.Forms.Label();
             this.lblNumero = new System.Windows.Forms.Label();
-            this.btnBorrar = new System.Windows.Forms.Button();
             this.sportGestDataSet = new SportGest.SportGestDataSet();
             this.equiposTableAdapter = new SportGest.SportGestDataSetTableAdapters.EquiposTableAdapter();
             this.jugadoresTableAdapter1 = new SportGest.SportGestDataSetTableAdapters.JugadoresTableAdapter();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.borrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sportGestDataSet)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.contextMenuStrip2.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sportGestDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // listJugadores
             // 
             this.listJugadores.ContextMenuStrip = this.contextMenuStrip1;
+            this.listJugadores.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listJugadores.FormattingEnabled = true;
-            this.listJugadores.Location = new System.Drawing.Point(12, 41);
+            this.listJugadores.ItemHeight = 20;
+            this.listJugadores.Location = new System.Drawing.Point(12, 48);
             this.listJugadores.Name = "listJugadores";
-            this.listJugadores.Size = new System.Drawing.Size(176, 290);
+            this.listJugadores.Size = new System.Drawing.Size(176, 304);
             this.listJugadores.TabIndex = 0;
             this.listJugadores.SelectedIndexChanged += new System.EventHandler(this.listJugadores_SelectedIndexChanged);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editarToolStripMenuItem,
+            this.borrarToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(107, 48);
+            // 
+            // editarToolStripMenuItem
+            // 
+            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
+            this.editarToolStripMenuItem.Text = "Editar";
+            this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarJugador_Click);
+            // 
+            // borrarToolStripMenuItem
+            // 
+            this.borrarToolStripMenuItem.Name = "borrarToolStripMenuItem";
+            this.borrarToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
+            this.borrarToolStripMenuItem.Text = "Borrar";
+            this.borrarToolStripMenuItem.Click += new System.EventHandler(this.btnBorrarJugador_Click);
             // 
             // listEquipos
             // 
             this.listEquipos.ContextMenuStrip = this.contextMenuStrip2;
+            this.listEquipos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listEquipos.FormattingEnabled = true;
-            this.listEquipos.Location = new System.Drawing.Point(211, 248);
+            this.listEquipos.ItemHeight = 20;
+            this.listEquipos.Location = new System.Drawing.Point(211, 228);
             this.listEquipos.Name = "listEquipos";
-            this.listEquipos.Size = new System.Drawing.Size(224, 108);
+            this.listEquipos.Size = new System.Drawing.Size(224, 124);
             this.listEquipos.TabIndex = 1;
             this.listEquipos.SelectedIndexChanged += new System.EventHandler(this.listEquipos_SelectedIndexChanged);
+            // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2});
+            this.contextMenuStrip2.Name = "contextMenuStrip1";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(107, 48);
+            this.contextMenuStrip2.Click += new System.EventHandler(this.editarEquipo_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(106, 22);
+            this.toolStripMenuItem1.Text = "Editar";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(106, 22);
+            this.toolStripMenuItem2.Text = "Borrar";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.borrarEquipo_Click);
             // 
             // label1
             // 
@@ -123,32 +171,36 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(260, 40);
+            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.Location = new System.Drawing.Point(260, 35);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(13, 13);
+            this.lblNombre.Size = new System.Drawing.Size(15, 16);
             this.lblNombre.TabIndex = 7;
             this.lblNombre.Text = "_";
             // 
             // lblNacimiento
             // 
             this.lblNacimiento.AutoSize = true;
-            this.lblNacimiento.Location = new System.Drawing.Point(322, 69);
+            this.lblNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNacimiento.Location = new System.Drawing.Point(322, 64);
             this.lblNacimiento.Name = "lblNacimiento";
-            this.lblNacimiento.Size = new System.Drawing.Size(13, 13);
+            this.lblNacimiento.Size = new System.Drawing.Size(15, 16);
             this.lblNacimiento.TabIndex = 8;
             this.lblNacimiento.Text = "_";
             // 
             // lblPosicion
             // 
             this.lblPosicion.AutoSize = true;
-            this.lblPosicion.Location = new System.Drawing.Point(260, 96);
+            this.lblPosicion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPosicion.Location = new System.Drawing.Point(260, 91);
             this.lblPosicion.Name = "lblPosicion";
-            this.lblPosicion.Size = new System.Drawing.Size(13, 13);
+            this.lblPosicion.Size = new System.Drawing.Size(15, 16);
             this.lblPosicion.TabIndex = 9;
             this.lblPosicion.Text = "_";
             // 
             // tbObservaciones
             // 
+            this.tbObservaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbObservaciones.Location = new System.Drawing.Point(210, 137);
             this.tbObservaciones.Multiline = true;
             this.tbObservaciones.Name = "tbObservaciones";
@@ -160,7 +212,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(208, 223);
+            this.label5.Location = new System.Drawing.Point(208, 212);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 13);
             this.label5.TabIndex = 11;
@@ -170,7 +222,7 @@
             // 
             this.Jugadores.AutoSize = true;
             this.Jugadores.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Jugadores.Location = new System.Drawing.Point(9, 24);
+            this.Jugadores.Location = new System.Drawing.Point(9, 32);
             this.Jugadores.Name = "Jugadores";
             this.Jugadores.Size = new System.Drawing.Size(65, 13);
             this.Jugadores.TabIndex = 12;
@@ -229,21 +281,12 @@
             // lblNumero
             // 
             this.lblNumero.AutoSize = true;
-            this.lblNumero.Location = new System.Drawing.Point(392, 96);
+            this.lblNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumero.Location = new System.Drawing.Point(392, 91);
             this.lblNumero.Name = "lblNumero";
-            this.lblNumero.Size = new System.Drawing.Size(13, 13);
+            this.lblNumero.Size = new System.Drawing.Size(15, 16);
             this.lblNumero.TabIndex = 15;
             this.lblNumero.Text = "_";
-            // 
-            // btnBorrar
-            // 
-            this.btnBorrar.Location = new System.Drawing.Point(13, 337);
-            this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(175, 19);
-            this.btnBorrar.TabIndex = 16;
-            this.btnBorrar.Text = "Borrar";
-            this.btnBorrar.UseVisualStyleBackColor = true;
-            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // sportGestDataSet
             // 
@@ -258,56 +301,12 @@
             // 
             this.jugadoresTableAdapter1.ClearBeforeFill = true;
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editarToolStripMenuItem,
-            this.borrarToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(107, 48);
-            // 
-            // editarToolStripMenuItem
-            // 
-            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
-            this.editarToolStripMenuItem.Text = "Editar";
-            this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarJugador_Click);
-            // 
-            // borrarToolStripMenuItem
-            // 
-            this.borrarToolStripMenuItem.Name = "borrarToolStripMenuItem";
-            this.borrarToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
-            this.borrarToolStripMenuItem.Text = "Borrar";
-            this.borrarToolStripMenuItem.Click += new System.EventHandler(this.btnBorrar_Click);
-            // 
-            // contextMenuStrip2
-            // 
-            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.toolStripMenuItem2});
-            this.contextMenuStrip2.Name = "contextMenuStrip1";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(181, 70);
-            this.contextMenuStrip2.Click += new System.EventHandler(this.editarEquipo_Click);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.toolStripMenuItem1.Text = "Editar";
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
-            this.toolStripMenuItem2.Text = "Borrar";
-            this.toolStripMenuItem2.Click += new System.EventHandler(this.borrarEquipo_Click);
-            // 
             // GestionEquipo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(447, 368);
-            this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.lblNumero);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.Jugadores);
@@ -324,15 +323,17 @@
             this.Controls.Add(this.listJugadores);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "GestionEquipo";
             this.Text = "Gestión de equipo";
             this.Load += new System.EventHandler(this.GestionEquipo_Load);
+            this.contextMenuStrip1.ResumeLayout(false);
+            this.contextMenuStrip2.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sportGestDataSet)).EndInit();
-            this.contextMenuStrip1.ResumeLayout(false);
-            this.contextMenuStrip2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -362,7 +363,6 @@
         private SportGestDataSetTableAdapters.EquiposTableAdapter equiposTableAdapter;
         private SportGestDataSetTableAdapters.JugadoresTableAdapter jugadoresTableAdapter1;
         private System.Windows.Forms.ToolStripMenuItem atrásToolStripMenuItem;
-        private System.Windows.Forms.Button btnBorrar;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem borrarToolStripMenuItem;

@@ -150,6 +150,12 @@ namespace SportGest
             tbLeerNotas.Clear();
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Opciones op = new Opciones();
+            op.Show();
+        }
+
 
 
         //private void tbNuevaNota_Enter(object sender, EventArgs e)

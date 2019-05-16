@@ -129,3 +129,4 @@ D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGes
 D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGest\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGest\obj\Debug\SportGest.exe.config
 D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGest\obj\Debug\SportGest.csproj.CopyComplete
+D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGest\obj\Debug\SportGest.Opciones.resources

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.btnNuevoPartido = new System.Windows.Forms.Button();
             this.btnGestionEquipo = new System.Windows.Forms.Button();
             this.btnHistorial = new System.Windows.Forms.Button();
@@ -48,9 +49,11 @@
             this.tbLeerNotas = new System.Windows.Forms.TextBox();
             this.btnEliminarNota = new System.Windows.Forms.Button();
             this.notasTableAdapter = new SportGest.SportGestDataSetTableAdapters.NotasTableAdapter();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.notasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sportGestDataSet)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnNuevoPartido
@@ -97,7 +100,7 @@
             this.btnHistorial.Name = "btnHistorial";
             this.btnHistorial.Size = new System.Drawing.Size(192, 33);
             this.btnHistorial.TabIndex = 4;
-            this.btnHistorial.Text = "&Historial********";
+            this.btnHistorial.Text = "&Historial";
             this.btnHistorial.UseVisualStyleBackColor = false;
             this.btnHistorial.Click += new System.EventHandler(this.btnHistorial_Click);
             // 
@@ -258,13 +261,25 @@
             // 
             this.notasTableAdapter.ClearBeforeFill = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SportGest.Properties.Resources.opciones;
+            this.pictureBox1.Location = new System.Drawing.Point(557, 27);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(36, 34);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.BackColor = System.Drawing.Color.Lavender;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(605, 475);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnEliminarNota);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbLeerNotas);
@@ -281,6 +296,7 @@
             this.Controls.Add(this.lblName);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
@@ -295,6 +311,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.sportGestDataSet)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -320,6 +337,7 @@
         private SportGestDataSet sportGestDataSet;
         private SportGestDataSetTableAdapters.NotasTableAdapter notasTableAdapter;
         private System.Windows.Forms.BindingSource notasBindingSource;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

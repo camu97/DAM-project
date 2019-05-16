@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Seguridad));
             this.btnEnter = new System.Windows.Forms.Button();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.tbPin = new System.Windows.Forms.TextBox();
@@ -80,12 +81,14 @@
             // 
             this.AcceptButton = this.btnEnter;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(208, 144);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.tbPin);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.btnEnter);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Seguridad";

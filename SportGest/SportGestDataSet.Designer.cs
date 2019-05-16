@@ -1173,6 +1173,30 @@ namespace SportGest {
             
             private global::System.Data.DataColumn columncampo;
             
+            private global::System.Data.DataColumn columngoles_local;
+            
+            private global::System.Data.DataColumn columngoles_visitante;
+            
+            private global::System.Data.DataColumn columnestilo_atq;
+            
+            private global::System.Data.DataColumn columnestilo_def;
+            
+            private global::System.Data.DataColumn columnposicion_atq;
+            
+            private global::System.Data.DataColumn columnposicion_def;
+            
+            private global::System.Data.DataColumn columncalentamiento;
+            
+            private global::System.Data.DataColumn columnobservaciones;
+            
+            private global::System.Data.DataColumn columntitulares;
+            
+            private global::System.Data.DataColumn columnsuplentes;
+            
+            private global::System.Data.DataColumn columncambios;
+            
+            private global::System.Data.DataColumn columncondicion;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public PartidosDataTable() {
@@ -1264,6 +1288,102 @@ namespace SportGest {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn goles_localColumn {
+                get {
+                    return this.columngoles_local;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn goles_visitanteColumn {
+                get {
+                    return this.columngoles_visitante;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn estilo_atqColumn {
+                get {
+                    return this.columnestilo_atq;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn estilo_defColumn {
+                get {
+                    return this.columnestilo_def;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn posicion_atqColumn {
+                get {
+                    return this.columnposicion_atq;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn posicion_defColumn {
+                get {
+                    return this.columnposicion_def;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn calentamientoColumn {
+                get {
+                    return this.columncalentamiento;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn observacionesColumn {
+                get {
+                    return this.columnobservaciones;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn titularesColumn {
+                get {
+                    return this.columntitulares;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn suplentesColumn {
+                get {
+                    return this.columnsuplentes;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn cambiosColumn {
+                get {
+                    return this.columncambios;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn condicionColumn {
+                get {
+                    return this.columncondicion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1299,7 +1419,26 @@ namespace SportGest {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PartidosRow AddPartidosRow(int Id, System.DateTime fecha, string equipo_local, string equipo_visitante, string resultado, int jornada, string campo) {
+            public PartidosRow AddPartidosRow(
+                        int Id, 
+                        System.DateTime fecha, 
+                        string equipo_local, 
+                        string equipo_visitante, 
+                        string resultado, 
+                        int jornada, 
+                        string campo, 
+                        int goles_local, 
+                        int goles_visitante, 
+                        string estilo_atq, 
+                        string estilo_def, 
+                        string posicion_atq, 
+                        string posicion_def, 
+                        string calentamiento, 
+                        string observaciones, 
+                        string titulares, 
+                        string suplentes, 
+                        string cambios, 
+                        string condicion) {
                 PartidosRow rowPartidosRow = ((PartidosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Id,
@@ -1308,7 +1447,19 @@ namespace SportGest {
                         equipo_visitante,
                         resultado,
                         jornada,
-                        campo};
+                        campo,
+                        goles_local,
+                        goles_visitante,
+                        estilo_atq,
+                        estilo_def,
+                        posicion_atq,
+                        posicion_def,
+                        calentamiento,
+                        observaciones,
+                        titulares,
+                        suplentes,
+                        cambios,
+                        condicion};
                 rowPartidosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPartidosRow);
                 return rowPartidosRow;
@@ -1345,6 +1496,18 @@ namespace SportGest {
                 this.columnresultado = base.Columns["resultado"];
                 this.columnjornada = base.Columns["jornada"];
                 this.columncampo = base.Columns["campo"];
+                this.columngoles_local = base.Columns["goles_local"];
+                this.columngoles_visitante = base.Columns["goles_visitante"];
+                this.columnestilo_atq = base.Columns["estilo_atq"];
+                this.columnestilo_def = base.Columns["estilo_def"];
+                this.columnposicion_atq = base.Columns["posicion_atq"];
+                this.columnposicion_def = base.Columns["posicion_def"];
+                this.columncalentamiento = base.Columns["calentamiento"];
+                this.columnobservaciones = base.Columns["observaciones"];
+                this.columntitulares = base.Columns["titulares"];
+                this.columnsuplentes = base.Columns["suplentes"];
+                this.columncambios = base.Columns["cambios"];
+                this.columncondicion = base.Columns["condicion"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1364,14 +1527,66 @@ namespace SportGest {
                 base.Columns.Add(this.columnjornada);
                 this.columncampo = new global::System.Data.DataColumn("campo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncampo);
+                this.columngoles_local = new global::System.Data.DataColumn("goles_local", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columngoles_local);
+                this.columngoles_visitante = new global::System.Data.DataColumn("goles_visitante", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columngoles_visitante);
+                this.columnestilo_atq = new global::System.Data.DataColumn("estilo_atq", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnestilo_atq);
+                this.columnestilo_def = new global::System.Data.DataColumn("estilo_def", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnestilo_def);
+                this.columnposicion_atq = new global::System.Data.DataColumn("posicion_atq", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnposicion_atq);
+                this.columnposicion_def = new global::System.Data.DataColumn("posicion_def", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnposicion_def);
+                this.columncalentamiento = new global::System.Data.DataColumn("calentamiento", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncalentamiento);
+                this.columnobservaciones = new global::System.Data.DataColumn("observaciones", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnobservaciones);
+                this.columntitulares = new global::System.Data.DataColumn("titulares", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntitulares);
+                this.columnsuplentes = new global::System.Data.DataColumn("suplentes", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsuplentes);
+                this.columncambios = new global::System.Data.DataColumn("cambios", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncambios);
+                this.columncondicion = new global::System.Data.DataColumn("condicion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncondicion);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AllowDBNull = false;
                 this.columnId.Unique = true;
+                this.columnfecha.AllowDBNull = false;
+                this.columnequipo_local.AllowDBNull = false;
                 this.columnequipo_local.MaxLength = 50;
+                this.columnequipo_visitante.AllowDBNull = false;
                 this.columnequipo_visitante.MaxLength = 50;
+                this.columnresultado.AllowDBNull = false;
                 this.columnresultado.MaxLength = 50;
+                this.columnjornada.AllowDBNull = false;
+                this.columncampo.AllowDBNull = false;
                 this.columncampo.MaxLength = 50;
+                this.columngoles_local.AllowDBNull = false;
+                this.columngoles_visitante.AllowDBNull = false;
+                this.columnestilo_atq.AllowDBNull = false;
+                this.columnestilo_atq.MaxLength = 20;
+                this.columnestilo_def.AllowDBNull = false;
+                this.columnestilo_def.MaxLength = 20;
+                this.columnposicion_atq.AllowDBNull = false;
+                this.columnposicion_atq.MaxLength = 20;
+                this.columnposicion_def.AllowDBNull = false;
+                this.columnposicion_def.MaxLength = 20;
+                this.columncalentamiento.AllowDBNull = false;
+                this.columncalentamiento.MaxLength = 200;
+                this.columnobservaciones.AllowDBNull = false;
+                this.columnobservaciones.MaxLength = 300;
+                this.columntitulares.AllowDBNull = false;
+                this.columntitulares.MaxLength = 30;
+                this.columnsuplentes.AllowDBNull = false;
+                this.columnsuplentes.MaxLength = 20;
+                this.columncambios.AllowDBNull = false;
+                this.columncambios.MaxLength = 200;
+                this.columncondicion.AllowDBNull = false;
+                this.columncondicion.MaxLength = 20;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2509,12 +2724,7 @@ namespace SportGest {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public System.DateTime fecha {
                 get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tablePartidos.fechaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha\' de la tabla \'Partidos\' es DBNull.", e);
-                    }
+                    return ((global::System.DateTime)(this[this.tablePartidos.fechaColumn]));
                 }
                 set {
                     this[this.tablePartidos.fechaColumn] = value;
@@ -2525,12 +2735,7 @@ namespace SportGest {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string equipo_local {
                 get {
-                    try {
-                        return ((string)(this[this.tablePartidos.equipo_localColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'equipo_local\' de la tabla \'Partidos\' es DBNull.", e);
-                    }
+                    return ((string)(this[this.tablePartidos.equipo_localColumn]));
                 }
                 set {
                     this[this.tablePartidos.equipo_localColumn] = value;
@@ -2541,12 +2746,7 @@ namespace SportGest {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string equipo_visitante {
                 get {
-                    try {
-                        return ((string)(this[this.tablePartidos.equipo_visitanteColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'equipo_visitante\' de la tabla \'Partidos\' es DBNull.", e);
-                    }
+                    return ((string)(this[this.tablePartidos.equipo_visitanteColumn]));
                 }
                 set {
                     this[this.tablePartidos.equipo_visitanteColumn] = value;
@@ -2557,12 +2757,7 @@ namespace SportGest {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string resultado {
                 get {
-                    try {
-                        return ((string)(this[this.tablePartidos.resultadoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'resultado\' de la tabla \'Partidos\' es DBNull.", e);
-                    }
+                    return ((string)(this[this.tablePartidos.resultadoColumn]));
                 }
                 set {
                     this[this.tablePartidos.resultadoColumn] = value;
@@ -2573,12 +2768,7 @@ namespace SportGest {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public int jornada {
                 get {
-                    try {
-                        return ((int)(this[this.tablePartidos.jornadaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'jornada\' de la tabla \'Partidos\' es DBNull.", e);
-                    }
+                    return ((int)(this[this.tablePartidos.jornadaColumn]));
                 }
                 set {
                     this[this.tablePartidos.jornadaColumn] = value;
@@ -2589,12 +2779,7 @@ namespace SportGest {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string campo {
                 get {
-                    try {
-                        return ((string)(this[this.tablePartidos.campoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'campo\' de la tabla \'Partidos\' es DBNull.", e);
-                    }
+                    return ((string)(this[this.tablePartidos.campoColumn]));
                 }
                 set {
                     this[this.tablePartidos.campoColumn] = value;
@@ -2603,74 +2788,134 @@ namespace SportGest {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsfechaNull() {
-                return this.IsNull(this.tablePartidos.fechaColumn);
+            public int goles_local {
+                get {
+                    return ((int)(this[this.tablePartidos.goles_localColumn]));
+                }
+                set {
+                    this[this.tablePartidos.goles_localColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetfechaNull() {
-                this[this.tablePartidos.fechaColumn] = global::System.Convert.DBNull;
+            public int goles_visitante {
+                get {
+                    return ((int)(this[this.tablePartidos.goles_visitanteColumn]));
+                }
+                set {
+                    this[this.tablePartidos.goles_visitanteColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool Isequipo_localNull() {
-                return this.IsNull(this.tablePartidos.equipo_localColumn);
+            public string estilo_atq {
+                get {
+                    return ((string)(this[this.tablePartidos.estilo_atqColumn]));
+                }
+                set {
+                    this[this.tablePartidos.estilo_atqColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void Setequipo_localNull() {
-                this[this.tablePartidos.equipo_localColumn] = global::System.Convert.DBNull;
+            public string estilo_def {
+                get {
+                    return ((string)(this[this.tablePartidos.estilo_defColumn]));
+                }
+                set {
+                    this[this.tablePartidos.estilo_defColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool Isequipo_visitanteNull() {
-                return this.IsNull(this.tablePartidos.equipo_visitanteColumn);
+            public string posicion_atq {
+                get {
+                    return ((string)(this[this.tablePartidos.posicion_atqColumn]));
+                }
+                set {
+                    this[this.tablePartidos.posicion_atqColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void Setequipo_visitanteNull() {
-                this[this.tablePartidos.equipo_visitanteColumn] = global::System.Convert.DBNull;
+            public string posicion_def {
+                get {
+                    return ((string)(this[this.tablePartidos.posicion_defColumn]));
+                }
+                set {
+                    this[this.tablePartidos.posicion_defColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsresultadoNull() {
-                return this.IsNull(this.tablePartidos.resultadoColumn);
+            public string calentamiento {
+                get {
+                    return ((string)(this[this.tablePartidos.calentamientoColumn]));
+                }
+                set {
+                    this[this.tablePartidos.calentamientoColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetresultadoNull() {
-                this[this.tablePartidos.resultadoColumn] = global::System.Convert.DBNull;
+            public string observaciones {
+                get {
+                    return ((string)(this[this.tablePartidos.observacionesColumn]));
+                }
+                set {
+                    this[this.tablePartidos.observacionesColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsjornadaNull() {
-                return this.IsNull(this.tablePartidos.jornadaColumn);
+            public string titulares {
+                get {
+                    return ((string)(this[this.tablePartidos.titularesColumn]));
+                }
+                set {
+                    this[this.tablePartidos.titularesColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetjornadaNull() {
-                this[this.tablePartidos.jornadaColumn] = global::System.Convert.DBNull;
+            public string suplentes {
+                get {
+                    return ((string)(this[this.tablePartidos.suplentesColumn]));
+                }
+                set {
+                    this[this.tablePartidos.suplentesColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IscampoNull() {
-                return this.IsNull(this.tablePartidos.campoColumn);
+            public string cambios {
+                get {
+                    return ((string)(this[this.tablePartidos.cambiosColumn]));
+                }
+                set {
+                    this[this.tablePartidos.cambiosColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetcampoNull() {
-                this[this.tablePartidos.campoColumn] = global::System.Convert.DBNull;
+            public string condicion {
+                get {
+                    return ((string)(this[this.tablePartidos.condicionColumn]));
+                }
+                set {
+                    this[this.tablePartidos.condicionColumn] = value;
+                }
             }
         }
         
@@ -4074,61 +4319,126 @@ SELECT Id, nombre, categoria, liga, num_jugadores, observaciones FROM Equipos WH
             tableMapping.ColumnMappings.Add("resultado", "resultado");
             tableMapping.ColumnMappings.Add("jornada", "jornada");
             tableMapping.ColumnMappings.Add("campo", "campo");
+            tableMapping.ColumnMappings.Add("goles_local", "goles_local");
+            tableMapping.ColumnMappings.Add("goles_visitante", "goles_visitante");
+            tableMapping.ColumnMappings.Add("estilo_atq", "estilo_atq");
+            tableMapping.ColumnMappings.Add("estilo_def", "estilo_def");
+            tableMapping.ColumnMappings.Add("posicion_atq", "posicion_atq");
+            tableMapping.ColumnMappings.Add("posicion_def", "posicion_def");
+            tableMapping.ColumnMappings.Add("calentamiento", "calentamiento");
+            tableMapping.ColumnMappings.Add("observaciones", "observaciones");
+            tableMapping.ColumnMappings.Add("titulares", "titulares");
+            tableMapping.ColumnMappings.Add("suplentes", "suplentes");
+            tableMapping.ColumnMappings.Add("cambios", "cambios");
+            tableMapping.ColumnMappings.Add("condicion", "condicion");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Partido] WHERE (([Id] = @Original_Id) AND ((@IsNull_fecha = 1 AND [fecha] IS NULL) OR ([fecha] = @Original_fecha)) AND ((@IsNull_equipo_local = 1 AND [equipo_local] IS NULL) OR ([equipo_local] = @Original_equipo_local)) AND ((@IsNull_equipo_visitante = 1 AND [equipo_visitante] IS NULL) OR ([equipo_visitante] = @Original_equipo_visitante)) AND ((@IsNull_resultado = 1 AND [resultado] IS NULL) OR ([resultado] = @Original_resultado)) AND ((@IsNull_jornada = 1 AND [jornada] IS NULL) OR ([jornada] = @Original_jornada)) AND ((@IsNull_campo = 1 AND [campo] IS NULL) OR ([campo] = @Original_campo)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Partidos] WHERE (([Id] = @Original_Id) AND ([fecha] = @Original_fecha) AND ([equipo_local] = @Original_equipo_local) AND ([equipo_visitante] = @Original_equipo_visitante) AND ([goles_local] = @Original_goles_local) AND ([goles_visitante] = @Original_goles_visitante) AND ([resultado] = @Original_resultado) AND ([jornada] = @Original_jornada) AND ([campo] = @Original_campo) AND ([estilo_atq] = @Original_estilo_atq) AND ([estilo_def] = @Original_estilo_def) AND ([posicion_atq] = @Original_posicion_atq) AND ([posicion_def] = @Original_posicion_def) AND ([calentamiento] = @Original_calentamiento) AND ([observaciones] = @Original_observaciones) AND ([titulares] = @Original_titulares) AND ([suplentes] = @Original_suplentes) AND ([cambios] = @Original_cambios) AND ([condicion] = @Original_condicion))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_fecha", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fecha", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_fecha", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fecha", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_equipo_local", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "equipo_local", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_equipo_local", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "equipo_local", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_equipo_visitante", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "equipo_visitante", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_equipo_visitante", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "equipo_visitante", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_resultado", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "resultado", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_goles_local", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "goles_local", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_goles_visitante", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "goles_visitante", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_resultado", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "resultado", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_jornada", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "jornada", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_jornada", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "jornada", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_campo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "campo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_campo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "campo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_estilo_atq", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "estilo_atq", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_estilo_def", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "estilo_def", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_posicion_atq", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "posicion_atq", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_posicion_def", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "posicion_def", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_calentamiento", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "calentamiento", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_observaciones", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "observaciones", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_titulares", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "titulares", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_suplentes", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "suplentes", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_cambios", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cambios", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_condicion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "condicion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Partido] ([Id], [fecha], [equipo_local], [equipo_visitante], [resultado], [jornada], [campo]) VALUES (@Id, @fecha, @equipo_local, @equipo_visitante, @resultado, @jornada, @campo);
-SELECT Id, fecha, equipo_local, equipo_visitante, resultado, jornada, campo FROM Partido WHERE (Id = @Id)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Partidos] ([fecha], [equipo_local], [equipo_visitante], [goles_local], [goles_visitante], [resultado], [jornada], [campo], [estilo_atq], [estilo_def], [posicion_atq], [posicion_def], [calentamiento], [observaciones], [titulares], [suplentes], [cambios], [condicion]) VALUES (@fecha, @equipo_local, @equipo_visitante, @goles_local, @goles_visitante, @resultado, @jornada, @campo, @estilo_atq, @estilo_def, @posicion_atq, @posicion_def, @calentamiento, @observaciones, @titulares, @suplentes, @cambios, @condicion);
+SELECT Id, fecha, equipo_local, equipo_visitante, goles_local, goles_visitante, resultado, jornada, campo, estilo_atq, estilo_def, posicion_atq, posicion_def, calentamiento, observaciones, titulares, suplentes, cambios, condicion FROM Partidos WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fecha", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@equipo_local", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "equipo_local", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@equipo_visitante", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "equipo_visitante", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@goles_local", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "goles_local", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@goles_visitante", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "goles_visitante", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@resultado", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "resultado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@jornada", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "jornada", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@campo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "campo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@estilo_atq", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "estilo_atq", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@estilo_def", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "estilo_def", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@posicion_atq", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "posicion_atq", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@posicion_def", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "posicion_def", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@calentamiento", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "calentamiento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@observaciones", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "observaciones", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@titulares", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "titulares", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@suplentes", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "suplentes", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cambios", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cambios", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@condicion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "condicion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Partido] SET [Id] = @Id, [fecha] = @fecha, [equipo_local] = @equipo_local, [equipo_visitante] = @equipo_visitante, [resultado] = @resultado, [jornada] = @jornada, [campo] = @campo WHERE (([Id] = @Original_Id) AND ((@IsNull_fecha = 1 AND [fecha] IS NULL) OR ([fecha] = @Original_fecha)) AND ((@IsNull_equipo_local = 1 AND [equipo_local] IS NULL) OR ([equipo_local] = @Original_equipo_local)) AND ((@IsNull_equipo_visitante = 1 AND [equipo_visitante] IS NULL) OR ([equipo_visitante] = @Original_equipo_visitante)) AND ((@IsNull_resultado = 1 AND [resultado] IS NULL) OR ([resultado] = @Original_resultado)) AND ((@IsNull_jornada = 1 AND [jornada] IS NULL) OR ([jornada] = @Original_jornada)) AND ((@IsNull_campo = 1 AND [campo] IS NULL) OR ([campo] = @Original_campo)));
-SELECT Id, fecha, equipo_local, equipo_visitante, resultado, jornada, campo FROM Partido WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [Partidos] SET [fecha] = @fecha, [equipo_local] = @equipo_local, [equipo_v" +
+                "isitante] = @equipo_visitante, [goles_local] = @goles_local, [goles_visitante] =" +
+                " @goles_visitante, [resultado] = @resultado, [jornada] = @jornada, [campo] = @ca" +
+                "mpo, [estilo_atq] = @estilo_atq, [estilo_def] = @estilo_def, [posicion_atq] = @p" +
+                "osicion_atq, [posicion_def] = @posicion_def, [calentamiento] = @calentamiento, [" +
+                "observaciones] = @observaciones, [titulares] = @titulares, [suplentes] = @suplen" +
+                "tes, [cambios] = @cambios, [condicion] = @condicion WHERE (([Id] = @Original_Id)" +
+                " AND ([fecha] = @Original_fecha) AND ([equipo_local] = @Original_equipo_local) A" +
+                "ND ([equipo_visitante] = @Original_equipo_visitante) AND ([goles_local] = @Origi" +
+                "nal_goles_local) AND ([goles_visitante] = @Original_goles_visitante) AND ([resul" +
+                "tado] = @Original_resultado) AND ([jornada] = @Original_jornada) AND ([campo] = " +
+                "@Original_campo) AND ([estilo_atq] = @Original_estilo_atq) AND ([estilo_def] = @" +
+                "Original_estilo_def) AND ([posicion_atq] = @Original_posicion_atq) AND ([posicio" +
+                "n_def] = @Original_posicion_def) AND ([calentamiento] = @Original_calentamiento)" +
+                " AND ([observaciones] = @Original_observaciones) AND ([titulares] = @Original_ti" +
+                "tulares) AND ([suplentes] = @Original_suplentes) AND ([cambios] = @Original_camb" +
+                "ios) AND ([condicion] = @Original_condicion));\r\nSELECT Id, fecha, equipo_local, " +
+                "equipo_visitante, goles_local, goles_visitante, resultado, jornada, campo, estil" +
+                "o_atq, estilo_def, posicion_atq, posicion_def, calentamiento, observaciones, tit" +
+                "ulares, suplentes, cambios, condicion FROM Partidos WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fecha", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@equipo_local", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "equipo_local", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@equipo_visitante", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "equipo_visitante", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@goles_local", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "goles_local", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@goles_visitante", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "goles_visitante", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@resultado", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "resultado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@jornada", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "jornada", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@campo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "campo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@estilo_atq", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "estilo_atq", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@estilo_def", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "estilo_def", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@posicion_atq", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "posicion_atq", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@posicion_def", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "posicion_def", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@calentamiento", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "calentamiento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@observaciones", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "observaciones", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@titulares", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "titulares", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@suplentes", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "suplentes", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cambios", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cambios", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@condicion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "condicion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_fecha", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fecha", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_fecha", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fecha", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_equipo_local", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "equipo_local", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_equipo_local", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "equipo_local", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_equipo_visitante", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "equipo_visitante", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_equipo_visitante", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "equipo_visitante", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_resultado", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "resultado", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_goles_local", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "goles_local", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_goles_visitante", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "goles_visitante", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_resultado", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "resultado", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_jornada", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "jornada", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_jornada", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "jornada", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_campo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "campo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_campo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "campo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_estilo_atq", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "estilo_atq", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_estilo_def", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "estilo_def", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_posicion_atq", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "posicion_atq", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_posicion_def", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "posicion_def", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_calentamiento", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "calentamiento", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_observaciones", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "observaciones", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_titulares", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "titulares", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_suplentes", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "suplentes", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_cambios", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cambios", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_condicion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "condicion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4144,8 +4454,7 @@ SELECT Id, fecha, equipo_local, equipo_visitante, resultado, jornada, campo FROM
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, fecha, equipo_local, equipo_visitante, resultado, jornada, campo FROM " +
-                "dbo.Partido";
+            this._commandCollection[0].CommandText = "SELECT        Partidos.*\r\nFROM            Partidos";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -4206,55 +4515,114 @@ SELECT Id, fecha, equipo_local, equipo_visitante, resultado, jornada, campo FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id, global::System.Nullable<global::System.DateTime> Original_fecha, string Original_equipo_local, string Original_equipo_visitante, string Original_resultado, global::System.Nullable<int> Original_jornada, string Original_campo) {
+        public virtual int Delete(
+                    int Original_Id, 
+                    System.DateTime Original_fecha, 
+                    string Original_equipo_local, 
+                    string Original_equipo_visitante, 
+                    int Original_goles_local, 
+                    int Original_goles_visitante, 
+                    string Original_resultado, 
+                    int Original_jornada, 
+                    string Original_campo, 
+                    string Original_estilo_atq, 
+                    string Original_estilo_def, 
+                    string Original_posicion_atq, 
+                    string Original_posicion_def, 
+                    string Original_calentamiento, 
+                    string Original_observaciones, 
+                    string Original_titulares, 
+                    string Original_suplentes, 
+                    string Original_cambios, 
+                    string Original_condicion) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
-            if ((Original_fecha.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_fecha.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((System.DateTime)(Original_fecha));
             if ((Original_equipo_local == null)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_equipo_local");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_equipo_local));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_equipo_local));
             }
             if ((Original_equipo_visitante == null)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_equipo_visitante");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_equipo_visitante));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_equipo_visitante));
             }
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_goles_local));
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_goles_visitante));
             if ((Original_resultado == null)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_resultado");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_resultado));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_resultado));
             }
-            if ((Original_jornada.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((int)(Original_jornada.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.DeleteCommand.Parameters[7].Value = ((int)(Original_jornada));
             if ((Original_campo == null)) {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_campo");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_campo));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_campo));
+            }
+            if ((Original_estilo_atq == null)) {
+                throw new global::System.ArgumentNullException("Original_estilo_atq");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((string)(Original_estilo_atq));
+            }
+            if ((Original_estilo_def == null)) {
+                throw new global::System.ArgumentNullException("Original_estilo_def");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_estilo_def));
+            }
+            if ((Original_posicion_atq == null)) {
+                throw new global::System.ArgumentNullException("Original_posicion_atq");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((string)(Original_posicion_atq));
+            }
+            if ((Original_posicion_def == null)) {
+                throw new global::System.ArgumentNullException("Original_posicion_def");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_posicion_def));
+            }
+            if ((Original_calentamiento == null)) {
+                throw new global::System.ArgumentNullException("Original_calentamiento");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((string)(Original_calentamiento));
+            }
+            if ((Original_observaciones == null)) {
+                throw new global::System.ArgumentNullException("Original_observaciones");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_observaciones));
+            }
+            if ((Original_titulares == null)) {
+                throw new global::System.ArgumentNullException("Original_titulares");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((string)(Original_titulares));
+            }
+            if ((Original_suplentes == null)) {
+                throw new global::System.ArgumentNullException("Original_suplentes");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(Original_suplentes));
+            }
+            if ((Original_cambios == null)) {
+                throw new global::System.ArgumentNullException("Original_cambios");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((string)(Original_cambios));
+            }
+            if ((Original_condicion == null)) {
+                throw new global::System.ArgumentNullException("Original_condicion");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_condicion));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4276,43 +4644,112 @@ SELECT Id, fecha, equipo_local, equipo_visitante, resultado, jornada, campo FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int Id, global::System.Nullable<global::System.DateTime> fecha, string equipo_local, string equipo_visitante, string resultado, global::System.Nullable<int> jornada, string campo) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Id));
-            if ((fecha.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(fecha.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
+        public virtual int Insert(
+                    System.DateTime fecha, 
+                    string equipo_local, 
+                    string equipo_visitante, 
+                    int goles_local, 
+                    int goles_visitante, 
+                    string resultado, 
+                    int jornada, 
+                    string campo, 
+                    string estilo_atq, 
+                    string estilo_def, 
+                    string posicion_atq, 
+                    string posicion_def, 
+                    string calentamiento, 
+                    string observaciones, 
+                    string titulares, 
+                    string suplentes, 
+                    string cambios, 
+                    string condicion) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(fecha));
             if ((equipo_local == null)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("equipo_local");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(equipo_local));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(equipo_local));
             }
             if ((equipo_visitante == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("equipo_visitante");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(equipo_visitante));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(equipo_visitante));
             }
+            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(goles_local));
+            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(goles_visitante));
             if ((resultado == null)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("resultado");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(resultado));
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(resultado));
             }
-            if ((jornada.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(jornada.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.InsertCommand.Parameters[6].Value = ((int)(jornada));
             if ((campo == null)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("campo");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(campo));
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(campo));
+            }
+            if ((estilo_atq == null)) {
+                throw new global::System.ArgumentNullException("estilo_atq");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(estilo_atq));
+            }
+            if ((estilo_def == null)) {
+                throw new global::System.ArgumentNullException("estilo_def");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(estilo_def));
+            }
+            if ((posicion_atq == null)) {
+                throw new global::System.ArgumentNullException("posicion_atq");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(posicion_atq));
+            }
+            if ((posicion_def == null)) {
+                throw new global::System.ArgumentNullException("posicion_def");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(posicion_def));
+            }
+            if ((calentamiento == null)) {
+                throw new global::System.ArgumentNullException("calentamiento");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(calentamiento));
+            }
+            if ((observaciones == null)) {
+                throw new global::System.ArgumentNullException("observaciones");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[13].Value = ((string)(observaciones));
+            }
+            if ((titulares == null)) {
+                throw new global::System.ArgumentNullException("titulares");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[14].Value = ((string)(titulares));
+            }
+            if ((suplentes == null)) {
+                throw new global::System.ArgumentNullException("suplentes");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[15].Value = ((string)(suplentes));
+            }
+            if ((cambios == null)) {
+                throw new global::System.ArgumentNullException("cambios");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[16].Value = ((string)(cambios));
+            }
+            if ((condicion == null)) {
+                throw new global::System.ArgumentNullException("condicion");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[17].Value = ((string)(condicion));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4334,93 +4771,223 @@ SELECT Id, fecha, equipo_local, equipo_visitante, resultado, jornada, campo FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int Id, global::System.Nullable<global::System.DateTime> fecha, string equipo_local, string equipo_visitante, string resultado, global::System.Nullable<int> jornada, string campo, int Original_Id, global::System.Nullable<global::System.DateTime> Original_fecha, string Original_equipo_local, string Original_equipo_visitante, string Original_resultado, global::System.Nullable<int> Original_jornada, string Original_campo) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Id));
-            if ((fecha.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(fecha.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
+        public virtual int Update(
+                    System.DateTime fecha, 
+                    string equipo_local, 
+                    string equipo_visitante, 
+                    int goles_local, 
+                    int goles_visitante, 
+                    string resultado, 
+                    int jornada, 
+                    string campo, 
+                    string estilo_atq, 
+                    string estilo_def, 
+                    string posicion_atq, 
+                    string posicion_def, 
+                    string calentamiento, 
+                    string observaciones, 
+                    string titulares, 
+                    string suplentes, 
+                    string cambios, 
+                    string condicion, 
+                    int Original_Id, 
+                    System.DateTime Original_fecha, 
+                    string Original_equipo_local, 
+                    string Original_equipo_visitante, 
+                    int Original_goles_local, 
+                    int Original_goles_visitante, 
+                    string Original_resultado, 
+                    int Original_jornada, 
+                    string Original_campo, 
+                    string Original_estilo_atq, 
+                    string Original_estilo_def, 
+                    string Original_posicion_atq, 
+                    string Original_posicion_def, 
+                    string Original_calentamiento, 
+                    string Original_observaciones, 
+                    string Original_titulares, 
+                    string Original_suplentes, 
+                    string Original_cambios, 
+                    string Original_condicion, 
+                    int Id) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((System.DateTime)(fecha));
             if ((equipo_local == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("equipo_local");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(equipo_local));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(equipo_local));
             }
             if ((equipo_visitante == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("equipo_visitante");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(equipo_visitante));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(equipo_visitante));
             }
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(goles_local));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(goles_visitante));
             if ((resultado == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("resultado");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(resultado));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(resultado));
             }
-            if ((jornada.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(jornada.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(jornada));
             if ((campo == null)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("campo");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(campo));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(campo));
             }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_Id));
-            if ((Original_fecha.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_fecha.Value));
+            if ((estilo_atq == null)) {
+                throw new global::System.ArgumentNullException("estilo_atq");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(estilo_atq));
             }
+            if ((estilo_def == null)) {
+                throw new global::System.ArgumentNullException("estilo_def");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(estilo_def));
+            }
+            if ((posicion_atq == null)) {
+                throw new global::System.ArgumentNullException("posicion_atq");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(posicion_atq));
+            }
+            if ((posicion_def == null)) {
+                throw new global::System.ArgumentNullException("posicion_def");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(posicion_def));
+            }
+            if ((calentamiento == null)) {
+                throw new global::System.ArgumentNullException("calentamiento");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(calentamiento));
+            }
+            if ((observaciones == null)) {
+                throw new global::System.ArgumentNullException("observaciones");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(observaciones));
+            }
+            if ((titulares == null)) {
+                throw new global::System.ArgumentNullException("titulares");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(titulares));
+            }
+            if ((suplentes == null)) {
+                throw new global::System.ArgumentNullException("suplentes");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(suplentes));
+            }
+            if ((cambios == null)) {
+                throw new global::System.ArgumentNullException("cambios");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(cambios));
+            }
+            if ((condicion == null)) {
+                throw new global::System.ArgumentNullException("condicion");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(condicion));
+            }
+            this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[19].Value = ((System.DateTime)(Original_fecha));
             if ((Original_equipo_local == null)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_equipo_local");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_equipo_local));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_equipo_local));
             }
             if ((Original_equipo_visitante == null)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_equipo_visitante");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_equipo_visitante));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_equipo_visitante));
             }
+            this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(Original_goles_local));
+            this.Adapter.UpdateCommand.Parameters[23].Value = ((int)(Original_goles_visitante));
             if ((Original_resultado == null)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_resultado");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_resultado));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_resultado));
             }
-            if ((Original_jornada.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Original_jornada.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.UpdateCommand.Parameters[25].Value = ((int)(Original_jornada));
             if ((Original_campo == null)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_campo");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_campo));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_campo));
             }
+            if ((Original_estilo_atq == null)) {
+                throw new global::System.ArgumentNullException("Original_estilo_atq");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(Original_estilo_atq));
+            }
+            if ((Original_estilo_def == null)) {
+                throw new global::System.ArgumentNullException("Original_estilo_def");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_estilo_def));
+            }
+            if ((Original_posicion_atq == null)) {
+                throw new global::System.ArgumentNullException("Original_posicion_atq");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(Original_posicion_atq));
+            }
+            if ((Original_posicion_def == null)) {
+                throw new global::System.ArgumentNullException("Original_posicion_def");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_posicion_def));
+            }
+            if ((Original_calentamiento == null)) {
+                throw new global::System.ArgumentNullException("Original_calentamiento");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((string)(Original_calentamiento));
+            }
+            if ((Original_observaciones == null)) {
+                throw new global::System.ArgumentNullException("Original_observaciones");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((string)(Original_observaciones));
+            }
+            if ((Original_titulares == null)) {
+                throw new global::System.ArgumentNullException("Original_titulares");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((string)(Original_titulares));
+            }
+            if ((Original_suplentes == null)) {
+                throw new global::System.ArgumentNullException("Original_suplentes");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(Original_suplentes));
+            }
+            if ((Original_cambios == null)) {
+                throw new global::System.ArgumentNullException("Original_cambios");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((string)(Original_cambios));
+            }
+            if ((Original_condicion == null)) {
+                throw new global::System.ArgumentNullException("Original_condicion");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((string)(Original_condicion));
+            }
+            this.Adapter.UpdateCommand.Parameters[37].Value = ((int)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4441,8 +5008,45 @@ SELECT Id, fecha, equipo_local, equipo_visitante, resultado, jornada, campo FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<global::System.DateTime> fecha, string equipo_local, string equipo_visitante, string resultado, global::System.Nullable<int> jornada, string campo, int Original_Id, global::System.Nullable<global::System.DateTime> Original_fecha, string Original_equipo_local, string Original_equipo_visitante, string Original_resultado, global::System.Nullable<int> Original_jornada, string Original_campo) {
-            return this.Update(Original_Id, fecha, equipo_local, equipo_visitante, resultado, jornada, campo, Original_Id, Original_fecha, Original_equipo_local, Original_equipo_visitante, Original_resultado, Original_jornada, Original_campo);
+        public virtual int Update(
+                    System.DateTime fecha, 
+                    string equipo_local, 
+                    string equipo_visitante, 
+                    int goles_local, 
+                    int goles_visitante, 
+                    string resultado, 
+                    int jornada, 
+                    string campo, 
+                    string estilo_atq, 
+                    string estilo_def, 
+                    string posicion_atq, 
+                    string posicion_def, 
+                    string calentamiento, 
+                    string observaciones, 
+                    string titulares, 
+                    string suplentes, 
+                    string cambios, 
+                    string condicion, 
+                    int Original_Id, 
+                    System.DateTime Original_fecha, 
+                    string Original_equipo_local, 
+                    string Original_equipo_visitante, 
+                    int Original_goles_local, 
+                    int Original_goles_visitante, 
+                    string Original_resultado, 
+                    int Original_jornada, 
+                    string Original_campo, 
+                    string Original_estilo_atq, 
+                    string Original_estilo_def, 
+                    string Original_posicion_atq, 
+                    string Original_posicion_def, 
+                    string Original_calentamiento, 
+                    string Original_observaciones, 
+                    string Original_titulares, 
+                    string Original_suplentes, 
+                    string Original_cambios, 
+                    string Original_condicion) {
+            return this.Update(fecha, equipo_local, equipo_visitante, goles_local, goles_visitante, resultado, jornada, campo, estilo_atq, estilo_def, posicion_atq, posicion_def, calentamiento, observaciones, titulares, suplentes, cambios, condicion, Original_Id, Original_fecha, Original_equipo_local, Original_equipo_visitante, Original_goles_local, Original_goles_visitante, Original_resultado, Original_jornada, Original_campo, Original_estilo_atq, Original_estilo_def, Original_posicion_atq, Original_posicion_def, Original_calentamiento, Original_observaciones, Original_titulares, Original_suplentes, Original_cambios, Original_condicion, Original_Id);
         }
     }
     
