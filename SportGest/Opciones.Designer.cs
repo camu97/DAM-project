@@ -42,6 +42,7 @@
             this.MaximizeBox = false;
             this.Name = "Opciones";
             this.Text = "Opciones";
+            this.Load += new System.EventHandler(this.Opciones_Load);
             this.ResumeLayout(false);
 
         }

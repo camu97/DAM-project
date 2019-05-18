@@ -14,14 +14,15 @@ namespace SportGest
     public partial class Partido : Form
     {
         string sCnn = "Data Source = (localdb)\\mssqllocaldb; Initial Catalog = SportGest; Integrated Security = True; Pooling = False";
-        string condicion = "";
-        string resultado = "";
-        string[] titulares;
-        string equipoTitular = "", cambios = "", suplentes = "";
+        string resultado = "", tipo = "", condicion = "";
+        string cambios = "", suplentes = "";
+        List<string> equipoTitular, titulares;
         bool error = false;
         public Partido()
         {
             InitializeComponent();
+            equipoTitular = new List<string>();
+            titulares = new List<string>();
         }
 
         private void rbVisitante_CheckedChanged(object sender, EventArgs e)
@@ -60,22 +61,7 @@ namespace SportGest
                     dt = equiposAdapter.GetData();
                     foreach (DataRow dr in dt.Rows)
                     {
-                        switch (dr["categoria"].ToString())
-                        {
-                            case "MINIS":
-                            case "PREBENJAMIN":
-                            case "BENJAMIN":
-                            case "ALEVIN":
-                                cbEquipo.Items.Add(dr["nombre"].ToString() + "- F8");
-                                break;
-                            case "INFANTIL":
-                            case "CADETE":
-                            case "JUVENIL":
-                            case "SENIOR":
-                            case "FEMENINO":
-                                cbEquipo.Items.Add(dr["nombre"].ToString() + "- F11");
-                                break;
-                        }
+                        cbEquipo.Items.Add(dr["nombre"].ToString() + " - " + dr["categoria"]);
                     }
                 }
                 catch (SqlException sqle)
@@ -96,6 +82,7 @@ namespace SportGest
                 tbVisitante.Text = cbEquipo.SelectedItem.ToString();
             }
 
+
             listJugadores.Items.Clear();
             using (SqlConnection connection = new SqlConnection(sCnn))
             {
@@ -104,10 +91,32 @@ namespace SportGest
                     connection.Open();
                     DataTable dt;
 
+                    dt = equiposAdapter.GetData();
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        switch (dr["categoria"].ToString())
+                        {
+                            case "MINIS":
+                            case "PREBENJAMIN":
+                            case "BENJAMIN":
+                            case "ALEVIN":
+                                tipo = "F8";
+                                break;
+                            case "INFANTIL":
+                            case "CADETE":
+                            case "JUVENIL":
+                            case "SENIOR":
+                            case "FEMENINO":
+                                tipo = "F11";
+                                break;
+                        }
+                        lblTipo.Text = "[" + tipo + "]";
+                    }
+
                     dt = jugadoresAdapter.GetData();
                     foreach (DataRow dr in dt.Rows)
                     {
-                        if (dr["equipo"].ToString().Equals(cbEquipo.SelectedItem.ToString()))
+                        if (dr["equipo"].ToString().Equals(cbEquipo.SelectedItem.ToString().Split('-')[0].Trim()))
                         {
                             listJugadores.Items.Add(dr["num"].ToString() + " - " + dr["nombre"].ToString() + " - " + dr["posicion"].ToString());
                         }
@@ -155,24 +164,31 @@ namespace SportGest
             minCambio5.Enabled = !minCambio5.Enabled;
         }
 
-        private void seleccionarToolStripMenuItem_Click(object sender, EventArgs e)
+        private void cbCompeticion_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void eliminarDelEquipoTitularToolStripMenuItem_Click(object sender, EventArgs e)
+        private void seleccionarTitular_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void eliminarTitular_Click(object sender, EventArgs e)
         {
 
         }
 
         private void btnConfirmarAlineacion_Click(object sender, EventArgs e)
         {
-            if ((listJugadores.SelectedItems.Count == 11 && cbEquipo.SelectedItem.ToString().Split('-')[1].Trim().Equals("F11")) || (listJugadores.SelectedItems.Count == 8 && cbEquipo.SelectedItem.ToString().Split('-')[1].Trim().Equals("F8")))
+            if ((listJugadores.SelectedItems.Count == 11 && tipo.Equals("F11")) || (listJugadores.SelectedItems.Count == 8 && tipo.Equals("F8")))
             {
+                //try
+                //{
                 for (int i = 0; i < listJugadores.SelectedItems.Count; i++)
                 {
-                    titulares[i] = listJugadores.SelectedItems[i].ToString().Split('-')[1].Trim();
-                    equipoTitular += listJugadores.SelectedItems[i].ToString().Split('-')[0].Trim() + ",";
+                    titulares.Add(listJugadores.SelectedItems[i].ToString().Split('-')[1].Trim());
+                    equipoTitular.Add(listJugadores.SelectedItems[i].ToString().Split('-')[0].Trim());
                 }
                 for (int i = 0; i < listJugadores.Items.Count; i++)
                 {
@@ -184,22 +200,28 @@ namespace SportGest
                         }
                     }
                 }
+                MessageBox.Show("Titulares y suplentes confirmados", "Equipo titular", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //}
+                //catch (NullReferenceException nre)
+                //{
+                //}
             }
             else
             {
-                if (listJugadores.SelectedItems.Count != 11 && cbEquipo.SelectedItem.ToString().Split('-')[1].Trim().Equals("F11"))
+                if (listJugadores.SelectedItems.Count != 11 && tipo.Equals("F11"))
                 {
                     MessageBox.Show("Debes seleccionar un 11 titular");
                 }
-                else if (listJugadores.SelectedItems.Count != 8 && cbEquipo.SelectedItem.ToString().Split('-')[1].Trim().Equals("F8"))
+                else if (listJugadores.SelectedItems.Count != 8 && tipo.Equals("F8"))
                 {
                     MessageBox.Show("Debes seleccionar un 8 titular");
                 }
             }
         }
 
-        private void AñadirEntrenamiento_Click(object sender, EventArgs e)
+        private void AñadirPartido_Click(object sender, EventArgs e)
         {
+            error = false;
             for (int i = 0; i < this.Controls.Count; i++)
             {
                 if (this.Controls[i] is TextBox && this.Controls[i].Text.Equals(""))
@@ -240,10 +262,14 @@ namespace SportGest
                         {
                             resultado = "EMPATE";
                         }
-                        equipoTitular.Substring(0, equipoTitular.Length - 1);
                         cambios.Substring(0, cambios.Length - 1);
                         suplentes.Substring(0, suplentes.Length - 1);
-                        partidosAdapter.Insert(DateTime.Parse(date.Value + " " + tbHora.Text), tbLocal.Text, tbVisitante.Text, int.Parse(resultLocal.Text), int.Parse(resultVisitante.Text), resultado, int.Parse(tbJornada.Text), tbCampo.Text, tbEstAtq.Text, tbEstDef.Text, tbPosAtq.Text, tbPosDef.Text, tbCalentamiento.Text, tbObservaciones.Text, equipoTitular, suplentes, cambios, condicion);
+                        string tit = "|";
+                        foreach (string s in equipoTitular)
+                        {
+                            tit += s + "|";
+                        }
+                        partidosAdapter.Insert(DateTime.Parse(date.Value + " " + tbHora.Text), tbLocal.Text, tbVisitante.Text, int.Parse(resultLocal.Text), int.Parse(resultVisitante.Text), resultado, int.Parse(tbJornada.Text), tbCampo.Text, tbEstAtq.Text, tbEstDef.Text, tbPosAtq.Text, tbPosDef.Text, tbCalentamiento.Text, tbObservaciones.Text, tit, suplentes, cambios, condicion);
 
                     }
                     catch (SqlException) { }

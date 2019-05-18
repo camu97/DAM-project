@@ -23,11 +23,13 @@ namespace SportGest
         {
             NuevoEquipo ne = new NuevoEquipo();
             ne.ShowDialog();
+            this.Refresh();
         }
 
         private void nuevoJugador_Click(object sender, EventArgs e)
         {
             NuevoJugador nj = new NuevoJugador();
+            this.Refresh();
             nj.ShowDialog();
         }
 
@@ -43,7 +45,7 @@ namespace SportGest
                     dt = equiposTableAdapter.GetData();
                     foreach (DataRow dr in dt.Rows)
                     {
-                        listEquipos.Items.Add(dr["Id"].ToString() + " - " + dr["nombre"].ToString() + "    [" + dr["categoria"].ToString() + " ]");
+                        listEquipos.Items.Add(dr["Id"].ToString() + "| " + dr["nombre"].ToString() + " - [" + dr["categoria"].ToString() + " ]");
                     }
                 }
                 catch (Exception ex)
@@ -57,59 +59,64 @@ namespace SportGest
 
         private void listEquipos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            listJugadores.Items.Clear();
-            using (SqlConnection connection = new SqlConnection(sCnn))
+            try
             {
-                connection.Open();
-                DataTable dt;
-                try
+                listJugadores.Items.Clear();
+                using (SqlConnection connection = new SqlConnection(sCnn))
                 {
-                    dt = jugadoresTableAdapter1.GetData();
-                    foreach (DataRow dr in dt.Rows)
+                    connection.Open();
+                    DataTable dt;
+                    try
                     {
-                        if (dr["equipo"].Equals(listEquipos.SelectedItem.ToString().Split('-')[1].Trim()))
+                        dt = jugadoresTableAdapter1.GetData();
+                        foreach (DataRow dr in dt.Rows)
                         {
-                            listJugadores.Items.Add(dr["Id"].ToString() + " - " + dr["nick"].ToString());
+                            if (dr["equipo"].Equals(listEquipos.SelectedItem.ToString().Split('-')[0].Split('|')[1].Trim()))
+                            {
+                                listJugadores.Items.Add(dr["Id"].ToString() + "| " + dr["num"].ToString() + " - " + dr["nick"].ToString());
+                            }
                         }
                     }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
 
+                }
             }
+            catch (NullReferenceException) { }
         }
 
         private void listJugadores_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-            using (SqlConnection connection = new SqlConnection(sCnn))
+            try
             {
-                connection.Open();
-                DataTable dt = new DataTable();
-                try
+                using (SqlConnection connection = new SqlConnection(sCnn))
                 {
-                    dt = jugadoresTableAdapter1.GetData();
-                    foreach (DataRow dr in dt.Rows)
+                    connection.Open();
+                    DataTable dt = new DataTable();
+                    try
                     {
-                        if (dr["nick"].Equals(listJugadores.SelectedItem.ToString().Split('-')[1].Trim()))
+                        dt = jugadoresTableAdapter1.GetData();
+                        foreach (DataRow dr in dt.Rows)
                         {
-                            lblNombre.Text = dr["nombre"].ToString();
-                            lblNacimiento.Text = dr["fecha_nacimiento"].ToString().Split(' ')[0];
-                            lblNumero.Text = dr["num"].ToString();
-                            lblPosicion.Text = dr["posicion"].ToString();
-                            tbObservaciones.Text = dr["observaciones"].ToString();
+                            if (dr["nick"].Equals(listJugadores.SelectedItem.ToString().Split('-')[1].Trim()))
+                            {
+                                lblNombre.Text = dr["nombre"].ToString();
+                                lblNacimiento.Text = dr["fecha_nacimiento"].ToString().Split(' ')[0];
+                                lblNumero.Text = dr["num"].ToString();
+                                lblPosicion.Text = dr["posicion"].ToString();
+                                tbObservaciones.Text = dr["observaciones"].ToString();
+                            }
                         }
                     }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
-                catch (SqlException ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                catch (NullReferenceException) { }
-
             }
+            catch (NullReferenceException) { }
         }
 
         private void atrás_Click(object sender, EventArgs e)
@@ -121,7 +128,7 @@ namespace SportGest
         {
             if (listJugadores.SelectedIndices.Count > 1)
             {
-                jugadoresTableAdapter1.Delete(int.Parse(listJugadores.SelectedItem.ToString().Split('-')[0]));
+                jugadoresTableAdapter1.Delete(int.Parse(listJugadores.SelectedItem.ToString().Split('|')[0]));
                 listJugadores.Items.Remove(listJugadores.SelectedItem);
                 listJugadores.Refresh();
                 listJugadores.SelectedItem = null;
@@ -134,7 +141,7 @@ namespace SportGest
             {
                 NuevoJugador nj = new NuevoJugador();
                 nj.editar = true;
-                nj.id = listJugadores.SelectedItem.ToString().Split('-')[0].Trim();
+                nj.id = listJugadores.SelectedItem.ToString().Split('|')[0].Trim();
                 nj.ShowDialog();
                 this.Refresh();
             }
@@ -146,7 +153,7 @@ namespace SportGest
             {
                 NuevoEquipo ne = new NuevoEquipo();
                 ne.editar = true;
-                ne.id = listEquipos.SelectedItem.ToString().Split('-')[0].Trim();
+                ne.id = listEquipos.SelectedItem.ToString().Split('|')[0].Trim();
                 ne.ShowDialog();
                 this.Refresh();
             }
@@ -156,7 +163,7 @@ namespace SportGest
         {
             if (listEquipos.SelectedIndices.Count > 1)
             {
-                equiposTableAdapter.Delete(int.Parse(listEquipos.SelectedItem.ToString().Split('-')[0]));
+                equiposTableAdapter.Delete(int.Parse(listEquipos.SelectedItem.ToString().Split('|')[0]));
                 listEquipos.Items.Remove(listJugadores.SelectedItem);
                 listEquipos.Refresh();
                 listEquipos.SelectedItem = null;

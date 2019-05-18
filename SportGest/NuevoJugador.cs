@@ -23,18 +23,20 @@ namespace SportGest
 
         private void btnAñadirJugador_Click(object sender, EventArgs e)
         {
+            error = false;
             for (int i = 0; i < this.Controls.Count; i++)
             {
-                if (this.Controls[i] is TextBox && this.Controls[i].Text.Equals(""))
+                if (this.Controls[i] is TextBox && this.Controls[i].Text.Equals("") && !this.Controls[i].Name.Equals("tbObservaciones"))
                 {
                     error = true;
                 }
             }
+
             if (!error)
             {
                 if (!editar)
                 {
-                    if (tbComentarios.Text.Equals("") || tbNacimiento.Text.Equals("") || tbNick.Text.Equals("") || tbNombre.Text.Equals("") || tbNumero.Text.Equals(""))
+                    if (tbObservaciones.Text.Equals("") || tbNacimiento.Text.Equals("") || tbNick.Text.Equals("") || tbNombre.Text.Equals("") || tbNumero.Text.Equals(""))
                     {
                         MessageBox.Show("Toddos los campos se deben rellenar");
                     }
@@ -46,7 +48,7 @@ namespace SportGest
                             DataTable dt = new DataTable();
                             try
                             {
-                                jugadoresTableAdapter1.Insert(int.Parse(tbNumero.Text), tbNombre.Text, tbNick.Text, cbPosicion.SelectedItem.ToString(), DateTime.Parse(tbNacimiento.Text), cbEquipos.SelectedItem.ToString(), tbComentarios.Text);
+                                jugadoresAdapter.Insert(int.Parse(tbNumero.Text), tbNombre.Text, tbNick.Text, cbPosicion.SelectedItem.ToString(), DateTime.Parse(tbNacimiento.Text), cbEquipos.SelectedItem.ToString(), tbObservaciones.Text);
                                 MessageBox.Show("Operación correcta", "Añadir", MessageBoxButtons.OK);
                             }
                             catch (Exception ex)
@@ -65,7 +67,7 @@ namespace SportGest
                         try
                         {
                             connection.Open();
-                            DataTable dt = jugadoresTableAdapter1.GetData();
+                            DataTable dt = jugadoresAdapter.GetData();
                             DataRow dr;
                             for (int i = 0; i < dt.Rows.Count; i++)
                             {
@@ -76,10 +78,10 @@ namespace SportGest
                                     dr["nombre"] = tbNombre.Text;
                                     dr["nick"] = tbNick.Text;
                                     dr["posicion"] = cbPosicion.SelectedItem.ToString();
-                                    dr["observaciones"] = tbComentarios.Text;
+                                    dr["observaciones"] = tbObservaciones.Text;
                                     dr["fecha_nacimiento"] = DateTime.Parse(tbNacimiento.Text).Date;
                                     dr["equipo"] = cbEquipos.SelectedItem.ToString();
-                                    jugadoresTableAdapter1.Update(dr);
+                                    jugadoresAdapter.Update(dr);
                                 }
                             }
                             dt.AcceptChanges();
@@ -118,7 +120,7 @@ namespace SportGest
                     this.cbEquipos.Items.Add(dr["nombre"]);
                 }
 
-                dt = jugadoresTableAdapter1.GetData();
+                dt = jugadoresAdapter.GetData();
                 foreach (DataRow dr in dt.Rows)
                 {
                     if (dr["id"].ToString().Equals(id))
@@ -127,7 +129,7 @@ namespace SportGest
                         tbNombre.Text = dr["nombre"].ToString();
                         tbNick.Text = dr["nick"].ToString();
                         cbPosicion.SelectedItem = dr["posicion"].ToString();
-                        tbComentarios.Text = dr["observaciones"].ToString();
+                        tbObservaciones.Text = dr["observaciones"].ToString();
                         tbNacimiento.Text = dr["fecha_nacimiento"].ToString().Split(' ')[0];
                         cbEquipos.SelectedItem = dr["equipo"].ToString();
 

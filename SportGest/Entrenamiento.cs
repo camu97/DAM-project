@@ -40,7 +40,7 @@ namespace SportGest
 
         }
 
-        private void cancelarToolStripMenuItem_Click(object sender, EventArgs e)
+        private void cancelar_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Cancelar entrenamiento", "¿Deseas cancelar la preparación de este entrenamiento? Perderás todo lo que hayas hecho", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
@@ -48,9 +48,20 @@ namespace SportGest
             }
         }
 
-        private void añadirAMaterialToolStripMenuItem_Click(object sender, EventArgs e)
+        private void añadirMaterial_Click(object sender, EventArgs e)
         {
-
+            if (((PictureBox)sender).Text.Contains("Calent"))
+            {
+                tbMateriaCalentamiento.AppendText("- " + cbAñadirMaterial.SelectedItem.ToString() + ((PictureBox)sender).Tag + "\r\n");
+            }
+            else if (((PictureBox)sender).Text.Contains("Princi"))
+            {
+                tbMaterialPrincipal.AppendText("- " + cbAñadirMaterial.SelectedItem.ToString() + ((PictureBox)sender).Tag + "\r\n");
+            }
+            else if (((PictureBox)sender).Text.Contains("Calm"))
+            {
+                tbMaterialCalma.AppendText("- " + cbAñadirMaterial.SelectedItem.ToString() + ((PictureBox)sender).Tag + "\r\n");
+            }
         }
 
         private void btnProgramarSesion_Click(object sender, EventArgs e)
@@ -69,9 +80,12 @@ namespace SportGest
                     try
                     {
                         connection.Open();
-                        entrenamientosAdapter.Insert();
+                        entrenamientosAdapter.Insert(DateTime.Parse(fechaPicker.Text + tbHora.Text), tbObjetivo.Text,
+                            int.Parse(tbTiempoSesion.Text), tbDescripcionObjectivo.Text, tbDescipcionCalentamiento.Text,
+                            tbDescripcionPrincipal.Text, tbDescripcionCalma.Text, cbEquipo.SelectedItem.ToString(),
+                            int.Parse(tbTiempoCalentamiento.Text), int.Parse(tbTiempoPrincipal.Text), int.Parse(tbTiempoCalma.Text));
                     }
-                    catch (Exception ex)
+                    catch (SqlException ex)
                     {
                         MessageBox.Show(ex.Message);
                     }
@@ -86,7 +100,23 @@ namespace SportGest
 
         private void Entrenamiento_Load(object sender, EventArgs e)
         {
+            using (SqlConnection connection = new SqlConnection(sCnn))
+            {
+                try
+                {
+                    connection.Open();
+                    DataTable dt = equiposAdapter.GetData();
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        cbEquipo.Items.Add(dr["nombre"].ToString() + " - " + dr["categoria"]);
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
 
+            }
         }
     }
 }

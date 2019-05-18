@@ -92,7 +92,7 @@
             this.rbVisitante = new System.Windows.Forms.RadioButton();
             this.rbLocal = new System.Windows.Forms.RadioButton();
             this.label21 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbCompetición = new System.Windows.Forms.ComboBox();
             this.tbCampo = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
@@ -110,6 +110,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.date = new System.Windows.Forms.DateTimePicker();
             this.label27 = new System.Windows.Forms.Label();
+            this.lblTipo = new System.Windows.Forms.Label();
             this.gbCambios.SuspendLayout();
             this.gbAtaque.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -573,7 +574,7 @@
             this.button1.TabIndex = 13;
             this.button1.Text = "Cerrar y añadir entrenamiento";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.AñadirEntrenamiento_Click);
+            this.button1.Click += new System.EventHandler(this.AñadirPartido_Click);
             // 
             // label13
             // 
@@ -601,6 +602,7 @@
             this.listJugadores.FormattingEnabled = true;
             this.listJugadores.Location = new System.Drawing.Point(542, 149);
             this.listJugadores.Name = "listJugadores";
+            this.listJugadores.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.listJugadores.Size = new System.Drawing.Size(280, 199);
             this.listJugadores.TabIndex = 16;
             // 
@@ -618,14 +620,14 @@
             this.seleccionarToolStripMenuItem.Name = "seleccionarToolStripMenuItem";
             this.seleccionarToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
             this.seleccionarToolStripMenuItem.Text = "Incluir en equipo titular";
-            this.seleccionarToolStripMenuItem.Click += new System.EventHandler(this.seleccionarToolStripMenuItem_Click);
+            this.seleccionarToolStripMenuItem.Click += new System.EventHandler(this.seleccionarTitular_Click);
             // 
             // eliminarDelEquipoTitularToolStripMenuItem
             // 
             this.eliminarDelEquipoTitularToolStripMenuItem.Name = "eliminarDelEquipoTitularToolStripMenuItem";
             this.eliminarDelEquipoTitularToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
             this.eliminarDelEquipoTitularToolStripMenuItem.Text = "Eliminar del equipo titular";
-            this.eliminarDelEquipoTitularToolStripMenuItem.Click += new System.EventHandler(this.eliminarDelEquipoTitularToolStripMenuItem_Click);
+            this.eliminarDelEquipoTitularToolStripMenuItem.Click += new System.EventHandler(this.eliminarTitular_Click);
             // 
             // label18
             // 
@@ -693,7 +695,7 @@
             // 
             this.groupBox1.Controls.Add(this.rbVisitante);
             this.groupBox1.Controls.Add(this.rbLocal);
-            this.groupBox1.Location = new System.Drawing.Point(832, 55);
+            this.groupBox1.Location = new System.Drawing.Point(887, 55);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(199, 36);
             this.groupBox1.TabIndex = 24;
@@ -734,18 +736,19 @@
             this.label21.Text = "Competición: ";
             this.toolTip1.SetToolTip(this.label21, "Competición en la que se desarrolla el partido");
             // 
-            // comboBox1
+            // cbCompetición
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbCompetición.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbCompetición.FormattingEnabled = true;
+            this.cbCompetición.Items.AddRange(new object[] {
             "Liga",
             "Copa",
             "Torneo"});
-            this.comboBox1.Location = new System.Drawing.Point(103, 99);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(82, 28);
-            this.comboBox1.TabIndex = 26;
+            this.cbCompetición.Location = new System.Drawing.Point(103, 99);
+            this.cbCompetición.Name = "cbCompetición";
+            this.cbCompetición.Size = new System.Drawing.Size(82, 28);
+            this.cbCompetición.TabIndex = 26;
+            this.cbCompetición.SelectedIndexChanged += new System.EventHandler(this.cbCompeticion_SelectedIndexChanged);
             // 
             // tbCampo
             // 
@@ -792,7 +795,7 @@
             this.cbEquipo.FormattingEnabled = true;
             this.cbEquipo.Location = new System.Drawing.Point(689, 65);
             this.cbEquipo.Name = "cbEquipo";
-            this.cbEquipo.Size = new System.Drawing.Size(133, 28);
+            this.cbEquipo.Size = new System.Drawing.Size(192, 28);
             this.cbEquipo.TabIndex = 33;
             this.cbEquipo.SelectedIndexChanged += new System.EventHandler(this.cbEquipo_SelectedIndexChanged);
             // 
@@ -881,12 +884,22 @@
             this.label27.TabIndex = 40;
             this.label27.Text = "Hora: ";
             // 
+            // lblTipo
+            // 
+            this.lblTipo.AutoSize = true;
+            this.lblTipo.Location = new System.Drawing.Point(605, 133);
+            this.lblTipo.Name = "lblTipo";
+            this.lblTipo.Size = new System.Drawing.Size(55, 13);
+            this.lblTipo.TabIndex = 41;
+            this.lblTipo.Text = "[FUTBOL]";
+            // 
             // Partido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(1168, 602);
+            this.Controls.Add(this.lblTipo);
             this.Controls.Add(this.label27);
             this.Controls.Add(this.date);
             this.Controls.Add(this.label12);
@@ -900,7 +913,7 @@
             this.Controls.Add(this.label22);
             this.Controls.Add(this.tbHora);
             this.Controls.Add(this.tbCampo);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbCompetición);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tbVisitante);
@@ -1005,7 +1018,7 @@
         private System.Windows.Forms.RadioButton rbVisitante;
         private System.Windows.Forms.RadioButton rbLocal;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbCompetición;
         private System.Windows.Forms.TextBox tbCampo;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
@@ -1022,5 +1035,6 @@
         private System.Windows.Forms.TextBox tbHora;
         private System.Windows.Forms.DateTimePicker date;
         private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label lblTipo;
     }
 }

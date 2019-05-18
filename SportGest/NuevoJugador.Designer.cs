@@ -36,7 +36,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.tbNombre = new System.Windows.Forms.TextBox();
-            this.tbComentarios = new System.Windows.Forms.TextBox();
+            this.tbObservaciones = new System.Windows.Forms.TextBox();
             this.tbNacimiento = new System.Windows.Forms.TextBox();
             this.cbEquipos = new System.Windows.Forms.ComboBox();
             this.sportGestDataSet = new SportGest.SportGestDataSet();
@@ -48,7 +48,7 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tbNumero = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.jugadoresTableAdapter1 = new SportGest.SportGestDataSetTableAdapters.JugadoresTableAdapter();
+            this.jugadoresAdapter = new SportGest.SportGestDataSetTableAdapters.JugadoresTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.sportGestDataSet)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,9 +94,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(12, 98);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 13);
+            this.label5.Size = new System.Drawing.Size(81, 13);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Comentarios:";
+            this.label5.Text = "Observaciones:";
             // 
             // tbNombre
             // 
@@ -107,15 +107,15 @@
             this.tbNombre.TabIndex = 5;
             this.toolTip1.SetToolTip(this.tbNombre, "Máximo 50 caracteres");
             // 
-            // tbComentarios
+            // tbObservaciones
             // 
-            this.tbComentarios.Location = new System.Drawing.Point(15, 114);
-            this.tbComentarios.MaxLength = 300;
-            this.tbComentarios.Multiline = true;
-            this.tbComentarios.Name = "tbComentarios";
-            this.tbComentarios.Size = new System.Drawing.Size(320, 53);
-            this.tbComentarios.TabIndex = 6;
-            this.toolTip1.SetToolTip(this.tbComentarios, "Máximo 300 caracteres");
+            this.tbObservaciones.Location = new System.Drawing.Point(15, 114);
+            this.tbObservaciones.MaxLength = 300;
+            this.tbObservaciones.Multiline = true;
+            this.tbObservaciones.Name = "tbObservaciones";
+            this.tbObservaciones.Size = new System.Drawing.Size(320, 53);
+            this.tbObservaciones.TabIndex = 6;
+            this.toolTip1.SetToolTip(this.tbObservaciones, "Máximo 300 caracteres");
             // 
             // tbNacimiento
             // 
@@ -197,9 +197,9 @@
             this.label7.TabIndex = 15;
             this.label7.Text = "Número:";
             // 
-            // jugadoresTableAdapter1
+            // jugadoresAdapter
             // 
-            this.jugadoresTableAdapter1.ClearBeforeFill = true;
+            this.jugadoresAdapter.ClearBeforeFill = true;
             // 
             // NuevoJugador
             // 
@@ -215,7 +215,7 @@
             this.Controls.Add(this.btnAñadirJugador);
             this.Controls.Add(this.cbEquipos);
             this.Controls.Add(this.tbNacimiento);
-            this.Controls.Add(this.tbComentarios);
+            this.Controls.Add(this.tbObservaciones);
             this.Controls.Add(this.tbNombre);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -242,7 +242,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox tbNombre;
-        private System.Windows.Forms.TextBox tbComentarios;
+        private System.Windows.Forms.TextBox tbObservaciones;
         private System.Windows.Forms.TextBox tbNacimiento;
         private System.Windows.Forms.ComboBox cbEquipos;
         private System.Windows.Forms.Button btnAñadirJugador;
@@ -254,6 +254,6 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.TextBox tbNumero;
         private System.Windows.Forms.Label label7;
-        private SportGestDataSetTableAdapters.JugadoresTableAdapter jugadoresTableAdapter1;
+        private SportGestDataSetTableAdapters.JugadoresTableAdapter jugadoresAdapter;
     }
 }

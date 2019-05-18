@@ -17,7 +17,6 @@ namespace SportGest
         public string language = "";
         public bool salir_login = false;
         public const string PIN = "0000";
-        private bool foco_nueva_nota = false;
         public Principal()
         {
             InitializeComponent();

@@ -16,5 +16,10 @@ namespace SportGest
         {
             InitializeComponent();
         }
+
+        private void Opciones_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

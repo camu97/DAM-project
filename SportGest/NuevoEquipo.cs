@@ -61,9 +61,10 @@ namespace SportGest
 
         private void btnAñadirEquipo_Click(object sender, EventArgs e)
         {
+            error = false;
             for (int i = 0; i < this.Controls.Count; i++)
             {
-                if (this.Controls[i] is TextBox && this.Controls[i].Text.Equals(""))
+                if (this.Controls[i] is TextBox && this.Controls[i].Text.Equals("") && !this.Controls[i].Name.Equals("tbObservaciones"))
                 {
                     error = true;
                 }
