@@ -59,33 +59,29 @@ namespace SportGest
 
         private void listEquipos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
+
+            listJugadores.Items.Clear();
+            using (SqlConnection connection = new SqlConnection(sCnn))
             {
-                listJugadores.Items.Clear();
-                using (SqlConnection connection = new SqlConnection(sCnn))
+                try
                 {
                     connection.Open();
                     DataTable dt;
-                    try
+                    dt = jugadoresAdapter.GetData();
+                    foreach (DataRow dr in dt.Rows)
                     {
-                        dt = jugadoresTableAdapter1.GetData();
-                        foreach (DataRow dr in dt.Rows)
+                        if (dr["equipo"].Equals(listEquipos.SelectedItem.ToString().Split('-')[0].Split('|')[1].Trim()))
                         {
-                            if (dr["equipo"].Equals(listEquipos.SelectedItem.ToString().Split('-')[0].Split('|')[1].Trim()))
-                            {
-                                listJugadores.Items.Add(dr["Id"].ToString() + "| " + dr["num"].ToString() + " - " + dr["nick"].ToString());
-                            }
+                            listJugadores.Items.Add(dr["Id"].ToString() + "| " + dr["num"].ToString() + " - " + dr["nick"].ToString());
                         }
                     }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-
                 }
+                catch (NullReferenceException) { }
+                catch (SqlException) { }
             }
-            catch (NullReferenceException) { }
         }
+
+
 
         private void listJugadores_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -97,7 +93,7 @@ namespace SportGest
                     DataTable dt = new DataTable();
                     try
                     {
-                        dt = jugadoresTableAdapter1.GetData();
+                        dt = jugadoresAdapter.GetData();
                         foreach (DataRow dr in dt.Rows)
                         {
                             if (dr["nick"].Equals(listJugadores.SelectedItem.ToString().Split('-')[1].Trim()))
@@ -126,9 +122,9 @@ namespace SportGest
 
         private void btnBorrarJugador_Click(object sender, EventArgs e)
         {
-            if (listJugadores.SelectedIndices.Count > 1)
+            if (listJugadores.SelectedIndices.Count == 1)
             {
-                jugadoresTableAdapter1.Delete(int.Parse(listJugadores.SelectedItem.ToString().Split('|')[0]));
+                jugadoresAdapter.Delete(int.Parse(listJugadores.SelectedItem.ToString().Split('|')[0]));
                 listJugadores.Items.Remove(listJugadores.SelectedItem);
                 listJugadores.Refresh();
                 listJugadores.SelectedItem = null;
@@ -137,7 +133,7 @@ namespace SportGest
 
         private void editarJugador_Click(object sender, EventArgs e)
         {
-            if (listJugadores.SelectedIndices.Count > 1)
+            if (listJugadores.SelectedIndices.Count == 1)
             {
                 NuevoJugador nj = new NuevoJugador();
                 nj.editar = true;
@@ -149,7 +145,7 @@ namespace SportGest
 
         private void editarEquipo_Click(object sender, EventArgs e)
         {
-            if (listEquipos.SelectedIndices.Count > 1)
+            if (listEquipos.SelectedIndices.Count == 1)
             {
                 NuevoEquipo ne = new NuevoEquipo();
                 ne.editar = true;
@@ -161,7 +157,7 @@ namespace SportGest
 
         private void borrarEquipo_Click(object sender, EventArgs e)
         {
-            if (listEquipos.SelectedIndices.Count > 1)
+            if (listEquipos.SelectedIndices.Count == 1)
             {
                 equiposTableAdapter.Delete(int.Parse(listEquipos.SelectedItem.ToString().Split('|')[0]));
                 listEquipos.Items.Remove(listJugadores.SelectedItem);

@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.btnNuevoPartido = new System.Windows.Forms.Button();
             this.btnGestionEquipo = new System.Windows.Forms.Button();
-            this.btnHistorial = new System.Windows.Forms.Button();
+            this.btnHistorialEntrenamientos = new System.Windows.Forms.Button();
             this.btnNuevoEntrenamiento = new System.Windows.Forms.Button();
             this.calendar = new System.Windows.Forms.MonthCalendar();
             this.ListaMensajes = new System.Windows.Forms.ListBox();
@@ -49,11 +49,10 @@
             this.tbLeerNotas = new System.Windows.Forms.TextBox();
             this.btnEliminarNota = new System.Windows.Forms.Button();
             this.notasTableAdapter = new SportGest.SportGestDataSetTableAdapters.NotasTableAdapter();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnHistorialPartidos = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.notasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sportGestDataSet)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnNuevoPartido
@@ -64,10 +63,10 @@
             this.btnNuevoPartido.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnNuevoPartido.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnNuevoPartido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevoPartido.Location = new System.Drawing.Point(21, 119);
+            this.btnNuevoPartido.Location = new System.Drawing.Point(21, 99);
             this.btnNuevoPartido.Name = "btnNuevoPartido";
-            this.btnNuevoPartido.Size = new System.Drawing.Size(192, 35);
-            this.btnNuevoPartido.TabIndex = 2;
+            this.btnNuevoPartido.Size = new System.Drawing.Size(192, 42);
+            this.btnNuevoPartido.TabIndex = 0;
             this.btnNuevoPartido.Text = "Nuevo &partido";
             this.btnNuevoPartido.UseVisualStyleBackColor = false;
             this.btnNuevoPartido.Click += new System.EventHandler(this.btnNuevoPartido_Click);
@@ -80,29 +79,29 @@
             this.btnGestionEquipo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnGestionEquipo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGestionEquipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGestionEquipo.Location = new System.Drawing.Point(21, 207);
+            this.btnGestionEquipo.Location = new System.Drawing.Point(21, 147);
             this.btnGestionEquipo.Name = "btnGestionEquipo";
-            this.btnGestionEquipo.Size = new System.Drawing.Size(192, 35);
-            this.btnGestionEquipo.TabIndex = 3;
+            this.btnGestionEquipo.Size = new System.Drawing.Size(192, 42);
+            this.btnGestionEquipo.TabIndex = 2;
             this.btnGestionEquipo.Text = "&Gestión de equipo";
             this.btnGestionEquipo.UseVisualStyleBackColor = false;
             this.btnGestionEquipo.Click += new System.EventHandler(this.btnGestionEquipo_Click);
             // 
-            // btnHistorial
+            // btnHistorialEntrenamientos
             // 
-            this.btnHistorial.BackColor = System.Drawing.SystemColors.Control;
-            this.btnHistorial.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnHistorial.FlatAppearance.BorderColor = System.Drawing.Color.ForestGreen;
-            this.btnHistorial.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnHistorial.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnHistorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHistorial.Location = new System.Drawing.Point(21, 248);
-            this.btnHistorial.Name = "btnHistorial";
-            this.btnHistorial.Size = new System.Drawing.Size(192, 33);
-            this.btnHistorial.TabIndex = 4;
-            this.btnHistorial.Text = "&Historial";
-            this.btnHistorial.UseVisualStyleBackColor = false;
-            this.btnHistorial.Click += new System.EventHandler(this.btnHistorial_Click);
+            this.btnHistorialEntrenamientos.BackColor = System.Drawing.SystemColors.Control;
+            this.btnHistorialEntrenamientos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnHistorialEntrenamientos.FlatAppearance.BorderColor = System.Drawing.Color.ForestGreen;
+            this.btnHistorialEntrenamientos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnHistorialEntrenamientos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnHistorialEntrenamientos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHistorialEntrenamientos.Location = new System.Drawing.Point(21, 195);
+            this.btnHistorialEntrenamientos.Name = "btnHistorialEntrenamientos";
+            this.btnHistorialEntrenamientos.Size = new System.Drawing.Size(192, 40);
+            this.btnHistorialEntrenamientos.TabIndex = 3;
+            this.btnHistorialEntrenamientos.Text = "&Historial de entrenamientos";
+            this.btnHistorialEntrenamientos.UseVisualStyleBackColor = false;
+            this.btnHistorialEntrenamientos.Click += new System.EventHandler(this.btnHistorial_Click);
             // 
             // btnNuevoEntrenamiento
             // 
@@ -112,10 +111,10 @@
             this.btnNuevoEntrenamiento.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnNuevoEntrenamiento.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnNuevoEntrenamiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevoEntrenamiento.Location = new System.Drawing.Point(21, 163);
+            this.btnNuevoEntrenamiento.Location = new System.Drawing.Point(21, 51);
             this.btnNuevoEntrenamiento.Name = "btnNuevoEntrenamiento";
-            this.btnNuevoEntrenamiento.Size = new System.Drawing.Size(192, 35);
-            this.btnNuevoEntrenamiento.TabIndex = 5;
+            this.btnNuevoEntrenamiento.Size = new System.Drawing.Size(192, 42);
+            this.btnNuevoEntrenamiento.TabIndex = 1;
             this.btnNuevoEntrenamiento.Text = "Nuevo &entrenamiento";
             this.btnNuevoEntrenamiento.UseVisualStyleBackColor = false;
             this.btnNuevoEntrenamiento.Click += new System.EventHandler(this.btnNuevoEntrenamiento_Click);
@@ -127,7 +126,7 @@
             this.calendar.MaxSelectionCount = 1;
             this.calendar.Name = "calendar";
             this.calendar.ShowToday = false;
-            this.calendar.TabIndex = 5;
+            this.calendar.TabIndex = 0;
             // 
             // ListaMensajes
             // 
@@ -138,7 +137,7 @@
             this.ListaMensajes.Location = new System.Drawing.Point(239, 245);
             this.ListaMensajes.Name = "ListaMensajes";
             this.ListaMensajes.Size = new System.Drawing.Size(346, 132);
-            this.ListaMensajes.TabIndex = 7;
+            this.ListaMensajes.TabIndex = 6;
             this.ListaMensajes.SelectedIndexChanged += new System.EventHandler(this.ListaMensajes_SelectedIndexChanged);
             // 
             // notasBindingSource
@@ -155,10 +154,11 @@
             // 
             this.tbNuevaNota.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbNuevaNota.Location = new System.Drawing.Point(239, 119);
+            this.tbNuevaNota.MaxLength = 500;
             this.tbNuevaNota.Multiline = true;
             this.tbNuevaNota.Name = "tbNuevaNota";
             this.tbNuevaNota.Size = new System.Drawing.Size(346, 79);
-            this.tbNuevaNota.TabIndex = 9;
+            this.tbNuevaNota.TabIndex = 4;
             // 
             // label2
             // 
@@ -180,7 +180,7 @@
             this.btnAñadirNota.Location = new System.Drawing.Point(239, 204);
             this.btnAñadirNota.Name = "btnAñadirNota";
             this.btnAñadirNota.Size = new System.Drawing.Size(346, 22);
-            this.btnAñadirNota.TabIndex = 12;
+            this.btnAñadirNota.TabIndex = 5;
             this.btnAñadirNota.Text = "Añadir";
             this.btnAñadirNota.UseVisualStyleBackColor = false;
             this.btnAñadirNota.Click += new System.EventHandler(this.btnAñadirNota_Click);
@@ -199,10 +199,10 @@
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Pristina", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.ForeColor = System.Drawing.Color.ForestGreen;
-            this.lblName.Location = new System.Drawing.Point(174, 31);
+            this.lblName.Location = new System.Drawing.Point(299, 31);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(251, 85);
-            this.lblName.TabIndex = 14;
+            this.lblName.TabIndex = 0;
             this.lblName.Text = "SportGest";
             this.lblName.UseMnemonic = false;
             // 
@@ -214,14 +214,15 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(605, 24);
-            this.menuStrip1.TabIndex = 15;
+            this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // itemSalir
             // 
             this.itemSalir.Name = "itemSalir";
+            this.itemSalir.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
             this.itemSalir.Size = new System.Drawing.Size(41, 20);
-            this.itemSalir.Text = "Salir";
+            this.itemSalir.Text = "&Salir";
             this.itemSalir.Click += new System.EventHandler(this.Salir_Click);
             // 
             // itemSobre
@@ -240,7 +241,7 @@
             this.tbLeerNotas.ReadOnly = true;
             this.tbLeerNotas.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tbLeerNotas.Size = new System.Drawing.Size(289, 72);
-            this.tbLeerNotas.TabIndex = 16;
+            this.tbLeerNotas.TabIndex = 7;
             // 
             // btnEliminarNota
             // 
@@ -252,7 +253,7 @@
             this.btnEliminarNota.Location = new System.Drawing.Point(534, 383);
             this.btnEliminarNota.Name = "btnEliminarNota";
             this.btnEliminarNota.Size = new System.Drawing.Size(51, 72);
-            this.btnEliminarNota.TabIndex = 17;
+            this.btnEliminarNota.TabIndex = 8;
             this.btnEliminarNota.Text = "Eliminar nota";
             this.btnEliminarNota.UseVisualStyleBackColor = false;
             this.btnEliminarNota.Click += new System.EventHandler(this.btnEliminarNota_Click);
@@ -261,16 +262,21 @@
             // 
             this.notasTableAdapter.ClearBeforeFill = true;
             // 
-            // pictureBox1
+            // btnHistorialPartidos
             // 
-            this.pictureBox1.Image = global::SportGest.Properties.Resources.opciones;
-            this.pictureBox1.Location = new System.Drawing.Point(557, 27);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(36, 34);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 18;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.btnHistorialPartidos.BackColor = System.Drawing.SystemColors.Control;
+            this.btnHistorialPartidos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnHistorialPartidos.FlatAppearance.BorderColor = System.Drawing.Color.ForestGreen;
+            this.btnHistorialPartidos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnHistorialPartidos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnHistorialPartidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHistorialPartidos.Location = new System.Drawing.Point(21, 241);
+            this.btnHistorialPartidos.Name = "btnHistorialPartidos";
+            this.btnHistorialPartidos.Size = new System.Drawing.Size(192, 40);
+            this.btnHistorialPartidos.TabIndex = 14;
+            this.btnHistorialPartidos.Text = "&Historial de partidos";
+            this.btnHistorialPartidos.UseVisualStyleBackColor = false;
+            this.btnHistorialPartidos.Click += new System.EventHandler(this.btnHistorialPartidos_Click);
             // 
             // Principal
             // 
@@ -279,7 +285,7 @@
             this.BackColor = System.Drawing.Color.Lavender;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(605, 475);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.btnHistorialPartidos);
             this.Controls.Add(this.btnEliminarNota);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbLeerNotas);
@@ -289,7 +295,7 @@
             this.Controls.Add(this.ListaMensajes);
             this.Controls.Add(this.calendar);
             this.Controls.Add(this.btnNuevoEntrenamiento);
-            this.Controls.Add(this.btnHistorial);
+            this.Controls.Add(this.btnHistorialEntrenamientos);
             this.Controls.Add(this.btnGestionEquipo);
             this.Controls.Add(this.btnNuevoPartido);
             this.Controls.Add(this.menuStrip1);
@@ -311,7 +317,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.sportGestDataSet)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -320,7 +325,7 @@
         #endregion
         private System.Windows.Forms.Button btnNuevoPartido;
         private System.Windows.Forms.Button btnGestionEquipo;
-        private System.Windows.Forms.Button btnHistorial;
+        private System.Windows.Forms.Button btnHistorialEntrenamientos;
         private System.Windows.Forms.Button btnNuevoEntrenamiento;
         private System.Windows.Forms.MonthCalendar calendar;
         private System.Windows.Forms.ListBox ListaMensajes;
@@ -337,7 +342,7 @@
         private SportGestDataSet sportGestDataSet;
         private SportGestDataSetTableAdapters.NotasTableAdapter notasTableAdapter;
         private System.Windows.Forms.BindingSource notasBindingSource;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnHistorialPartidos;
     }
 }
 

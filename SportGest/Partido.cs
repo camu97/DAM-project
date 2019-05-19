@@ -14,10 +14,10 @@ namespace SportGest
     public partial class Partido : Form
     {
         string sCnn = "Data Source = (localdb)\\mssqllocaldb; Initial Catalog = SportGest; Integrated Security = True; Pooling = False";
-        string resultado = "", tipo = "", condicion = "";
+        string resultado = "", tipo = "", condicion = "Local";
         string cambios = "", suplentes = "";
         List<string> equipoTitular, titulares;
-        bool error = false;
+        bool error = false, p_prog = false;
         public Partido()
         {
             InitializeComponent();
@@ -31,10 +31,13 @@ namespace SportGest
             tbLocal.Clear();
             try
             {
-                tbVisitante.Text = cbEquipo.SelectedItem.ToString();
                 condicion = "Visitante";
+                tbVisitante.Text = cbEquipo.SelectedItem.ToString();
             }
-            catch (NullReferenceException) { }
+            catch (NullReferenceException exc)
+            {
+                //MessageBox.Show(exc.Message);
+            }
         }
 
         private void rbLocal_CheckedChanged(object sender, EventArgs e)
@@ -43,10 +46,13 @@ namespace SportGest
             tbVisitante.Clear();
             try
             {
-                tbLocal.Text = cbEquipo.SelectedItem.ToString();
                 condicion = "Local";
+                tbLocal.Text = cbEquipo.SelectedItem.ToString();
             }
-            catch (NullReferenceException) { }
+            catch (NullReferenceException exc)
+            {
+                //MessageBox.Show(exc.Message);
+            }
         }
 
         private void Partido_Load(object sender, EventArgs e)
@@ -177,7 +183,68 @@ namespace SportGest
 
         private void cbCompeticion_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (cbCompetición.SelectedItem.ToString().Equals("Liga"))
+            {
+                tbJornada.Enabled = true;
+            }
+            else
+            {
+                tbJornada.Enabled = false;
+            }
+        }
 
+        private void cancelarPartido_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void tbHora_TextChanged(object sender, EventArgs e)
+        {
+            if (tbHora.TextLength == 5)
+            {
+                try
+                {
+                    int.Parse(tbHora.Text.Split(':')[0]);
+                    int.Parse(tbHora.Text.Split(':')[1]);
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("Por favor, introducir una HORA válida");
+                }
+            }
+        }
+
+        private void tbFecha_TextChanged(object sender, EventArgs e)
+        {
+            if (tbFecha.TextLength == 10)
+            {
+                try
+                {
+                    int.Parse(tbFecha.Text.Split('/')[0]);
+                    int.Parse(tbFecha.Text.Split('/')[1]);
+                    int.Parse(tbFecha.Text.Split('/')[2]);
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("Por favor, introducir una FECHA válida");
+                }
+            }
+        }
+
+        private void Partido_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!p_prog)
+            {
+                if (DialogResult.No == MessageBox.Show("¿Deseas cancelar este partido?", "Cancelar partido", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+                {
+                    if (DialogResult.No == MessageBox.Show
+                    ("¿Deseas abandonar la aplicación?", "Salir", MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question))
+                    {
+                        e.Cancel = true;
+                    }
+                }
+            }
         }
 
         private void seleccionarTitular_Click(object sender, EventArgs e)
@@ -201,13 +268,19 @@ namespace SportGest
                     titulares.Add(listJugadores.SelectedItems[i].ToString().Split('-')[1].Trim());
                     equipoTitular.Add(listJugadores.SelectedItems[i].ToString().Split('-')[0].Trim());
                 }
-                for (int i = 0; i < listJugadores.Items.Count; i++)
+
+
+                if (listJugadores.Items.Count == listJugadores.SelectedIndices.Count)
                 {
-                    for (int j = 0; j < listJugadores.SelectedIndices.Count; j++)
+                    suplentes = "Sin suplentes";
+                }
+                else
+                {
+                    for (int i = 0; i < listJugadores.Items.Count; i++)
                     {
-                        if (!listJugadores.Items[i].ToString().Split('-')[1].Trim().Equals(listJugadores.SelectedItems[j].ToString().Split('-')[1].Trim()))
+                        if (!equipoTitular.Contains(listJugadores.Items[i].ToString().Split('-')[0].Trim()))
                         {
-                            suplentes += listJugadores.Items[i].ToString().Split('-')[1].Trim() + ",";
+                            suplentes += listJugadores.Items[i].ToString().Split('-')[0].Trim() + "|";
                         }
                     }
                 }
@@ -235,10 +308,18 @@ namespace SportGest
             error = false;
             for (int i = 0; i < this.Controls.Count; i++)
             {
-                if (this.Controls[i] is TextBox && this.Controls[i].Text.Equals(""))
+                if (this.Controls[i] is TextBox && this.Controls[i].Text.Equals("") && !this.Controls[i].Name.Equals("tbJornada"))
                 {
                     error = true;
                 }
+            }
+            try
+            {
+                DateTime.Parse(tbFecha.Text);
+            }
+            catch (FormatException)
+            {
+                error = true;
             }
             if (!error)
             {
@@ -247,6 +328,8 @@ namespace SportGest
                     try
                     {
                         connection.Open();
+
+
                         if (int.Parse(resultLocal.Text) > int.Parse(resultVisitante.Text))
                         {
                             if (condicion.Equals("Local"))
@@ -289,19 +372,32 @@ namespace SportGest
                         {
                             suplentes = "Sin jugadores suplentes";
                         }
-                        string tit = "|";
+                        string tit = "";
                         foreach (string s in equipoTitular)
                         {
                             tit += s + "|";
                         }
+                        tit = tit.Substring(0, tit.Length - 1);
+
+                        string j;
+                        if (tbJornada.Enabled)
+                        {
+                            j = tbJornada.Text;
+                        }
+                        else
+                        {
+                            j = null;
+                        }
+
                         partidosAdapter.Insert(
-                            DateTime.Parse(date.Value.ToString().Split(' ')[0].TrimEnd() + " " + tbHora.Text),
+                            DateTime.Parse(tbFecha.Text + " " + tbHora.Text),
                             tbLocal.Text,
                             tbVisitante.Text,
                             int.Parse(resultLocal.Text),
                             int.Parse(resultVisitante.Text),
                             resultado,
-                            int.Parse(tbJornada.Text),
+                            j,
+                            cbCompetición.SelectedItem.ToString(),
                             tbCampo.Text,
                             tbEstAtq.Text,
                             tbEstDef.Text,
@@ -314,7 +410,9 @@ namespace SportGest
                             cambios,
                             condicion
                         );
-
+                        p_prog = true;
+                        MessageBox.Show("Partido añadido", "Partidos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
                     }
                     catch (SqlException sqle)
                     {
@@ -324,7 +422,7 @@ namespace SportGest
             }
             else
             {
-                MessageBox.Show("Algún campo vacío", "Erorr", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Algún campo incorrecto o  vacío", "Erorr", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

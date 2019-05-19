@@ -14,9 +14,7 @@ namespace SportGest
 {
     public partial class Principal : Form
     {
-        public string language = "";
-        public bool salir_login = false;
-        public const string PIN = "0000";
+        string sCnn = "Data Source = (localdb)\\mssqllocaldb; Initial Catalog = SportGest; Integrated Security = True; Pooling = False";
         public Principal()
         {
             InitializeComponent();
@@ -30,13 +28,12 @@ namespace SportGest
 
         private void Principal_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (!salir_login)
-                if (DialogResult.No == MessageBox.Show
-                    ("¿Deseas abandonar la aplicación?", "Salir", MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question))
-                {
-                    e.Cancel = true;
-                }
+            if (DialogResult.No == MessageBox.Show
+                ("¿Deseas abandonar la aplicación?", "Salir", MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question))
+            {
+                e.Cancel = true;
+            }
         }
 
         private void Salir_Click(object sender, EventArgs e)
@@ -46,12 +43,6 @@ namespace SportGest
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Seguridad securityForm = new Seguridad(this);
-            //securityForm.ShowDialog();
-
-            string sCnn;
-            sCnn = "Data Source = (localdb)\\mssqllocaldb; Initial Catalog = SportGest; Integrated Security = True; Pooling = False";
-
             using (SqlConnection connection = new SqlConnection(sCnn))
             {
                 connection.Open();
@@ -78,8 +69,6 @@ namespace SportGest
         {
             if (tbNuevaNota.Text.Length != 0)
             {
-                string sCnn;
-                sCnn = "Data Source = (localdb)\\mssqllocaldb; Initial Catalog = SportGest; Integrated Security = True; Pooling = False";
                 DataTable dt = new DataTable();
 
                 using (SqlConnection connection = new SqlConnection(sCnn))
@@ -114,8 +103,8 @@ namespace SportGest
 
         private void btnHistorial_Click(object sender, EventArgs e)
         {
-            Historial h = new Historial();
-            h.ShowDialog();
+            HistorialEntrenamientos he = new HistorialEntrenamientos();
+            he.ShowDialog();
 
         }
 
@@ -149,10 +138,10 @@ namespace SportGest
             tbLeerNotas.Clear();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void btnHistorialPartidos_Click(object sender, EventArgs e)
         {
-            Opciones op = new Opciones();
-            op.Show();
+            HistorialPartidos hp = new HistorialPartidos();
+            hp.ShowDialog();
         }
 
 

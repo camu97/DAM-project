@@ -60,6 +60,7 @@
             this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre:";
+            this.toolTip1.SetToolTip(this.label1, "Nombre de jugador(a)");
             // 
             // label2
             // 
@@ -69,7 +70,7 @@
             this.label2.Size = new System.Drawing.Size(109, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Fecha de nacimiento:";
-            this.toolTip1.SetToolTip(this.label2, "Formato: dd/mm/aaaa");
+            this.toolTip1.SetToolTip(this.label2, "Fecha de nacimiento\\r\\nFormato: dd/mm/aaaa");
             // 
             // label3
             // 
@@ -79,6 +80,7 @@
             this.label3.Size = new System.Drawing.Size(50, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "Posición:";
+            this.toolTip1.SetToolTip(this.label3, "Seleccionar su posición habitual");
             // 
             // label4
             // 
@@ -88,6 +90,7 @@
             this.label4.Size = new System.Drawing.Size(43, 13);
             this.label4.TabIndex = 3;
             this.label4.Text = "Equipo:";
+            this.toolTip1.SetToolTip(this.label4, "Seleccionar equipo en el que juega");
             // 
             // label5
             // 
@@ -105,7 +108,7 @@
             this.tbNombre.Name = "tbNombre";
             this.tbNombre.Size = new System.Drawing.Size(139, 20);
             this.tbNombre.TabIndex = 0;
-            this.toolTip1.SetToolTip(this.tbNombre, "Máximo 50 caracteres");
+            this.toolTip1.SetToolTip(this.tbNombre, "Nombre de jugador(a)");
             // 
             // tbObservaciones
             // 
@@ -115,7 +118,7 @@
             this.tbObservaciones.Name = "tbObservaciones";
             this.tbObservaciones.Size = new System.Drawing.Size(320, 53);
             this.tbObservaciones.TabIndex = 6;
-            this.toolTip1.SetToolTip(this.tbObservaciones, "Máximo 300 caracteres");
+            this.toolTip1.SetToolTip(this.tbObservaciones, "Observaciones sobre el jugador\\r\\nMáximo 300 caracteres");
             // 
             // tbNacimiento
             // 
@@ -125,7 +128,7 @@
             this.tbNacimiento.Size = new System.Drawing.Size(80, 20);
             this.tbNacimiento.TabIndex = 2;
             this.tbNacimiento.Tag = "dd/mm/aaaa";
-            this.toolTip1.SetToolTip(this.tbNacimiento, "Formato: dd/mm/aaaa");
+            this.toolTip1.SetToolTip(this.tbNacimiento, "Fecha de nacimiento\\r\\nFormato: dd/mm/aaaa");
             // 
             // cbEquipos
             // 
@@ -134,6 +137,7 @@
             this.cbEquipos.Name = "cbEquipos";
             this.cbEquipos.Size = new System.Drawing.Size(132, 21);
             this.cbEquipos.TabIndex = 4;
+            this.toolTip1.SetToolTip(this.cbEquipos, "Seleccionar equipo en el que juega");
             // 
             // sportGestDataSet
             // 
@@ -157,6 +161,7 @@
             this.cbPosicion.Name = "cbPosicion";
             this.cbPosicion.Size = new System.Drawing.Size(80, 21);
             this.cbPosicion.TabIndex = 5;
+            this.toolTip1.SetToolTip(this.cbPosicion, "Seleccionar su posición habitual");
             // 
             // tbNick
             // 
@@ -165,7 +170,7 @@
             this.tbNick.Name = "tbNick";
             this.tbNick.Size = new System.Drawing.Size(75, 20);
             this.tbNick.TabIndex = 1;
-            this.toolTip1.SetToolTip(this.tbNick, "Máximo 20 caracteres");
+            this.toolTip1.SetToolTip(this.tbNick, "Nick de jugador(a)");
             // 
             // label6
             // 
@@ -175,6 +180,7 @@
             this.label6.Size = new System.Drawing.Size(32, 13);
             this.label6.TabIndex = 13;
             this.label6.Text = "Nick:";
+            this.toolTip1.SetToolTip(this.label6, "Nick de jugador(a)");
             // 
             // equiposTableAdapter
             // 
@@ -187,6 +193,7 @@
             this.tbNumero.Name = "tbNumero";
             this.tbNumero.Size = new System.Drawing.Size(27, 20);
             this.tbNumero.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.tbNumero, "Número de jugador(a)");
             // 
             // label7
             // 
@@ -196,6 +203,7 @@
             this.label7.Size = new System.Drawing.Size(47, 13);
             this.label7.TabIndex = 15;
             this.label7.Text = "Número:";
+            this.toolTip1.SetToolTip(this.label7, "Número de jugador(a)");
             // 
             // jugadoresAdapter
             // 

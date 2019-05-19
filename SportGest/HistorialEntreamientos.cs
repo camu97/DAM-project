@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace SportGest
 {
-    public partial class Historial : Form
+    public partial class HistorialEntrenamientos : Form
     {
         string sCnn = "Data Source = (localdb)\\mssqllocaldb; Initial Catalog = SportGest; Integrated Security = True; Pooling = False";
-        public Historial()
+        public HistorialEntrenamientos()
         {
             InitializeComponent();
         }
@@ -101,7 +101,9 @@ namespace SportGest
             {
                 try
                 {
-                    DataTable dt = entrenamientoAdapter.GetData();
+                    connection.Open();
+                    DataTable dt = new DataTable();
+                    dt = entrenamientoAdapter.GetData();
                     foreach (DataRow dr in dt.Rows)
                     {
                         listSesiones.Items.Add(dr["Id"] + " - " + dr["fecha"] + " - " + dr["equipo"] /*Se incluye la categoría*/ + " - " + dr["objetivo"]);

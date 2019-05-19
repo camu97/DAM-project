@@ -138,6 +138,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Equipo.cs" />
+    <Compile Include="HistorialPartidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HistorialPartidos.Designer.cs">
+      <DependentUpon>HistorialPartidos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Jugador.cs" />
     <Compile Include="NuevoEquipo.cs">
       <SubType>Form</SubType>
@@ -151,12 +157,6 @@
     <Compile Include="NuevoJugador.Designer.cs">
       <DependentUpon>NuevoJugador.cs</DependentUpon>
     </Compile>
-    <Compile Include="Opciones.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Opciones.Designer.cs">
-      <DependentUpon>Opciones.cs</DependentUpon>
-    </Compile>
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,17 +168,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Seguridad.cs">
+    <Compile Include="HistorialEntreamientos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Seguridad.Designer.cs">
-      <DependentUpon>Seguridad.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Historial.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Historial.Designer.cs">
-      <DependentUpon>Historial.cs</DependentUpon>
+    <Compile Include="HistorialEntreamientos.Designer.cs">
+      <DependentUpon>HistorialEntreamientos.cs</DependentUpon>
     </Compile>
     <Compile Include="Partido.cs">
       <SubType>Form</SubType>
@@ -208,23 +202,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SportGestDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="HistorialPartidos.resx">
+      <DependentUpon>HistorialPartidos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NuevoEquipo.resx">
       <DependentUpon>NuevoEquipo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NuevoJugador.resx">
       <DependentUpon>NuevoJugador.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Opciones.resx">
-      <DependentUpon>Opciones.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Seguridad.resx">
-      <DependentUpon>Seguridad.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Historial.resx">
-      <DependentUpon>Historial.cs</DependentUpon>
+    <EmbeddedResource Include="HistorialEntreamientos.resx">
+      <DependentUpon>HistorialEntreamientos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Partido.resx">
       <DependentUpon>Partido.cs</DependentUpon>

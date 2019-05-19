@@ -115,14 +115,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SportGest.exe" size="3232736">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SportGest.exe" size="3234784">
       <assemblyIdentity name="SportGest" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>j/FHXLiWvofRId6IDqN23OrO7ywRq0vKUC1bNw0qti0=</dsig:DigestValue>
+        <dsig:DigestValue>S+udXDWurcZ83MG4lvZNSesyzQ3Vpobv8JV9iGk8A0k=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

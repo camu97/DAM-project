@@ -81,6 +81,7 @@
             // tbLiga
             // 
             this.tbLiga.Location = new System.Drawing.Point(48, 72);
+            this.tbLiga.MaxLength = 50;
             this.tbLiga.Name = "tbLiga";
             this.tbLiga.Size = new System.Drawing.Size(242, 20);
             this.tbLiga.TabIndex = 2;

@@ -57,7 +57,7 @@
             this.lblNumero = new System.Windows.Forms.Label();
             this.sportGestDataSet = new SportGest.SportGestDataSet();
             this.equiposTableAdapter = new SportGest.SportGestDataSetTableAdapters.EquiposTableAdapter();
-            this.jugadoresTableAdapter1 = new SportGest.SportGestDataSetTableAdapters.JugadoresTableAdapter();
+            this.jugadoresAdapter = new SportGest.SportGestDataSetTableAdapters.JugadoresTableAdapter();
             this.contextMenuStrip1.SuspendLayout();
             this.contextMenuStrip2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -297,9 +297,9 @@
             // 
             this.equiposTableAdapter.ClearBeforeFill = true;
             // 
-            // jugadoresTableAdapter1
+            // jugadoresAdapter
             // 
-            this.jugadoresTableAdapter1.ClearBeforeFill = true;
+            this.jugadoresAdapter.ClearBeforeFill = true;
             // 
             // GestionEquipo
             // 
@@ -361,7 +361,7 @@
         private System.Windows.Forms.Label lblNumero;
         private SportGestDataSet sportGestDataSet;
         private SportGestDataSetTableAdapters.EquiposTableAdapter equiposTableAdapter;
-        private SportGestDataSetTableAdapters.JugadoresTableAdapter jugadoresTableAdapter1;
+        private SportGestDataSetTableAdapters.JugadoresTableAdapter jugadoresAdapter;
         private System.Windows.Forms.ToolStripMenuItem atrásToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;

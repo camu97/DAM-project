@@ -13,66 +13,26 @@ namespace SportGest
 {
     public partial class Entrenamiento : Form
     {
-        bool error = false;
+        bool error = false, e_prog = false;
         string sCnn = "Data Source = (localdb)\\mssqllocaldb; Initial Catalog = SportGest; Integrated Security = True; Pooling = False";
-        List<string> contMat_Calentamiento, contMat_Principal, contMat_Calma;
+
         public Entrenamiento()
         {
             InitializeComponent();
-            contMat_Calentamiento = new List<string>();
-            contMat_Principal = new List<string>();
-            contMat_Calma = new List<string>();
-        }
-
-        private void imgConoRojo_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void imgConoAzul_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void imgJugador_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void imgBalon_Click(object sender, EventArgs e)
-        {
 
         }
 
         private void cancelar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Cancelar entrenamiento", "¿Deseas cancelar la preparación de este entrenamiento? Perderás todo lo que hayas hecho", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                this.Close();
-            }
-        }
-
-        private void añadirMaterial_Click(object sender, EventArgs e)
-        {
-            if (((PictureBox)sender).Name.Contains("Calent"))
-            {
-                tbMateriaCalentamiento.AppendText(contMat_Calentamiento + ((PictureBox)sender).Tag + "\r\n");
-            }
-            else if (((PictureBox)sender).Name.Contains("Princi"))
-            {
-                tbMaterialPrincipal.AppendText( + ((PictureBox)sender).Tag + "\r\n");
-            }
-            else if (((PictureBox)sender).Name.Contains("Calm"))
-            {
-                tbMaterialCalma.AppendText( + ((PictureBox)sender).Tag + "\r\n");
-            }
+            this.Close();
         }
 
         private void btnProgramarSesion_Click(object sender, EventArgs e)
         {
+            error = false;
             for (int i = 0; i < this.Controls.Count; i++)
             {
-                if (this.Controls[i] is TextBox && this.Controls[i].Text.Equals(""))
+                if (this.Controls[i] is TextBox && this.Controls[i].Text.Equals("") && this.Controls[i].Name.Contains("Material"))
                 {
                     error = true;
                 }
@@ -84,16 +44,30 @@ namespace SportGest
                     try
                     {
                         connection.Open();
-                        entrenamientosAdapter.Insert(DateTime.Parse(fechaPicker.Text + tbHora.Text), tbObjetivo.Text,
-                            int.Parse(tbTiempoSesion.Text), tbDescripcionObjectivo.Text, tbDescipcionCalentamiento.Text,
-                            tbDescripcionPrincipal.Text, tbDescripcionCalma.Text, cbEquipo.SelectedItem.ToString(),
-                            int.Parse(tbTiempoCalentamiento.Text), int.Parse(tbTiempoPrincipal.Text), int.Parse(tbTiempoCalma.Text));
+                        entrenamientosAdapter.Insert(
+                            DateTime.Parse(tbFecha.Text + " " + tbHora.Text),
+                            tbObjetivo.Text,
+                            int.Parse(tbTiempoSesion.Text),
+                            tbDescripcionObjectivo.Text,
+                            tbDescipcionCalentamiento.Text,
+                            tbDescripcionPrincipal.Text,
+                            tbDescripcionCalma.Text,
+                            cbEquipo.SelectedItem.ToString(),
+                            int.Parse(tbTiempoCalentamiento.Text),
+                            int.Parse(tbTiempoPrincipal.Text),
+                            int.Parse(tbTiempoCalma.Text),
+                            tbMateriaCalentamiento.Text,
+                            tbMaterialPrincipal.Text,
+                            tbMaterialCalma.Text
+                          );
                     }
                     catch (SqlException ex)
                     {
                         MessageBox.Show(ex.Message);
                     }
-
+                    MessageBox.Show("Entrenamiento añadido");
+                    e_prog = true;
+                    this.Close();
                 }
             }
             else
@@ -123,5 +97,78 @@ namespace SportGest
             }
         }
 
+        private void Entrenamiento_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!e_prog)
+            {
+                if (DialogResult.No == MessageBox.Show
+                    ("¿Deseas abandonar la aplicación?", "Salir", MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question))
+                {
+                    e.Cancel = true;
+                }
+            }
+        }
+
+        private void tbTiempoSesion_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int.Parse(tbTiempoSesion.Text);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Por favor, introducir un número de minutos válido para la sesión");
+            }
+        }
+
+        private void tbHora_TextChanged(object sender, EventArgs e)
+        {
+            if (tbHora.TextLength == 5)
+            {
+                try
+                {
+                    int horas = int.Parse(tbHora.Text.Split(':')[0]);
+                    int minutos = int.Parse(tbHora.Text.Split(':')[1]);
+                    if (horas < 0 || horas > 23 || minutos > 59 || minutos < 0)
+                    {
+                        throw new FormatException();
+                    }
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("Por favor, introducir una HORA válida");
+                }
+            }
+        }
+
+        private void tbFecha_TextChanged(object sender, EventArgs e)
+        {
+            if (tbFecha.TextLength == 10)
+            {
+                try
+                {
+                    int.Parse(tbFecha.Text.Split('/')[0]);
+                    int.Parse(tbFecha.Text.Split('/')[1]);
+                    int.Parse(tbFecha.Text.Split('/')[2]);
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("Por favor, introducir una FECHA válida");
+                }
+            }
+        }
+
+        private void tbTiempoCalentamiento_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int.Parse(((TextBox)sender).Text);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Por favor, introducir un número de minutos válido para la parte de la sesión");
+            }
+        }
     }
 }
