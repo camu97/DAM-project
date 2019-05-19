@@ -73,7 +73,7 @@
             this.listJugadores.Location = new System.Drawing.Point(12, 48);
             this.listJugadores.Name = "listJugadores";
             this.listJugadores.Size = new System.Drawing.Size(176, 304);
-            this.listJugadores.TabIndex = 0;
+            this.listJugadores.TabIndex = 1;
             this.listJugadores.SelectedIndexChanged += new System.EventHandler(this.listJugadores_SelectedIndexChanged);
             // 
             // contextMenuStrip1
@@ -107,7 +107,7 @@
             this.listEquipos.Location = new System.Drawing.Point(211, 228);
             this.listEquipos.Name = "listEquipos";
             this.listEquipos.Size = new System.Drawing.Size(224, 124);
-            this.listEquipos.TabIndex = 1;
+            this.listEquipos.TabIndex = 0;
             this.listEquipos.SelectedIndexChanged += new System.EventHandler(this.listEquipos_SelectedIndexChanged);
             // 
             // contextMenuStrip2

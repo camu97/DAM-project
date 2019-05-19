@@ -66,7 +66,7 @@
             this.listSesiones.Location = new System.Drawing.Point(16, 214);
             this.listSesiones.Name = "listSesiones";
             this.listSesiones.Size = new System.Drawing.Size(424, 264);
-            this.listSesiones.TabIndex = 2;
+            this.listSesiones.TabIndex = 0;
             this.listSesiones.SelectedIndexChanged += new System.EventHandler(this.listSesiones_SelectedIndexChanged);
             // 
             // label2
@@ -229,7 +229,7 @@
             this.button1.Location = new System.Drawing.Point(273, 491);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(166, 23);
-            this.button1.TabIndex = 20;
+            this.button1.TabIndex = 1;
             this.button1.Text = "Volver al menú principal";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.btnMenu_Click);

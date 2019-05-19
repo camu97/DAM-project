@@ -94,22 +94,33 @@ namespace SportGest
                     dt = equiposAdapter.GetData();
                     foreach (DataRow dr in dt.Rows)
                     {
-                        switch (dr["categoria"].ToString())
-                        {
-                            case "MINIS":
-                            case "PREBENJAMIN":
-                            case "BENJAMIN":
-                            case "ALEVIN":
-                                tipo = "F8";
-                                break;
-                            case "INFANTIL":
-                            case "CADETE":
-                            case "JUVENIL":
-                            case "SENIOR":
-                            case "FEMENINO":
-                                tipo = "F11";
-                                break;
-                        }
+                        if (dr["nombre"].ToString().Equals(cbEquipo.SelectedItem.ToString().Split('-')[0].Trim()))
+                            switch (dr["categoria"].ToString())
+                            {
+                                case "MINIS":
+                                case "PREBENJAMIN":
+                                case "BENJAMIN":
+                                case "ALEVIN":
+                                    tipo = "F8";
+                                    cbCambio1.Enabled = false;
+                                    cbCambio2.Enabled = false;
+                                    cbCambio3.Enabled = false;
+                                    cbCambio4.Enabled = false;
+                                    cbCambio5.Enabled = false;
+                                    break;
+                                case "INFANTIL":
+                                case "CADETE":
+                                case "JUVENIL":
+                                case "SENIOR":
+                                case "FEMENINO":
+                                    tipo = "F11";
+                                    cbCambio1.Enabled = true;
+                                    cbCambio2.Enabled = true;
+                                    cbCambio3.Enabled = true;
+                                    cbCambio4.Enabled = true;
+                                    cbCambio5.Enabled = true;
+                                    break;
+                            }
                         lblTipo.Text = "[" + tipo + "]";
                     }
 
@@ -200,7 +211,7 @@ namespace SportGest
                         }
                     }
                 }
-                MessageBox.Show("Titulares y suplentes confirmados", "Equipo titular", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Titulares y suplentes confirmados", "Equipo de partido", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 //}
                 //catch (NullReferenceException nre)
                 //{
@@ -262,17 +273,53 @@ namespace SportGest
                         {
                             resultado = "EMPATE";
                         }
-                        cambios.Substring(0, cambios.Length - 1);
-                        suplentes.Substring(0, suplentes.Length - 1);
+                        try
+                        {
+                            cambios.Substring(0, cambios.Length - 1);
+                        }
+                        catch (ArgumentOutOfRangeException)
+                        {
+                            cambios = "Sin cambios";
+                        }
+                        try
+                        {
+                            suplentes.Substring(0, suplentes.Length - 1);
+                        }
+                        catch (ArgumentOutOfRangeException)
+                        {
+                            suplentes = "Sin jugadores suplentes";
+                        }
                         string tit = "|";
                         foreach (string s in equipoTitular)
                         {
                             tit += s + "|";
                         }
-                        partidosAdapter.Insert(DateTime.Parse(date.Value + " " + tbHora.Text), tbLocal.Text, tbVisitante.Text, int.Parse(resultLocal.Text), int.Parse(resultVisitante.Text), resultado, int.Parse(tbJornada.Text), tbCampo.Text, tbEstAtq.Text, tbEstDef.Text, tbPosAtq.Text, tbPosDef.Text, tbCalentamiento.Text, tbObservaciones.Text, tit, suplentes, cambios, condicion);
+                        partidosAdapter.Insert(
+                            DateTime.Parse(date.Value.ToString().Split(' ')[0].TrimEnd() + " " + tbHora.Text),
+                            tbLocal.Text,
+                            tbVisitante.Text,
+                            int.Parse(resultLocal.Text),
+                            int.Parse(resultVisitante.Text),
+                            resultado,
+                            int.Parse(tbJornada.Text),
+                            tbCampo.Text,
+                            tbEstAtq.Text,
+                            tbEstDef.Text,
+                            tbPosAtq.Text,
+                            tbPosDef.Text,
+                            tbCalentamiento.Text,
+                            tbObservaciones.Text,
+                            tit,
+                            suplentes,
+                            cambios,
+                            condicion
+                        );
 
                     }
-                    catch (SqlException) { }
+                    catch (SqlException sqle)
+                    {
+                        MessageBox.Show(sqle.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
                 }
             }
             else

@@ -104,7 +104,7 @@
             this.tbNombre.MaxLength = 50;
             this.tbNombre.Name = "tbNombre";
             this.tbNombre.Size = new System.Drawing.Size(139, 20);
-            this.tbNombre.TabIndex = 5;
+            this.tbNombre.TabIndex = 0;
             this.toolTip1.SetToolTip(this.tbNombre, "Máximo 50 caracteres");
             // 
             // tbObservaciones
@@ -123,7 +123,7 @@
             this.tbNacimiento.MaxLength = 10;
             this.tbNacimiento.Name = "tbNacimiento";
             this.tbNacimiento.Size = new System.Drawing.Size(80, 20);
-            this.tbNacimiento.TabIndex = 8;
+            this.tbNacimiento.TabIndex = 2;
             this.tbNacimiento.Tag = "dd/mm/aaaa";
             this.toolTip1.SetToolTip(this.tbNacimiento, "Formato: dd/mm/aaaa");
             // 
@@ -133,7 +133,7 @@
             this.cbEquipos.Location = new System.Drawing.Point(61, 71);
             this.cbEquipos.Name = "cbEquipos";
             this.cbEquipos.Size = new System.Drawing.Size(132, 21);
-            this.cbEquipos.TabIndex = 9;
+            this.cbEquipos.TabIndex = 4;
             // 
             // sportGestDataSet
             // 
@@ -145,7 +145,7 @@
             this.btnAñadirJugador.Location = new System.Drawing.Point(141, 183);
             this.btnAñadirJugador.Name = "btnAñadirJugador";
             this.btnAñadirJugador.Size = new System.Drawing.Size(75, 23);
-            this.btnAñadirJugador.TabIndex = 10;
+            this.btnAñadirJugador.TabIndex = 7;
             this.btnAñadirJugador.Text = "Añadir";
             this.btnAñadirJugador.UseVisualStyleBackColor = true;
             this.btnAñadirJugador.Click += new System.EventHandler(this.btnAñadirJugador_Click);
@@ -156,7 +156,7 @@
             this.cbPosicion.Location = new System.Drawing.Point(255, 70);
             this.cbPosicion.Name = "cbPosicion";
             this.cbPosicion.Size = new System.Drawing.Size(80, 21);
-            this.cbPosicion.TabIndex = 11;
+            this.cbPosicion.TabIndex = 5;
             // 
             // tbNick
             // 
@@ -164,7 +164,7 @@
             this.tbNick.MaxLength = 20;
             this.tbNick.Name = "tbNick";
             this.tbNick.Size = new System.Drawing.Size(75, 20);
-            this.tbNick.TabIndex = 12;
+            this.tbNick.TabIndex = 1;
             this.toolTip1.SetToolTip(this.tbNick, "Máximo 20 caracteres");
             // 
             // label6
@@ -186,7 +186,7 @@
             this.tbNumero.MaxLength = 2;
             this.tbNumero.Name = "tbNumero";
             this.tbNumero.Size = new System.Drawing.Size(27, 20);
-            this.tbNumero.TabIndex = 14;
+            this.tbNumero.TabIndex = 3;
             // 
             // label7
             // 

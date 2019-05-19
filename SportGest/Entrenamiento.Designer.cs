@@ -186,7 +186,7 @@
             this.cbEquipo.Location = new System.Drawing.Point(83, 86);
             this.cbEquipo.Name = "cbEquipo";
             this.cbEquipo.Size = new System.Drawing.Size(217, 28);
-            this.cbEquipo.TabIndex = 6;
+            this.cbEquipo.TabIndex = 0;
             // 
             // lblObjectivo
             // 
@@ -207,7 +207,7 @@
             this.tbObjetivo.MaxLength = 50;
             this.tbObjetivo.Name = "tbObjetivo";
             this.tbObjetivo.Size = new System.Drawing.Size(552, 26);
-            this.tbObjetivo.TabIndex = 8;
+            this.tbObjetivo.TabIndex = 1;
             // 
             // label3
             // 
@@ -226,7 +226,7 @@
             this.fechaPicker.Location = new System.Drawing.Point(71, 137);
             this.fechaPicker.Name = "fechaPicker";
             this.fechaPicker.Size = new System.Drawing.Size(161, 26);
-            this.fechaPicker.TabIndex = 10;
+            this.fechaPicker.TabIndex = 3;
             this.fechaPicker.Value = new System.DateTime(2019, 4, 14, 0, 0, 0, 0);
             // 
             // label4
@@ -247,7 +247,7 @@
             this.tbDescripcionObjectivo.Multiline = true;
             this.tbDescripcionObjectivo.Name = "tbDescripcionObjectivo";
             this.tbDescripcionObjectivo.Size = new System.Drawing.Size(552, 51);
-            this.tbDescripcionObjectivo.TabIndex = 12;
+            this.tbDescripcionObjectivo.TabIndex = 5;
             // 
             // tbDescipcionCalentamiento
             // 
@@ -257,7 +257,7 @@
             this.tbDescipcionCalentamiento.Multiline = true;
             this.tbDescipcionCalentamiento.Name = "tbDescipcionCalentamiento";
             this.tbDescipcionCalentamiento.Size = new System.Drawing.Size(284, 110);
-            this.tbDescipcionCalentamiento.TabIndex = 13;
+            this.tbDescipcionCalentamiento.TabIndex = 6;
             // 
             // tbDescripcionCalma
             // 
@@ -267,7 +267,7 @@
             this.tbDescripcionCalma.Multiline = true;
             this.tbDescripcionCalma.Name = "tbDescripcionCalma";
             this.tbDescripcionCalma.Size = new System.Drawing.Size(284, 110);
-            this.tbDescripcionCalma.TabIndex = 14;
+            this.tbDescripcionCalma.TabIndex = 8;
             // 
             // tbDescripcionPrincipal
             // 
@@ -277,7 +277,7 @@
             this.tbDescripcionPrincipal.Multiline = true;
             this.tbDescripcionPrincipal.Name = "tbDescripcionPrincipal";
             this.tbDescripcionPrincipal.Size = new System.Drawing.Size(284, 110);
-            this.tbDescripcionPrincipal.TabIndex = 15;
+            this.tbDescripcionPrincipal.TabIndex = 7;
             // 
             // lblDescripcionCalentamiento
             // 
@@ -343,7 +343,7 @@
             this.tbTiempoCalentamiento.MaxLength = 2;
             this.tbTiempoCalentamiento.Name = "tbTiempoCalentamiento";
             this.tbTiempoCalentamiento.Size = new System.Drawing.Size(30, 26);
-            this.tbTiempoCalentamiento.TabIndex = 25;
+            this.tbTiempoCalentamiento.TabIndex = 0;
             // 
             // tbTiempoPrincipal
             // 
@@ -352,7 +352,7 @@
             this.tbTiempoPrincipal.MaxLength = 2;
             this.tbTiempoPrincipal.Name = "tbTiempoPrincipal";
             this.tbTiempoPrincipal.Size = new System.Drawing.Size(30, 26);
-            this.tbTiempoPrincipal.TabIndex = 26;
+            this.tbTiempoPrincipal.TabIndex = 0;
             // 
             // tbTiempoCalma
             // 
@@ -361,7 +361,7 @@
             this.tbTiempoCalma.MaxLength = 2;
             this.tbTiempoCalma.Name = "tbTiempoCalma";
             this.tbTiempoCalma.Size = new System.Drawing.Size(30, 26);
-            this.tbTiempoCalma.TabIndex = 27;
+            this.tbTiempoCalma.TabIndex = 0;
             // 
             // menuStrip1
             // 
@@ -430,6 +430,7 @@
             this.escaletaCalentamiento.TabIndex = 7;
             this.escaletaCalentamiento.TabStop = false;
             this.escaletaCalentamiento.Tag = "escalera(s)";
+            this.escaletaCalentamiento.Click += new System.EventHandler(this.añadirMaterial_Click);
             // 
             // contextMenuStrip1
             // 
@@ -466,6 +467,7 @@
             this.arosCalentamiento.TabIndex = 6;
             this.arosCalentamiento.TabStop = false;
             this.arosCalentamiento.Tag = "aro(s)";
+            this.arosCalentamiento.Click += new System.EventHandler(this.añadirMaterial_Click);
             // 
             // balonCalentamiento
             // 
@@ -478,6 +480,7 @@
             this.balonCalentamiento.TabIndex = 5;
             this.balonCalentamiento.TabStop = false;
             this.balonCalentamiento.Tag = "pelota(s)";
+            this.balonCalentamiento.Click += new System.EventHandler(this.añadirMaterial_Click);
             // 
             // jugadorCalentamiento
             // 
@@ -490,6 +493,7 @@
             this.jugadorCalentamiento.TabIndex = 4;
             this.jugadorCalentamiento.TabStop = false;
             this.jugadorCalentamiento.Tag = "jugador(es)";
+            this.jugadorCalentamiento.Click += new System.EventHandler(this.añadirMaterial_Click);
             // 
             // vallaCalentamiento
             // 
@@ -502,6 +506,7 @@
             this.vallaCalentamiento.TabIndex = 3;
             this.vallaCalentamiento.TabStop = false;
             this.vallaCalentamiento.Tag = "valla(s)";
+            this.vallaCalentamiento.Click += new System.EventHandler(this.añadirMaterial_Click);
             // 
             // picasCalentamiento
             // 
@@ -514,6 +519,7 @@
             this.picasCalentamiento.TabIndex = 2;
             this.picasCalentamiento.TabStop = false;
             this.picasCalentamiento.Tag = " pica(s)";
+            this.picasCalentamiento.Click += new System.EventHandler(this.añadirMaterial_Click);
             // 
             // setasCalentamiento
             // 
@@ -526,6 +532,7 @@
             this.setasCalentamiento.TabIndex = 1;
             this.setasCalentamiento.TabStop = false;
             this.setasCalentamiento.Tag = " seta(s)";
+            this.setasCalentamiento.Click += new System.EventHandler(this.añadirMaterial_Click);
             // 
             // conosCalentamiento
             // 
@@ -538,6 +545,7 @@
             this.conosCalentamiento.TabIndex = 0;
             this.conosCalentamiento.TabStop = false;
             this.conosCalentamiento.Tag = " cono(s)";
+            this.conosCalentamiento.Click += new System.EventHandler(this.añadirMaterial_Click);
             // 
             // groupBox1
             // 
@@ -585,7 +593,7 @@
             this.tbHora.Location = new System.Drawing.Point(351, 137);
             this.tbHora.Name = "tbHora";
             this.tbHora.Size = new System.Drawing.Size(84, 26);
-            this.tbHora.TabIndex = 46;
+            this.tbHora.TabIndex = 4;
             // 
             // gbCalma
             // 
@@ -616,6 +624,7 @@
             this.setasCaalma.TabIndex = 9;
             this.setasCaalma.TabStop = false;
             this.setasCaalma.Tag = " seta(s)";
+            this.setasCaalma.Click += new System.EventHandler(this.añadirMaterial_Click);
             // 
             // conosCalma
             // 
@@ -628,6 +637,7 @@
             this.conosCalma.TabIndex = 8;
             this.conosCalma.TabStop = false;
             this.conosCalma.Tag = " cono(s)";
+            this.conosCalma.Click += new System.EventHandler(this.añadirMaterial_Click);
             // 
             // escalerasCalma
             // 
@@ -640,6 +650,7 @@
             this.escalerasCalma.TabIndex = 7;
             this.escalerasCalma.TabStop = false;
             this.escalerasCalma.Tag = "escalera(s)";
+            this.escalerasCalma.Click += new System.EventHandler(this.añadirMaterial_Click);
             // 
             // arosCalma
             // 
@@ -652,6 +663,7 @@
             this.arosCalma.TabIndex = 6;
             this.arosCalma.TabStop = false;
             this.arosCalma.Tag = "aro(s)";
+            this.arosCalma.Click += new System.EventHandler(this.añadirMaterial_Click);
             // 
             // balonCalma
             // 
@@ -664,6 +676,7 @@
             this.balonCalma.TabIndex = 5;
             this.balonCalma.TabStop = false;
             this.balonCalma.Tag = "pelota(s)";
+            this.balonCalma.Click += new System.EventHandler(this.añadirMaterial_Click);
             // 
             // jugadorCalma
             // 
@@ -676,6 +689,7 @@
             this.jugadorCalma.TabIndex = 4;
             this.jugadorCalma.TabStop = false;
             this.jugadorCalma.Tag = "jugador(es)";
+            this.jugadorCalma.Click += new System.EventHandler(this.añadirMaterial_Click);
             // 
             // vallasCalma
             // 
@@ -688,6 +702,7 @@
             this.vallasCalma.TabIndex = 3;
             this.vallasCalma.TabStop = false;
             this.vallasCalma.Tag = "valla(s)";
+            this.vallasCalma.Click += new System.EventHandler(this.añadirMaterial_Click);
             // 
             // picasCalma
             // 
@@ -700,6 +715,7 @@
             this.picasCalma.TabIndex = 2;
             this.picasCalma.TabStop = false;
             this.picasCalma.Tag = " pica(s)";
+            this.picasCalma.Click += new System.EventHandler(this.añadirMaterial_Click);
             // 
             // gbPrincipal
             // 
@@ -730,6 +746,7 @@
             this.setasPrincipal.TabIndex = 9;
             this.setasPrincipal.TabStop = false;
             this.setasPrincipal.Tag = " seta(s)";
+            this.setasPrincipal.Click += new System.EventHandler(this.añadirMaterial_Click);
             // 
             // conosPrincipal
             // 
@@ -742,6 +759,7 @@
             this.conosPrincipal.TabIndex = 8;
             this.conosPrincipal.TabStop = false;
             this.conosPrincipal.Tag = " cono(s)";
+            this.conosPrincipal.Click += new System.EventHandler(this.añadirMaterial_Click);
             // 
             // escalerasPrincipal
             // 
@@ -754,6 +772,7 @@
             this.escalerasPrincipal.TabIndex = 7;
             this.escalerasPrincipal.TabStop = false;
             this.escalerasPrincipal.Tag = "escalera(s)";
+            this.escalerasPrincipal.Click += new System.EventHandler(this.añadirMaterial_Click);
             // 
             // arosPrincipal
             // 
@@ -766,6 +785,7 @@
             this.arosPrincipal.TabIndex = 6;
             this.arosPrincipal.TabStop = false;
             this.arosPrincipal.Tag = "aro(s)";
+            this.arosPrincipal.Click += new System.EventHandler(this.añadirMaterial_Click);
             // 
             // balonPrincipal
             // 
@@ -778,6 +798,7 @@
             this.balonPrincipal.TabIndex = 5;
             this.balonPrincipal.TabStop = false;
             this.balonPrincipal.Tag = "pelota(s)";
+            this.balonPrincipal.Click += new System.EventHandler(this.añadirMaterial_Click);
             // 
             // jugadorPrincipal
             // 
@@ -790,6 +811,7 @@
             this.jugadorPrincipal.TabIndex = 4;
             this.jugadorPrincipal.TabStop = false;
             this.jugadorPrincipal.Tag = "jugador(es)";
+            this.jugadorPrincipal.Click += new System.EventHandler(this.añadirMaterial_Click);
             // 
             // vallasPrincipal
             // 
@@ -802,6 +824,7 @@
             this.vallasPrincipal.TabIndex = 3;
             this.vallasPrincipal.TabStop = false;
             this.vallasPrincipal.Tag = "valla(s)";
+            this.vallasPrincipal.Click += new System.EventHandler(this.añadirMaterial_Click);
             // 
             // picasPrincipal
             // 
@@ -814,6 +837,7 @@
             this.picasPrincipal.TabIndex = 2;
             this.picasPrincipal.TabStop = false;
             this.picasPrincipal.Tag = " pica(s)";
+            this.picasPrincipal.Click += new System.EventHandler(this.añadirMaterial_Click);
             // 
             // imgCampoCalma
             // 
@@ -957,6 +981,7 @@
             this.ShowIcon = false;
             this.Text = "Hoja de entrenamiento";
             this.Load += new System.EventHandler(this.Entrenamiento_Load);
+            this.Click += new System.EventHandler(this.añadirMaterial_Click);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.gbCalentamiento.ResumeLayout(false);

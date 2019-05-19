@@ -471,7 +471,8 @@
             this.tbEstAtq.Location = new System.Drawing.Point(59, 87);
             this.tbEstAtq.Name = "tbEstAtq";
             this.tbEstAtq.Size = new System.Drawing.Size(98, 26);
-            this.tbEstAtq.TabIndex = 7;
+            this.tbEstAtq.TabIndex = 1;
+            this.tbEstAtq.Text = "qqqqq";
             // 
             // tbPosAtq
             // 
@@ -479,7 +480,8 @@
             this.tbPosAtq.Location = new System.Drawing.Point(69, 51);
             this.tbPosAtq.Name = "tbPosAtq";
             this.tbPosAtq.Size = new System.Drawing.Size(88, 26);
-            this.tbPosAtq.TabIndex = 6;
+            this.tbPosAtq.TabIndex = 0;
+            this.tbPosAtq.Text = "wwww";
             // 
             // label16
             // 
@@ -505,7 +507,8 @@
             this.tbEstDef.Location = new System.Drawing.Point(56, 92);
             this.tbEstDef.Name = "tbEstDef";
             this.tbEstDef.Size = new System.Drawing.Size(110, 26);
-            this.tbEstDef.TabIndex = 9;
+            this.tbEstDef.TabIndex = 1;
+            this.tbEstDef.Text = "llññññññ";
             // 
             // tbPosDef
             // 
@@ -513,7 +516,8 @@
             this.tbPosDef.Location = new System.Drawing.Point(71, 56);
             this.tbPosDef.Name = "tbPosDef";
             this.tbPosDef.Size = new System.Drawing.Size(95, 26);
-            this.tbPosDef.TabIndex = 8;
+            this.tbPosDef.TabIndex = 0;
+            this.tbPosDef.Text = "kkkkkk";
             // 
             // label17
             // 
@@ -564,14 +568,15 @@
             this.tbObservaciones.Multiline = true;
             this.tbObservaciones.Name = "tbObservaciones";
             this.tbObservaciones.Size = new System.Drawing.Size(448, 152);
-            this.tbObservaciones.TabIndex = 11;
+            this.tbObservaciones.TabIndex = 16;
+            this.tbObservaciones.Text = "dfgjnfgffsdg";
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(933, 569);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(204, 23);
-            this.button1.TabIndex = 13;
+            this.button1.TabIndex = 14;
             this.button1.Text = "Cerrar y añadir entrenamiento";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.AñadirPartido_Click);
@@ -593,7 +598,8 @@
             this.tbCalentamiento.Multiline = true;
             this.tbCalentamiento.Name = "tbCalentamiento";
             this.tbCalentamiento.Size = new System.Drawing.Size(275, 183);
-            this.tbCalentamiento.TabIndex = 15;
+            this.tbCalentamiento.TabIndex = 12;
+            this.tbCalentamiento.Text = "asdsadasdasdas";
             // 
             // listJugadores
             // 
@@ -604,7 +610,7 @@
             this.listJugadores.Name = "listJugadores";
             this.listJugadores.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.listJugadores.Size = new System.Drawing.Size(280, 199);
-            this.listJugadores.TabIndex = 16;
+            this.listJugadores.TabIndex = 10;
             // 
             // menuEquipoTitular
             // 
@@ -663,7 +669,7 @@
             this.tbLocal.Name = "tbLocal";
             this.tbLocal.ReadOnly = true;
             this.tbLocal.Size = new System.Drawing.Size(199, 26);
-            this.tbLocal.TabIndex = 20;
+            this.tbLocal.TabIndex = 1;
             this.toolTip1.SetToolTip(this.tbLocal, "Equipo local");
             // 
             // resultLocal
@@ -671,7 +677,8 @@
             this.resultLocal.Location = new System.Drawing.Point(283, 70);
             this.resultLocal.Name = "resultLocal";
             this.resultLocal.Size = new System.Drawing.Size(15, 20);
-            this.resultLocal.TabIndex = 21;
+            this.resultLocal.TabIndex = 3;
+            this.resultLocal.Text = "2";
             this.toolTip1.SetToolTip(this.resultLocal, "Rrsultado local");
             // 
             // resultVisitante
@@ -679,7 +686,8 @@
             this.resultVisitante.Location = new System.Drawing.Point(320, 70);
             this.resultVisitante.Name = "resultVisitante";
             this.resultVisitante.Size = new System.Drawing.Size(15, 20);
-            this.resultVisitante.TabIndex = 22;
+            this.resultVisitante.TabIndex = 4;
+            this.resultVisitante.Text = "1";
             this.toolTip1.SetToolTip(this.resultVisitante, "Resultado visitante");
             // 
             // tbVisitante
@@ -688,7 +696,8 @@
             this.tbVisitante.Location = new System.Drawing.Point(345, 65);
             this.tbVisitante.Name = "tbVisitante";
             this.tbVisitante.Size = new System.Drawing.Size(199, 26);
-            this.tbVisitante.TabIndex = 23;
+            this.tbVisitante.TabIndex = 2;
+            this.tbVisitante.Text = "aaaaaaa";
             this.toolTip1.SetToolTip(this.tbVisitante, "Equipo visitante");
             // 
             // groupBox1
@@ -698,7 +707,7 @@
             this.groupBox1.Location = new System.Drawing.Point(887, 55);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(199, 36);
-            this.groupBox1.TabIndex = 24;
+            this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Condición";
             // 
@@ -720,7 +729,7 @@
             this.rbLocal.Location = new System.Drawing.Point(15, 13);
             this.rbLocal.Name = "rbLocal";
             this.rbLocal.Size = new System.Drawing.Size(51, 17);
-            this.rbLocal.TabIndex = 0;
+            this.rbLocal.TabIndex = 1;
             this.rbLocal.TabStop = true;
             this.rbLocal.Text = "Local";
             this.rbLocal.UseVisualStyleBackColor = true;
@@ -747,7 +756,7 @@
             this.cbCompetición.Location = new System.Drawing.Point(103, 99);
             this.cbCompetición.Name = "cbCompetición";
             this.cbCompetición.Size = new System.Drawing.Size(82, 28);
-            this.cbCompetición.TabIndex = 26;
+            this.cbCompetición.TabIndex = 5;
             this.cbCompetición.SelectedIndexChanged += new System.EventHandler(this.cbCompeticion_SelectedIndexChanged);
             // 
             // tbCampo
@@ -756,7 +765,8 @@
             this.tbCampo.Location = new System.Drawing.Point(320, 100);
             this.tbCampo.Name = "tbCampo";
             this.tbCampo.Size = new System.Drawing.Size(309, 26);
-            this.tbCampo.TabIndex = 27;
+            this.tbCampo.TabIndex = 7;
+            this.tbCampo.Text = "navbia";
             this.toolTip1.SetToolTip(this.tbCampo, "Introducir campo");
             // 
             // label22
@@ -796,7 +806,7 @@
             this.cbEquipo.Location = new System.Drawing.Point(689, 65);
             this.cbEquipo.Name = "cbEquipo";
             this.cbEquipo.Size = new System.Drawing.Size(192, 28);
-            this.cbEquipo.TabIndex = 33;
+            this.cbEquipo.TabIndex = 0;
             this.cbEquipo.SelectedIndexChanged += new System.EventHandler(this.cbEquipo_SelectedIndexChanged);
             // 
             // label25
@@ -815,7 +825,8 @@
             this.tbHora.MaxLength = 5;
             this.tbHora.Name = "tbHora";
             this.tbHora.Size = new System.Drawing.Size(59, 26);
-            this.tbHora.TabIndex = 28;
+            this.tbHora.TabIndex = 9;
+            this.tbHora.Text = "19:00";
             this.toolTip1.SetToolTip(this.tbHora, "Formato: \"dd/mm/aaaa hh:mm\"");
             // 
             // jugadoresAdapter
@@ -836,7 +847,8 @@
             this.tbJornada.Location = new System.Drawing.Point(242, 99);
             this.tbJornada.Name = "tbJornada";
             this.tbJornada.Size = new System.Drawing.Size(20, 26);
-            this.tbJornada.TabIndex = 35;
+            this.tbJornada.TabIndex = 6;
+            this.tbJornada.Text = "1";
             // 
             // label26
             // 
@@ -852,7 +864,7 @@
             this.btnConfirmarAlineacion.Location = new System.Drawing.Point(542, 355);
             this.btnConfirmarAlineacion.Name = "btnConfirmarAlineacion";
             this.btnConfirmarAlineacion.Size = new System.Drawing.Size(280, 24);
-            this.btnConfirmarAlineacion.TabIndex = 37;
+            this.btnConfirmarAlineacion.TabIndex = 11;
             this.btnConfirmarAlineacion.Text = "Confirmar alineación";
             this.btnConfirmarAlineacion.UseVisualStyleBackColor = true;
             this.btnConfirmarAlineacion.Click += new System.EventHandler(this.btnConfirmarAlineacion_Click);
@@ -872,8 +884,9 @@
             this.date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.date.Location = new System.Drawing.Point(675, 100);
             this.date.Name = "date";
-            this.date.Size = new System.Drawing.Size(85, 26);
-            this.date.TabIndex = 39;
+            this.date.Size = new System.Drawing.Size(100, 26);
+            this.date.TabIndex = 8;
+            this.date.Value = new System.DateTime(2019, 5, 19, 0, 0, 0, 0);
             // 
             // label27
             // 
@@ -937,7 +950,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Partido";
-            this.Text = "Partido";
             this.Load += new System.EventHandler(this.Partido_Load);
             this.gbCambios.ResumeLayout(false);
             this.gbCambios.PerformLayout();

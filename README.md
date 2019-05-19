@@ -8,3 +8,5 @@ o
 6/5 - Modificada la pantalla de seguridad (fallos).Cambiado sistema de entrada.
 11/5 - Añadida base de datos al programa.
 13/5 - Implementado el trabajo con bases de datos en la pantalla principal.
+14/5,15/5,16/5 - Correciónde  disposición de pantallas, redistribución de controles y correción de errores o excepciones.
+18/5 - Optimización o correción del uso de la base de datos en todas las pantallas.

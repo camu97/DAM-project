@@ -15,9 +15,13 @@ namespace SportGest
     {
         bool error = false;
         string sCnn = "Data Source = (localdb)\\mssqllocaldb; Initial Catalog = SportGest; Integrated Security = True; Pooling = False";
+        List<string> contMat_Calentamiento, contMat_Principal, contMat_Calma;
         public Entrenamiento()
         {
             InitializeComponent();
+            contMat_Calentamiento = new List<string>();
+            contMat_Principal = new List<string>();
+            contMat_Calma = new List<string>();
         }
 
         private void imgConoRojo_Click(object sender, EventArgs e)
@@ -50,17 +54,17 @@ namespace SportGest
 
         private void añadirMaterial_Click(object sender, EventArgs e)
         {
-            if (((PictureBox)sender).Text.Contains("Calent"))
+            if (((PictureBox)sender).Name.Contains("Calent"))
             {
-                tbMateriaCalentamiento.AppendText("- " + cbAñadirMaterial.SelectedItem.ToString() + ((PictureBox)sender).Tag + "\r\n");
+                tbMateriaCalentamiento.AppendText(contMat_Calentamiento + ((PictureBox)sender).Tag + "\r\n");
             }
-            else if (((PictureBox)sender).Text.Contains("Princi"))
+            else if (((PictureBox)sender).Name.Contains("Princi"))
             {
-                tbMaterialPrincipal.AppendText("- " + cbAñadirMaterial.SelectedItem.ToString() + ((PictureBox)sender).Tag + "\r\n");
+                tbMaterialPrincipal.AppendText( + ((PictureBox)sender).Tag + "\r\n");
             }
-            else if (((PictureBox)sender).Text.Contains("Calm"))
+            else if (((PictureBox)sender).Name.Contains("Calm"))
             {
-                tbMaterialCalma.AppendText("- " + cbAñadirMaterial.SelectedItem.ToString() + ((PictureBox)sender).Tag + "\r\n");
+                tbMaterialCalma.AppendText( + ((PictureBox)sender).Tag + "\r\n");
             }
         }
 
@@ -118,5 +122,6 @@ namespace SportGest
 
             }
         }
+
     }
 }

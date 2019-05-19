@@ -76,14 +76,14 @@
             this.tbNombre.MaxLength = 50;
             this.tbNombre.Name = "tbNombre";
             this.tbNombre.Size = new System.Drawing.Size(190, 20);
-            this.tbNombre.TabIndex = 6;
+            this.tbNombre.TabIndex = 0;
             // 
             // tbLiga
             // 
             this.tbLiga.Location = new System.Drawing.Point(48, 72);
             this.tbLiga.Name = "tbLiga";
             this.tbLiga.Size = new System.Drawing.Size(242, 20);
-            this.tbLiga.TabIndex = 8;
+            this.tbLiga.TabIndex = 2;
             // 
             // tbObservaciones
             // 
@@ -91,7 +91,7 @@
             this.tbObservaciones.Multiline = true;
             this.tbObservaciones.Name = "tbObservaciones";
             this.tbObservaciones.Size = new System.Drawing.Size(344, 59);
-            this.tbObservaciones.TabIndex = 11;
+            this.tbObservaciones.TabIndex = 4;
             // 
             // label6
             // 
@@ -107,7 +107,7 @@
             this.btnAñadirEquipo.Location = new System.Drawing.Point(145, 218);
             this.btnAñadirEquipo.Name = "btnAñadirEquipo";
             this.btnAñadirEquipo.Size = new System.Drawing.Size(75, 23);
-            this.btnAñadirEquipo.TabIndex = 14;
+            this.btnAñadirEquipo.TabIndex = 5;
             this.btnAñadirEquipo.Text = "Añadir equipo";
             this.btnAñadirEquipo.UseVisualStyleBackColor = true;
             this.btnAñadirEquipo.Click += new System.EventHandler(this.btnAñadirEquipo_Click);
@@ -128,7 +128,7 @@
             this.cbCategoria.Location = new System.Drawing.Point(75, 43);
             this.cbCategoria.Name = "cbCategoria";
             this.cbCategoria.Size = new System.Drawing.Size(145, 21);
-            this.cbCategoria.TabIndex = 15;
+            this.cbCategoria.TabIndex = 1;
             // 
             // label4
             // 
@@ -145,7 +145,7 @@
             this.tbNumero.MaxLength = 2;
             this.tbNumero.Name = "tbNumero";
             this.tbNumero.Size = new System.Drawing.Size(24, 20);
-            this.tbNumero.TabIndex = 16;
+            this.tbNumero.TabIndex = 3;
             // 
             // equiposTableAdapter1
             // 
