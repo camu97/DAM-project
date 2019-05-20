@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +15,7 @@ namespace SportGest
     public partial class Entrenamiento : Form
     {
         bool error = false, e_prog = false;
-        string sCnn = Properties.Settings.Default.Conexion;
+        string sCnn = Properties.Settings.Default.SportGestConnection;
 
         public Entrenamiento()
         {
@@ -44,22 +45,22 @@ namespace SportGest
                     try
                     {
                         connection.Open();
-                        entrenamientosAdapter.Insert(
-                            DateTime.Parse(tbFecha.Text + " " + tbHora.Text),
-                            tbObjetivo.Text,
-                            int.Parse(tbTiempoSesion.Text),
-                            tbDescripcionObjectivo.Text,
-                            tbDescipcionCalentamiento.Text,
-                            tbDescripcionPrincipal.Text,
-                            tbDescripcionCalma.Text,
-                            cbEquipo.SelectedItem.ToString(),
-                            int.Parse(tbTiempoCalentamiento.Text),
-                            int.Parse(tbTiempoPrincipal.Text),
-                            int.Parse(tbTiempoCalma.Text),
-                            tbMateriaCalentamiento.Text,
-                            tbMaterialPrincipal.Text,
-                            tbMaterialCalma.Text
-                          );
+                        //entrenamientosAdapter.Insert(
+                          //  DateTime.Parse(tbFecha.Text + " " + tbHora.Text),
+                          //  tbObjetivo.Text,
+                          //  int.Parse(tbTiempoSesion.Text),
+                          //  tbDescripcionObjectivo.Text,
+                          //  tbDescipcionCalentamiento.Text,
+                          //  tbDescripcionPrincipal.Text,
+                          //  tbDescripcionCalma.Text,
+                          //  cbEquipo.SelectedItem.ToString(),
+                          //  int.Parse(tbTiempoCalentamiento.Text),
+                          //  int.Parse(tbTiempoPrincipal.Text),
+                          //  int.Parse(tbTiempoCalma.Text),
+                          //  tbMateriaCalentamiento.Text,
+                          //  tbMaterialPrincipal.Text,
+                          //  tbMaterialCalma.Text
+                          //);
                     }
                     catch (SqlException ex)
                     {
@@ -83,11 +84,11 @@ namespace SportGest
                 try
                 {
                     connection.Open();
-                    DataTable dt = equiposAdapter.GetData();
-                    foreach (DataRow dr in dt.Rows)
-                    {
-                        cbEquipo.Items.Add(dr["nombre"].ToString() + " - " + dr["categoria"]);
-                    }
+                    //DataTable dt = equiposAdapter.GetData();
+                    //foreach (DataRow dr in dt.Rows)
+                    //{
+                    //    cbEquipo.Items.Add(dr["nombre"].ToString() + " - " + dr["categoria"]);
+                    //}
                 }
                 catch (SqlException ex)
                 {
@@ -102,7 +103,7 @@ namespace SportGest
             if (!e_prog)
             {
                 if (DialogResult.No == MessageBox.Show
-                    ("¿Deseas abandonar la aplicación?", "Salir", MessageBoxButtons.YesNo,
+                    ("¿Deseas cancelar la sesión?", "Cancelar partido", MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question))
                 {
                     e.Cancel = true;
@@ -157,6 +158,11 @@ namespace SportGest
                     MessageBox.Show("Por favor, introducir una FECHA válida");
                 }
             }
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void tbTiempoCalentamiento_TextChanged(object sender, EventArgs e)

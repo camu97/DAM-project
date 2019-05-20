@@ -50,9 +50,8 @@
             this.lblEstilo = new System.Windows.Forms.Label();
             this.lblPosicionamiento = new System.Windows.Forms.Label();
             this.cbEquipo = new System.Windows.Forms.ComboBox();
-            this.equiposAdapter = new SportGest.DatabaseSportGestDataSetTableAdapters.EquiposAdapter();
-            this.partidosAdapter = new SportGest.DatabaseSportGestDataSetTableAdapters.PartidosAdapter();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.lblName = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -172,9 +171,9 @@
             // listPartidos
             // 
             this.listPartidos.FormattingEnabled = true;
-            this.listPartidos.Location = new System.Drawing.Point(12, 234);
+            this.listPartidos.Location = new System.Drawing.Point(12, 247);
             this.listPartidos.Name = "listPartidos";
-            this.listPartidos.Size = new System.Drawing.Size(424, 238);
+            this.listPartidos.Size = new System.Drawing.Size(424, 225);
             this.listPartidos.TabIndex = 20;
             this.listPartidos.SelectedIndexChanged += new System.EventHandler(this.listPartidos_SelectedIndexChanged);
             // 
@@ -209,9 +208,10 @@
             this.lblEquipoConvocado.AutoSize = true;
             this.lblEquipoConvocado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblEquipoConvocado.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblEquipoConvocado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEquipoConvocado.Location = new System.Drawing.Point(9, 77);
             this.lblEquipoConvocado.Name = "lblEquipoConvocado";
-            this.lblEquipoConvocado.Size = new System.Drawing.Size(42, 15);
+            this.lblEquipoConvocado.Size = new System.Drawing.Size(48, 15);
             this.lblEquipoConvocado.TabIndex = 39;
             this.lblEquipoConvocado.Text = "Equipo";
             this.lblEquipoConvocado.Click += new System.EventHandler(this.lblEquipoConvocado_Click);
@@ -221,9 +221,10 @@
             this.lblEstilo.AutoSize = true;
             this.lblEstilo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblEstilo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblEstilo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEstilo.Location = new System.Drawing.Point(154, 77);
             this.lblEstilo.Name = "lblEstilo";
-            this.lblEstilo.Size = new System.Drawing.Size(34, 15);
+            this.lblEstilo.Size = new System.Drawing.Size(40, 15);
             this.lblEstilo.TabIndex = 40;
             this.lblEstilo.Text = "Estilo";
             this.lblEstilo.Click += new System.EventHandler(this.lblEstilo_Click);
@@ -233,9 +234,10 @@
             this.lblPosicionamiento.AutoSize = true;
             this.lblPosicionamiento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblPosicionamiento.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblPosicionamiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPosicionamiento.Location = new System.Drawing.Point(304, 77);
             this.lblPosicionamiento.Name = "lblPosicionamiento";
-            this.lblPosicionamiento.Size = new System.Drawing.Size(86, 15);
+            this.lblPosicionamiento.Size = new System.Drawing.Size(101, 15);
             this.lblPosicionamiento.TabIndex = 41;
             this.lblPosicionamiento.Text = "Posicionamiento";
             this.lblPosicionamiento.Click += new System.EventHandler(this.lblPosicionamiento_Click);
@@ -249,13 +251,17 @@
             this.cbEquipo.TabIndex = 42;
             this.cbEquipo.SelectedIndexChanged += new System.EventHandler(this.cbEquipo_SelectedIndexChanged);
             // 
-            // equiposAdapter
+            // lblName
             // 
-            this.equiposAdapter.ClearBeforeFill = true;
-            // 
-            // partidosAdapter
-            // 
-            this.partidosAdapter.ClearBeforeFill = true;
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Pristina", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.ForeColor = System.Drawing.Color.ForestGreen;
+            this.lblName.Location = new System.Drawing.Point(280, 207);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(112, 35);
+            this.lblName.TabIndex = 43;
+            this.lblName.Text = "SportGest";
+            this.lblName.UseMnemonic = false;
             // 
             // HistorialPartidos
             // 
@@ -263,6 +269,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(444, 480);
+            this.Controls.Add(this.lblName);
             this.Controls.Add(this.cbEquipo);
             this.Controls.Add(this.lblPosicionamiento);
             this.Controls.Add(this.lblEstilo);
@@ -286,6 +293,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "HistorialPartidos";
+            this.ShowInTaskbar = false;
             this.Text = "Historial de partidos";
             this.Load += new System.EventHandler(this.HistorialPartidos_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -316,8 +324,7 @@
         private System.Windows.Forms.Label lblEstilo;
         private System.Windows.Forms.Label lblPosicionamiento;
         private System.Windows.Forms.ComboBox cbEquipo;
-        private DatabaseSportGestDataSetTableAdapters.EquiposAdapter equiposAdapter;
-        private DatabaseSportGestDataSetTableAdapters.PartidosAdapter partidosAdapter;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Label lblName;
     }
 }

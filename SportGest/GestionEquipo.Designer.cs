@@ -55,8 +55,6 @@
             this.atrásToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label6 = new System.Windows.Forms.Label();
             this.lblNumero = new System.Windows.Forms.Label();
-            this.equiposAdapter = new SportGest.DatabaseSportGestDataSetTableAdapters.EquiposAdapter();
-            this.jugadoresAdapter = new SportGest.DatabaseSportGestDataSetTableAdapters.JugadoresAdapter();
             this.contextMenuStrip1.SuspendLayout();
             this.contextMenuStrip2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -286,14 +284,6 @@
             this.lblNumero.TabIndex = 15;
             this.lblNumero.Text = "_";
             // 
-            // equiposAdapter
-            // 
-            this.equiposAdapter.ClearBeforeFill = true;
-            // 
-            // jugadoresAdapter
-            // 
-            this.jugadoresAdapter.ClearBeforeFill = true;
-            // 
             // GestionEquipo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -320,6 +310,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "GestionEquipo";
+            this.ShowInTaskbar = false;
             this.Text = "Gestión de equipo";
             this.Load += new System.EventHandler(this.GestionEquipo_Load);
             this.contextMenuStrip1.ResumeLayout(false);
@@ -358,7 +349,5 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
-        private DatabaseSportGestDataSetTableAdapters.EquiposAdapter equiposAdapter;
-        private DatabaseSportGestDataSetTableAdapters.JugadoresAdapter jugadoresAdapter;
     }
 }

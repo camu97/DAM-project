@@ -15,7 +15,7 @@ namespace SportGest
     {
         public bool editar = false, error = false;
         public string id;
-        string sCnn = Properties.Settings.Default.Conexion;
+        string sCnn = Properties.Settings.Default.SportGestConnection;
         public NuevoEquipo()
         {
             InitializeComponent();
@@ -31,10 +31,12 @@ namespace SportGest
             if (editar)
             {
                 btnAñadirEquipo.Text = "Acpetar";
+                this.Text = "Equipo";
             }
             else
             {
                 btnAñadirEquipo.Text = "Añadir";
+                this.Text = "Nuevo equipo";
             }
 
             using (SqlConnection connection = new SqlConnection(sCnn))
@@ -42,19 +44,19 @@ namespace SportGest
                 connection.Open();
                 DataTable dt;
 
-                dt = equiposAdapter.GetData();
-                foreach (DataRow dr in dt.Rows)
-                {
-                    if (dr["id"].ToString().Equals(id))
-                    {
-                        tbNumero.Text = dr["num_jugadores"].ToString();
-                        tbNombre.Text = dr["nombre"].ToString();
-                        tbLiga.Text = dr["liga"].ToString();
-                        tbObservaciones.Text = dr["observaciones"].ToString();
-                        cbCategoria.SelectedItem = dr["categoria"].ToString();
+                //dt = equiposAdapter.GetData();
+                //foreach (DataRow dr in dt.Rows)
+                //{
+                //    if (dr["id"].ToString().Equals(id))
+                //    {
+                //        tbNumero.Text = dr["num_jugadores"].ToString();
+                //        tbNombre.Text = dr["nombre"].ToString();
+                //        tbLiga.Text = dr["liga"].ToString();
+                //        tbObservaciones.Text = dr["observaciones"].ToString();
+                //        cbCategoria.SelectedItem = dr["categoria"].ToString();
 
-                    }
-                }
+                //    }
+                //}
             }
 
         }
@@ -79,7 +81,7 @@ namespace SportGest
                         DataTable dt = new DataTable();
                         try
                         {
-                            equiposAdapter.Insert(tbNombre.Text, cbCategoria.SelectedItem.ToString(), tbLiga.Text, int.Parse(tbNumero.Text), tbObservaciones.Text);
+                            //equiposAdapter.Insert(tbNombre.Text, cbCategoria.SelectedItem.ToString(), tbLiga.Text, int.Parse(tbNumero.Text), tbObservaciones.Text);
                             MessageBox.Show("Operación correcta", "Añadir", MessageBoxButtons.OK);
                         }
                         catch (Exception ex)
@@ -97,23 +99,23 @@ namespace SportGest
                         try
                         {
                             connection.Open();
-                            DataTable dt = equiposAdapter.GetData();
-                            DataRow dr;
-                            for (int i = 0; i < dt.Rows.Count; i++)
-                            {
-                                dr = dt.Rows[i];
-                                if (dr["id"].ToString().Equals(id))
-                                {
-                                    dr["num_jugadores"] = int.Parse(tbNumero.Text);
-                                    dr["nombre"] = tbNombre.Text;
-                                    dr["categoria"] = cbCategoria.SelectedItem.ToString();
-                                    dr["observaciones"] = tbObservaciones.Text;
-                                    dr["liga"] = tbLiga.Text;
-                                    equiposAdapter.Update(dr);
-                                }
-                            }
+                            //DataTable dt = equiposAdapter.GetData();
+                            //DataRow dr;
+                            //for (int i = 0; i < dt.Rows.Count; i++)
+                            //{
+                            //    dr = dt.Rows[i];
+                            //    if (dr["id"].ToString().Equals(id))
+                            //    {
+                            //        dr["num_jugadores"] = int.Parse(tbNumero.Text);
+                            //        dr["nombre"] = tbNombre.Text;
+                            //        dr["categoria"] = cbCategoria.SelectedItem.ToString();
+                            //        dr["observaciones"] = tbObservaciones.Text;
+                            //        dr["liga"] = tbLiga.Text;
+                            //        equiposAdapter.Update(dr);
+                            //    }
+                            //}
 
-                            dt.AcceptChanges();
+                            //dt.AcceptChanges();
                         }
                         catch (Exception ex)
                         {

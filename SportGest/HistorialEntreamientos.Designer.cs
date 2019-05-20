@@ -51,8 +51,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.volverAlMenúPrincipalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.equiposAdapter = new SportGest.DatabaseSportGestDataSetTableAdapters.EquiposAdapter();
-            this.entrenamientosAdapter = new SportGest.DatabaseSportGestDataSetTableAdapters.EntrenamientosAdapter();
+            this.lblName = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -252,13 +251,17 @@
             this.volverAlMenúPrincipalToolStripMenuItem.Text = "Volver al menú principal";
             this.volverAlMenúPrincipalToolStripMenuItem.Click += new System.EventHandler(this.btnMenu_Click);
             // 
-            // equiposAdapter
+            // lblName
             // 
-            this.equiposAdapter.ClearBeforeFill = true;
-            // 
-            // entrenamientosAdapter
-            // 
-            this.entrenamientosAdapter.ClearBeforeFill = true;
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Pristina", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.ForeColor = System.Drawing.Color.ForestGreen;
+            this.lblName.Location = new System.Drawing.Point(280, 192);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(112, 35);
+            this.lblName.TabIndex = 20;
+            this.lblName.Text = "SportGest";
+            this.lblName.UseMnemonic = false;
             // 
             // HistorialEntrenamientos
             // 
@@ -285,11 +288,13 @@
             this.Controls.Add(this.listSesiones);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.lblName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "HistorialEntrenamientos";
+            this.ShowInTaskbar = false;
             this.Text = "Historial de entrenamientos";
             this.Load += new System.EventHandler(this.Historial_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -321,7 +326,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem volverAlMenúPrincipalToolStripMenuItem;
         private System.Windows.Forms.ToolTip toolTip1;
-        private DatabaseSportGestDataSetTableAdapters.EquiposAdapter equiposAdapter;
-        private DatabaseSportGestDataSetTableAdapters.EntrenamientosAdapter entrenamientosAdapter;
+        private System.Windows.Forms.Label lblName;
     }
 }

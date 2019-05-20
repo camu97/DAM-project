@@ -34,12 +34,9 @@
             this.btnGestionEquipo = new System.Windows.Forms.Button();
             this.btnHistorialEntrenamientos = new System.Windows.Forms.Button();
             this.btnNuevoEntrenamiento = new System.Windows.Forms.Button();
-            this.calendar = new System.Windows.Forms.MonthCalendar();
             this.ListaMensajes = new System.Windows.Forms.ListBox();
             this.tbNuevaNota = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.btnAñadirNota = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.itemSalir = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,7 +45,6 @@
             this.btnEliminarNota = new System.Windows.Forms.Button();
             this.btnHistorialPartidos = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.notasAdapter = new SportGest.DatabaseSportGestDataSetTableAdapters.NotasAdapter();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,10 +56,10 @@
             this.btnNuevoPartido.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnNuevoPartido.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnNuevoPartido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevoPartido.Location = new System.Drawing.Point(21, 99);
+            this.btnNuevoPartido.Location = new System.Drawing.Point(12, 167);
             this.btnNuevoPartido.Name = "btnNuevoPartido";
             this.btnNuevoPartido.Size = new System.Drawing.Size(192, 42);
-            this.btnNuevoPartido.TabIndex = 0;
+            this.btnNuevoPartido.TabIndex = 1;
             this.btnNuevoPartido.Text = "Nuevo &partido";
             this.btnNuevoPartido.UseVisualStyleBackColor = false;
             this.btnNuevoPartido.Click += new System.EventHandler(this.btnNuevoPartido_Click);
@@ -76,7 +72,7 @@
             this.btnGestionEquipo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnGestionEquipo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGestionEquipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGestionEquipo.Location = new System.Drawing.Point(21, 147);
+            this.btnGestionEquipo.Location = new System.Drawing.Point(12, 215);
             this.btnGestionEquipo.Name = "btnGestionEquipo";
             this.btnGestionEquipo.Size = new System.Drawing.Size(192, 42);
             this.btnGestionEquipo.TabIndex = 2;
@@ -92,7 +88,7 @@
             this.btnHistorialEntrenamientos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnHistorialEntrenamientos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnHistorialEntrenamientos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHistorialEntrenamientos.Location = new System.Drawing.Point(21, 195);
+            this.btnHistorialEntrenamientos.Location = new System.Drawing.Point(12, 263);
             this.btnHistorialEntrenamientos.Name = "btnHistorialEntrenamientos";
             this.btnHistorialEntrenamientos.Size = new System.Drawing.Size(192, 40);
             this.btnHistorialEntrenamientos.TabIndex = 3;
@@ -108,22 +104,13 @@
             this.btnNuevoEntrenamiento.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnNuevoEntrenamiento.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnNuevoEntrenamiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevoEntrenamiento.Location = new System.Drawing.Point(21, 51);
+            this.btnNuevoEntrenamiento.Location = new System.Drawing.Point(12, 119);
             this.btnNuevoEntrenamiento.Name = "btnNuevoEntrenamiento";
             this.btnNuevoEntrenamiento.Size = new System.Drawing.Size(192, 42);
-            this.btnNuevoEntrenamiento.TabIndex = 1;
+            this.btnNuevoEntrenamiento.TabIndex = 0;
             this.btnNuevoEntrenamiento.Text = "Nuevo &entrenamiento";
             this.btnNuevoEntrenamiento.UseVisualStyleBackColor = false;
             this.btnNuevoEntrenamiento.Click += new System.EventHandler(this.btnNuevoEntrenamiento_Click);
-            // 
-            // calendar
-            // 
-            this.calendar.FirstDayOfWeek = System.Windows.Forms.Day.Monday;
-            this.calendar.Location = new System.Drawing.Point(21, 293);
-            this.calendar.MaxSelectionCount = 1;
-            this.calendar.Name = "calendar";
-            this.calendar.ShowToday = false;
-            this.calendar.TabIndex = 0;
             // 
             // ListaMensajes
             // 
@@ -131,31 +118,21 @@
             this.ListaMensajes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ListaMensajes.FormattingEnabled = true;
             this.ListaMensajes.ItemHeight = 16;
-            this.ListaMensajes.Location = new System.Drawing.Point(239, 245);
+            this.ListaMensajes.Location = new System.Drawing.Point(222, 119);
             this.ListaMensajes.Name = "ListaMensajes";
-            this.ListaMensajes.Size = new System.Drawing.Size(346, 132);
-            this.ListaMensajes.TabIndex = 6;
+            this.ListaMensajes.Size = new System.Drawing.Size(363, 148);
+            this.ListaMensajes.TabIndex = 7;
             this.ListaMensajes.SelectedIndexChanged += new System.EventHandler(this.ListaMensajes_SelectedIndexChanged);
             // 
             // tbNuevaNota
             // 
             this.tbNuevaNota.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbNuevaNota.Location = new System.Drawing.Point(239, 119);
+            this.tbNuevaNota.Location = new System.Drawing.Point(12, 376);
             this.tbNuevaNota.MaxLength = 500;
             this.tbNuevaNota.Multiline = true;
             this.tbNuevaNota.Name = "tbNuevaNota";
-            this.tbNuevaNota.Size = new System.Drawing.Size(346, 79);
-            this.tbNuevaNota.TabIndex = 4;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.label2.Location = new System.Drawing.Point(243, 103);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 13);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Nueva nota: ";
+            this.tbNuevaNota.Size = new System.Drawing.Size(516, 68);
+            this.tbNuevaNota.TabIndex = 5;
             // 
             // btnAñadirNota
             // 
@@ -164,29 +141,20 @@
             this.btnAñadirNota.FlatAppearance.BorderColor = System.Drawing.Color.ForestGreen;
             this.btnAñadirNota.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnAñadirNota.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAñadirNota.Location = new System.Drawing.Point(239, 204);
+            this.btnAñadirNota.Location = new System.Drawing.Point(534, 376);
             this.btnAñadirNota.Name = "btnAñadirNota";
-            this.btnAñadirNota.Size = new System.Drawing.Size(346, 22);
-            this.btnAñadirNota.TabIndex = 5;
-            this.btnAñadirNota.Text = "Añadir";
+            this.btnAñadirNota.Size = new System.Drawing.Size(59, 68);
+            this.btnAñadirNota.TabIndex = 6;
+            this.btnAñadirNota.Text = "Añadir nota";
             this.btnAñadirNota.UseVisualStyleBackColor = false;
             this.btnAñadirNota.Click += new System.EventHandler(this.btnAñadirNota_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(236, 229);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 13);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "Lista de notas:";
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Pristina", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.ForeColor = System.Drawing.Color.ForestGreen;
-            this.lblName.Location = new System.Drawing.Point(299, 31);
+            this.lblName.Location = new System.Drawing.Point(161, 24);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(251, 85);
             this.lblName.TabIndex = 0;
@@ -201,7 +169,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(605, 24);
-            this.menuStrip1.TabIndex = 9;
+            this.menuStrip1.TabIndex = 10;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // itemSalir
@@ -222,13 +190,13 @@
             // tbLeerNotas
             // 
             this.tbLeerNotas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbLeerNotas.Location = new System.Drawing.Point(239, 383);
+            this.tbLeerNotas.Location = new System.Drawing.Point(222, 277);
             this.tbLeerNotas.Multiline = true;
             this.tbLeerNotas.Name = "tbLeerNotas";
             this.tbLeerNotas.ReadOnly = true;
             this.tbLeerNotas.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbLeerNotas.Size = new System.Drawing.Size(289, 72);
-            this.tbLeerNotas.TabIndex = 7;
+            this.tbLeerNotas.Size = new System.Drawing.Size(294, 72);
+            this.tbLeerNotas.TabIndex = 8;
             // 
             // btnEliminarNota
             // 
@@ -237,10 +205,10 @@
             this.btnEliminarNota.FlatAppearance.BorderColor = System.Drawing.Color.ForestGreen;
             this.btnEliminarNota.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnEliminarNota.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnEliminarNota.Location = new System.Drawing.Point(534, 383);
+            this.btnEliminarNota.Location = new System.Drawing.Point(522, 277);
             this.btnEliminarNota.Name = "btnEliminarNota";
-            this.btnEliminarNota.Size = new System.Drawing.Size(51, 72);
-            this.btnEliminarNota.TabIndex = 8;
+            this.btnEliminarNota.Size = new System.Drawing.Size(63, 72);
+            this.btnEliminarNota.TabIndex = 9;
             this.btnEliminarNota.Text = "Eliminar nota";
             this.btnEliminarNota.UseVisualStyleBackColor = false;
             this.btnEliminarNota.Click += new System.EventHandler(this.btnEliminarNota_Click);
@@ -253,17 +221,13 @@
             this.btnHistorialPartidos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnHistorialPartidos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnHistorialPartidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHistorialPartidos.Location = new System.Drawing.Point(21, 241);
+            this.btnHistorialPartidos.Location = new System.Drawing.Point(12, 309);
             this.btnHistorialPartidos.Name = "btnHistorialPartidos";
             this.btnHistorialPartidos.Size = new System.Drawing.Size(192, 40);
-            this.btnHistorialPartidos.TabIndex = 14;
+            this.btnHistorialPartidos.TabIndex = 4;
             this.btnHistorialPartidos.Text = "&Historial de partidos";
             this.btnHistorialPartidos.UseVisualStyleBackColor = false;
             this.btnHistorialPartidos.Click += new System.EventHandler(this.btnHistorialPartidos_Click);
-            // 
-            // notasAdapter
-            // 
-            this.notasAdapter.ClearBeforeFill = true;
             // 
             // Principal
             // 
@@ -274,13 +238,10 @@
             this.ClientSize = new System.Drawing.Size(605, 475);
             this.Controls.Add(this.btnHistorialPartidos);
             this.Controls.Add(this.btnEliminarNota);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.tbLeerNotas);
             this.Controls.Add(this.btnAñadirNota);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.tbNuevaNota);
             this.Controls.Add(this.ListaMensajes);
-            this.Controls.Add(this.calendar);
             this.Controls.Add(this.btnNuevoEntrenamiento);
             this.Controls.Add(this.btnHistorialEntrenamientos);
             this.Controls.Add(this.btnGestionEquipo);
@@ -295,7 +256,6 @@
             this.MaximizeBox = false;
             this.Name = "Principal";
             this.RightToLeftLayout = true;
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SportGest";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Principal_FormClosing);
@@ -312,12 +272,9 @@
         private System.Windows.Forms.Button btnGestionEquipo;
         private System.Windows.Forms.Button btnHistorialEntrenamientos;
         private System.Windows.Forms.Button btnNuevoEntrenamiento;
-        private System.Windows.Forms.MonthCalendar calendar;
         private System.Windows.Forms.ListBox ListaMensajes;
         private System.Windows.Forms.TextBox tbNuevaNota;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnAñadirNota;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem itemSobre;
@@ -326,7 +283,6 @@
         private System.Windows.Forms.Button btnEliminarNota;
         private System.Windows.Forms.Button btnHistorialPartidos;
         private System.Windows.Forms.ToolTip toolTip1;
-        private DatabaseSportGestDataSetTableAdapters.NotasAdapter notasAdapter;
     }
 }
 

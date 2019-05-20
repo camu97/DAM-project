@@ -13,7 +13,7 @@ namespace SportGest
 {
     public partial class GestionEquipo : Form
     {
-        string sCnn = Properties.Settings.Default.Conexion;
+        string sCnn = Properties.Settings.Default.SportGestConnection;
         public GestionEquipo()
         {
             InitializeComponent();
@@ -42,11 +42,11 @@ namespace SportGest
                     connection.Open();
                     DataTable dt = new DataTable();
 
-                    dt = equiposAdapter.GetData();
-                    foreach (DataRow dr in dt.Rows)
-                    {
-                        listEquipos.Items.Add(dr["Id"].ToString() + "| " + dr["nombre"].ToString() + " - [" + dr["categoria"].ToString() + " ]");
-                    }
+                    //dt = equiposAdapter.GetData();
+                    //foreach (DataRow dr in dt.Rows)
+                    //{
+                    //    listEquipos.Items.Add(dr["Id"].ToString() + "| " + dr["nombre"].ToString() + " - [" + dr["categoria"].ToString() + " ]");
+                    //}
                 }
                 catch (Exception ex)
                 {
@@ -67,14 +67,16 @@ namespace SportGest
                 {
                     connection.Open();
                     DataTable dt;
-                    dt = jugadoresAdapter.GetData();
-                    foreach (DataRow dr in dt.Rows)
-                    {
-                        if (dr["equipo"].Equals(listEquipos.SelectedItem.ToString().Split('-')[0].Split('|')[1].Trim()))
-                        {
-                            listJugadores.Items.Add(dr["Id"].ToString() + "| " + dr["num"].ToString() + " - " + dr["nick"].ToString());
-                        }
-                    }
+
+
+                    //dt = jugadoresAdapter.GetData();
+                    //foreach (DataRow dr in dt.Rows)
+                    //{
+                    //    if (dr["equipo"].Equals(listEquipos.SelectedItem.ToString().Split('-')[0].Split('|')[1].Trim()))
+                    //    {
+                    //        listJugadores.Items.Add(dr["Id"].ToString() + "| " + dr["num"].ToString() + " - " + dr["nick"].ToString());
+                    //    }
+                    //}
                 }
                 catch (NullReferenceException) { }
                 catch (SqlException) { }
@@ -93,18 +95,18 @@ namespace SportGest
                     DataTable dt = new DataTable();
                     try
                     {
-                        dt = jugadoresAdapter.GetData();
-                        foreach (DataRow dr in dt.Rows)
-                        {
-                            if (dr["nick"].Equals(listJugadores.SelectedItem.ToString().Split('-')[1].Trim()))
-                            {
-                                lblNombre.Text = dr["nombre"].ToString();
-                                lblNacimiento.Text = dr["fecha_nacimiento"].ToString().Split(' ')[0];
-                                lblNumero.Text = dr["num"].ToString();
-                                lblPosicion.Text = dr["posicion"].ToString();
-                                tbObservaciones.Text = dr["observaciones"].ToString();
-                            }
-                        }
+                        //dt = jugadoresAdapter.GetData();
+                        //foreach (DataRow dr in dt.Rows)
+                        //{
+                        //    if (dr["nick"].Equals(listJugadores.SelectedItem.ToString().Split('-')[1].Trim()))
+                        //    {
+                        //        lblNombre.Text = dr["nombre"].ToString();
+                        //        lblNacimiento.Text = dr["fecha_nacimiento"].ToString().Split(' ')[0];
+                        //        lblNumero.Text = dr["num"].ToString();
+                        //        lblPosicion.Text = dr["posicion"].ToString();
+                        //        tbObservaciones.Text = dr["observaciones"].ToString();
+                        //    }
+                        //}
                     }
                     catch (SqlException ex)
                     {
@@ -124,7 +126,8 @@ namespace SportGest
         {
             if (listJugadores.SelectedIndices.Count == 1)
             {
-                jugadoresAdapter.Delete(int.Parse(listJugadores.SelectedItem.ToString().Split('|')[0]));
+                //jugadoresAdapter.Delete(int.Parse(listJugadores.SelectedItem.ToString().Split('|')[0]));
+
                 listJugadores.Items.Remove(listJugadores.SelectedItem);
                 listJugadores.Refresh();
                 listJugadores.SelectedItem = null;
@@ -159,7 +162,8 @@ namespace SportGest
         {
             if (listEquipos.SelectedIndices.Count == 1)
             {
-                equiposAdapter.Delete(int.Parse(listEquipos.SelectedItem.ToString().Split('|')[0]));
+                //equiposAdapter.Delete(int.Parse(listEquipos.SelectedItem.ToString().Split('|')[0]));
+
                 listEquipos.Items.Remove(listJugadores.SelectedItem);
                 listEquipos.Refresh();
                 listEquipos.SelectedItem = null;

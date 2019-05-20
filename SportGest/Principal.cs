@@ -14,7 +14,7 @@ namespace SportGest
 {
     public partial class Principal : Form
     {
-        string sCnn = Properties.Settings.Default.Conexion;
+        string sCnn = Properties.Settings.Default.SportGestConnection;
         public Principal()
         {
             InitializeComponent();
@@ -43,18 +43,32 @@ namespace SportGest
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            Intro intro = new Intro();
+            //intro.ShowDialog();
+
             using (SqlConnection connection = new SqlConnection(sCnn))
             {
-                connection.Open();
+
                 DataTable dt = new DataTable();
 
                 try
                 {
-                    dt = notasAdapter.GetData();
-                    foreach (DataRow dr in dt.Rows)
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM Notas;", connection);
+                    cmd.CommandType = CommandType.Text;
+
+                    connection.Open();
+                    SqlDataReader r = cmd.ExecuteReader();
+                    while (r.Read())
                     {
-                        ListaMensajes.Items.Add(dr["id"].ToString() + " - " + dr["fecha"].ToString().Split(' ')[0] + " - " + dr["nota"].ToString());
+                        ListaMensajes.Items.Add(r["id"].ToString() + " - " + r["fecha"].ToString().Split(' ')[0] + " - " + r["nota"].ToString());
                     }
+
+                    //dt = notasTableAdapter1.GetData();
+                    //foreach (DataRow dr in dt.Rows)
+                    //{
+                    //    ListaMensajes.Items.Add(dr["id"].ToString() + " - " + dr["fecha"].ToString().Split(' ')[0] + " - " + dr["nota"].ToString());
+                    //}
+
                 }
                 catch (Exception ex)
                 {
@@ -73,26 +87,45 @@ namespace SportGest
 
                 using (SqlConnection connection = new SqlConnection(sCnn))
                 {
-                    connection.Open();
                     try
                     {
-                        notasAdapter.Insert(DateTime.Now.Date, tbNuevaNota.Text);
+                        SqlCommand cmd = new SqlCommand("INSERT INTO Notas(fecha,nota) values(" + DateTime.Now.ToString() + ",\'" + tbNuevaNota.Text + "\');", connection);
+                        cmd.CommandType = CommandType.Text;
+                        connection.Open();
+                        int fa = cmd.ExecuteNonQuery();
+                        MessageBox.Show(fa.ToString());
+                        //notasTableAdapter1.Insert(DateTime.Now.Date, tbNuevaNota.Text);
+
+                        //dt = notasTableAdapter1.GetData();
+                        foreach (DataRow dr in dt.Rows)
+                        {
+                            MessageBox.Show(dr["id"].ToString() + " - " + dr["fecha"].ToString().Split(' ')[0] + " - " + dr["nota"].ToString());
+                        }
+
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show(ex.Message);
                     }
 
-                }
-                tbNuevaNota.Clear();
-                ListaMensajes.Items.Clear();
-                dt = notasAdapter.GetData();
-                foreach (DataRow dr in dt.Rows)
-                {
-                    ListaMensajes.Items.Add(dr["id"].ToString() + " - " + dr["fecha"].ToString().Split(' ')[0] + " - " + dr["nota"].ToString());
-                }
-                ListaMensajes.Refresh();
 
+                    try
+                    {
+                        tbNuevaNota.Clear();
+                        ListaMensajes.Items.Clear();
+                        SqlCommand cmd = new SqlCommand("SELECT * FROM Notas;", connection);
+                        cmd.CommandType = CommandType.Text;
+
+                        connection.Open();
+                        SqlDataReader r = cmd.ExecuteReader();
+                        while (r.Read())
+                        {
+                            ListaMensajes.Items.Add(r["id"].ToString() + " - " + r["fecha"].ToString().Split(' ')[0] + " - " + r["nota"].ToString());
+                        }
+                        ListaMensajes.Refresh();
+                    }
+                    catch (SqlException) { }
+                }
             }
         }
         private void btnNuevoPartido_Click(object sender, EventArgs e)
@@ -131,7 +164,7 @@ namespace SportGest
 
         private void btnEliminarNota_Click(object sender, EventArgs e)
         {
-            notasAdapter.Delete(int.Parse(ListaMensajes.SelectedItem.ToString().Split('-')[0]));
+            //notasTableAdapter1.Delete(int.Parse(ListaMensajes.SelectedItem.ToString().Split('-')[0]));
             ListaMensajes.Items.Remove(ListaMensajes.SelectedItem);
             ListaMensajes.Refresh();
             ListaMensajes.SelectedItem = null;

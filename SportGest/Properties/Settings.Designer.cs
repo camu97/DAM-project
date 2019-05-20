@@ -26,22 +26,11 @@ namespace SportGest.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(localdb)\\mssqllocaldb;Initial Catalog=SportGest;Integrated Security=" +
-            "True;Pooling=False")]
-        public string SportGestConnectionString {
-            get {
-                return ((string)(this["SportGestConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\DatabaseSport" +
-            "Gest.mdf;Integrated Security=True;Connect Timeout=30")]
-        public string Conexion {
+            "Gest.mdf;Integrated Security=True;")]
+        public string SportGestConnection {
             get {
-                return ((string)(this["Conexion"]));
+                return ((string)(this["SportGestConnection"]));
             }
         }
     }

@@ -46,8 +46,6 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tbNumero = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.jugadoresAdapter = new SportGest.DatabaseSportGestDataSetTableAdapters.JugadoresAdapter();
-            this.equiposAdapter = new SportGest.DatabaseSportGestDataSetTableAdapters.EquiposAdapter();
             this.SuspendLayout();
             // 
             // label1
@@ -194,14 +192,6 @@
             this.label7.Text = "Número:";
             this.toolTip1.SetToolTip(this.label7, "Número de jugador(a)");
             // 
-            // jugadoresAdapter
-            // 
-            this.jugadoresAdapter.ClearBeforeFill = true;
-            // 
-            // equiposAdapter
-            // 
-            this.equiposAdapter.ClearBeforeFill = true;
-            // 
             // NuevoJugador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -227,6 +217,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "NuevoJugador";
+            this.ShowInTaskbar = false;
             this.Text = "Jugador";
             this.Load += new System.EventHandler(this.NuevoJugador_Load);
             this.ResumeLayout(false);
@@ -252,7 +243,5 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.TextBox tbNumero;
         private System.Windows.Forms.Label label7;
-        private DatabaseSportGestDataSetTableAdapters.JugadoresAdapter jugadoresAdapter;
-        private DatabaseSportGestDataSetTableAdapters.EquiposAdapter equiposAdapter;
     }
 }

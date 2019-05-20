@@ -40,7 +40,6 @@
             this.cbCategoria = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tbNumero = new System.Windows.Forms.TextBox();
-            this.equiposAdapter = new SportGest.DatabaseSportGestDataSetTableAdapters.EquiposAdapter();
             this.SuspendLayout();
             // 
             // label1
@@ -148,10 +147,6 @@
             this.tbNumero.Size = new System.Drawing.Size(24, 20);
             this.tbNumero.TabIndex = 3;
             // 
-            // equiposAdapter
-            // 
-            this.equiposAdapter.ClearBeforeFill = true;
-            // 
             // NuevoEquipo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -173,7 +168,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "NuevoEquipo";
-            this.Text = "Nuevo equipo";
+            this.ShowInTaskbar = false;
+            this.Text = "Equipo";
             this.Load += new System.EventHandler(this.NuevoEquipo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -193,6 +189,5 @@
         private System.Windows.Forms.ComboBox cbCategoria;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox tbNumero;
-        private DatabaseSportGestDataSetTableAdapters.EquiposAdapter equiposAdapter;
     }
 }

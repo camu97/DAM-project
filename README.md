@@ -10,3 +10,6 @@ o
 13/5 - Implementado el trabajo con bases de datos en la pantalla principal.
 14/5,15/5,16/5 - Correciónde  disposición de pantallas, redistribución de controles y correción de errores o excepciones.
 18/5 - Optimización o correción del uso de la base de datos en todas las pantallas.
+19/5 - Integración de la base de datos como recurso de la aplicación.
+20/5 - Versión final a falta de añadir tooltips en todas las pantallas así como algún otro detalle en la funcionalidad de algún elemento de las pantallas.
+20/5 - Versión final entregable.

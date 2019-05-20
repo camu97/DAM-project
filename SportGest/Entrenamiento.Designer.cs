@@ -30,9 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Entrenamiento));
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tbTiempoSesion = new System.Windows.Forms.TextBox();
             this.lblEquipo = new System.Windows.Forms.Label();
             this.cbEquipo = new System.Windows.Forms.ComboBox();
             this.lblObjectivo = new System.Windows.Forms.Label();
@@ -102,8 +99,9 @@
             this.tbMaterialCalma = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tbFecha = new System.Windows.Forms.TextBox();
-            this.equiposAdapter = new SportGest.DatabaseSportGestDataSetTableAdapters.EquiposAdapter();
-            this.entrenamientosAdapter = new SportGest.DatabaseSportGestDataSetTableAdapters.EntrenamientosAdapter();
+            this.tbTiempoSesion = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.gbCalentamiento.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.escaleraCalentamiento)).BeginInit();
@@ -140,42 +138,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.imgCampoPrincipal)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(427, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(308, 31);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Hoja de entrenamiento";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(955, 90);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(249, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Tiempo de sesión:              minutos";
-            // 
-            // tbTiempoSesion
-            // 
-            this.tbTiempoSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTiempoSesion.Location = new System.Drawing.Point(1100, 90);
-            this.tbTiempoSesion.MaxLength = 3;
-            this.tbTiempoSesion.Name = "tbTiempoSesion";
-            this.tbTiempoSesion.Size = new System.Drawing.Size(37, 22);
-            this.tbTiempoSesion.TabIndex = 2;
-            this.tbTiempoSesion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbTiempoSesion.TextChanged += new System.EventHandler(this.tbTiempoSesion_TextChanged);
-            // 
             // lblEquipo
             // 
             this.lblEquipo.AutoSize = true;
             this.lblEquipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEquipo.Location = new System.Drawing.Point(12, 90);
+            this.lblEquipo.Location = new System.Drawing.Point(10, 36);
             this.lblEquipo.Name = "lblEquipo";
             this.lblEquipo.Size = new System.Drawing.Size(67, 20);
             this.lblEquipo.TabIndex = 3;
@@ -185,9 +152,9 @@
             // 
             this.cbEquipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbEquipo.FormattingEnabled = true;
-            this.cbEquipo.Location = new System.Drawing.Point(83, 86);
+            this.cbEquipo.Location = new System.Drawing.Point(83, 36);
             this.cbEquipo.Name = "cbEquipo";
-            this.cbEquipo.Size = new System.Drawing.Size(167, 24);
+            this.cbEquipo.Size = new System.Drawing.Size(217, 24);
             this.cbEquipo.TabIndex = 0;
             // 
             // lblObjectivo
@@ -195,9 +162,9 @@
             this.lblObjectivo.AutoSize = true;
             this.lblObjectivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblObjectivo.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.lblObjectivo.Location = new System.Drawing.Point(284, 92);
+            this.lblObjectivo.Location = new System.Drawing.Point(331, 35);
             this.lblObjectivo.Name = "lblObjectivo";
-            this.lblObjectivo.Size = new System.Drawing.Size(105, 16);
+            this.lblObjectivo.Size = new System.Drawing.Size(100, 16);
             this.lblObjectivo.TabIndex = 7;
             this.lblObjectivo.Text = "Objectivo(s): ";
             // 
@@ -205,46 +172,47 @@
             // 
             this.tbObjetivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbObjetivo.ForeColor = System.Drawing.Color.DarkRed;
-            this.tbObjetivo.Location = new System.Drawing.Point(390, 87);
+            this.tbObjetivo.Location = new System.Drawing.Point(437, 30);
             this.tbObjetivo.MaxLength = 50;
             this.tbObjetivo.Name = "tbObjetivo";
             this.tbObjetivo.Size = new System.Drawing.Size(552, 26);
-            this.tbObjetivo.TabIndex = 1;
+            this.tbObjetivo.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 142);
+            this.label3.Location = new System.Drawing.Point(10, 72);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 20);
+            this.label3.Size = new System.Drawing.Size(58, 20);
             this.label3.TabIndex = 9;
-            this.label3.Text = "Fecha: ";
+            this.label3.Text = "Fecha:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(482, 142);
+            this.label4.Location = new System.Drawing.Point(332, 75);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(102, 16);
+            this.label4.Size = new System.Drawing.Size(99, 16);
             this.label4.TabIndex = 11;
             this.label4.Text = "Descripción: ";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // tbDescripcionObjectivo
             // 
             this.tbDescripcionObjectivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbDescripcionObjectivo.Location = new System.Drawing.Point(587, 136);
+            this.tbDescripcionObjectivo.Location = new System.Drawing.Point(437, 69);
             this.tbDescripcionObjectivo.MaxLength = 100;
             this.tbDescripcionObjectivo.Multiline = true;
             this.tbDescripcionObjectivo.Name = "tbDescripcionObjectivo";
-            this.tbDescripcionObjectivo.Size = new System.Drawing.Size(618, 64);
+            this.tbDescripcionObjectivo.Size = new System.Drawing.Size(552, 64);
             this.tbDescripcionObjectivo.TabIndex = 5;
             // 
             // tbDescipcionCalentamiento
             // 
             this.tbDescipcionCalentamiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbDescipcionCalentamiento.Location = new System.Drawing.Point(38, 482);
+            this.tbDescipcionCalentamiento.Location = new System.Drawing.Point(13, 424);
             this.tbDescipcionCalentamiento.MaxLength = 300;
             this.tbDescipcionCalentamiento.Multiline = true;
             this.tbDescipcionCalentamiento.Name = "tbDescipcionCalentamiento";
@@ -254,7 +222,7 @@
             // tbDescripcionCalma
             // 
             this.tbDescripcionCalma.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbDescripcionCalma.Location = new System.Drawing.Point(904, 482);
+            this.tbDescripcionCalma.Location = new System.Drawing.Point(837, 424);
             this.tbDescripcionCalma.MaxLength = 300;
             this.tbDescripcionCalma.Multiline = true;
             this.tbDescripcionCalma.Name = "tbDescripcionCalma";
@@ -264,7 +232,7 @@
             // tbDescripcionPrincipal
             // 
             this.tbDescripcionPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbDescripcionPrincipal.Location = new System.Drawing.Point(448, 482);
+            this.tbDescripcionPrincipal.Location = new System.Drawing.Point(423, 424);
             this.tbDescripcionPrincipal.MaxLength = 500;
             this.tbDescripcionPrincipal.Multiline = true;
             this.tbDescripcionPrincipal.Name = "tbDescripcionPrincipal";
@@ -274,7 +242,7 @@
             // lblDescripcionCalentamiento
             // 
             this.lblDescripcionCalentamiento.AutoSize = true;
-            this.lblDescripcionCalentamiento.Location = new System.Drawing.Point(35, 466);
+            this.lblDescripcionCalentamiento.Location = new System.Drawing.Point(10, 444);
             this.lblDescripcionCalentamiento.Name = "lblDescripcionCalentamiento";
             this.lblDescripcionCalentamiento.Size = new System.Drawing.Size(179, 13);
             this.lblDescripcionCalentamiento.TabIndex = 16;
@@ -283,7 +251,7 @@
             // lblDescripcionPrincipal
             // 
             this.lblDescripcionPrincipal.AutoSize = true;
-            this.lblDescripcionPrincipal.Location = new System.Drawing.Point(445, 466);
+            this.lblDescripcionPrincipal.Location = new System.Drawing.Point(421, 408);
             this.lblDescripcionPrincipal.Name = "lblDescripcionPrincipal";
             this.lblDescripcionPrincipal.Size = new System.Drawing.Size(176, 13);
             this.lblDescripcionPrincipal.TabIndex = 17;
@@ -292,7 +260,7 @@
             // lblDescripcionCalma
             // 
             this.lblDescripcionCalma.AutoSize = true;
-            this.lblDescripcionCalma.Location = new System.Drawing.Point(901, 466);
+            this.lblDescripcionCalma.Location = new System.Drawing.Point(834, 408);
             this.lblDescripcionCalma.Name = "lblDescripcionCalma";
             this.lblDescripcionCalma.Size = new System.Drawing.Size(197, 13);
             this.lblDescripcionCalma.TabIndex = 18;
@@ -304,7 +272,7 @@
             this.lblCalentamiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCalentamiento.Location = new System.Drawing.Point(10, 35);
             this.lblCalentamiento.Name = "lblCalentamiento";
-            this.lblCalentamiento.Size = new System.Drawing.Size(119, 16);
+            this.lblCalentamiento.Size = new System.Drawing.Size(115, 16);
             this.lblCalentamiento.TabIndex = 22;
             this.lblCalentamiento.Text = "Calentamiento: ";
             // 
@@ -314,7 +282,7 @@
             this.lblCalma.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCalma.Location = new System.Drawing.Point(11, 35);
             this.lblCalma.Name = "lblCalma";
-            this.lblCalma.Size = new System.Drawing.Size(147, 16);
+            this.lblCalma.Size = new System.Drawing.Size(140, 16);
             this.lblCalma.TabIndex = 23;
             this.lblCalma.Text = "Vuelta a la calma:  ";
             // 
@@ -324,7 +292,7 @@
             this.lblPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrincipal.Location = new System.Drawing.Point(6, 33);
             this.lblPrincipal.Name = "lblPrincipal";
-            this.lblPrincipal.Size = new System.Drawing.Size(119, 16);
+            this.lblPrincipal.Size = new System.Drawing.Size(115, 16);
             this.lblPrincipal.TabIndex = 24;
             this.lblPrincipal.Text = "Fase principal: ";
             // 
@@ -364,7 +332,7 @@
             this.programarSesiónToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1259, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1188, 24);
             this.menuStrip1.TabIndex = 15;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -403,7 +371,7 @@
             this.gbCalentamiento.Controls.Add(this.picasCalentamiento);
             this.gbCalentamiento.Controls.Add(this.setasCalentamiento);
             this.gbCalentamiento.Controls.Add(this.conosCalentamiento);
-            this.gbCalentamiento.Location = new System.Drawing.Point(242, 327);
+            this.gbCalentamiento.Location = new System.Drawing.Point(218, 250);
             this.gbCalentamiento.Name = "gbCalentamiento";
             this.gbCalentamiento.Size = new System.Drawing.Size(105, 183);
             this.gbCalentamiento.TabIndex = 40;
@@ -504,7 +472,7 @@
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.lblCalentamiento);
             this.groupBox1.Controls.Add(this.tbTiempoCalentamiento);
-            this.groupBox1.Location = new System.Drawing.Point(38, 206);
+            this.groupBox1.Location = new System.Drawing.Point(14, 140);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(284, 68);
             this.groupBox1.TabIndex = 6;
@@ -524,7 +492,7 @@
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.tbTiempoPrincipal);
             this.groupBox2.Controls.Add(this.lblPrincipal);
-            this.groupBox2.Location = new System.Drawing.Point(448, 206);
+            this.groupBox2.Location = new System.Drawing.Point(424, 140);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(284, 68);
             this.groupBox2.TabIndex = 9;
@@ -544,7 +512,7 @@
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.tbTiempoCalma);
             this.groupBox3.Controls.Add(this.lblCalma);
-            this.groupBox3.Location = new System.Drawing.Point(904, 206);
+            this.groupBox3.Location = new System.Drawing.Point(837, 140);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(284, 67);
             this.groupBox3.TabIndex = 12;
@@ -563,20 +531,20 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(295, 142);
+            this.label5.Location = new System.Drawing.Point(160, 72);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 20);
+            this.label5.Size = new System.Drawing.Size(48, 20);
             this.label5.TabIndex = 45;
-            this.label5.Text = "Hora: ";
+            this.label5.Text = "Hora:";
             // 
             // tbHora
             // 
             this.tbHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbHora.Location = new System.Drawing.Point(353, 142);
+            this.tbHora.Location = new System.Drawing.Point(214, 73);
             this.tbHora.MaxLength = 5;
             this.tbHora.Name = "tbHora";
-            this.tbHora.Size = new System.Drawing.Size(84, 22);
-            this.tbHora.TabIndex = 4;
+            this.tbHora.Size = new System.Drawing.Size(86, 22);
+            this.tbHora.TabIndex = 2;
             this.tbHora.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbHora.TextChanged += new System.EventHandler(this.tbHora_TextChanged);
             // 
@@ -590,7 +558,7 @@
             this.gbCalma.Controls.Add(this.jugadorCalma);
             this.gbCalma.Controls.Add(this.vallasCalma);
             this.gbCalma.Controls.Add(this.picasCalma);
-            this.gbCalma.Location = new System.Drawing.Point(1107, 316);
+            this.gbCalma.Location = new System.Drawing.Point(1040, 250);
             this.gbCalma.Name = "gbCalma";
             this.gbCalma.Size = new System.Drawing.Size(105, 183);
             this.gbCalma.TabIndex = 41;
@@ -696,7 +664,7 @@
             this.gbPrincipal.Controls.Add(this.jugadorPrincipal);
             this.gbPrincipal.Controls.Add(this.vallasPrincipal);
             this.gbPrincipal.Controls.Add(this.picasPrincipal);
-            this.gbPrincipal.Location = new System.Drawing.Point(656, 316);
+            this.gbPrincipal.Location = new System.Drawing.Point(632, 250);
             this.gbPrincipal.Name = "gbPrincipal";
             this.gbPrincipal.Size = new System.Drawing.Size(105, 183);
             this.gbPrincipal.TabIndex = 41;
@@ -795,7 +763,7 @@
             // imgCampoCalma
             // 
             this.imgCampoCalma.Image = ((System.Drawing.Image)(resources.GetObject("imgCampoCalma.Image")));
-            this.imgCampoCalma.Location = new System.Drawing.Point(904, 280);
+            this.imgCampoCalma.Location = new System.Drawing.Point(837, 214);
             this.imgCampoCalma.Name = "imgCampoCalma";
             this.imgCampoCalma.Size = new System.Drawing.Size(158, 183);
             this.imgCampoCalma.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -805,7 +773,7 @@
             // imgCampoCalentamiento
             // 
             this.imgCampoCalentamiento.Image = global::SportGest.Properties.Resources.campo_vertical;
-            this.imgCampoCalentamiento.Location = new System.Drawing.Point(41, 280);
+            this.imgCampoCalentamiento.Location = new System.Drawing.Point(17, 214);
             this.imgCampoCalentamiento.Name = "imgCampoCalentamiento";
             this.imgCampoCalentamiento.Size = new System.Drawing.Size(158, 183);
             this.imgCampoCalentamiento.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -815,7 +783,7 @@
             // imgCampoPrincipal
             // 
             this.imgCampoPrincipal.Image = ((System.Drawing.Image)(resources.GetObject("imgCampoPrincipal.Image")));
-            this.imgCampoPrincipal.Location = new System.Drawing.Point(447, 280);
+            this.imgCampoPrincipal.Location = new System.Drawing.Point(423, 214);
             this.imgCampoPrincipal.Name = "imgCampoPrincipal";
             this.imgCampoPrincipal.Size = new System.Drawing.Size(158, 183);
             this.imgCampoPrincipal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -825,7 +793,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(208, 280);
+            this.label6.Location = new System.Drawing.Point(184, 214);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(139, 13);
             this.label6.TabIndex = 47;
@@ -834,7 +802,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(611, 277);
+            this.label7.Location = new System.Drawing.Point(587, 211);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(150, 13);
             this.label7.TabIndex = 48;
@@ -843,7 +811,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(1068, 280);
+            this.label8.Location = new System.Drawing.Point(1001, 214);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(175, 13);
             this.label8.TabIndex = 49;
@@ -852,7 +820,7 @@
             // tbMateriaCalentamiento
             // 
             this.tbMateriaCalentamiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbMateriaCalentamiento.Location = new System.Drawing.Point(208, 296);
+            this.tbMateriaCalentamiento.Location = new System.Drawing.Point(184, 230);
             this.tbMateriaCalentamiento.MaxLength = 100;
             this.tbMateriaCalentamiento.Multiline = true;
             this.tbMateriaCalentamiento.Name = "tbMateriaCalentamiento";
@@ -862,7 +830,7 @@
             // tbMaterialPrincipal
             // 
             this.tbMaterialPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbMaterialPrincipal.Location = new System.Drawing.Point(614, 296);
+            this.tbMaterialPrincipal.Location = new System.Drawing.Point(590, 230);
             this.tbMaterialPrincipal.MaxLength = 100;
             this.tbMaterialPrincipal.Multiline = true;
             this.tbMaterialPrincipal.Name = "tbMaterialPrincipal";
@@ -872,7 +840,7 @@
             // tbMaterialCalma
             // 
             this.tbMaterialCalma.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbMaterialCalma.Location = new System.Drawing.Point(1071, 296);
+            this.tbMaterialCalma.Location = new System.Drawing.Point(1004, 230);
             this.tbMaterialCalma.MaxLength = 100;
             this.tbMaterialCalma.Multiline = true;
             this.tbMaterialCalma.Name = "tbMaterialCalma";
@@ -882,28 +850,55 @@
             // tbFecha
             // 
             this.tbFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbFecha.Location = new System.Drawing.Point(83, 142);
+            this.tbFecha.Location = new System.Drawing.Point(68, 72);
             this.tbFecha.MaxLength = 10;
             this.tbFecha.Name = "tbFecha";
-            this.tbFecha.Size = new System.Drawing.Size(116, 22);
-            this.tbFecha.TabIndex = 3;
+            this.tbFecha.Size = new System.Drawing.Size(86, 22);
+            this.tbFecha.TabIndex = 1;
             this.tbFecha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbFecha.TextChanged += new System.EventHandler(this.tbFecha_TextChanged);
             // 
-            // equiposAdapter
+            // tbTiempoSesion
             // 
-            this.equiposAdapter.ClearBeforeFill = true;
+            this.tbTiempoSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTiempoSesion.Location = new System.Drawing.Point(171, 100);
+            this.tbTiempoSesion.MaxLength = 3;
+            this.tbTiempoSesion.Name = "tbTiempoSesion";
+            this.tbTiempoSesion.Size = new System.Drawing.Size(37, 22);
+            this.tbTiempoSesion.TabIndex = 3;
+            this.tbTiempoSesion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // entrenamientosAdapter
+            // label2
             // 
-            this.entrenamientosAdapter.ClearBeforeFill = true;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(10, 100);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(208, 20);
+            this.label2.TabIndex = 50;
+            this.label2.Text = "Duración de la sesión:          \'";
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Pristina", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.ForeColor = System.Drawing.Color.ForestGreen;
+            this.lblName.Location = new System.Drawing.Point(1015, 56);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(148, 49);
+            this.lblName.TabIndex = 51;
+            this.lblName.Text = "SportGest";
+            this.lblName.UseMnemonic = false;
             // 
             // Entrenamiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Lavender;
-            this.ClientSize = new System.Drawing.Size(1259, 667);
+            this.ClientSize = new System.Drawing.Size(1188, 628);
+            this.Controls.Add(this.lblName);
+            this.Controls.Add(this.tbTiempoSesion);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.tbDescripcionCalma);
             this.Controls.Add(this.tbDescripcionPrincipal);
             this.Controls.Add(this.tbDescipcionCalentamiento);
@@ -935,9 +930,6 @@
             this.Controls.Add(this.lblObjectivo);
             this.Controls.Add(this.cbEquipo);
             this.Controls.Add(this.lblEquipo);
-            this.Controls.Add(this.tbTiempoSesion);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -945,7 +937,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "Entrenamiento";
-            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "Hoja de entrenamiento";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Entrenamiento_FormClosing);
             this.Load += new System.EventHandler(this.Entrenamiento_Load);
@@ -993,10 +985,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox tbTiempoSesion;
         private System.Windows.Forms.Label lblEquipo;
         private System.Windows.Forms.ComboBox cbEquipo;
         private System.Windows.Forms.Label lblObjectivo;
@@ -1066,7 +1054,8 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private DatabaseSportGestDataSetTableAdapters.EquiposAdapter equiposAdapter;
-        private DatabaseSportGestDataSetTableAdapters.EntrenamientosAdapter entrenamientosAdapter;
+        private System.Windows.Forms.TextBox tbTiempoSesion;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblName;
     }
 }

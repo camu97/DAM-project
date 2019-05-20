@@ -90,7 +90,6 @@
             this.tbCampo = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
             this.cbEquipo = new System.Windows.Forms.ComboBox();
             this.label25 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
@@ -106,9 +105,7 @@
             this.añadirEntrenamientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.añadirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cancelarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.partidosAdapter = new SportGest.DatabaseSportGestDataSetTableAdapters.PartidosAdapter();
-            this.jugadoresAdapter = new SportGest.DatabaseSportGestDataSetTableAdapters.JugadoresAdapter();
-            this.equiposAdapter = new SportGest.DatabaseSportGestDataSetTableAdapters.EquiposAdapter();
+            this.lblName = new System.Windows.Forms.Label();
             this.gbCambios.SuspendLayout();
             this.gbAtaque.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -120,7 +117,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(539, 167);
+            this.label1.Location = new System.Drawing.Point(520, 133);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 13);
             this.label1.TabIndex = 1;
@@ -158,7 +155,7 @@
             this.gbCambios.Controls.Add(this.label2);
             this.gbCambios.Controls.Add(this.cbCambio12);
             this.gbCambios.Controls.Add(this.cbCambio11);
-            this.gbCambios.Location = new System.Drawing.Point(31, 431);
+            this.gbCambios.Location = new System.Drawing.Point(12, 397);
             this.gbCambios.Name = "gbCambios";
             this.gbCambios.Size = new System.Drawing.Size(283, 156);
             this.gbCambios.TabIndex = 17;
@@ -461,7 +458,7 @@
             this.gbAtaque.Controls.Add(this.tbPosAtq);
             this.gbAtaque.Controls.Add(this.label16);
             this.gbAtaque.Controls.Add(this.label15);
-            this.gbAtaque.Location = new System.Drawing.Point(320, 435);
+            this.gbAtaque.Location = new System.Drawing.Point(301, 401);
             this.gbAtaque.Name = "gbAtaque";
             this.gbAtaque.Size = new System.Drawing.Size(172, 152);
             this.gbAtaque.TabIndex = 14;
@@ -543,7 +540,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::SportGest.Properties.Resources.campo_cesped;
-            this.pictureBox1.Location = new System.Drawing.Point(31, 167);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 133);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(486, 246);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -556,7 +553,7 @@
             this.gbDefensa.Controls.Add(this.tbEstDef);
             this.gbDefensa.Controls.Add(this.label17);
             this.gbDefensa.Controls.Add(this.tbPosDef);
-            this.gbDefensa.Location = new System.Drawing.Point(498, 435);
+            this.gbDefensa.Location = new System.Drawing.Point(479, 401);
             this.gbDefensa.Name = "gbDefensa";
             this.gbDefensa.Size = new System.Drawing.Size(180, 152);
             this.gbDefensa.TabIndex = 15;
@@ -566,7 +563,7 @@
             // tbObservaciones
             // 
             this.tbObservaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbObservaciones.Location = new System.Drawing.Point(689, 435);
+            this.tbObservaciones.Location = new System.Drawing.Point(670, 401);
             this.tbObservaciones.MaxLength = 500;
             this.tbObservaciones.Multiline = true;
             this.tbObservaciones.Name = "tbObservaciones";
@@ -576,7 +573,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(859, 167);
+            this.label13.Location = new System.Drawing.Point(840, 133);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(143, 13);
             this.label13.TabIndex = 14;
@@ -585,7 +582,7 @@
             // tbCalentamiento
             // 
             this.tbCalentamiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCalentamiento.Location = new System.Drawing.Point(862, 183);
+            this.tbCalentamiento.Location = new System.Drawing.Point(843, 149);
             this.tbCalentamiento.MaxLength = 300;
             this.tbCalentamiento.Multiline = true;
             this.tbCalentamiento.Name = "tbCalentamiento";
@@ -596,7 +593,7 @@
             // 
             this.listJugadores.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listJugadores.FormattingEnabled = true;
-            this.listJugadores.Location = new System.Drawing.Point(542, 183);
+            this.listJugadores.Location = new System.Drawing.Point(523, 149);
             this.listJugadores.Name = "listJugadores";
             this.listJugadores.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.listJugadores.Size = new System.Drawing.Size(280, 199);
@@ -605,7 +602,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(271, 128);
+            this.label20.Location = new System.Drawing.Point(252, 94);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(10, 13);
             this.label20.TabIndex = 19;
@@ -614,7 +611,7 @@
             // tbLocal
             // 
             this.tbLocal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbLocal.Location = new System.Drawing.Point(39, 120);
+            this.tbLocal.Location = new System.Drawing.Point(20, 86);
             this.tbLocal.Name = "tbLocal";
             this.tbLocal.ReadOnly = true;
             this.tbLocal.Size = new System.Drawing.Size(205, 26);
@@ -624,7 +621,7 @@
             // 
             // resultLocal
             // 
-            this.resultLocal.Location = new System.Drawing.Point(250, 125);
+            this.resultLocal.Location = new System.Drawing.Point(231, 91);
             this.resultLocal.Name = "resultLocal";
             this.resultLocal.Size = new System.Drawing.Size(16, 20);
             this.resultLocal.TabIndex = 6;
@@ -633,7 +630,7 @@
             // 
             // resultVisitante
             // 
-            this.resultVisitante.Location = new System.Drawing.Point(287, 125);
+            this.resultVisitante.Location = new System.Drawing.Point(268, 91);
             this.resultVisitante.Name = "resultVisitante";
             this.resultVisitante.Size = new System.Drawing.Size(16, 20);
             this.resultVisitante.TabIndex = 7;
@@ -643,7 +640,7 @@
             // tbVisitante
             // 
             this.tbVisitante.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbVisitante.Location = new System.Drawing.Point(309, 120);
+            this.tbVisitante.Location = new System.Drawing.Point(290, 86);
             this.tbVisitante.Name = "tbVisitante";
             this.tbVisitante.Size = new System.Drawing.Size(208, 26);
             this.tbVisitante.TabIndex = 8;
@@ -654,7 +651,7 @@
             // 
             this.groupBox1.Controls.Add(this.rbVisitante);
             this.groupBox1.Controls.Add(this.rbLocal);
-            this.groupBox1.Location = new System.Drawing.Point(834, 110);
+            this.groupBox1.Location = new System.Drawing.Point(815, 76);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(199, 36);
             this.groupBox1.TabIndex = 10;
@@ -688,7 +685,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(34, 80);
+            this.label21.Location = new System.Drawing.Point(15, 46);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(71, 13);
             this.label21.TabIndex = 25;
@@ -703,7 +700,7 @@
             "Liga",
             "Copa",
             "Torneo"});
-            this.cbCompetición.Location = new System.Drawing.Point(109, 72);
+            this.cbCompetición.Location = new System.Drawing.Point(90, 38);
             this.cbCompetición.Name = "cbCompetición";
             this.cbCompetición.Size = new System.Drawing.Size(82, 28);
             this.cbCompetición.TabIndex = 0;
@@ -712,7 +709,7 @@
             // tbCampo
             // 
             this.tbCampo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCampo.Location = new System.Drawing.Point(369, 73);
+            this.tbCampo.Location = new System.Drawing.Point(350, 39);
             this.tbCampo.MaxLength = 50;
             this.tbCampo.Name = "tbCampo";
             this.tbCampo.Size = new System.Drawing.Size(309, 26);
@@ -722,7 +719,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(696, 79);
+            this.label22.Location = new System.Drawing.Point(677, 45);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(43, 13);
             this.label22.TabIndex = 29;
@@ -732,28 +729,18 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(317, 81);
+            this.label23.Location = new System.Drawing.Point(298, 47);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(46, 13);
             this.label23.TabIndex = 30;
             this.label23.Text = "Campo: ";
             this.toolTip1.SetToolTip(this.label23, "Campo donde se disputará el partido");
             // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(452, 24);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(212, 31);
-            this.label24.TabIndex = 32;
-            this.label24.Text = "Hoja de partido";
-            // 
             // cbEquipo
             // 
             this.cbEquipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbEquipo.FormattingEnabled = true;
-            this.cbEquipo.Location = new System.Drawing.Point(621, 118);
+            this.cbEquipo.Location = new System.Drawing.Point(602, 84);
             this.cbEquipo.Name = "cbEquipo";
             this.cbEquipo.Size = new System.Drawing.Size(192, 28);
             this.cbEquipo.TabIndex = 9;
@@ -762,7 +749,7 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(569, 126);
+            this.label25.Location = new System.Drawing.Point(550, 92);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(46, 13);
             this.label25.TabIndex = 34;
@@ -771,7 +758,7 @@
             // tbHora
             // 
             this.tbHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbHora.Location = new System.Drawing.Point(884, 72);
+            this.tbHora.Location = new System.Drawing.Point(865, 38);
             this.tbHora.MaxLength = 5;
             this.tbHora.Name = "tbHora";
             this.tbHora.Size = new System.Drawing.Size(59, 26);
@@ -783,7 +770,7 @@
             // 
             this.tbJornada.Enabled = false;
             this.tbJornada.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbJornada.Location = new System.Drawing.Point(277, 72);
+            this.tbJornada.Location = new System.Drawing.Point(258, 38);
             this.tbJornada.Name = "tbJornada";
             this.tbJornada.Size = new System.Drawing.Size(20, 26);
             this.tbJornada.TabIndex = 1;
@@ -791,7 +778,7 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(227, 81);
+            this.label26.Location = new System.Drawing.Point(208, 47);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(48, 13);
             this.label26.TabIndex = 36;
@@ -799,7 +786,7 @@
             // 
             // btnConfirmarAlineacion
             // 
-            this.btnConfirmarAlineacion.Location = new System.Drawing.Point(542, 389);
+            this.btnConfirmarAlineacion.Location = new System.Drawing.Point(523, 355);
             this.btnConfirmarAlineacion.Name = "btnConfirmarAlineacion";
             this.btnConfirmarAlineacion.Size = new System.Drawing.Size(280, 24);
             this.btnConfirmarAlineacion.TabIndex = 12;
@@ -810,7 +797,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(686, 419);
+            this.label12.Location = new System.Drawing.Point(667, 385);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(136, 13);
             this.label12.TabIndex = 38;
@@ -819,7 +806,7 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(842, 80);
+            this.label27.Location = new System.Drawing.Point(823, 46);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(36, 13);
             this.label27.TabIndex = 40;
@@ -828,7 +815,7 @@
             // lblTipo
             // 
             this.lblTipo.AutoSize = true;
-            this.lblTipo.Location = new System.Drawing.Point(605, 167);
+            this.lblTipo.Location = new System.Drawing.Point(586, 133);
             this.lblTipo.Name = "lblTipo";
             this.lblTipo.Size = new System.Drawing.Size(55, 13);
             this.lblTipo.TabIndex = 41;
@@ -837,7 +824,7 @@
             // tbFecha
             // 
             this.tbFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbFecha.Location = new System.Drawing.Point(736, 72);
+            this.tbFecha.Location = new System.Drawing.Point(717, 38);
             this.tbFecha.MaxLength = 10;
             this.tbFecha.Name = "tbFecha";
             this.tbFecha.Size = new System.Drawing.Size(100, 26);
@@ -850,7 +837,7 @@
             this.añadirEntrenamientoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1168, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1139, 24);
             this.menuStrip1.TabIndex = 18;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -879,24 +866,25 @@
             this.cancelarToolStripMenuItem.Text = "&Cancelar";
             this.cancelarToolStripMenuItem.Click += new System.EventHandler(this.cancelarPartido_Click);
             // 
-            // partidosAdapter
+            // lblName
             // 
-            this.partidosAdapter.ClearBeforeFill = true;
-            // 
-            // jugadoresAdapter
-            // 
-            this.jugadoresAdapter.ClearBeforeFill = true;
-            // 
-            // equiposAdapter
-            // 
-            this.equiposAdapter.ClearBeforeFill = true;
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Pristina", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.ForeColor = System.Drawing.Color.ForestGreen;
+            this.lblName.Location = new System.Drawing.Point(979, 28);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(139, 46);
+            this.lblName.TabIndex = 42;
+            this.lblName.Text = "SportGest";
+            this.lblName.UseMnemonic = false;
             // 
             // Partido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Lavender;
-            this.ClientSize = new System.Drawing.Size(1168, 618);
+            this.ClientSize = new System.Drawing.Size(1139, 568);
+            this.Controls.Add(this.lblName);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.tbFecha);
             this.Controls.Add(this.lblTipo);
@@ -907,7 +895,6 @@
             this.Controls.Add(this.tbJornada);
             this.Controls.Add(this.label25);
             this.Controls.Add(this.cbEquipo);
-            this.Controls.Add(this.label24);
             this.Controls.Add(this.label23);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.tbHora);
@@ -934,6 +921,8 @@
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "Partido";
+            this.ShowInTaskbar = false;
+            this.Text = "Hoja de partido";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Partido_FormClosing);
             this.Load += new System.EventHandler(this.Partido_Load);
             this.gbCambios.ResumeLayout(false);
@@ -1013,7 +1002,6 @@
         private System.Windows.Forms.TextBox tbCampo;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label24;
         private System.Windows.Forms.ComboBox cbEquipo;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.ToolTip toolTip1;
@@ -1029,8 +1017,6 @@
         private System.Windows.Forms.ToolStripMenuItem añadirEntrenamientoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem añadirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cancelarToolStripMenuItem;
-        private DatabaseSportGestDataSetTableAdapters.PartidosAdapter partidosAdapter;
-        private DatabaseSportGestDataSetTableAdapters.JugadoresAdapter jugadoresAdapter;
-        private DatabaseSportGestDataSetTableAdapters.EquiposAdapter equiposAdapter;
+        private System.Windows.Forms.Label lblName;
     }
 }

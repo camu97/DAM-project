@@ -83,6 +83,16 @@ namespace SportGest.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap campo_3d_intro {
+            get {
+                object obj = ResourceManager.GetObject("campo_3d_intro", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap campo_cesped {
             get {
                 object obj = ResourceManager.GetObject("campo_cesped", resourceCulture);
