@@ -13,15 +13,16 @@ namespace SportGest
 {
     public partial class HistorialPartidos : Form
     {
-        string sCnn = "Data Source = (localdb)\\mssqllocaldb; Initial Catalog = SportGest; Integrated Security = True; Pooling = False";
-        string titulares = "";
+        string sCnn = Properties.Settings.Default.Conexion;
+        string titulares = "", suplentes = "";
         public HistorialPartidos()
         {
             InitializeComponent();
         }
 
-        private void lblTitulares_Click(object sender, EventArgs e)
+        private void lblEquipoConvocado_Click(object sender, EventArgs e)
         {
+            string[] tit = { "" }, sup = { "" };
             using (SqlConnection connection = new SqlConnection(sCnn))
             {
                 try
@@ -30,21 +31,28 @@ namespace SportGest
                     DataTable dt = partidosAdapter.GetData();
                     foreach (DataRow dr in dt.Rows)
                     {
-                        for (int i = 0; i < listPartidos.Items.Count; i++)
+                        if (dr["Id"].ToString().Equals(listPartidos.SelectedItem.ToString().Split('-')[0].Trim()))
                         {
-                            if (dr["Id"].Equals(listPartidos.SelectedItem.ToString().Split('-')[0].Trim()))
+                            tit = dr["titulares"].ToString().Split('|');
+                            for (int j = 0; j < tit.Length; j++)
                             {
-                                string[] tit = dr["titulares"].ToString().Split('|');
-                                for (int j = 0; j < tit.Length; j++)
-                                {
-                                    titulares += tit[j] + ",";
-                                }
-                                MessageBox.Show(titulares.Substring(0, titulares.Length - 1) + "\r\n" + dr["suplentes"].ToString(), "Equipo");
+                                titulares += tit[j] + ",";
                             }
+                            sup = dr["suplentes"].ToString().Split('|');
+                            for (int j = 0; j < sup.Length; j++)
+                            {
+                                suplentes += sup[j] + ",";
+                            }
+
+                            MessageBox.Show(titulares.Substring(0, titulares.Length - 1) + "\r\n" + suplentes.Substring(0, suplentes.Length - 1), "Equipo", MessageBoxButtons.OK, MessageBoxIcon.None);
                         }
                     }
                 }
                 catch (SqlException) { }
+                catch (NullReferenceException)
+                {
+                    MessageBox.Show("Seleccionad un partido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
         }
 
@@ -56,14 +64,15 @@ namespace SportGest
                 {
                     connection.Open();
                     DataTable dt = new DataTable();
-                    dt = partidosAdapter.GetData();
+                    dt = equiposAdapter.GetData();
                     foreach (DataRow dr in dt.Rows)
                     {
-                        cbEquipo.Items.Add(dr["equipo"]);
+                        cbEquipo.Items.Add(dr["nombre"] + " - " + dr["categoria"]);
                     }
 
                 }
                 catch (SqlException) { }
+                //catch (ConstraintException) { }
             }
         }
 
@@ -77,16 +86,17 @@ namespace SportGest
                     DataTable dt = partidosAdapter.GetData();
                     foreach (DataRow dr in dt.Rows)
                     {
-                        for (int i = 0; i < listPartidos.Items.Count; i++)
+                        if (dr["Id"].ToString().Equals(listPartidos.SelectedItem.ToString().Split('-')[0].Trim()))
                         {
-                            if (dr["Id"].Equals(listPartidos.SelectedItem.ToString().Split('-')[0].Trim()))
-                            {
-                                MessageBox.Show("Ataque: " + dr["estilo_atq"] + "\r\nDefensa: " + dr["estilo_def"].ToString(), "Estilo de juego");
-                            }
+                            MessageBox.Show("Ataque: " + dr["estilo_atq"] + "\r\nDefensa: " + dr["estilo_def"].ToString(), "Estilo de juego");
                         }
                     }
                 }
                 catch (SqlException) { }
+                catch (NullReferenceException)
+                {
+                    MessageBox.Show("Seleccionad un partido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
         }
 
@@ -100,21 +110,23 @@ namespace SportGest
                     DataTable dt = partidosAdapter.GetData();
                     foreach (DataRow dr in dt.Rows)
                     {
-                        for (int i = 0; i < listPartidos.Items.Count; i++)
+                        if (dr["Id"].ToString().Equals(listPartidos.SelectedItem.ToString().Split('-')[0].Trim()))
                         {
-                            if (dr["Id"].Equals(listPartidos.SelectedItem.ToString().Split('-')[0].Trim()))
-                            {
-                                MessageBox.Show("Ataque: " + dr["posicion_atq"] + "\r\nDefensa: " + dr["posicion_def"].ToString(), "Posicionamiento");
-                            }
+                            MessageBox.Show("Ataque: " + dr["posicion_atq"] + "\r\nDefensa: " + dr["posicion_def"].ToString(), "Posicionamiento");
                         }
                     }
                 }
                 catch (SqlException) { }
+                catch (NullReferenceException)
+                {
+                    MessageBox.Show("Seleccionad un partido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
         }
 
         private void cbEquipo_SelectedIndexChanged(object sender, EventArgs e)
         {
+            listPartidos.Items.Clear();
             using (SqlConnection connection = new SqlConnection(sCnn))
             {
                 try
@@ -124,9 +136,19 @@ namespace SportGest
                     dt = partidosAdapter.GetData();
                     foreach (DataRow dr in dt.Rows)
                     {
-                        if (cbEquipo.SelectedItem.ToString().Equals(dr["equipo"]))
+                        if (dr["condicion"].ToString().Equals("Local"))
                         {
-                            listPartidos.Items.Add(dr["Id"] + " - " + dr["fecha"] + " - " + dr["rival"] + " - " + dr["competicion"]);
+                            if (cbEquipo.SelectedItem.ToString().Equals(dr["equipo_local"]))
+                            {
+                                listPartidos.Items.Add(dr["Id"] + " - " + dr["fecha"] + " - vs. " + dr["equipo_visitante"] + " - " + dr["competicion"]);
+                            }
+                        }
+                        else
+                        {
+                            if (cbEquipo.SelectedItem.ToString().Equals(dr["equipo_visitante"]))
+                            {
+                                listPartidos.Items.Add(dr["Id"] + " - " + dr["fecha"] + " - vs. " + dr["equipo_local"] + " - " + dr["competicion"]);
+                            }
                         }
                     }
 
@@ -138,6 +160,47 @@ namespace SportGest
         private void volverAlMenúPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void listPartidos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            using (SqlConnection connection = new SqlConnection(sCnn))
+            {
+                try
+                {
+                    connection.Open();
+                    DataTable dt = new DataTable();
+                    dt = partidosAdapter.GetData();
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        if (dr["Id"].ToString().Equals(listPartidos.SelectedItem.ToString().Split('-')[0].Trim()))
+                        {
+                            lblFecha.Text = dr["fecha"].ToString();
+                            if (dr["resultado"].ToString().Equals("VICTORIA"))
+                            {
+                                lblResultado.ForeColor = Color.DarkGreen;
+                            }
+                            else
+                            {
+                                lblResultado.ForeColor = Color.DarkRed;
+                            }
+                            lblResultado.Text = dr["resultado"].ToString() + " [" + dr["goles_local"] + "-" + dr["goles_visitante"] + "]";
+                            lblEquipo.Text = cbEquipo.SelectedItem.ToString().Split('-')[0].Trim();
+                            lblCategoria.Text = cbEquipo.SelectedItem.ToString().Split('-')[1].Trim();
+                            if (dr["condicion"].ToString().Equals("Local"))
+                            {
+                                lblRival.Text = dr["equipo_visitante"].ToString();
+                            }
+                            else
+                            {
+                                lblRival.Text = dr["equipo_local"].ToString();
+                            }
+                            tbObservaciones.Text = dr["observaciones"].ToString();
+                        }
+                    }
+                }
+                catch (SqlException) { }
+            }
         }
     }
 }

@@ -15,7 +15,7 @@ namespace SportGest
     {
         public bool editar = false, error = false;
         public string id = "";
-        string sCnn = "Data Source = (localdb)\\mssqllocaldb; Initial Catalog = SportGest; Integrated Security = True; Pooling = False";
+        string sCnn = Properties.Settings.Default.Conexion;
         public NuevoJugador()
         {
             InitializeComponent();
@@ -131,7 +131,7 @@ namespace SportGest
             using (SqlConnection connection = new SqlConnection(sCnn))
             {
                 connection.Open();
-                DataTable dt = equiposTableAdapter.GetData();
+                DataTable dt = equiposAdapter.GetData();
                 foreach (DataRow dr in dt.Rows)
                 {
                     this.cbEquipos.Items.Add(dr["nombre"] + "   [" + dr["categoria"] + "]");

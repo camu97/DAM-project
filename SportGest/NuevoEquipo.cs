@@ -15,7 +15,7 @@ namespace SportGest
     {
         public bool editar = false, error = false;
         public string id;
-        string sCnn = "Data Source = (localdb)\\mssqllocaldb; Initial Catalog = SportGest; Integrated Security = True; Pooling = False";
+        string sCnn = Properties.Settings.Default.Conexion;
         public NuevoEquipo()
         {
             InitializeComponent();
@@ -42,7 +42,7 @@ namespace SportGest
                 connection.Open();
                 DataTable dt;
 
-                dt = equiposTableAdapter1.GetData();
+                dt = equiposAdapter.GetData();
                 foreach (DataRow dr in dt.Rows)
                 {
                     if (dr["id"].ToString().Equals(id))
@@ -79,7 +79,7 @@ namespace SportGest
                         DataTable dt = new DataTable();
                         try
                         {
-                            equiposTableAdapter1.Insert(tbNombre.Text, cbCategoria.SelectedItem.ToString(), tbLiga.Text, int.Parse(tbNumero.Text), tbObservaciones.Text);
+                            equiposAdapter.Insert(tbNombre.Text, cbCategoria.SelectedItem.ToString(), tbLiga.Text, int.Parse(tbNumero.Text), tbObservaciones.Text);
                             MessageBox.Show("Operación correcta", "Añadir", MessageBoxButtons.OK);
                         }
                         catch (Exception ex)
@@ -97,7 +97,7 @@ namespace SportGest
                         try
                         {
                             connection.Open();
-                            DataTable dt = equiposTableAdapter1.GetData();
+                            DataTable dt = equiposAdapter.GetData();
                             DataRow dr;
                             for (int i = 0; i < dt.Rows.Count; i++)
                             {
@@ -109,7 +109,7 @@ namespace SportGest
                                     dr["categoria"] = cbCategoria.SelectedItem.ToString();
                                     dr["observaciones"] = tbObservaciones.Text;
                                     dr["liga"] = tbLiga.Text;
-                                    equiposTableAdapter1.Update(dr);
+                                    equiposAdapter.Update(dr);
                                 }
                             }
 

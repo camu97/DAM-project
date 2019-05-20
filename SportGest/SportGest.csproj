@@ -13,7 +13,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\javie\Desktop\SportGest\</PublishUrl>
+    <PublishUrl>D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\Instalación_SportGest\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -25,7 +25,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ProductName>SportGest</ProductName>
     <PublisherName>Javier Cameselle Abreu</PublisherName>
-    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationRevision>5</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -137,6 +137,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DatabaseSportGestDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatabaseSportGestDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Equipo.cs" />
     <Compile Include="HistorialPartidos.cs">
       <SubType>Form</SubType>
@@ -194,14 +199,6 @@
     <Compile Include="Entrenamiento.Designer.cs">
       <DependentUpon>Entrenamiento.cs</DependentUpon>
     </Compile>
-    <Compile Include="SportGestDataSet.cs">
-      <DependentUpon>SportGestDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="SportGestDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SportGestDataSet.xsd</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="HistorialPartidos.resx">
       <DependentUpon>HistorialPartidos.cs</DependentUpon>
     </EmbeddedResource>
@@ -231,6 +228,17 @@
     <EmbeddedResource Include="Entrenamiento.resx">
       <DependentUpon>Entrenamiento.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DatabaseSportGestDataSet.xsc">
+      <DependentUpon>DatabaseSportGestDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DatabaseSportGestDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatabaseSportGestDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DatabaseSportGestDataSet.xss">
+      <DependentUpon>DatabaseSportGestDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -241,17 +249,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="SportGestDataSet.xsc">
-      <DependentUpon>SportGestDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="SportGestDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>SportGestDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="SportGestDataSet.xss">
-      <DependentUpon>SportGestDataSet.xsd</DependentUpon>
-    </None>
     <None Include="SportGest_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
@@ -262,6 +259,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\opciones.png" />
+    <Content Include="DatabaseSportGest.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DatabaseSportGest_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>DatabaseSportGest.mdf</DependentUpon>
+    </Content>
     <Content Include="s-icon.ico" />
     <None Include="Resources\aro.png" />
     <None Include="Resources\aros_grupo.png" />
@@ -296,6 +300,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

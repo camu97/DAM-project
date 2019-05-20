@@ -55,13 +55,11 @@
             this.atrásToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label6 = new System.Windows.Forms.Label();
             this.lblNumero = new System.Windows.Forms.Label();
-            this.sportGestDataSet = new SportGest.SportGestDataSet();
-            this.equiposTableAdapter = new SportGest.SportGestDataSetTableAdapters.EquiposTableAdapter();
-            this.jugadoresAdapter = new SportGest.SportGestDataSetTableAdapters.JugadoresTableAdapter();
+            this.equiposAdapter = new SportGest.DatabaseSportGestDataSetTableAdapters.EquiposAdapter();
+            this.jugadoresAdapter = new SportGest.DatabaseSportGestDataSetTableAdapters.JugadoresAdapter();
             this.contextMenuStrip1.SuspendLayout();
             this.contextMenuStrip2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sportGestDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // listJugadores
@@ -288,14 +286,9 @@
             this.lblNumero.TabIndex = 15;
             this.lblNumero.Text = "_";
             // 
-            // sportGestDataSet
+            // equiposAdapter
             // 
-            this.sportGestDataSet.DataSetName = "SportGestDataSet";
-            this.sportGestDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // equiposTableAdapter
-            // 
-            this.equiposTableAdapter.ClearBeforeFill = true;
+            this.equiposAdapter.ClearBeforeFill = true;
             // 
             // jugadoresAdapter
             // 
@@ -333,7 +326,6 @@
             this.contextMenuStrip2.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sportGestDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -359,9 +351,6 @@
         private System.Windows.Forms.ToolStripMenuItem nuevoJugadorToolStripMenuItem;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblNumero;
-        private SportGestDataSet sportGestDataSet;
-        private SportGestDataSetTableAdapters.EquiposTableAdapter equiposTableAdapter;
-        private SportGestDataSetTableAdapters.JugadoresTableAdapter jugadoresAdapter;
         private System.Windows.Forms.ToolStripMenuItem atrásToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
@@ -369,5 +358,7 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private DatabaseSportGestDataSetTableAdapters.EquiposAdapter equiposAdapter;
+        private DatabaseSportGestDataSetTableAdapters.JugadoresAdapter jugadoresAdapter;
     }
 }

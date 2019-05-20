@@ -13,7 +13,7 @@ namespace SportGest
 {
     public partial class Partido : Form
     {
-        string sCnn = "Data Source = (localdb)\\mssqllocaldb; Initial Catalog = SportGest; Integrated Security = True; Pooling = False";
+        string sCnn = Properties.Settings.Default.Conexion;
         string resultado = "", tipo = "", condicion = "Local";
         string cambios = "", suplentes = "";
         List<string> equipoTitular, titulares;
@@ -283,6 +283,7 @@ namespace SportGest
                             suplentes += listJugadores.Items[i].ToString().Split('-')[0].Trim() + "|";
                         }
                     }
+                    suplentes.Substring(0, suplentes.Length - 1);
                 }
                 MessageBox.Show("Titulares y suplentes confirmados", "Equipo de partido", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 //}
@@ -379,37 +380,50 @@ namespace SportGest
                         }
                         tit = tit.Substring(0, tit.Length - 1);
 
-                        string j;
+                        string jornada;
                         if (tbJornada.Enabled)
                         {
-                            j = tbJornada.Text;
+                            jornada = tbJornada.Text;
                         }
                         else
                         {
-                            j = null;
+                            jornada = null;
                         }
 
+
+                        string local = tbLocal.Text;
+                        string visitante = tbVisitante.Text;
+                        if (condicion.Equals("Local"))
+                        {
+                            local.Split('-')[0].Trim();
+                        }
+                        else
+                        {
+                            visitante.Split('-')[0].Trim();
+                        }
+
+
                         partidosAdapter.Insert(
-                            DateTime.Parse(tbFecha.Text + " " + tbHora.Text),
-                            tbLocal.Text,
-                            tbVisitante.Text,
-                            int.Parse(resultLocal.Text),
-                            int.Parse(resultVisitante.Text),
-                            resultado,
-                            j,
-                            cbCompetición.SelectedItem.ToString(),
-                            tbCampo.Text,
-                            tbEstAtq.Text,
-                            tbEstDef.Text,
-                            tbPosAtq.Text,
-                            tbPosDef.Text,
-                            tbCalentamiento.Text,
-                            tbObservaciones.Text,
-                            tit,
-                            suplentes,
-                            cambios,
-                            condicion
-                        );
+                           DateTime.Parse(tbFecha.Text + " " + tbHora.Text),
+                           local,
+                           visitante,
+                           int.Parse(resultLocal.Text),
+                           int.Parse(resultVisitante.Text),
+                           resultado,
+                           jornada,
+                           cbCompetición.SelectedItem.ToString(),
+                           tbCampo.Text,
+                           tbEstAtq.Text,
+                           tbEstDef.Text,
+                           tbPosAtq.Text,
+                           tbPosDef.Text,
+                           tbCalentamiento.Text,
+                           tbObservaciones.Text,
+                           tit,
+                           suplentes,
+                           cambios,
+                           condicion
+                       );
                         p_prog = true;
                         MessageBox.Show("Partido añadido", "Partidos", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();

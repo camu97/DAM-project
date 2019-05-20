@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HistorialPartidos));
-            this.tbDescripción = new System.Windows.Forms.TextBox();
+            this.tbObservaciones = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.lblDuracion = new System.Windows.Forms.Label();
+            this.lblRival = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.lblObjectivo = new System.Windows.Forms.Label();
+            this.lblResultado = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lblCategoria = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
@@ -45,23 +46,25 @@
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.volverAlMenúPrincipalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lblCambios = new System.Windows.Forms.Label();
+            this.lblEquipoConvocado = new System.Windows.Forms.Label();
             this.lblEstilo = new System.Windows.Forms.Label();
             this.lblPosicionamiento = new System.Windows.Forms.Label();
-            this.partidosAdapter = new SportGest.SportGestDataSetTableAdapters.PartidosTableAdapter();
             this.cbEquipo = new System.Windows.Forms.ComboBox();
+            this.equiposAdapter = new SportGest.DatabaseSportGestDataSetTableAdapters.EquiposAdapter();
+            this.partidosAdapter = new SportGest.DatabaseSportGestDataSetTableAdapters.PartidosAdapter();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tbDescripción
+            // tbObservaciones
             // 
-            this.tbDescripción.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbDescripción.Location = new System.Drawing.Point(12, 116);
-            this.tbDescripción.Multiline = true;
-            this.tbDescripción.Name = "tbDescripción";
-            this.tbDescripción.ReadOnly = true;
-            this.tbDescripción.Size = new System.Drawing.Size(421, 82);
-            this.tbDescripción.TabIndex = 33;
+            this.tbObservaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbObservaciones.Location = new System.Drawing.Point(12, 116);
+            this.tbObservaciones.Multiline = true;
+            this.tbObservaciones.Name = "tbObservaciones";
+            this.tbObservaciones.ReadOnly = true;
+            this.tbObservaciones.Size = new System.Drawing.Size(421, 82);
+            this.tbObservaciones.TabIndex = 33;
             // 
             // label6
             // 
@@ -72,14 +75,14 @@
             this.label6.TabIndex = 32;
             this.label6.Text = "Observaciones del encuentro:";
             // 
-            // lblDuracion
+            // lblRival
             // 
-            this.lblDuracion.AutoSize = true;
-            this.lblDuracion.Location = new System.Drawing.Point(363, 55);
-            this.lblDuracion.Name = "lblDuracion";
-            this.lblDuracion.Size = new System.Drawing.Size(13, 13);
-            this.lblDuracion.TabIndex = 31;
-            this.lblDuracion.Text = "_";
+            this.lblRival.AutoSize = true;
+            this.lblRival.Location = new System.Drawing.Point(363, 55);
+            this.lblRival.Name = "lblRival";
+            this.lblRival.Size = new System.Drawing.Size(13, 13);
+            this.lblRival.TabIndex = 31;
+            this.lblRival.Text = "_";
             // 
             // label7
             // 
@@ -90,23 +93,23 @@
             this.label7.TabIndex = 30;
             this.label7.Text = "Rival:";
             // 
-            // lblObjectivo
+            // lblResultado
             // 
-            this.lblObjectivo.AutoSize = true;
-            this.lblObjectivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblObjectivo.Location = new System.Drawing.Point(228, 33);
-            this.lblObjectivo.Name = "lblObjectivo";
-            this.lblObjectivo.Size = new System.Drawing.Size(14, 13);
-            this.lblObjectivo.TabIndex = 29;
-            this.lblObjectivo.Text = "_";
+            this.lblResultado.AutoSize = true;
+            this.lblResultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResultado.Location = new System.Drawing.Point(218, 33);
+            this.lblResultado.Name = "lblResultado";
+            this.lblResultado.Size = new System.Drawing.Size(13, 13);
+            this.lblResultado.TabIndex = 29;
+            this.lblResultado.Text = "_";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(154, 33);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 13);
+            this.label5.Size = new System.Drawing.Size(58, 13);
             this.label5.TabIndex = 28;
             this.label5.Text = "Resultado:";
             // 
@@ -173,6 +176,7 @@
             this.listPartidos.Name = "listPartidos";
             this.listPartidos.Size = new System.Drawing.Size(424, 238);
             this.listPartidos.TabIndex = 20;
+            this.listPartidos.SelectedIndexChanged += new System.EventHandler(this.listPartidos_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -200,17 +204,17 @@
             this.volverAlMenúPrincipalToolStripMenuItem.Text = "Volver al menú principal";
             this.volverAlMenúPrincipalToolStripMenuItem.Click += new System.EventHandler(this.volverAlMenúPrincipalToolStripMenuItem_Click);
             // 
-            // lblCambios
+            // lblEquipoConvocado
             // 
-            this.lblCambios.AutoSize = true;
-            this.lblCambios.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblCambios.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblCambios.Location = new System.Drawing.Point(9, 77);
-            this.lblCambios.Name = "lblCambios";
-            this.lblCambios.Size = new System.Drawing.Size(49, 15);
-            this.lblCambios.TabIndex = 39;
-            this.lblCambios.Text = "Titulares";
-            this.lblCambios.Click += new System.EventHandler(this.lblTitulares_Click);
+            this.lblEquipoConvocado.AutoSize = true;
+            this.lblEquipoConvocado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblEquipoConvocado.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblEquipoConvocado.Location = new System.Drawing.Point(9, 77);
+            this.lblEquipoConvocado.Name = "lblEquipoConvocado";
+            this.lblEquipoConvocado.Size = new System.Drawing.Size(42, 15);
+            this.lblEquipoConvocado.TabIndex = 39;
+            this.lblEquipoConvocado.Text = "Equipo";
+            this.lblEquipoConvocado.Click += new System.EventHandler(this.lblEquipoConvocado_Click);
             // 
             // lblEstilo
             // 
@@ -236,33 +240,38 @@
             this.lblPosicionamiento.Text = "Posicionamiento";
             this.lblPosicionamiento.Click += new System.EventHandler(this.lblPosicionamiento_Click);
             // 
-            // partidosAdapter
-            // 
-            this.partidosAdapter.ClearBeforeFill = true;
-            // 
             // cbEquipo
             // 
             this.cbEquipo.FormattingEnabled = true;
             this.cbEquipo.Location = new System.Drawing.Point(63, 207);
             this.cbEquipo.Name = "cbEquipo";
-            this.cbEquipo.Size = new System.Drawing.Size(121, 21);
+            this.cbEquipo.Size = new System.Drawing.Size(167, 21);
             this.cbEquipo.TabIndex = 42;
             this.cbEquipo.SelectedIndexChanged += new System.EventHandler(this.cbEquipo_SelectedIndexChanged);
+            // 
+            // equiposAdapter
+            // 
+            this.equiposAdapter.ClearBeforeFill = true;
+            // 
+            // partidosAdapter
+            // 
+            this.partidosAdapter.ClearBeforeFill = true;
             // 
             // HistorialPartidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(444, 480);
             this.Controls.Add(this.cbEquipo);
             this.Controls.Add(this.lblPosicionamiento);
             this.Controls.Add(this.lblEstilo);
-            this.Controls.Add(this.lblCambios);
-            this.Controls.Add(this.tbDescripción);
+            this.Controls.Add(this.lblEquipoConvocado);
+            this.Controls.Add(this.tbObservaciones);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.lblDuracion);
+            this.Controls.Add(this.lblRival);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.lblObjectivo);
+            this.Controls.Add(this.lblResultado);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lblCategoria);
             this.Controls.Add(this.lblFecha);
@@ -287,11 +296,11 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox tbDescripción;
+        private System.Windows.Forms.TextBox tbObservaciones;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label lblDuracion;
+        private System.Windows.Forms.Label lblRival;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label lblObjectivo;
+        private System.Windows.Forms.Label lblResultado;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblCategoria;
         private System.Windows.Forms.Label lblFecha;
@@ -303,10 +312,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem volverAlMenúPrincipalToolStripMenuItem;
-        private System.Windows.Forms.Label lblCambios;
+        private System.Windows.Forms.Label lblEquipoConvocado;
         private System.Windows.Forms.Label lblEstilo;
         private System.Windows.Forms.Label lblPosicionamiento;
-        private SportGestDataSetTableAdapters.PartidosTableAdapter partidosAdapter;
         private System.Windows.Forms.ComboBox cbEquipo;
+        private DatabaseSportGestDataSetTableAdapters.EquiposAdapter equiposAdapter;
+        private DatabaseSportGestDataSetTableAdapters.PartidosAdapter partidosAdapter;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

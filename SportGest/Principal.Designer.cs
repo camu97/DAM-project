@@ -36,8 +36,6 @@
             this.btnNuevoEntrenamiento = new System.Windows.Forms.Button();
             this.calendar = new System.Windows.Forms.MonthCalendar();
             this.ListaMensajes = new System.Windows.Forms.ListBox();
-            this.notasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sportGestDataSet = new SportGest.SportGestDataSet();
             this.tbNuevaNota = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnAñadirNota = new System.Windows.Forms.Button();
@@ -48,10 +46,9 @@
             this.itemSobre = new System.Windows.Forms.ToolStripMenuItem();
             this.tbLeerNotas = new System.Windows.Forms.TextBox();
             this.btnEliminarNota = new System.Windows.Forms.Button();
-            this.notasTableAdapter = new SportGest.SportGestDataSetTableAdapters.NotasTableAdapter();
             this.btnHistorialPartidos = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.notasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sportGestDataSet)).BeginInit();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.notasAdapter = new SportGest.DatabaseSportGestDataSetTableAdapters.NotasAdapter();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -139,16 +136,6 @@
             this.ListaMensajes.Size = new System.Drawing.Size(346, 132);
             this.ListaMensajes.TabIndex = 6;
             this.ListaMensajes.SelectedIndexChanged += new System.EventHandler(this.ListaMensajes_SelectedIndexChanged);
-            // 
-            // notasBindingSource
-            // 
-            this.notasBindingSource.DataMember = "Notas";
-            this.notasBindingSource.DataSource = this.sportGestDataSet;
-            // 
-            // sportGestDataSet
-            // 
-            this.sportGestDataSet.DataSetName = "SportGestDataSet";
-            this.sportGestDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tbNuevaNota
             // 
@@ -258,10 +245,6 @@
             this.btnEliminarNota.UseVisualStyleBackColor = false;
             this.btnEliminarNota.Click += new System.EventHandler(this.btnEliminarNota_Click);
             // 
-            // notasTableAdapter
-            // 
-            this.notasTableAdapter.ClearBeforeFill = true;
-            // 
             // btnHistorialPartidos
             // 
             this.btnHistorialPartidos.BackColor = System.Drawing.SystemColors.Control;
@@ -277,6 +260,10 @@
             this.btnHistorialPartidos.Text = "&Historial de partidos";
             this.btnHistorialPartidos.UseVisualStyleBackColor = false;
             this.btnHistorialPartidos.Click += new System.EventHandler(this.btnHistorialPartidos_Click);
+            // 
+            // notasAdapter
+            // 
+            this.notasAdapter.ClearBeforeFill = true;
             // 
             // Principal
             // 
@@ -313,8 +300,6 @@
             this.Text = "SportGest";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Principal_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.notasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sportGestDataSet)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -339,10 +324,9 @@
         private System.Windows.Forms.ToolStripMenuItem itemSalir;
         private System.Windows.Forms.TextBox tbLeerNotas;
         private System.Windows.Forms.Button btnEliminarNota;
-        private SportGestDataSet sportGestDataSet;
-        private SportGestDataSetTableAdapters.NotasTableAdapter notasTableAdapter;
-        private System.Windows.Forms.BindingSource notasBindingSource;
         private System.Windows.Forms.Button btnHistorialPartidos;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private DatabaseSportGestDataSetTableAdapters.NotasAdapter notasAdapter;
     }
 }
 

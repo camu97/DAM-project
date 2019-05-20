@@ -14,7 +14,7 @@ namespace SportGest
 {
     public partial class Principal : Form
     {
-        string sCnn = "Data Source = (localdb)\\mssqllocaldb; Initial Catalog = SportGest; Integrated Security = True; Pooling = False";
+        string sCnn = Properties.Settings.Default.Conexion;
         public Principal()
         {
             InitializeComponent();
@@ -50,7 +50,7 @@ namespace SportGest
 
                 try
                 {
-                    dt = notasTableAdapter.GetData();
+                    dt = notasAdapter.GetData();
                     foreach (DataRow dr in dt.Rows)
                     {
                         ListaMensajes.Items.Add(dr["id"].ToString() + " - " + dr["fecha"].ToString().Split(' ')[0] + " - " + dr["nota"].ToString());
@@ -76,7 +76,7 @@ namespace SportGest
                     connection.Open();
                     try
                     {
-                        notasTableAdapter.Insert(DateTime.Now.Date, tbNuevaNota.Text);
+                        notasAdapter.Insert(DateTime.Now.Date, tbNuevaNota.Text);
                     }
                     catch (Exception ex)
                     {
@@ -86,7 +86,7 @@ namespace SportGest
                 }
                 tbNuevaNota.Clear();
                 ListaMensajes.Items.Clear();
-                dt = notasTableAdapter.GetData();
+                dt = notasAdapter.GetData();
                 foreach (DataRow dr in dt.Rows)
                 {
                     ListaMensajes.Items.Add(dr["id"].ToString() + " - " + dr["fecha"].ToString().Split(' ')[0] + " - " + dr["nota"].ToString());
@@ -131,7 +131,7 @@ namespace SportGest
 
         private void btnEliminarNota_Click(object sender, EventArgs e)
         {
-            notasTableAdapter.Delete(int.Parse(ListaMensajes.SelectedItem.ToString().Split('-')[0]));
+            notasAdapter.Delete(int.Parse(ListaMensajes.SelectedItem.ToString().Split('-')[0]));
             ListaMensajes.Items.Remove(ListaMensajes.SelectedItem);
             ListaMensajes.Refresh();
             ListaMensajes.SelectedItem = null;

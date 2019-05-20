@@ -77,9 +77,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.tbCalentamiento = new System.Windows.Forms.TextBox();
             this.listJugadores = new System.Windows.Forms.ListBox();
-            this.menuEquipoTitular = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.seleccionarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eliminarDelEquipoTitularToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label20 = new System.Windows.Forms.Label();
             this.tbLocal = new System.Windows.Forms.TextBox();
             this.resultLocal = new System.Windows.Forms.TextBox();
@@ -98,9 +95,6 @@
             this.label25 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tbHora = new System.Windows.Forms.TextBox();
-            this.jugadoresAdapter = new SportGest.SportGestDataSetTableAdapters.JugadoresTableAdapter();
-            this.equiposAdapter = new SportGest.SportGestDataSetTableAdapters.EquiposTableAdapter();
-            this.partidosAdapter = new SportGest.SportGestDataSetTableAdapters.PartidosTableAdapter();
             this.tbJornada = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.btnConfirmarAlineacion = new System.Windows.Forms.Button();
@@ -112,11 +106,13 @@
             this.añadirEntrenamientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.añadirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cancelarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.partidosAdapter = new SportGest.DatabaseSportGestDataSetTableAdapters.PartidosAdapter();
+            this.jugadoresAdapter = new SportGest.DatabaseSportGestDataSetTableAdapters.JugadoresAdapter();
+            this.equiposAdapter = new SportGest.DatabaseSportGestDataSetTableAdapters.EquiposAdapter();
             this.gbCambios.SuspendLayout();
             this.gbAtaque.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gbDefensa.SuspendLayout();
-            this.menuEquipoTitular.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -598,7 +594,6 @@
             // 
             // listJugadores
             // 
-            this.listJugadores.ContextMenuStrip = this.menuEquipoTitular;
             this.listJugadores.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listJugadores.FormattingEnabled = true;
             this.listJugadores.Location = new System.Drawing.Point(542, 183);
@@ -606,29 +601,6 @@
             this.listJugadores.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.listJugadores.Size = new System.Drawing.Size(280, 199);
             this.listJugadores.TabIndex = 11;
-            // 
-            // menuEquipoTitular
-            // 
-            this.menuEquipoTitular.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.seleccionarToolStripMenuItem,
-            this.eliminarDelEquipoTitularToolStripMenuItem});
-            this.menuEquipoTitular.Name = "menuEquipoTitular";
-            this.menuEquipoTitular.Size = new System.Drawing.Size(211, 48);
-            this.menuEquipoTitular.Text = "Equipo titular";
-            // 
-            // seleccionarToolStripMenuItem
-            // 
-            this.seleccionarToolStripMenuItem.Name = "seleccionarToolStripMenuItem";
-            this.seleccionarToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
-            this.seleccionarToolStripMenuItem.Text = "Incluir en equipo titular";
-            this.seleccionarToolStripMenuItem.Click += new System.EventHandler(this.seleccionarTitular_Click);
-            // 
-            // eliminarDelEquipoTitularToolStripMenuItem
-            // 
-            this.eliminarDelEquipoTitularToolStripMenuItem.Name = "eliminarDelEquipoTitularToolStripMenuItem";
-            this.eliminarDelEquipoTitularToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
-            this.eliminarDelEquipoTitularToolStripMenuItem.Text = "Eliminar del equipo titular";
-            this.eliminarDelEquipoTitularToolStripMenuItem.Click += new System.EventHandler(this.eliminarTitular_Click);
             // 
             // label20
             // 
@@ -807,18 +779,6 @@
             this.toolTip1.SetToolTip(this.tbHora, "Formato: \"dd/mm/aaaa hh:mm\"");
             this.tbHora.TextChanged += new System.EventHandler(this.tbHora_TextChanged);
             // 
-            // jugadoresAdapter
-            // 
-            this.jugadoresAdapter.ClearBeforeFill = true;
-            // 
-            // equiposAdapter
-            // 
-            this.equiposAdapter.ClearBeforeFill = true;
-            // 
-            // partidosAdapter
-            // 
-            this.partidosAdapter.ClearBeforeFill = true;
-            // 
             // tbJornada
             // 
             this.tbJornada.Enabled = false;
@@ -919,6 +879,18 @@
             this.cancelarToolStripMenuItem.Text = "&Cancelar";
             this.cancelarToolStripMenuItem.Click += new System.EventHandler(this.cancelarPartido_Click);
             // 
+            // partidosAdapter
+            // 
+            this.partidosAdapter.ClearBeforeFill = true;
+            // 
+            // jugadoresAdapter
+            // 
+            this.jugadoresAdapter.ClearBeforeFill = true;
+            // 
+            // equiposAdapter
+            // 
+            this.equiposAdapter.ClearBeforeFill = true;
+            // 
             // Partido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -971,7 +943,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gbDefensa.ResumeLayout(false);
             this.gbDefensa.PerformLayout();
-            this.menuEquipoTitular.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
@@ -1029,10 +1000,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox tbCalentamiento;
         private System.Windows.Forms.ListBox listJugadores;
-        private System.Windows.Forms.ContextMenuStrip menuEquipoTitular;
-        private System.Windows.Forms.ToolStripMenuItem seleccionarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem eliminarDelEquipoTitularToolStripMenuItem;
-        private SportGestDataSetTableAdapters.JugadoresTableAdapter jugadoresAdapter;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox tbLocal;
         private System.Windows.Forms.TextBox resultLocal;
@@ -1048,10 +1015,8 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.ComboBox cbEquipo;
-        private SportGestDataSetTableAdapters.EquiposTableAdapter equiposAdapter;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.ToolTip toolTip1;
-        private SportGestDataSetTableAdapters.PartidosTableAdapter partidosAdapter;
         private System.Windows.Forms.TextBox tbJornada;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Button btnConfirmarAlineacion;
@@ -1064,5 +1029,8 @@
         private System.Windows.Forms.ToolStripMenuItem añadirEntrenamientoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem añadirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cancelarToolStripMenuItem;
+        private DatabaseSportGestDataSetTableAdapters.PartidosAdapter partidosAdapter;
+        private DatabaseSportGestDataSetTableAdapters.JugadoresAdapter jugadoresAdapter;
+        private DatabaseSportGestDataSetTableAdapters.EquiposAdapter equiposAdapter;
     }
 }

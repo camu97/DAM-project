@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HistorialEntrenamientos));
             this.label1 = new System.Windows.Forms.Label();
             this.listSesiones = new System.Windows.Forms.ListBox();
@@ -47,9 +48,11 @@
             this.lblCalentamiento = new System.Windows.Forms.Label();
             this.lblPrincipal = new System.Windows.Forms.Label();
             this.lblCalma = new System.Windows.Forms.Label();
-            this.entrenamientoAdapter = new SportGest.SportGestDataSetTableAdapters.EntrenamientosTableAdapter();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.volverAlMenúPrincipalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.equiposAdapter = new SportGest.DatabaseSportGestDataSetTableAdapters.EquiposAdapter();
+            this.entrenamientosAdapter = new SportGest.DatabaseSportGestDataSetTableAdapters.EntrenamientosAdapter();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -232,10 +235,6 @@
             this.lblCalma.Text = "Vuelta a la calma";
             this.lblCalma.Click += new System.EventHandler(this.lblCalma_Click);
             // 
-            // entrenamientoAdapter
-            // 
-            this.entrenamientoAdapter.ClearBeforeFill = true;
-            // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -253,12 +252,20 @@
             this.volverAlMenúPrincipalToolStripMenuItem.Text = "Volver al menú principal";
             this.volverAlMenúPrincipalToolStripMenuItem.Click += new System.EventHandler(this.btnMenu_Click);
             // 
+            // equiposAdapter
+            // 
+            this.equiposAdapter.ClearBeforeFill = true;
+            // 
+            // entrenamientosAdapter
+            // 
+            this.entrenamientosAdapter.ClearBeforeFill = true;
+            // 
             // HistorialEntrenamientos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Lavender;
-            this.ClientSize = new System.Drawing.Size(450, 503);
+            this.ClientSize = new System.Drawing.Size(450, 508);
             this.Controls.Add(this.lblCalma);
             this.Controls.Add(this.lblPrincipal);
             this.Controls.Add(this.lblCalentamiento);
@@ -302,7 +309,6 @@
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Label lblCategoria;
         private System.Windows.Forms.Label label5;
-        private SportGestDataSetTableAdapters.EntrenamientosTableAdapter entrenamientoAdapter;
         private System.Windows.Forms.Label lblObjectivo;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblDuracion;
@@ -314,5 +320,8 @@
         private System.Windows.Forms.Label lblCalma;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem volverAlMenúPrincipalToolStripMenuItem;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private DatabaseSportGestDataSetTableAdapters.EquiposAdapter equiposAdapter;
+        private DatabaseSportGestDataSetTableAdapters.EntrenamientosAdapter entrenamientosAdapter;
     }
 }

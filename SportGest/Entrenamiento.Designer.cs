@@ -101,9 +101,9 @@
             this.tbMaterialPrincipal = new System.Windows.Forms.TextBox();
             this.tbMaterialCalma = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.equiposAdapter = new SportGest.SportGestDataSetTableAdapters.EquiposTableAdapter();
-            this.entrenamientosAdapter = new SportGest.SportGestDataSetTableAdapters.EntrenamientosTableAdapter();
             this.tbFecha = new System.Windows.Forms.TextBox();
+            this.equiposAdapter = new SportGest.DatabaseSportGestDataSetTableAdapters.EquiposAdapter();
+            this.entrenamientosAdapter = new SportGest.DatabaseSportGestDataSetTableAdapters.EntrenamientosAdapter();
             this.menuStrip1.SuspendLayout();
             this.gbCalentamiento.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.escaleraCalentamiento)).BeginInit();
@@ -168,7 +168,6 @@
             this.tbTiempoSesion.Name = "tbTiempoSesion";
             this.tbTiempoSesion.Size = new System.Drawing.Size(37, 22);
             this.tbTiempoSesion.TabIndex = 2;
-            this.tbTiempoSesion.Text = "120";
             this.tbTiempoSesion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbTiempoSesion.TextChanged += new System.EventHandler(this.tbTiempoSesion_TextChanged);
             // 
@@ -198,7 +197,7 @@
             this.lblObjectivo.ForeColor = System.Drawing.SystemColors.WindowText;
             this.lblObjectivo.Location = new System.Drawing.Point(284, 92);
             this.lblObjectivo.Name = "lblObjectivo";
-            this.lblObjectivo.Size = new System.Drawing.Size(100, 16);
+            this.lblObjectivo.Size = new System.Drawing.Size(105, 16);
             this.lblObjectivo.TabIndex = 7;
             this.lblObjectivo.Text = "Objectivo(s): ";
             // 
@@ -211,7 +210,6 @@
             this.tbObjetivo.Name = "tbObjetivo";
             this.tbObjetivo.Size = new System.Drawing.Size(552, 26);
             this.tbObjetivo.TabIndex = 1;
-            this.tbObjetivo.Text = "dasdasdasd";
             // 
             // label3
             // 
@@ -229,7 +227,7 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(482, 142);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(99, 16);
+            this.label4.Size = new System.Drawing.Size(102, 16);
             this.label4.TabIndex = 11;
             this.label4.Text = "Descripción: ";
             // 
@@ -242,7 +240,6 @@
             this.tbDescripcionObjectivo.Name = "tbDescripcionObjectivo";
             this.tbDescripcionObjectivo.Size = new System.Drawing.Size(618, 64);
             this.tbDescripcionObjectivo.TabIndex = 5;
-            this.tbDescripcionObjectivo.Text = "adasdasdas";
             // 
             // tbDescipcionCalentamiento
             // 
@@ -253,7 +250,6 @@
             this.tbDescipcionCalentamiento.Name = "tbDescipcionCalentamiento";
             this.tbDescipcionCalentamiento.Size = new System.Drawing.Size(284, 168);
             this.tbDescipcionCalentamiento.TabIndex = 7;
-            this.tbDescipcionCalentamiento.Text = "1eqaeqwdad";
             // 
             // tbDescripcionCalma
             // 
@@ -264,7 +260,6 @@
             this.tbDescripcionCalma.Name = "tbDescripcionCalma";
             this.tbDescripcionCalma.Size = new System.Drawing.Size(284, 168);
             this.tbDescripcionCalma.TabIndex = 13;
-            this.tbDescripcionCalma.Text = "ahgfcfsd";
             // 
             // tbDescripcionPrincipal
             // 
@@ -275,7 +270,6 @@
             this.tbDescripcionPrincipal.Name = "tbDescripcionPrincipal";
             this.tbDescripcionPrincipal.Size = new System.Drawing.Size(284, 168);
             this.tbDescripcionPrincipal.TabIndex = 10;
-            this.tbDescripcionPrincipal.Text = "dasdfqdfqfas";
             // 
             // lblDescripcionCalentamiento
             // 
@@ -310,7 +304,7 @@
             this.lblCalentamiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCalentamiento.Location = new System.Drawing.Point(10, 35);
             this.lblCalentamiento.Name = "lblCalentamiento";
-            this.lblCalentamiento.Size = new System.Drawing.Size(115, 16);
+            this.lblCalentamiento.Size = new System.Drawing.Size(119, 16);
             this.lblCalentamiento.TabIndex = 22;
             this.lblCalentamiento.Text = "Calentamiento: ";
             // 
@@ -320,7 +314,7 @@
             this.lblCalma.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCalma.Location = new System.Drawing.Point(11, 35);
             this.lblCalma.Name = "lblCalma";
-            this.lblCalma.Size = new System.Drawing.Size(140, 16);
+            this.lblCalma.Size = new System.Drawing.Size(147, 16);
             this.lblCalma.TabIndex = 23;
             this.lblCalma.Text = "Vuelta a la calma:  ";
             // 
@@ -330,7 +324,7 @@
             this.lblPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrincipal.Location = new System.Drawing.Point(6, 33);
             this.lblPrincipal.Name = "lblPrincipal";
-            this.lblPrincipal.Size = new System.Drawing.Size(115, 16);
+            this.lblPrincipal.Size = new System.Drawing.Size(119, 16);
             this.lblPrincipal.TabIndex = 24;
             this.lblPrincipal.Text = "Fase principal: ";
             // 
@@ -342,7 +336,6 @@
             this.tbTiempoCalentamiento.Name = "tbTiempoCalentamiento";
             this.tbTiempoCalentamiento.Size = new System.Drawing.Size(30, 26);
             this.tbTiempoCalentamiento.TabIndex = 0;
-            this.tbTiempoCalentamiento.Text = "12";
             this.tbTiempoCalentamiento.TextChanged += new System.EventHandler(this.tbTiempoCalentamiento_TextChanged);
             // 
             // tbTiempoPrincipal
@@ -353,7 +346,6 @@
             this.tbTiempoPrincipal.Name = "tbTiempoPrincipal";
             this.tbTiempoPrincipal.Size = new System.Drawing.Size(30, 26);
             this.tbTiempoPrincipal.TabIndex = 0;
-            this.tbTiempoPrincipal.Text = "12";
             this.tbTiempoPrincipal.TextChanged += new System.EventHandler(this.tbTiempoCalentamiento_TextChanged);
             // 
             // tbTiempoCalma
@@ -364,7 +356,6 @@
             this.tbTiempoCalma.Name = "tbTiempoCalma";
             this.tbTiempoCalma.Size = new System.Drawing.Size(30, 26);
             this.tbTiempoCalma.TabIndex = 0;
-            this.tbTiempoCalma.Text = "12";
             this.tbTiempoCalma.TextChanged += new System.EventHandler(this.tbTiempoCalentamiento_TextChanged);
             // 
             // menuStrip1
@@ -373,7 +364,7 @@
             this.programarSesiónToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1224, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1259, 24);
             this.menuStrip1.TabIndex = 15;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -412,12 +403,13 @@
             this.gbCalentamiento.Controls.Add(this.picasCalentamiento);
             this.gbCalentamiento.Controls.Add(this.setasCalentamiento);
             this.gbCalentamiento.Controls.Add(this.conosCalentamiento);
-            this.gbCalentamiento.Location = new System.Drawing.Point(217, 280);
+            this.gbCalentamiento.Location = new System.Drawing.Point(242, 327);
             this.gbCalentamiento.Name = "gbCalentamiento";
             this.gbCalentamiento.Size = new System.Drawing.Size(105, 183);
             this.gbCalentamiento.TabIndex = 40;
             this.gbCalentamiento.TabStop = false;
             this.gbCalentamiento.Text = "Herramientas";
+            this.gbCalentamiento.Visible = false;
             // 
             // escaleraCalentamiento
             // 
@@ -585,7 +577,6 @@
             this.tbHora.Name = "tbHora";
             this.tbHora.Size = new System.Drawing.Size(84, 22);
             this.tbHora.TabIndex = 4;
-            this.tbHora.Text = "12:00";
             this.tbHora.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbHora.TextChanged += new System.EventHandler(this.tbHora_TextChanged);
             // 
@@ -599,12 +590,13 @@
             this.gbCalma.Controls.Add(this.jugadorCalma);
             this.gbCalma.Controls.Add(this.vallasCalma);
             this.gbCalma.Controls.Add(this.picasCalma);
-            this.gbCalma.Location = new System.Drawing.Point(1085, 280);
+            this.gbCalma.Location = new System.Drawing.Point(1107, 316);
             this.gbCalma.Name = "gbCalma";
             this.gbCalma.Size = new System.Drawing.Size(105, 183);
             this.gbCalma.TabIndex = 41;
             this.gbCalma.TabStop = false;
             this.gbCalma.Text = "Herramientas";
+            this.gbCalma.Visible = false;
             // 
             // setasCaalma
             // 
@@ -704,12 +696,13 @@
             this.gbPrincipal.Controls.Add(this.jugadorPrincipal);
             this.gbPrincipal.Controls.Add(this.vallasPrincipal);
             this.gbPrincipal.Controls.Add(this.picasPrincipal);
-            this.gbPrincipal.Location = new System.Drawing.Point(627, 280);
+            this.gbPrincipal.Location = new System.Drawing.Point(656, 316);
             this.gbPrincipal.Name = "gbPrincipal";
             this.gbPrincipal.Size = new System.Drawing.Size(105, 183);
             this.gbPrincipal.TabIndex = 41;
             this.gbPrincipal.TabStop = false;
             this.gbPrincipal.Text = "Herramientas";
+            this.gbPrincipal.Visible = false;
             // 
             // setasPrincipal
             // 
@@ -832,7 +825,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(41, 663);
+            this.label6.Location = new System.Drawing.Point(208, 280);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(139, 13);
             this.label6.TabIndex = 47;
@@ -841,7 +834,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(448, 663);
+            this.label7.Location = new System.Drawing.Point(611, 277);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(150, 13);
             this.label7.TabIndex = 48;
@@ -850,7 +843,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(904, 663);
+            this.label8.Location = new System.Drawing.Point(1068, 280);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(175, 13);
             this.label8.TabIndex = 49;
@@ -859,43 +852,32 @@
             // tbMateriaCalentamiento
             // 
             this.tbMateriaCalentamiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbMateriaCalentamiento.Location = new System.Drawing.Point(41, 679);
+            this.tbMateriaCalentamiento.Location = new System.Drawing.Point(208, 296);
             this.tbMateriaCalentamiento.MaxLength = 100;
             this.tbMateriaCalentamiento.Multiline = true;
             this.tbMateriaCalentamiento.Name = "tbMateriaCalentamiento";
-            this.tbMateriaCalentamiento.Size = new System.Drawing.Size(284, 80);
+            this.tbMateriaCalentamiento.Size = new System.Drawing.Size(114, 167);
             this.tbMateriaCalentamiento.TabIndex = 8;
-            this.tbMateriaCalentamiento.Text = "aegztd";
             // 
             // tbMaterialPrincipal
             // 
             this.tbMaterialPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbMaterialPrincipal.Location = new System.Drawing.Point(451, 679);
+            this.tbMaterialPrincipal.Location = new System.Drawing.Point(614, 296);
             this.tbMaterialPrincipal.MaxLength = 100;
             this.tbMaterialPrincipal.Multiline = true;
             this.tbMaterialPrincipal.Name = "tbMaterialPrincipal";
-            this.tbMaterialPrincipal.Size = new System.Drawing.Size(284, 80);
+            this.tbMaterialPrincipal.Size = new System.Drawing.Size(118, 167);
             this.tbMaterialPrincipal.TabIndex = 11;
-            this.tbMaterialPrincipal.Text = "ghfdhgfhgfh";
             // 
             // tbMaterialCalma
             // 
             this.tbMaterialCalma.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbMaterialCalma.Location = new System.Drawing.Point(907, 679);
+            this.tbMaterialCalma.Location = new System.Drawing.Point(1071, 296);
             this.tbMaterialCalma.MaxLength = 100;
             this.tbMaterialCalma.Multiline = true;
             this.tbMaterialCalma.Name = "tbMaterialCalma";
-            this.tbMaterialCalma.Size = new System.Drawing.Size(284, 80);
+            this.tbMaterialCalma.Size = new System.Drawing.Size(117, 167);
             this.tbMaterialCalma.TabIndex = 14;
-            this.tbMaterialCalma.Text = "klçk";
-            // 
-            // equiposAdapter
-            // 
-            this.equiposAdapter.ClearBeforeFill = true;
-            // 
-            // entrenamientosAdapter
-            // 
-            this.entrenamientosAdapter.ClearBeforeFill = true;
             // 
             // tbFecha
             // 
@@ -905,16 +887,26 @@
             this.tbFecha.Name = "tbFecha";
             this.tbFecha.Size = new System.Drawing.Size(116, 22);
             this.tbFecha.TabIndex = 3;
-            this.tbFecha.Text = "12/12/12";
             this.tbFecha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbFecha.TextChanged += new System.EventHandler(this.tbFecha_TextChanged);
+            // 
+            // equiposAdapter
+            // 
+            this.equiposAdapter.ClearBeforeFill = true;
+            // 
+            // entrenamientosAdapter
+            // 
+            this.entrenamientosAdapter.ClearBeforeFill = true;
             // 
             // Entrenamiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Lavender;
-            this.ClientSize = new System.Drawing.Size(1224, 774);
+            this.ClientSize = new System.Drawing.Size(1259, 667);
+            this.Controls.Add(this.tbDescripcionCalma);
+            this.Controls.Add(this.tbDescripcionPrincipal);
+            this.Controls.Add(this.tbDescipcionCalentamiento);
             this.Controls.Add(this.tbFecha);
             this.Controls.Add(this.tbMaterialCalma);
             this.Controls.Add(this.tbMaterialPrincipal);
@@ -936,9 +928,6 @@
             this.Controls.Add(this.lblDescripcionCalma);
             this.Controls.Add(this.lblDescripcionPrincipal);
             this.Controls.Add(this.lblDescripcionCalentamiento);
-            this.Controls.Add(this.tbDescripcionPrincipal);
-            this.Controls.Add(this.tbDescripcionCalma);
-            this.Controls.Add(this.tbDescipcionCalentamiento);
             this.Controls.Add(this.tbDescripcionObjectivo);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -1073,11 +1062,11 @@
         private System.Windows.Forms.TextBox tbMaterialPrincipal;
         private System.Windows.Forms.TextBox tbMaterialCalma;
         private System.Windows.Forms.ToolTip toolTip1;
-        private SportGestDataSetTableAdapters.EquiposTableAdapter equiposAdapter;
-        private SportGestDataSetTableAdapters.EntrenamientosTableAdapter entrenamientosAdapter;
         private System.Windows.Forms.TextBox tbFecha;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
+        private DatabaseSportGestDataSetTableAdapters.EquiposAdapter equiposAdapter;
+        private DatabaseSportGestDataSetTableAdapters.EntrenamientosAdapter entrenamientosAdapter;
     }
 }

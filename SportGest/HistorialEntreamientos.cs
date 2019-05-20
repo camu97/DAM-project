@@ -13,7 +13,7 @@ namespace SportGest
 {
     public partial class HistorialEntrenamientos : Form
     {
-        string sCnn = "Data Source = (localdb)\\mssqllocaldb; Initial Catalog = SportGest; Integrated Security = True; Pooling = False";
+        string sCnn = Properties.Settings.Default.Conexion;
         public HistorialEntrenamientos()
         {
             InitializeComponent();
@@ -26,7 +26,7 @@ namespace SportGest
                 try
                 {
                     connection.Open();
-                    DataTable dt = entrenamientoAdapter.GetData();
+                    DataTable dt = entrenamientosAdapter.GetData();
                     foreach (DataRow dr in dt.Rows)
                     {
                         for (int i = 0; i < listSesiones.Items.Count; i++)
@@ -50,7 +50,7 @@ namespace SportGest
                 try
                 {
                     connection.Open();
-                    DataTable dt = entrenamientoAdapter.GetData();
+                    DataTable dt = entrenamientosAdapter.GetData();
                     foreach (DataRow dr in dt.Rows)
                     {
                         for (int i = 0; i < listSesiones.Items.Count; i++)
@@ -74,7 +74,7 @@ namespace SportGest
                 try
                 {
                     connection.Open();
-                    DataTable dt = entrenamientoAdapter.GetData();
+                    DataTable dt = entrenamientosAdapter.GetData();
                     foreach (DataRow dr in dt.Rows)
                     {
                         for (int i = 0; i < listSesiones.Items.Count; i++)
@@ -103,7 +103,7 @@ namespace SportGest
                 {
                     connection.Open();
                     DataTable dt = new DataTable();
-                    dt = entrenamientoAdapter.GetData();
+                    dt = entrenamientosAdapter.GetData();
                     foreach (DataRow dr in dt.Rows)
                     {
                         listSesiones.Items.Add(dr["Id"] + " - " + dr["fecha"] + " - " + dr["equipo"] /*Se incluye la categoría*/ + " - " + dr["objetivo"]);
@@ -120,7 +120,7 @@ namespace SportGest
             {
                 try
                 {
-                    DataTable dt = entrenamientoAdapter.GetData();
+                    DataTable dt = entrenamientosAdapter.GetData();
                     foreach (DataRow dr in dt.Rows)
                     {
                         if (dr["Id"].Equals(listSesiones.SelectedItem.ToString().Split('-')[0].Trim()))

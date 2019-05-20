@@ -13,7 +13,7 @@ namespace SportGest
 {
     public partial class GestionEquipo : Form
     {
-        string sCnn = "Data Source = (localdb)\\mssqllocaldb; Initial Catalog = SportGest; Integrated Security = True; Pooling = False";
+        string sCnn = Properties.Settings.Default.Conexion;
         public GestionEquipo()
         {
             InitializeComponent();
@@ -42,7 +42,7 @@ namespace SportGest
                     connection.Open();
                     DataTable dt = new DataTable();
 
-                    dt = equiposTableAdapter.GetData();
+                    dt = equiposAdapter.GetData();
                     foreach (DataRow dr in dt.Rows)
                     {
                         listEquipos.Items.Add(dr["Id"].ToString() + "| " + dr["nombre"].ToString() + " - [" + dr["categoria"].ToString() + " ]");
@@ -159,7 +159,7 @@ namespace SportGest
         {
             if (listEquipos.SelectedIndices.Count == 1)
             {
-                equiposTableAdapter.Delete(int.Parse(listEquipos.SelectedItem.ToString().Split('|')[0]));
+                equiposAdapter.Delete(int.Parse(listEquipos.SelectedItem.ToString().Split('|')[0]));
                 listEquipos.Items.Remove(listJugadores.SelectedItem);
                 listEquipos.Refresh();
                 listEquipos.SelectedItem = null;

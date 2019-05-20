@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="SportGest.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="SportGest.exe" version="1.0.0.4" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <description asmv2:iconFile="s-icon.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
@@ -115,14 +115,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SportGest.exe" size="3234784">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SportGest.exe" size="3226080">
       <assemblyIdentity name="SportGest" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>S+udXDWurcZ83MG4lvZNSesyzQ3Vpobv8JV9iGk8A0k=</dsig:DigestValue>
+        <dsig:DigestValue>a0yrBWygXtg7vUmI4mFJ556D/I4wBwy9WMKAxaAzZ6I=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -1314,6 +1314,24 @@
       </hash>
     </dependentAssembly>
   </dependency>
+  <file name="DatabaseSportGest.mdf" size="8388608" writeableType="applicationData">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>BBv7LP5jtGFLPfsj9EjqM8R53MXis4CZU/tA/VEeQAI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="DatabaseSportGest_log.ldf" size="8388608" writeableType="applicationData">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>fNGCqiAJodVUkoAroAdyiaE1UxrAlI+K4Pf2KU1cnMY=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Resources\campo_horizontal.jpg" size="7954">
     <hash>
       <dsig:Transforms>
@@ -1413,13 +1431,13 @@
       <dsig:DigestValue>ACgXIYzY1lpMAT8juNFq27L7wynlj8n7VtW8hmbtPW8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="SportGest.exe.config" size="18388">
+  <file name="SportGest.exe.config" size="18637">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>Dq7Ga0+MvV4fE9VpSF6VX5pCldV68WZHq8a0dqO38kk=</dsig:DigestValue>
+      <dsig:DigestValue>PhbcS7DpbbXKrM7FM2wr/JF3o3+R7kzu1hVn5P0cjQA=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

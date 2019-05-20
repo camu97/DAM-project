@@ -14,7 +14,7 @@ namespace SportGest
     public partial class Entrenamiento : Form
     {
         bool error = false, e_prog = false;
-        string sCnn = "Data Source = (localdb)\\mssqllocaldb; Initial Catalog = SportGest; Integrated Security = True; Pooling = False";
+        string sCnn = Properties.Settings.Default.Conexion;
 
         public Entrenamiento()
         {

@@ -39,17 +39,15 @@
             this.tbObservaciones = new System.Windows.Forms.TextBox();
             this.tbNacimiento = new System.Windows.Forms.TextBox();
             this.cbEquipos = new System.Windows.Forms.ComboBox();
-            this.sportGestDataSet = new SportGest.SportGestDataSet();
             this.btnAñadirJugador = new System.Windows.Forms.Button();
             this.cbPosicion = new System.Windows.Forms.ComboBox();
             this.tbNick = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.equiposTableAdapter = new SportGest.SportGestDataSetTableAdapters.EquiposTableAdapter();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tbNumero = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.jugadoresAdapter = new SportGest.SportGestDataSetTableAdapters.JugadoresTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.sportGestDataSet)).BeginInit();
+            this.jugadoresAdapter = new SportGest.DatabaseSportGestDataSetTableAdapters.JugadoresAdapter();
+            this.equiposAdapter = new SportGest.DatabaseSportGestDataSetTableAdapters.EquiposAdapter();
             this.SuspendLayout();
             // 
             // label1
@@ -139,11 +137,6 @@
             this.cbEquipos.TabIndex = 4;
             this.toolTip1.SetToolTip(this.cbEquipos, "Seleccionar equipo en el que juega");
             // 
-            // sportGestDataSet
-            // 
-            this.sportGestDataSet.DataSetName = "SportGestDataSet";
-            this.sportGestDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // btnAñadirJugador
             // 
             this.btnAñadirJugador.Location = new System.Drawing.Point(141, 183);
@@ -182,10 +175,6 @@
             this.label6.Text = "Nick:";
             this.toolTip1.SetToolTip(this.label6, "Nick de jugador(a)");
             // 
-            // equiposTableAdapter
-            // 
-            this.equiposTableAdapter.ClearBeforeFill = true;
-            // 
             // tbNumero
             // 
             this.tbNumero.Location = new System.Drawing.Point(264, 44);
@@ -208,6 +197,10 @@
             // jugadoresAdapter
             // 
             this.jugadoresAdapter.ClearBeforeFill = true;
+            // 
+            // equiposAdapter
+            // 
+            this.equiposAdapter.ClearBeforeFill = true;
             // 
             // NuevoJugador
             // 
@@ -236,7 +229,6 @@
             this.Name = "NuevoJugador";
             this.Text = "Jugador";
             this.Load += new System.EventHandler(this.NuevoJugador_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.sportGestDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -257,11 +249,10 @@
         private System.Windows.Forms.ComboBox cbPosicion;
         private System.Windows.Forms.TextBox tbNick;
         private System.Windows.Forms.Label label6;
-        private SportGestDataSet sportGestDataSet;
-        private SportGestDataSetTableAdapters.EquiposTableAdapter equiposTableAdapter;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.TextBox tbNumero;
         private System.Windows.Forms.Label label7;
-        private SportGestDataSetTableAdapters.JugadoresTableAdapter jugadoresAdapter;
+        private DatabaseSportGestDataSetTableAdapters.JugadoresAdapter jugadoresAdapter;
+        private DatabaseSportGestDataSetTableAdapters.EquiposAdapter equiposAdapter;
     }
 }
