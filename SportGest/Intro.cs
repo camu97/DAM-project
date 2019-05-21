@@ -101,7 +101,7 @@ namespace SportGest
                         [t_calentamiento]           INTEGER            NOT NULL,
                         [t_principal]               INTEGER            NOT NULL,
                         [t_calma]                   INTEGER            NOT NULL,
-                        [mat_calentaminento]        VARCHAR (200)  NULL,
+                        [mat_calentamiento]        VARCHAR (200)  NULL,
                         [mat_principal]             VARCHAR (200)  NULL,
                         [mat_calma]                 VARCHAR (200)  NULL
                     )";

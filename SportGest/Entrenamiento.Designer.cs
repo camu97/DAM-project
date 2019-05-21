@@ -211,7 +211,7 @@
             // tbDescripcionCalentamiento
             // 
             this.tbDescripcionCalentamiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbDescripcionCalentamiento.Location = new System.Drawing.Point(13, 424);
+            this.tbDescripcionCalentamiento.Location = new System.Drawing.Point(14, 424);
             this.tbDescripcionCalentamiento.MaxLength = 300;
             this.tbDescripcionCalentamiento.Multiline = true;
             this.tbDescripcionCalentamiento.Name = "tbDescripcionCalentamiento";
@@ -241,7 +241,7 @@
             // lblDescripcionCalentamiento
             // 
             this.lblDescripcionCalentamiento.AutoSize = true;
-            this.lblDescripcionCalentamiento.Location = new System.Drawing.Point(10, 444);
+            this.lblDescripcionCalentamiento.Location = new System.Drawing.Point(14, 408);
             this.lblDescripcionCalentamiento.Name = "lblDescripcionCalentamiento";
             this.lblDescripcionCalentamiento.Size = new System.Drawing.Size(179, 13);
             this.lblDescripcionCalentamiento.TabIndex = 16;
