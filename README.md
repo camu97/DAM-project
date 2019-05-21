@@ -13,3 +13,5 @@ o
 19/5 - Integración de la base de datos como recurso de la aplicación.
 20/5 - Versión final a falta de añadir tooltips en todas las pantallas así como algún otro detalle en la funcionalidad de algún elemento de las pantallas.
 20/5 - Versión final entregable.
+*Problemas con la base de datos
+21/5 - Versión final. Cambio en la base de datos(Se usaba SQL Server y se cambió a SQLite por problemas técnicos).
