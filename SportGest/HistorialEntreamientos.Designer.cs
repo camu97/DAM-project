@@ -133,7 +133,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(153, 34);
+            this.label5.Location = new System.Drawing.Point(195, 34);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(58, 13);
             this.label5.TabIndex = 9;
@@ -143,7 +143,7 @@
             // 
             this.lblObjectivo.AutoSize = true;
             this.lblObjectivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblObjectivo.Location = new System.Drawing.Point(208, 34);
+            this.lblObjectivo.Location = new System.Drawing.Point(250, 34);
             this.lblObjectivo.Name = "lblObjectivo";
             this.lblObjectivo.Size = new System.Drawing.Size(14, 13);
             this.lblObjectivo.TabIndex = 10;

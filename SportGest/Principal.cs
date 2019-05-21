@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.OleDb;
 
 namespace SportGest
 {
@@ -18,6 +19,10 @@ namespace SportGest
         public Principal()
         {
             InitializeComponent();
+            try
+            {
+
+            } catch (SqlException) { }
         }
 
         private void btnNuevoEntrenamiento_Click(object sender, EventArgs e)
@@ -53,14 +58,14 @@ namespace SportGest
 
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM Notas;", connection);
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM Notas", connection);
                     cmd.CommandType = CommandType.Text;
 
                     connection.Open();
-                    SqlDataReader r = cmd.ExecuteReader();
-                    while (r.Read())
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    while (dr.Read())
                     {
-                        ListaMensajes.Items.Add(r["id"].ToString() + " - " + r["fecha"].ToString().Split(' ')[0] + " - " + r["nota"].ToString());
+                        ListaMensajes.Items.Add(dr["id"].ToString() + " - " + dr["fecha"].ToString().Split(' ')[0] + " - " + dr["nota"].ToString());
                     }
 
                     //dt = notasTableAdapter1.GetData();
@@ -87,44 +92,44 @@ namespace SportGest
 
                 using (SqlConnection connection = new SqlConnection(sCnn))
                 {
+
+                    SqlCommand cmd = new SqlCommand("INSERT into Notas(fecha,nota) VALUES(@fecha,@nota)", connection);
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Parameters.AddWithValue("@fecha", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@nota", tbNuevaNota.Text);
                     try
                     {
-                        SqlCommand cmd = new SqlCommand("INSERT INTO Notas(fecha,nota) values(" + DateTime.Now.ToString() + ",\'" + tbNuevaNota.Text + "\');", connection);
-                        cmd.CommandType = CommandType.Text;
                         connection.Open();
                         int fa = cmd.ExecuteNonQuery();
                         MessageBox.Show(fa.ToString());
+
+
+                        SqlCommand cmd2 = new SqlCommand("SELECT * FROM Notas;", connection);
+                        cmd2.CommandType = CommandType.Text;
+                        SqlDataReader r = cmd2.ExecuteReader();
+                        tbNuevaNota.Clear();
+                        ListaMensajes.Items.Clear();
+                        while (r.Read())
+                        {
+                            ListaMensajes.Items.Add(r["id"].ToString() + " - " + r["fecha"].ToString().Split(' ')[0] + " - " + r["nota"].ToString());
+                        }
                         //notasTableAdapter1.Insert(DateTime.Now.Date, tbNuevaNota.Text);
 
                         //dt = notasTableAdapter1.GetData();
-                        foreach (DataRow dr in dt.Rows)
-                        {
-                            MessageBox.Show(dr["id"].ToString() + " - " + dr["fecha"].ToString().Split(' ')[0] + " - " + dr["nota"].ToString());
-                        }
-
+                        //foreach (DataRow dr in dt.Rows)
+                        //{
+                        //    MessageBox.Show(dr["id"].ToString() + " - " + dr["fecha"].ToString().Split(' ')[0] + " - " + dr["nota"].ToString());
+                        //}
+                        connection.Close();
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show(ex.Message);
                     }
-
-
-                    try
+                    finally
                     {
-                        tbNuevaNota.Clear();
-                        ListaMensajes.Items.Clear();
-                        SqlCommand cmd = new SqlCommand("SELECT * FROM Notas;", connection);
-                        cmd.CommandType = CommandType.Text;
-
-                        connection.Open();
-                        SqlDataReader r = cmd.ExecuteReader();
-                        while (r.Read())
-                        {
-                            ListaMensajes.Items.Add(r["id"].ToString() + " - " + r["fecha"].ToString().Split(' ')[0] + " - " + r["nota"].ToString());
-                        }
-                        ListaMensajes.Refresh();
+                        connection.Close();
                     }
-                    catch (SqlException) { }
                 }
             }
         }
@@ -165,6 +170,27 @@ namespace SportGest
         private void btnEliminarNota_Click(object sender, EventArgs e)
         {
             //notasTableAdapter1.Delete(int.Parse(ListaMensajes.SelectedItem.ToString().Split('-')[0]));
+            using (SqlConnection connection = new SqlConnection(sCnn))
+            {
+
+                SqlCommand cmd = new SqlCommand("DELETE FROM Notas WHERE id=@id", connection);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@id", ListaMensajes.SelectedItem.ToString().Split('-')[0]);
+                try
+                {
+                    connection.Open();
+                    int fa = cmd.ExecuteNonQuery();
+                    MessageBox.Show(fa.ToString());
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
             ListaMensajes.Items.Remove(ListaMensajes.SelectedItem);
             ListaMensajes.Refresh();
             ListaMensajes.SelectedItem = null;

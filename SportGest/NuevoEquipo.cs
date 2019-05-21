@@ -30,33 +30,43 @@ namespace SportGest
         {
             if (editar)
             {
-                btnAñadirEquipo.Text = "Acpetar";
+                btnAñadirEquipo.Text = "Acpetar cambios";
                 this.Text = "Equipo";
+
+                using (SqlConnection connection = new SqlConnection(sCnn))
+                {
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM Equipos", connection);
+                    cmd.CommandType = CommandType.Text;
+                    try
+                    {
+                        connection.Open();
+                        SqlDataReader dr = cmd.ExecuteReader();
+                        while (dr.Read())
+                        {
+                            if (dr["Id"].ToString().Equals(id))
+                            {
+                                tbNumero.Text = dr["num_jugadores"].ToString();
+                                tbNombre.Text = dr["nombre"].ToString();
+                                tbLiga.Text = dr["liga"].ToString();
+                                tbObservaciones.Text = dr["observaciones"].ToString();
+                                cbCategoria.SelectedItem = dr["categoria"].ToString();
+                            }
+                        }
+                    }
+                    catch (SqlException exc)
+                    {
+                        MessageBox.Show(exc.Message);
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+                }
             }
             else
             {
                 btnAñadirEquipo.Text = "Añadir";
                 this.Text = "Nuevo equipo";
-            }
-
-            using (SqlConnection connection = new SqlConnection(sCnn))
-            {
-                connection.Open();
-                DataTable dt;
-
-                //dt = equiposAdapter.GetData();
-                //foreach (DataRow dr in dt.Rows)
-                //{
-                //    if (dr["id"].ToString().Equals(id))
-                //    {
-                //        tbNumero.Text = dr["num_jugadores"].ToString();
-                //        tbNombre.Text = dr["nombre"].ToString();
-                //        tbLiga.Text = dr["liga"].ToString();
-                //        tbObservaciones.Text = dr["observaciones"].ToString();
-                //        cbCategoria.SelectedItem = dr["categoria"].ToString();
-
-                //    }
-                //}
             }
 
         }
@@ -77,16 +87,30 @@ namespace SportGest
                 {
                     using (SqlConnection connection = new SqlConnection(sCnn))
                     {
-                        connection.Open();
-                        DataTable dt = new DataTable();
+                        //equiposAdapter.Insert(tbNombre.Text, cbCategoria.SelectedItem.ToString(), tbLiga.Text, int.Parse(tbNumero.Text), tbObservaciones.Text);
+                        SqlCommand cmd = new SqlCommand("INSERT into Equipos (nombre,categoria,liga,num_jugadores,observaciones) VALUES(@nombre,@categoria,@liga,@numero_jugadores,@observaciones)", connection);
+                        cmd.CommandType = CommandType.Text;
+                        cmd.Parameters.AddWithValue("@categoria", cbCategoria.Text);
+                        cmd.Parameters.AddWithValue("@nombre", tbNombre.Text);
+                        cmd.Parameters.AddWithValue("@liga", tbLiga.Text);
+                        cmd.Parameters.AddWithValue("@numero_jugadores", int.Parse(tbNumero.Text));
+                        cmd.Parameters.AddWithValue("@observaciones", tbObservaciones.Text);
                         try
                         {
-                            //equiposAdapter.Insert(tbNombre.Text, cbCategoria.SelectedItem.ToString(), tbLiga.Text, int.Parse(tbNumero.Text), tbObservaciones.Text);
-                            MessageBox.Show("Operación correcta", "Añadir", MessageBoxButtons.OK);
+                            connection.Open();
+                            int fa = cmd.ExecuteNonQuery();
+                            if (fa >= 1)
+                            {
+                                MessageBox.Show("Añadido", "Añadir equipo", MessageBoxButtons.OK);
+                            }
                         }
                         catch (Exception ex)
                         {
                             MessageBox.Show(ex.Message);
+                        }
+                        finally
+                        {
+                            connection.Close();
                         }
 
                     }
@@ -96,32 +120,35 @@ namespace SportGest
                 {
                     using (SqlConnection connection = new SqlConnection(sCnn))
                     {
+                        SqlCommand cmd = new SqlCommand("UPDATE Equipos SET " +
+                            "nombre=@nombre," +
+                            "categoria=@categoria," +
+                            "liga=@liga," +
+                            "num_jugadores=@numero_jugadores," +
+                            "observaciones=@observaciones  WHERE id=@id", connection);
+                        cmd.CommandType = CommandType.Text;
+                        cmd.Parameters.AddWithValue("@categoria", cbCategoria.Text);
+                        cmd.Parameters.AddWithValue("@nombre", tbNombre.Text);
+                        cmd.Parameters.AddWithValue("@liga", tbLiga.Text);
+                        cmd.Parameters.AddWithValue("@numero_jugadores", int.Parse(tbNumero.Text));
+                        cmd.Parameters.AddWithValue("@observaciones", tbObservaciones.Text);
                         try
                         {
                             connection.Open();
-                            //DataTable dt = equiposAdapter.GetData();
-                            //DataRow dr;
-                            //for (int i = 0; i < dt.Rows.Count; i++)
-                            //{
-                            //    dr = dt.Rows[i];
-                            //    if (dr["id"].ToString().Equals(id))
-                            //    {
-                            //        dr["num_jugadores"] = int.Parse(tbNumero.Text);
-                            //        dr["nombre"] = tbNombre.Text;
-                            //        dr["categoria"] = cbCategoria.SelectedItem.ToString();
-                            //        dr["observaciones"] = tbObservaciones.Text;
-                            //        dr["liga"] = tbLiga.Text;
-                            //        equiposAdapter.Update(dr);
-                            //    }
-                            //}
-
-                            //dt.AcceptChanges();
+                            int fa = cmd.ExecuteNonQuery();
+                            if (fa == 1)
+                            {
+                                MessageBox.Show("Operación correcta", "Modificar", MessageBoxButtons.OK);
+                            }
                         }
                         catch (Exception ex)
                         {
                             MessageBox.Show(ex.Message);
                         }
-
+                        finally
+                        {
+                            connection.Close();
+                        }
                     }
                 }
             }

@@ -1,5 +1,3 @@
-D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGest\bin\Debug\DatabaseSportGest.mdf
-D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGest\bin\Debug\DatabaseSportGest_log.ldf
 D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGest\bin\Debug\SportGest.exe.config
 D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGest\bin\Debug\SportGest.exe.manifest
 D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGest\bin\Debug\SportGest.application

@@ -23,22 +23,22 @@ namespace SportGest
         {
             using (SqlConnection connection = new SqlConnection(sCnn))
             {
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Entrenamientos WHERE Id=@id", connection);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@id", listSesiones.SelectedItem.ToString().Split('|')[0].Trim());
                 try
                 {
                     connection.Open();
-                    //DataTable dt = entrenamientosAdapter.GetData();
-                    //foreach (DataRow dr in dt.Rows)
-                    //{
-                    //    for (int i = 0; i < listSesiones.Items.Count; i++)
-                    //    {
-                    //        if (dr["Id"].Equals(listSesiones.SelectedItem.ToString().Split('-')[0].Trim()))
-                    //        {
-                    //            MessageBox.Show("Tiempo: " + dr["t_calentamiento"] + "\r\nTarea:" + dr["calentamiento_descripcion"], "Calentamiento", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    //        }
-                    //    }
-                    //}
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        MessageBox.Show("Duración: " + dr["t_calentamiento"] + "'\r\nTarea:" + dr["calentamiento_descripcion"], "Calentamiento", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
-                catch (SqlException) { }
+                catch (SqlException exc)
+                {
+                    MessageBox.Show(exc.Message);
+                }
             }
 
         }
@@ -47,23 +47,22 @@ namespace SportGest
         {
             using (SqlConnection connection = new SqlConnection(sCnn))
             {
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Entrenamientos WHERE Id=@id", connection);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@id", listSesiones.SelectedItem.ToString().Split('|')[0].Trim());
                 try
                 {
                     connection.Open();
-                    //DataTable dt = entrenamientosAdapter.GetData();
-                    //foreach (DataRow dr in dt.Rows)
-                    //{
-                    //    for (int i = 0; i < listSesiones.Items.Count; i++)
-                    //    {
-                    //        if (dr["Id"].Equals(listSesiones.SelectedItem.ToString().Split('-')[0].Trim()))
-                    //        {
-                    //            MessageBox.Show("Tiempo: " + dr["t_principal"] + "\r\nTarea:" + dr["principal_descripcion"], "Calentamiento", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    //        }
-                    //    }
-                    //}
-
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        MessageBox.Show("Duración: " + dr["t_principal"] + "'\r\nTarea:" + dr["principal_descripcion"], "Calentamiento", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
-                catch (SqlException) { }
+                catch (SqlException exc)
+                {
+                    MessageBox.Show(exc.Message);
+                }
             }
         }
 
@@ -71,22 +70,22 @@ namespace SportGest
         {
             using (SqlConnection connection = new SqlConnection(sCnn))
             {
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Entrenamientos WHERE Id=@id", connection);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@id", listSesiones.SelectedItem.ToString().Split('|')[0].Trim());
                 try
                 {
                     connection.Open();
-                    //DataTable dt = entrenamientosAdapter.GetData();
-                    //foreach (DataRow dr in dt.Rows)
-                    //{
-                    //    for (int i = 0; i < listSesiones.Items.Count; i++)
-                    //    {
-                    //        if (dr["Id"].Equals(listSesiones.SelectedItem.ToString().Split('-')[0].Trim()))
-                    //        {
-                    //            MessageBox.Show("Tiempo: " + dr["t_calma"] + "\r\nTarea:" + dr["calma_descripcion"], "Calentamiento", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    //        }
-                    //    }
-                    //}
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        MessageBox.Show("Duración: " + dr["t_calma"] + "'\r\nTarea:" + dr["calma_descripcion"], "Calentamiento", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
-                catch (SqlException) { }
+                catch (SqlException exc)
+                {
+                    MessageBox.Show(exc.Message);
+                }
             }
         }
 
@@ -99,18 +98,22 @@ namespace SportGest
         {
             using (SqlConnection connection = new SqlConnection(sCnn))
             {
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Entrenamientos", connection);
+                cmd.CommandType = CommandType.Text;
                 try
                 {
                     connection.Open();
-                    DataTable dt = new DataTable();
-                    //dt = entrenamientosAdapter.GetData();
-                    //foreach (DataRow dr in dt.Rows)
-                    //{
-                    //    listSesiones.Items.Add(dr["Id"] + " - " + dr["fecha"] + " - " + dr["equipo"] /*Se incluye la categoría*/ + " - " + dr["objetivo"]);
-                    //}
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        listSesiones.Items.Add(dr["Id"] + " | " + dr["fecha"] + " - " + dr["equipo"] /*Se incluye la categoría*/ + " - " + dr["objetivo"]);
+                    }
 
                 }
-                catch (SqlException) { }
+                catch (SqlException exc)
+                {
+                    MessageBox.Show(exc.Message);
+                }
             }
         }
 
@@ -118,23 +121,27 @@ namespace SportGest
         {
             using (SqlConnection connection = new SqlConnection(sCnn))
             {
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Entrenamientos WHERE Id=@id", connection);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@id", listSesiones.SelectedItem.ToString().Split('|')[0].Trim());
                 try
                 {
-                    //DataTable dt = entrenamientosAdapter.GetData();
-                    //foreach (DataRow dr in dt.Rows)
-                    //{
-                    //    if (dr["Id"].Equals(listSesiones.SelectedItem.ToString().Split('-')[0].Trim()))
-                    //    {
-                    //        lblFecha.Text = dr["fecha"].ToString();
-                    //        lblDuracion.Text = dr["duracion"].ToString();
-                    //        lblEquipo.Text = dr["equipo"].ToString().Split('-')[0].Trim();
-                    //        lblCategoria.Text = dr["equipo"].ToString().Split('-')[1].Trim();
-                    //        lblObjectivo.Text = dr["objetivo"].ToString();
-                    //        tbDescripción.Text = dr["descripcion"].ToString();
-                    //    }
-                    //}
+                    connection.Open();
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        lblFecha.Text = dr["fecha"].ToString();
+                        lblDuracion.Text = dr["duracion"].ToString() + " '";
+                        lblEquipo.Text = dr["equipo"].ToString().Split('-')[0].Trim();
+                        lblCategoria.Text = dr["equipo"].ToString().Split('-')[1].Trim();
+                        lblObjectivo.Text = dr["objetivo"].ToString();
+                        tbDescripción.Text = dr["descripcion"].ToString();
+                    }
                 }
-                catch (SqlException) { }
+                catch (SqlException exc)
+                {
+                    MessageBox.Show(exc.Message);
+                }
             }
         }
     }

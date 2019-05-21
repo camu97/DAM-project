@@ -23,64 +23,24 @@ namespace SportGest
         {
             NuevoEquipo ne = new NuevoEquipo();
             ne.ShowDialog();
-            this.Refresh();
+            cargarEquipos();
         }
 
         private void nuevoJugador_Click(object sender, EventArgs e)
         {
             NuevoJugador nj = new NuevoJugador();
-            this.Refresh();
             nj.ShowDialog();
+            cargarJugadores();
         }
 
         private void GestionEquipo_Load(object sender, EventArgs e)
         {
-            using (SqlConnection connection = new SqlConnection(sCnn))
-            {
-                try
-                {
-                    connection.Open();
-                    DataTable dt = new DataTable();
-
-                    //dt = equiposAdapter.GetData();
-                    //foreach (DataRow dr in dt.Rows)
-                    //{
-                    //    listEquipos.Items.Add(dr["Id"].ToString() + "| " + dr["nombre"].ToString() + " - [" + dr["categoria"].ToString() + " ]");
-                    //}
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-
-            }
-
+            cargarEquipos();
         }
 
         private void listEquipos_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-            listJugadores.Items.Clear();
-            using (SqlConnection connection = new SqlConnection(sCnn))
-            {
-                try
-                {
-                    connection.Open();
-                    DataTable dt;
-
-
-                    //dt = jugadoresAdapter.GetData();
-                    //foreach (DataRow dr in dt.Rows)
-                    //{
-                    //    if (dr["equipo"].Equals(listEquipos.SelectedItem.ToString().Split('-')[0].Split('|')[1].Trim()))
-                    //    {
-                    //        listJugadores.Items.Add(dr["Id"].ToString() + "| " + dr["num"].ToString() + " - " + dr["nick"].ToString());
-                    //    }
-                    //}
-                }
-                catch (NullReferenceException) { }
-                catch (SqlException) { }
-            }
+            cargarJugadores();
         }
 
 
@@ -91,26 +51,32 @@ namespace SportGest
             {
                 using (SqlConnection connection = new SqlConnection(sCnn))
                 {
-                    connection.Open();
-                    DataTable dt = new DataTable();
                     try
                     {
-                        //dt = jugadoresAdapter.GetData();
-                        //foreach (DataRow dr in dt.Rows)
-                        //{
-                        //    if (dr["nick"].Equals(listJugadores.SelectedItem.ToString().Split('-')[1].Trim()))
-                        //    {
-                        //        lblNombre.Text = dr["nombre"].ToString();
-                        //        lblNacimiento.Text = dr["fecha_nacimiento"].ToString().Split(' ')[0];
-                        //        lblNumero.Text = dr["num"].ToString();
-                        //        lblPosicion.Text = dr["posicion"].ToString();
-                        //        tbObservaciones.Text = dr["observaciones"].ToString();
-                        //    }
-                        //}
+                        SqlCommand cmd = new SqlCommand("SELECT * FROM Jugadores", connection);
+                        cmd.CommandType = CommandType.Text;
+
+                        connection.Open();
+                        SqlDataReader dr = cmd.ExecuteReader();
+                        while (dr.Read())
+                        {
+                            if (dr["nick"].Equals(listJugadores.SelectedItem.ToString().Split('-')[1].Trim()))
+                            {
+                                lblNombre.Text = dr["nombre"].ToString();
+                                lblNacimiento.Text = dr["fecha_nacimiento"].ToString().Split(' ')[0];
+                                lblNumero.Text = dr["num"].ToString();
+                                lblPosicion.Text = dr["posicion"].ToString();
+                                tbObservaciones.Text = dr["observaciones"].ToString();
+                            }
+                        }
                     }
                     catch (SqlException ex)
                     {
                         MessageBox.Show(ex.Message);
+                    }
+                    finally
+                    {
+                        connection.Close();
                     }
                 }
             }
@@ -124,49 +90,157 @@ namespace SportGest
 
         private void btnBorrarJugador_Click(object sender, EventArgs e)
         {
-            if (listJugadores.SelectedIndices.Count == 1)
+            try
             {
                 //jugadoresAdapter.Delete(int.Parse(listJugadores.SelectedItem.ToString().Split('|')[0]));
+                using (SqlConnection connection = new SqlConnection(sCnn))
+                {
 
-                listJugadores.Items.Remove(listJugadores.SelectedItem);
-                listJugadores.Refresh();
-                listJugadores.SelectedItem = null;
+                    SqlCommand cmd = new SqlCommand("DELETE FROM Jugadores WHERE id=@id", connection);
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Parameters.AddWithValue("@id", listJugadores.SelectedItem.ToString().Split('|')[0]);
+                    try
+                    {
+                        connection.Open();
+                        int fa = cmd.ExecuteNonQuery();
+                        MessageBox.Show(fa.ToString());
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+                }
+                cargarJugadores();
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("Debes seleccionar un elemento de la lista");
             }
         }
 
         private void editarJugador_Click(object sender, EventArgs e)
         {
-            if (listJugadores.SelectedIndices.Count == 1)
+            try
             {
                 NuevoJugador nj = new NuevoJugador();
                 nj.editar = true;
                 nj.id = listJugadores.SelectedItem.ToString().Split('|')[0].Trim();
                 nj.ShowDialog();
-                this.Refresh();
+                cargarJugadores();
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("Debes seleccionar un elemento de la lista");
             }
         }
 
         private void editarEquipo_Click(object sender, EventArgs e)
         {
-            if (listEquipos.SelectedIndices.Count == 1)
+            try
             {
                 NuevoEquipo ne = new NuevoEquipo();
                 ne.editar = true;
                 ne.id = listEquipos.SelectedItem.ToString().Split('|')[0].Trim();
                 ne.ShowDialog();
-                this.Refresh();
+                cargarEquipos();
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("Debes seleccionar un elemento de la lista");
             }
         }
 
         private void borrarEquipo_Click(object sender, EventArgs e)
         {
-            if (listEquipos.SelectedIndices.Count == 1)
+            try
             {
                 //equiposAdapter.Delete(int.Parse(listEquipos.SelectedItem.ToString().Split('|')[0]));
+                using (SqlConnection connection = new SqlConnection(sCnn))
+                {
 
-                listEquipos.Items.Remove(listJugadores.SelectedItem);
-                listEquipos.Refresh();
-                listEquipos.SelectedItem = null;
+                    SqlCommand cmd = new SqlCommand("DELETE FROM Equipos WHERE id=@id", connection);
+                    cmd.CommandType = CommandType.Text;
+                    try
+                    {
+                        cmd.Parameters.AddWithValue("@id", listEquipos.SelectedItem.ToString().Split('|')[0]);
+                        connection.Open();
+                        int fa = cmd.ExecuteNonQuery();
+                        MessageBox.Show(fa.ToString());
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+                }
+                cargarEquipos();
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("Debes seleccionar un elemento de la lista");
+            }
+        }
+
+        private void cargarEquipos()
+        {
+            listEquipos.Items.Clear();
+            using (SqlConnection connection = new SqlConnection(sCnn))
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM Equipos", connection);
+                    cmd.CommandType = CommandType.Text;
+
+                    connection.Open();
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        listEquipos.Items.Add(dr["Id"].ToString() + "| " + dr["nombre"].ToString() + " - " + dr["categoria"].ToString());
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+        }
+
+        private void cargarJugadores()
+        {
+            listJugadores.Items.Clear();
+            using (SqlConnection connection = new SqlConnection(sCnn))
+            {
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Jugadores WHERE equipo=@equipo", connection);
+                cmd.CommandType = CommandType.Text;
+                try
+                {
+                    cmd.Parameters.AddWithValue("@equipo", listEquipos.SelectedItem.ToString().Split('|')[1].Split('-')[0].Trim()); //10| Alerta A - Alevines
+
+                    connection.Open();
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        //if (dr["equipo"].Equals(listEquipos.SelectedItem.ToString().Split('|')[1].Trim()))
+                        listJugadores.Items.Add(dr["Id"].ToString() + "| " + dr["num"].ToString() + " - " + dr["nick"].ToString());
+                    }
+                }
+                catch (NullReferenceException) { }
+                catch (SqlException) { }
+                finally
+                {
+                    connection.Close();
+                }
             }
         }
     }

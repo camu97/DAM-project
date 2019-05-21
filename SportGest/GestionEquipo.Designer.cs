@@ -31,11 +31,11 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionEquipo));
             this.listJugadores = new System.Windows.Forms.ListBox();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.contextMenuJugadores = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.borrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listEquipos = new System.Windows.Forms.ListBox();
-            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.contextMenuEquipos = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
@@ -55,14 +55,14 @@
             this.atrásToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label6 = new System.Windows.Forms.Label();
             this.lblNumero = new System.Windows.Forms.Label();
-            this.contextMenuStrip1.SuspendLayout();
-            this.contextMenuStrip2.SuspendLayout();
+            this.contextMenuJugadores.SuspendLayout();
+            this.contextMenuEquipos.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // listJugadores
             // 
-            this.listJugadores.ContextMenuStrip = this.contextMenuStrip1;
+            this.listJugadores.ContextMenuStrip = this.contextMenuJugadores;
             this.listJugadores.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listJugadores.FormattingEnabled = true;
             this.listJugadores.ItemHeight = 20;
@@ -72,13 +72,13 @@
             this.listJugadores.TabIndex = 1;
             this.listJugadores.SelectedIndexChanged += new System.EventHandler(this.listJugadores_SelectedIndexChanged);
             // 
-            // contextMenuStrip1
+            // contextMenuJugadores
             // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.contextMenuJugadores.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.editarToolStripMenuItem,
             this.borrarToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(107, 48);
+            this.contextMenuJugadores.Name = "contextMenuStrip1";
+            this.contextMenuJugadores.Size = new System.Drawing.Size(107, 48);
             // 
             // editarToolStripMenuItem
             // 
@@ -96,7 +96,7 @@
             // 
             // listEquipos
             // 
-            this.listEquipos.ContextMenuStrip = this.contextMenuStrip2;
+            this.listEquipos.ContextMenuStrip = this.contextMenuEquipos;
             this.listEquipos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listEquipos.FormattingEnabled = true;
             this.listEquipos.ItemHeight = 20;
@@ -106,20 +106,20 @@
             this.listEquipos.TabIndex = 0;
             this.listEquipos.SelectedIndexChanged += new System.EventHandler(this.listEquipos_SelectedIndexChanged);
             // 
-            // contextMenuStrip2
+            // contextMenuEquipos
             // 
-            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.contextMenuEquipos.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
             this.toolStripMenuItem2});
-            this.contextMenuStrip2.Name = "contextMenuStrip1";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(107, 48);
-            this.contextMenuStrip2.Click += new System.EventHandler(this.editarEquipo_Click);
+            this.contextMenuEquipos.Name = "contextMenuStrip1";
+            this.contextMenuEquipos.Size = new System.Drawing.Size(107, 48);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(106, 22);
             this.toolStripMenuItem1.Text = "Editar";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.editarEquipo_Click);
             // 
             // toolStripMenuItem2
             // 
@@ -313,8 +313,8 @@
             this.ShowInTaskbar = false;
             this.Text = "Gestión de equipo";
             this.Load += new System.EventHandler(this.GestionEquipo_Load);
-            this.contextMenuStrip1.ResumeLayout(false);
-            this.contextMenuStrip2.ResumeLayout(false);
+            this.contextMenuJugadores.ResumeLayout(false);
+            this.contextMenuEquipos.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -343,10 +343,10 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblNumero;
         private System.Windows.Forms.ToolStripMenuItem atrásToolStripMenuItem;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuJugadores;
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem borrarToolStripMenuItem;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.ContextMenuStrip contextMenuEquipos;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
     }

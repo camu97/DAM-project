@@ -20,7 +20,6 @@ namespace SportGest
         public Entrenamiento()
         {
             InitializeComponent();
-
         }
 
         private void cancelar_Click(object sender, EventArgs e)
@@ -42,32 +41,60 @@ namespace SportGest
             {
                 using (SqlConnection connection = new SqlConnection(sCnn))
                 {
+                    SqlCommand cmd = new SqlCommand("INSERT INTO Entrenamientos values(@fecha,@objetivo,@duracion,@descripcion," +
+                        "@descrip_calent,@descrip_princi,@descrip_calma,@equipo,@t_calent,@t_princi,@t_calma,@mat_calent,@mat_princi,@mat_calma)", connection);
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Parameters.AddWithValue("@fecha", DateTime.Parse(tbFecha.Text + " " + tbHora.Text));
+                    cmd.Parameters.AddWithValue("@objetivo", tbObjetivo.Text);
+                    cmd.Parameters.AddWithValue("@duracion", int.Parse(tbTiempoSesion.Text));
+                    cmd.Parameters.AddWithValue("@descripcion", tbDescripcionObjectivo.Text);
+                    cmd.Parameters.AddWithValue("@descrip_calent", tbDescripcionCalentamiento.Text);
+                    cmd.Parameters.AddWithValue("@descrip_princi", tbDescripcionPrincipal.Text);
+                    cmd.Parameters.AddWithValue("@descrip_calma", tbDescripcionCalma.Text);
+                    cmd.Parameters.AddWithValue("@equipo", cbEquipo.Text);
+                    cmd.Parameters.AddWithValue("@t_calent", int.Parse(tbTiempoCalentamiento.Text));
+                    cmd.Parameters.AddWithValue("@t_princi", int.Parse(tbTiempoPrincipal.Text));
+                    cmd.Parameters.AddWithValue("@t_calma", int.Parse(tbTiempoCalma.Text));
+                    cmd.Parameters.AddWithValue("@mat_calent", tbMateriaCalentamiento.Text);
+                    cmd.Parameters.AddWithValue("@mat_princi", tbMaterialPrincipal.Text);
+                    cmd.Parameters.AddWithValue("@mat_calma", tbMaterialCalma.Text);
                     try
                     {
                         connection.Open();
-                        //entrenamientosAdapter.Insert(
-                          //  DateTime.Parse(tbFecha.Text + " " + tbHora.Text),
-                          //  tbObjetivo.Text,
-                          //  int.Parse(tbTiempoSesion.Text),
-                          //  tbDescripcionObjectivo.Text,
-                          //  tbDescipcionCalentamiento.Text,
-                          //  tbDescripcionPrincipal.Text,
-                          //  tbDescripcionCalma.Text,
-                          //  cbEquipo.SelectedItem.ToString(),
-                          //  int.Parse(tbTiempoCalentamiento.Text),
-                          //  int.Parse(tbTiempoPrincipal.Text),
-                          //  int.Parse(tbTiempoCalma.Text),
-                          //  tbMateriaCalentamiento.Text,
-                          //  tbMaterialPrincipal.Text,
-                          //  tbMaterialCalma.Text
-                          //);
+                        int fa = cmd.ExecuteNonQuery();
+                        if (fa == 1)
+                        {
+                            MessageBox.Show("Entrenamiento añadido");
+                            e_prog = true;
+                        }
+                        {
+                            //entrenamientosAdapter.Insert(
+                            //DateTime.Parse(tbFecha.Text + " " + tbHora.Text),
+                            //  tbObjetivo.Text,
+                            //  int.Parse(tbTiempoSesion.Text),
+                            //  tbDescripcionObjectivo.Text,
+                            //  tbDescripcionCalentamiento.Text,
+                            //  tbDescripcionPrincipal.Text,
+                            //  tbDescripcionCalma.Text,
+                            //  cbEquipo.Text,
+                            //  int.Parse(tbTiempoCalentamiento.Text),
+                            //  int.Parse(tbTiempoPrincipal.Text),
+                            //  int.Parse(tbTiempoCalma.Text),
+                            //  tbMateriaCalentamiento.Text,
+                            //  tbMaterialPrincipal.Text,
+                            //  tbMaterialCalma.Text
+                            //);
+                        }
+
                     }
                     catch (SqlException ex)
                     {
                         MessageBox.Show(ex.Message);
                     }
-                    MessageBox.Show("Entrenamiento añadido");
-                    e_prog = true;
+                    finally
+                    {
+                        connection.Close();
+                    }
                     this.Close();
                 }
             }
@@ -81,14 +108,16 @@ namespace SportGest
         {
             using (SqlConnection connection = new SqlConnection(sCnn))
             {
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Equipos", connection);
+                cmd.CommandType = CommandType.Text;
                 try
                 {
                     connection.Open();
-                    //DataTable dt = equiposAdapter.GetData();
-                    //foreach (DataRow dr in dt.Rows)
-                    //{
-                    //    cbEquipo.Items.Add(dr["nombre"].ToString() + " - " + dr["categoria"]);
-                    //}
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        cbEquipo.Items.Add(dr["nombre"].ToString() + " - " + dr["categoria"]);
+                    }
                 }
                 catch (SqlException ex)
                 {
@@ -158,11 +187,6 @@ namespace SportGest
                     MessageBox.Show("Por favor, introducir una FECHA válida");
                 }
             }
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void tbTiempoCalentamiento_TextChanged(object sender, EventArgs e)
