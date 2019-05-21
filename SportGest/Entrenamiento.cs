@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
+using System.Data.SQLite;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -32,16 +32,44 @@ namespace SportGest
             error = false;
             for (int i = 0; i < this.Controls.Count; i++)
             {
-                if (this.Controls[i] is TextBox && this.Controls[i].Text.Equals("") && this.Controls[i].Name.Contains("Material"))
+                if (this.Controls[i] is TextBox && this.Controls[i].Text.Equals("") && !this.Controls[i].Name.Contains("Material"))
                 {
                     error = true;
                 }
             }
+
+            try
+            {
+                DateTime.Parse(tbFecha.Text + " " + tbHora.Text);
+                int.Parse(tbTiempoSesion.Text);
+                int.Parse(tbTiempoCalentamiento.Text);
+                int.Parse(tbTiempoCalma.Text);
+                int.Parse(tbTiempoPrincipal.Text);
+            }
+            catch (FormatException)
+            {
+                error = true;
+            }
+            bool e_equipo = false;
+            string s = "";
+            for (int i = 0; i < cbEquipo.Items.Count; i++)
+            {
+                s = cbEquipo.Items[i].ToString();
+                if (s.Equals(cbEquipo.Text))
+                {
+                    e_equipo = true;
+                }
+            }
+            if (!e_equipo)
+            {
+                error = true;
+            }
+
             if (!error)
             {
-                using (SqlConnection connection = new SqlConnection(sCnn))
+                using (SQLiteConnection connection = new SQLiteConnection(sCnn))
                 {
-                    SqlCommand cmd = new SqlCommand("INSERT INTO Entrenamientos values(@fecha,@objetivo,@duracion,@descripcion," +
+                    SQLiteCommand cmd = new SQLiteCommand("INSERT INTO [Entrenamientos] (fecha,objetivo,duracion,descripcion,calentamiento_descripcion,principal_descripcion,calma_descripcion,equipo,t_calentamiento,t_principal,t_calma,mat_calentamiento,mat_principal,mat_calma) values(@fecha,@objetivo,@duracion,@descripcion," +
                         "@descrip_calent,@descrip_princi,@descrip_calma,@equipo,@t_calent,@t_princi,@t_calma,@mat_calent,@mat_princi,@mat_calma)", connection);
                     cmd.CommandType = CommandType.Text;
                     cmd.Parameters.AddWithValue("@fecha", DateTime.Parse(tbFecha.Text + " " + tbHora.Text));
@@ -87,7 +115,7 @@ namespace SportGest
                         }
 
                     }
-                    catch (SqlException ex)
+                    catch (SQLiteException ex)
                     {
                         MessageBox.Show(ex.Message);
                     }
@@ -100,26 +128,26 @@ namespace SportGest
             }
             else
             {
-                MessageBox.Show("Algún campo vacío", "Erorr", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Revisa todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void Entrenamiento_Load(object sender, EventArgs e)
         {
-            using (SqlConnection connection = new SqlConnection(sCnn))
+            using (SQLiteConnection connection = new SQLiteConnection(sCnn))
             {
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Equipos", connection);
+                SQLiteCommand cmd = new SQLiteCommand("SELECT * FROM [Equipos]", connection);
                 cmd.CommandType = CommandType.Text;
                 try
                 {
                     connection.Open();
-                    SqlDataReader dr = cmd.ExecuteReader();
+                    SQLiteDataReader dr = cmd.ExecuteReader();
                     while (dr.Read())
                     {
                         cbEquipo.Items.Add(dr["nombre"].ToString() + " - " + dr["categoria"]);
                     }
                 }
-                catch (SqlException ex)
+                catch (SQLiteException ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
@@ -174,30 +202,30 @@ namespace SportGest
 
         private void tbFecha_TextChanged(object sender, EventArgs e)
         {
-            if (tbFecha.TextLength == 10)
-            {
-                try
-                {
-                    int.Parse(tbFecha.Text.Split('/')[0]);
-                    int.Parse(tbFecha.Text.Split('/')[1]);
-                    int.Parse(tbFecha.Text.Split('/')[2]);
-                }
-                catch (FormatException)
-                {
-                    MessageBox.Show("Por favor, introducir una FECHA válida");
-                }
-            }
-        }
-
-        private void tbTiempoCalentamiento_TextChanged(object sender, EventArgs e)
-        {
             try
             {
-                int.Parse(((TextBox)sender).Text);
+                int.Parse(tbFecha.Text.Split('/')[0]);
+                int.Parse(tbFecha.Text.Split('/')[1]);
+                int.Parse(tbFecha.Text.Split('/')[2]);
             }
             catch (FormatException)
             {
-                MessageBox.Show("Por favor, introducir un número de minutos válido para la parte de la sesión");
+                MessageBox.Show("Por favor, introducir una FECHA válida");
+            }
+        }
+
+        private void tbTiemposFases_TextChanged(object sender, EventArgs e)
+        {
+            if (((TextBox)sender).TextLength > 0)
+            {
+                try
+                {
+                    int.Parse(((TextBox)sender).Text);
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("Por favor, introducir un número de minutos válido para la parte de la sesión");
+                }
             }
         }
     }

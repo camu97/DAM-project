@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
+using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -49,15 +49,15 @@ namespace SportGest
         {
             try
             {
-                using (SqlConnection connection = new SqlConnection(sCnn))
+                using (SQLiteConnection connection = new SQLiteConnection(sCnn))
                 {
                     try
                     {
-                        SqlCommand cmd = new SqlCommand("SELECT * FROM Jugadores", connection);
+                        SQLiteCommand cmd = new SQLiteCommand("SELECT * FROM [Jugadores]", connection);
                         cmd.CommandType = CommandType.Text;
 
                         connection.Open();
-                        SqlDataReader dr = cmd.ExecuteReader();
+                        SQLiteDataReader dr = cmd.ExecuteReader();
                         while (dr.Read())
                         {
                             if (dr["nick"].Equals(listJugadores.SelectedItem.ToString().Split('-')[1].Trim()))
@@ -70,7 +70,7 @@ namespace SportGest
                             }
                         }
                     }
-                    catch (SqlException ex)
+                    catch (SQLiteException ex)
                     {
                         MessageBox.Show(ex.Message);
                     }
@@ -93,19 +93,19 @@ namespace SportGest
             try
             {
                 //jugadoresAdapter.Delete(int.Parse(listJugadores.SelectedItem.ToString().Split('|')[0]));
-                using (SqlConnection connection = new SqlConnection(sCnn))
+                using (SQLiteConnection connection = new SQLiteConnection(sCnn))
                 {
 
-                    SqlCommand cmd = new SqlCommand("DELETE FROM Jugadores WHERE id=@id", connection);
+                    SQLiteCommand cmd = new SQLiteCommand("DELETE FROM [Jugadores] WHERE id=@id", connection);
                     cmd.CommandType = CommandType.Text;
                     cmd.Parameters.AddWithValue("@id", listJugadores.SelectedItem.ToString().Split('|')[0]);
                     try
                     {
                         connection.Open();
                         int fa = cmd.ExecuteNonQuery();
-                        MessageBox.Show(fa.ToString());
+                        //MessageBox.Show(fa.ToString());
                     }
-                    catch (Exception ex)
+                    catch (SQLiteException ex)
                     {
                         MessageBox.Show(ex.Message);
                     }
@@ -156,56 +156,55 @@ namespace SportGest
 
         private void borrarEquipo_Click(object sender, EventArgs e)
         {
-            try
+            using (SQLiteConnection connection = new SQLiteConnection(sCnn))
             {
-                //equiposAdapter.Delete(int.Parse(listEquipos.SelectedItem.ToString().Split('|')[0]));
-                using (SqlConnection connection = new SqlConnection(sCnn))
+                try
                 {
+                    //equiposAdapter.Delete(int.Parse(listEquipos.SelectedItem.ToString().Split('|')[0]));   
 
-                    SqlCommand cmd = new SqlCommand("DELETE FROM Equipos WHERE id=@id", connection);
+                    SQLiteCommand cmd = new SQLiteCommand("DELETE FROM [Equipos] WHERE id=@id", connection);
                     cmd.CommandType = CommandType.Text;
-                    try
-                    {
-                        cmd.Parameters.AddWithValue("@id", listEquipos.SelectedItem.ToString().Split('|')[0]);
-                        connection.Open();
-                        int fa = cmd.ExecuteNonQuery();
-                        MessageBox.Show(fa.ToString());
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                    finally
-                    {
-                        connection.Close();
-                    }
+                    cmd.Parameters.AddWithValue("@id", listEquipos.SelectedItem.ToString().Split('|')[0]);
+                    connection.Open();
+                    int fa = cmd.ExecuteNonQuery();
+                    //MessageBox.Show(fa.ToString());
+
+                    cargarEquipos();
+
                 }
-                cargarEquipos();
-            }
-            catch (NullReferenceException)
-            {
-                MessageBox.Show("Debes seleccionar un elemento de la lista");
+                catch (NullReferenceException)
+                {
+                    MessageBox.Show("Debes seleccionar un elemento de la lista");
+                }
+                catch (SQLiteException exc)
+                {
+                    MessageBox.Show(exc.Message);
+                }
+                finally
+                {
+                    connection.Close();
+                }
             }
         }
 
         private void cargarEquipos()
         {
             listEquipos.Items.Clear();
-            using (SqlConnection connection = new SqlConnection(sCnn))
+            using (SQLiteConnection connection = new SQLiteConnection(sCnn))
             {
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM Equipos", connection);
+                    SQLiteCommand cmd = new SQLiteCommand("SELECT * FROM [Equipos]", connection);
                     cmd.CommandType = CommandType.Text;
 
                     connection.Open();
-                    SqlDataReader dr = cmd.ExecuteReader();
+                    SQLiteDataReader dr = cmd.ExecuteReader();
                     while (dr.Read())
                     {
                         listEquipos.Items.Add(dr["Id"].ToString() + "| " + dr["nombre"].ToString() + " - " + dr["categoria"].ToString());
                     }
                 }
-                catch (Exception ex)
+                catch (SQLiteException ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
@@ -219,16 +218,16 @@ namespace SportGest
         private void cargarJugadores()
         {
             listJugadores.Items.Clear();
-            using (SqlConnection connection = new SqlConnection(sCnn))
+            using (SQLiteConnection connection = new SQLiteConnection(sCnn))
             {
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Jugadores WHERE equipo=@equipo", connection);
+                SQLiteCommand cmd = new SQLiteCommand("SELECT * FROM [Jugadores] WHERE equipo=@equipo", connection);
                 cmd.CommandType = CommandType.Text;
                 try
                 {
                     cmd.Parameters.AddWithValue("@equipo", listEquipos.SelectedItem.ToString().Split('|')[1].Split('-')[0].Trim()); //10| Alerta A - Alevines
 
                     connection.Open();
-                    SqlDataReader dr = cmd.ExecuteReader();
+                    SQLiteDataReader dr = cmd.ExecuteReader();
                     while (dr.Read())
                     {
                         //if (dr["equipo"].Equals(listEquipos.SelectedItem.ToString().Split('|')[1].Trim()))
@@ -236,7 +235,7 @@ namespace SportGest
                     }
                 }
                 catch (NullReferenceException) { }
-                catch (SqlException) { }
+                catch (SQLiteException) { }
                 finally
                 {
                     connection.Close();

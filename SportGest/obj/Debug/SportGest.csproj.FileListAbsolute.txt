@@ -134,3 +134,14 @@ D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGes
 D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGest\obj\Debug\SportGest.exe
 D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGest\obj\Debug\SportGest.pdb
 D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGest\obj\Debug\SportGest.csprojAssemblyReference.cache
+D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGest\bin\Debug\DatabaseSportGest.mdf
+D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGest\bin\Debug\DatabaseSportGest_log.ldf
+D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGest\bin\Debug\EntityFramework.dll
+D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGest\bin\Debug\EntityFramework.SqlServer.dll
+D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGest\bin\Debug\System.Data.SQLite.dll
+D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGest\bin\Debug\System.Data.SQLite.EF6.dll
+D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGest\bin\Debug\System.Data.SQLite.Linq.dll
+D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGest\bin\Debug\EntityFramework.xml
+D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGest\bin\Debug\EntityFramework.SqlServer.xml
+D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGest\bin\Debug\System.Data.SQLite.xml
+D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGest\bin\Debug\System.Data.SQLite.dll.config

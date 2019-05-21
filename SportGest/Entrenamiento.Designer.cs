@@ -303,7 +303,7 @@
             this.tbTiempoCalentamiento.Name = "tbTiempoCalentamiento";
             this.tbTiempoCalentamiento.Size = new System.Drawing.Size(30, 26);
             this.tbTiempoCalentamiento.TabIndex = 0;
-            this.tbTiempoCalentamiento.TextChanged += new System.EventHandler(this.tbTiempoCalentamiento_TextChanged);
+            this.tbTiempoCalentamiento.TextChanged += new System.EventHandler(this.tbTiemposFases_TextChanged);
             // 
             // tbTiempoPrincipal
             // 
@@ -313,7 +313,7 @@
             this.tbTiempoPrincipal.Name = "tbTiempoPrincipal";
             this.tbTiempoPrincipal.Size = new System.Drawing.Size(30, 26);
             this.tbTiempoPrincipal.TabIndex = 0;
-            this.tbTiempoPrincipal.TextChanged += new System.EventHandler(this.tbTiempoCalentamiento_TextChanged);
+            this.tbTiempoPrincipal.TextChanged += new System.EventHandler(this.tbTiemposFases_TextChanged);
             // 
             // tbTiempoCalma
             // 
@@ -323,7 +323,7 @@
             this.tbTiempoCalma.Name = "tbTiempoCalma";
             this.tbTiempoCalma.Size = new System.Drawing.Size(30, 26);
             this.tbTiempoCalma.TabIndex = 0;
-            this.tbTiempoCalma.TextChanged += new System.EventHandler(this.tbTiempoCalentamiento_TextChanged);
+            this.tbTiempoCalma.TextChanged += new System.EventHandler(this.tbTiemposFases_TextChanged);
             // 
             // menuStrip1
             // 

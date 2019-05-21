@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
+using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -31,63 +31,112 @@ namespace SportGest
                     error = true;
                 }
             }
-
-            using (SqlConnection connection = new SqlConnection(sCnn))
+            try
             {
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Jugadores WHERE num=@numero and equipo=@equipo and nombre!=@nombre", connection);
-                cmd.CommandType = CommandType.Text;
-                cmd.Parameters.AddWithValue("@numero", int.Parse(tbNumero.Text));
-                cmd.Parameters.AddWithValue("@nombre", tbNombre.Text);
-                cmd.Parameters.AddWithValue("@equipo", cbEquipos.Text.Split('[')[0].Trim());
-                try
+                DateTime x = DateTime.Parse(tbNacimiento.Text).Date;
+            }
+            catch (FormatException)
+            {
+                error = true;
+            }
+            try
+            {
+                int x = int.Parse(tbNumero.Text);
+            }
+            catch (FormatException)
+            {
+                error = true;
+            }
+            string pos = cbPosicion.Text;
+            if (!pos.Equals("PT") && !pos.Equals("DEF") & !pos.Equals("MED") && !pos.Equals("DEL"))
+            {
+                error = true;
+            }
+            bool e_equipo = false;
+            string s = "";
+            for (int i = 0; i < cbEquipos.Items.Count; i++)
+            {
+                s = cbEquipos.Items[i].ToString();
+                if (s.Equals(cbEquipos.Text))
                 {
-                    connection.Open();
-                    SqlDataReader dr = cmd.ExecuteReader();
-                    if (dr.HasRows)
-                    {
-                        error = true;
-                        MessageBox.Show("Ya hay un jugador con ese número[" + tbNumero.Text + "]");
-                    }
-                    {
-                        //DataTable dt = jugadoresAdapter.GetData();
-                        //DataRow dr;
-                        //for (int i = 0; i < dt.Rows.Count; i++)
-                        //{
-                        //    dr = dt.Rows[i];
-                        //    if (dr["num"].ToString().Equals(tbNumero.Text) && dr["equipo"].ToString().Equals(cbEquipos.SelectedItem.ToString().Split('[')[0].Trim()))
-                        //    {
-                        //        error = true;
-                        //        tbNumero.Text = "¡" + tbNumero.Text + "!";
-                        //        toolTip1.SetToolTip(tbNumero, "Ya existe un jugador con ese número");
-                        //        toolTip1.SetToolTip(label7, "Ya existe un jugador con ese número");
-                        //    }
-                        //}
-                        //dt.AcceptChanges();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                finally
-                {
-                    connection.Close();
+                    e_equipo = true;
                 }
             }
+            if (!e_equipo)
+            {
+                error = true;
+            }
+            if (!error)
+            {
+                using (SQLiteConnection connection = new SQLiteConnection(sCnn))
+                {
+                    SQLiteCommand cmd = new SQLiteCommand("SELECT * FROM [Jugadores] WHERE num=@numero and equipo=@equipo and nombre!=@nombre", connection);
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Parameters.AddWithValue("@numero", int.Parse(tbNumero.Text));
+                    cmd.Parameters.AddWithValue("@nombre", tbNombre.Text);
+                    cmd.Parameters.AddWithValue("@equipo", cbEquipos.Text.Split('[')[0].Trim());
+                    try
+                    {
+                        connection.Open();
+                        SQLiteDataReader dr = cmd.ExecuteReader();
+                        while (dr.Read()) { }
+                        if (dr.HasRows)
+                        {
+                            error = true;
+                            MessageBox.Show("Ya hay un jugador con ese número[" + tbNumero.Text + "]");
+                        }
+                        {
+                            //DataTable dt = jugadoresAdapter.GetData();
+                            //DataRow dr;
+                            //for (int i = 0; i < dt.Rows.Count; i++)
+                            //{
+                            //    dr = dt.Rows[i];
+                            //    if (dr["num"].ToString().Equals(tbNumero.Text) && dr["equipo"].ToString().Equals(cbEquipos.SelectedItem.ToString().Split('[')[0].Trim()))
+                            //    {
+                            //        error = true;
+                            //        tbNumero.Text = "¡" + tbNumero.Text + "!";
+                            //        toolTip1.SetToolTip(tbNumero, "Ya existe un jugador con ese número");
+                            //        toolTip1.SetToolTip(label7, "Ya existe un jugador con ese número");
+                            //    }
+                            //}
+                            //dt.AcceptChanges();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+                }
+            }
+
             if (!error)
             {
                 if (!editar)
                 {
-                    using (SqlConnection connection = new SqlConnection(sCnn))
+                    using (SQLiteConnection connection = new SQLiteConnection(sCnn))
                     {
                         //jugadoresAdapter.Insert(int.Parse(tbNumero.Text), tbNombre.Text, tbNick.Text, cbPosicion.SelectedItem.ToString(), DateTime.Parse(tbNacimiento.Text), cbEquipos.SelectedItem.ToString().Split('[')[0].Trim(), tbObservaciones.Text);
 
-                        SqlCommand cmd = new SqlCommand("INSERT into Jugadores (num,nombre,nick,posicion,fecha_nacimiento,equipo,observaciones) VALUES(@numero,@nombre,@nick,@posicion,@fecha,@equipo,@observaciones)", connection);
+                        SQLiteCommand cmd = new SQLiteCommand("INSERT into [Jugadores] (num,nombre,nick,posicion,fecha_nacimiento,equipo,observaciones) VALUES(@numero,@nombre,@nick,@posicion,@fecha,@equipo,@observaciones)", connection);
                         cmd.CommandType = CommandType.Text;
                         cmd.Parameters.AddWithValue("@nick", tbNick.Text);
                         cmd.Parameters.AddWithValue("@nombre", tbNombre.Text);
-                        cmd.Parameters.AddWithValue("@fecha", DateTime.Parse(tbNacimiento.Text));
-                        cmd.Parameters.AddWithValue("@numero", int.Parse(tbNumero.Text));
+                        cmd.Parameters.AddWithValue("@fecha", DateTime.Parse(tbNacimiento.Text).Date);
+                        try
+                        {
+                            cmd.Parameters.AddWithValue("@numero", int.Parse(tbNumero.Text));
+                        }
+                        catch (FormatException)
+                        {
+                            cmd.Parameters.AddWithValue("@numero", int.Parse(tbNumero.Text));
+                        }
+
+
+
                         cmd.Parameters.AddWithValue("@observaciones", tbObservaciones.Text);
                         cmd.Parameters.AddWithValue("@posicion", cbPosicion.Text);
                         cmd.Parameters.AddWithValue("@equipo", cbEquipos.Text.Split('[')[0].Trim());
@@ -114,7 +163,7 @@ namespace SportGest
                 }
                 else
                 {
-                    using (SqlConnection connection = new SqlConnection(sCnn))
+                    using (SQLiteConnection connection = new SQLiteConnection(sCnn))
                     {
                         {
                             //DataTable dt = jugadoresAdapter.GetData();
@@ -136,7 +185,7 @@ namespace SportGest
                             //}
                             //dt.AcceptChanges();
                         }
-                        SqlCommand cmd = new SqlCommand("UPDATE Jugadores SET " +
+                        SQLiteCommand cmd = new SQLiteCommand("UPDATE [Jugadores] SET " +
                             "nombre=@nombre," +
                             "posicion=@posicion," +
                             "fecha_nacimiento=@fecha," +
@@ -162,7 +211,7 @@ namespace SportGest
                                 MessageBox.Show("Operación correcta", "Modificar datos", MessageBoxButtons.OK);
                             }
                         }
-                        catch (SqlException) { }
+                        catch (SQLiteException) { }
                         finally
                         {
                             connection.Close();
@@ -182,6 +231,7 @@ namespace SportGest
             this.cbPosicion.Items.Add("DEF");
             this.cbPosicion.Items.Add("MED");
             this.cbPosicion.Items.Add("DEL");
+
             if (editar)
             {
                 btnAñadirJugador.Text = "Acpetar";
@@ -193,22 +243,22 @@ namespace SportGest
                 this.Text = "Nuevo jugador";
             }
 
-            using (SqlConnection connection = new SqlConnection(sCnn))
+            using (SQLiteConnection connection = new SQLiteConnection(sCnn))
             {
 
 
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Equipos", connection);
+                SQLiteCommand cmd = new SQLiteCommand("SELECT * FROM [Equipos]", connection);
                 cmd.CommandType = CommandType.Text;
                 try
                 {
                     connection.Open();
-                    SqlDataReader dr = cmd.ExecuteReader();
+                    SQLiteDataReader dr = cmd.ExecuteReader();
                     while (dr.Read())
                     {
                         this.cbEquipos.Items.Add(dr["nombre"] + "   [" + dr["categoria"] + "]");
                     }
                 }
-                catch (SqlException exc)
+                catch (SQLiteException exc)
                 {
                     MessageBox.Show(exc.Message);
                 }
@@ -219,13 +269,13 @@ namespace SportGest
 
                 if (editar)
                 {
-                    cmd = new SqlCommand("SELECT * FROM Jugadores WHERE id=@id", connection);
+                    cmd = new SQLiteCommand("SELECT * FROM [Jugadores] WHERE id=@id", connection);
                     cmd.CommandType = CommandType.Text;
                     cmd.Parameters.AddWithValue("@id", id);
                     try
                     {
                         connection.Open();
-                        SqlDataReader dr = cmd.ExecuteReader();
+                        SQLiteDataReader dr = cmd.ExecuteReader();
                         while (dr.Read())
                         {
                             {
@@ -240,7 +290,7 @@ namespace SportGest
                             }
                         }
                     }
-                    catch (SqlException exc)
+                    catch (SQLiteException exc)
                     {
                         MessageBox.Show(exc.Message);
                     }

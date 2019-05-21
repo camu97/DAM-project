@@ -702,7 +702,7 @@
             "Torneo"});
             this.cbCompetición.Location = new System.Drawing.Point(90, 38);
             this.cbCompetición.Name = "cbCompetición";
-            this.cbCompetición.Size = new System.Drawing.Size(82, 28);
+            this.cbCompetición.Size = new System.Drawing.Size(112, 28);
             this.cbCompetición.TabIndex = 0;
             this.cbCompetición.SelectedIndexChanged += new System.EventHandler(this.cbCompeticion_SelectedIndexChanged);
             // 

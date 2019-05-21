@@ -247,14 +247,16 @@
             // nuevoEquipoToolStripMenuItem1
             // 
             this.nuevoEquipoToolStripMenuItem1.Name = "nuevoEquipoToolStripMenuItem1";
-            this.nuevoEquipoToolStripMenuItem1.Size = new System.Drawing.Size(153, 22);
+            this.nuevoEquipoToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
+            this.nuevoEquipoToolStripMenuItem1.Size = new System.Drawing.Size(191, 22);
             this.nuevoEquipoToolStripMenuItem1.Text = "Nuevo equipo";
             this.nuevoEquipoToolStripMenuItem1.Click += new System.EventHandler(this.nuevoEquipo_Click);
             // 
             // nuevoJugadorToolStripMenuItem
             // 
             this.nuevoJugadorToolStripMenuItem.Name = "nuevoJugadorToolStripMenuItem";
-            this.nuevoJugadorToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.nuevoJugadorToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.J)));
+            this.nuevoJugadorToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
             this.nuevoJugadorToolStripMenuItem.Text = "Nuevo jugador";
             this.nuevoJugadorToolStripMenuItem.Click += new System.EventHandler(this.nuevoJugador_Click);
             // 

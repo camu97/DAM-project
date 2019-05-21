@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
+using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -56,15 +56,15 @@ namespace SportGest
 
         private void Partido_Load(object sender, EventArgs e)
         {
-            using (SqlConnection connection = new SqlConnection(sCnn))
+            using (SQLiteConnection connection = new SQLiteConnection(sCnn))
             {
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM Equipos", connection);
+                    SQLiteCommand cmd = new SQLiteCommand("SELECT * FROM [Equipos]", connection);
                     cmd.CommandType = CommandType.Text;
 
                     connection.Open();
-                    SqlDataReader dr = cmd.ExecuteReader();
+                    SQLiteDataReader dr = cmd.ExecuteReader();
                     while (dr.Read())
                     {
                         cbEquipo.Items.Add(dr["nombre"].ToString() + " - " + dr["categoria"]);
@@ -76,9 +76,9 @@ namespace SportGest
                     //    cbEquipo.Items.Add(dr["nombre"].ToString() + " - " + dr["categoria"]);
                     //}
                 }
-                catch (SqlException sqle)
+                catch (SQLiteException SQLitee)
                 {
-                    MessageBox.Show(sqle.Message);
+                    MessageBox.Show(SQLitee.Message);
                 }
                 finally
                 {
@@ -100,17 +100,15 @@ namespace SportGest
 
 
             listJugadores.Items.Clear();
-            using (SqlConnection connection = new SqlConnection(sCnn))
+            using (SQLiteConnection connection = new SQLiteConnection(sCnn))
             {
                 try
                 {
                     connection.Open();
 
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM Equipos", connection);
+                    SQLiteCommand cmd = new SQLiteCommand("SELECT * FROM [Equipos]", connection);
                     cmd.CommandType = CommandType.Text;
-
-                    connection.Open();
-                    SqlDataReader dr = cmd.ExecuteReader();
+                    SQLiteDataReader dr = cmd.ExecuteReader();
                     while (dr.Read())
                     {
                         if (dr["nombre"].ToString().Equals(cbEquipo.SelectedItem.ToString().Split('-')[0].Trim()))
@@ -142,30 +140,15 @@ namespace SportGest
                             }
                         lblTipo.Text = "[" + tipo + "]";
                     }
-
-
-
-                    SqlCommand cmd2 = new SqlCommand("SELECT * FROM Jugadores", connection);
-                    cmd.CommandType = CommandType.Text;
-
-                    connection.Open();
-                    SqlDataReader dr2 = cmd.ExecuteReader();
-                    while (dr.Read())
-                    {
-                        if (dr["equipo"].ToString().Equals(cbEquipo.SelectedItem.ToString().Split('-')[0].Trim()))
-                        {
-                            listJugadores.Items.Add(dr["num"].ToString() + " - " + dr["nombre"].ToString() + " - " + dr["posicion"].ToString());
-                        }
-                    }
-                    //    if (dr["equipo"].ToString().Equals(cbEquipo.SelectedItem.ToString().Split('-')[0].Trim()))
-                    //    {
-                    //        listJugadores.Items.Add(dr["num"].ToString() + " - " + dr["nombre"].ToString() + " - " + dr["posicion"].ToString());
-                    //    }
-                    //}
                 }
-                catch (SqlException sqle)
+                catch (SQLiteException exc)
                 {
-                    MessageBox.Show(sqle.Message);
+                    MessageBox.Show(exc.Message);
+                }
+                finally
+                {
+                    connection.Close();
+                    cargarJugadores();
                 }
             }
         }
@@ -240,19 +223,20 @@ namespace SportGest
 
         private void tbFecha_TextChanged(object sender, EventArgs e)
         {
-            if (tbFecha.TextLength == 10)
+            try
             {
-                try
-                {
-                    int.Parse(tbFecha.Text.Split('/')[0]);
-                    int.Parse(tbFecha.Text.Split('/')[1]);
-                    int.Parse(tbFecha.Text.Split('/')[2]);
-                }
-                catch (FormatException)
+                int.Parse(tbFecha.Text.Split('/')[0]);
+                int.Parse(tbFecha.Text.Split('/')[1]);
+                int.Parse(tbFecha.Text.Split('/')[2]);
+            }
+            catch (FormatException)
+            {
+                if (tbFecha.TextLength > 5)
                 {
                     MessageBox.Show("Por favor, introducir una FECHA válida");
                 }
             }
+            catch (IndexOutOfRangeException) { }
         }
 
         private void Partido_FormClosing(object sender, FormClosingEventArgs e)
@@ -337,21 +321,29 @@ namespace SportGest
             }
             try
             {
-                DateTime.Parse(tbFecha.Text);
+                DateTime.Parse(tbFecha.Text + " " + tbHora.Text);
+                int.Parse(resultLocal.Text);
+                int.Parse(resultVisitante.Text);
             }
             catch (FormatException)
             {
                 error = true;
-                mensaje += "\r\nFormato erróneo en la fecha";
+                mensaje += "\r\nFormato erróneo en: fecha/hora y/o goles de algún equipo";
             }
             if (equipoTitular.Count == 0)
             {
                 error = true;
                 mensaje += "\r\nNo hay equipo confirmado";
             }
+
+            if (!cbCompetición.Text.Equals("Liga") && !cbCompetición.Text.Equals("Copa") && !cbCompetición.Text.Equals("Torneo"))
+            {
+                cbCompetición.Text = "Amistoso";
+            }
+
             if (!error)
             {
-                using (SqlConnection connection = new SqlConnection(sCnn))
+                using (SQLiteConnection connection = new SQLiteConnection(sCnn))
                 {
                     if (int.Parse(resultLocal.Text) > int.Parse(resultVisitante.Text))
                     {
@@ -446,7 +438,7 @@ namespace SportGest
                         //);
                     }
 
-                    SqlCommand cmd = new SqlCommand("INSERT INTO Partidos VALUES(@fecha,@local,@visitante,@goles_local,@goles_visitante,@resultado,@jornada,@competicion" +
+                    SQLiteCommand cmd = new SQLiteCommand("INSERT INTO [Partidos] (fecha,equipo_local,equipo_visitante,goles_local,goles_visitante,resultado,jornada,competicion,campo,estilo_atq,estilo_def,posicion_atq,posicion_def,calentamiento,observaciones,titulares,suplentes,cambios,condicion) VALUES(@fecha,@local,@visitante,@goles_local,@goles_visitante,@resultado,@jornada,@competicion" +
                         ",@campo,@est_atq,@est_def,@pos_atq,@pos_def,@calentamiento,@observaciones,@titulares,@suplentes,@cambios,@condicion_campo)", connection);
                     cmd.CommandType = CommandType.Text;
                     cmd.Parameters.AddWithValue("@fecha", DateTime.Parse(tbFecha.Text + " " + tbHora.Text));
@@ -473,7 +465,7 @@ namespace SportGest
                     {
                         connection.Open();
                         int fa = cmd.ExecuteNonQuery();
-                        MessageBox.Show(fa.ToString());
+                        //MessageBox.Show(fa.ToString());
 
                         connection.Close();
 
@@ -494,6 +486,35 @@ namespace SportGest
             else
             {
                 MessageBox.Show("Campo(s) incorrecto(s) o vacío(s):" + mensaje, "Erorr", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void cargarJugadores()
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(sCnn))
+            {
+                try
+                {
+                    SQLiteCommand cmd2 = new SQLiteCommand("SELECT * FROM [Jugadores]", connection);
+                    cmd2.CommandType = CommandType.Text;
+                    connection.Open();
+                    SQLiteDataReader dr2 = cmd2.ExecuteReader();
+                    while (dr2.Read())
+                    {
+                        if (dr2["equipo"].ToString().Equals(cbEquipo.Text.Split('-')[0].Trim()))
+                        {
+                            listJugadores.Items.Add(dr2["num"].ToString() + " - " + dr2["nombre"].ToString() + " - " + dr2["posicion"].ToString());
+                        }
+                    }
+                }
+                catch (SQLiteException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    connection.Close();
+                }
             }
         }
     }

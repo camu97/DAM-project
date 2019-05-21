@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
+using System.Data.SQLite;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -19,10 +19,6 @@ namespace SportGest
         public Principal()
         {
             InitializeComponent();
-            try
-            {
-
-            } catch (SqlException) { }
         }
 
         private void btnNuevoEntrenamiento_Click(object sender, EventArgs e)
@@ -49,31 +45,21 @@ namespace SportGest
         private void Form1_Load(object sender, EventArgs e)
         {
             Intro intro = new Intro();
-            //intro.ShowDialog();
+            intro.ShowDialog();
 
-            using (SqlConnection connection = new SqlConnection(sCnn))
+            using (SQLiteConnection connection = new SQLiteConnection(sCnn))
             {
-
-                DataTable dt = new DataTable();
-
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM Notas", connection);
+                    SQLiteCommand cmd = new SQLiteCommand("SELECT * FROM [Notas]", connection);
                     cmd.CommandType = CommandType.Text;
 
                     connection.Open();
-                    SqlDataReader dr = cmd.ExecuteReader();
+                    SQLiteDataReader dr = cmd.ExecuteReader();
                     while (dr.Read())
                     {
                         ListaMensajes.Items.Add(dr["id"].ToString() + " - " + dr["fecha"].ToString().Split(' ')[0] + " - " + dr["nota"].ToString());
                     }
-
-                    //dt = notasTableAdapter1.GetData();
-                    //foreach (DataRow dr in dt.Rows)
-                    //{
-                    //    ListaMensajes.Items.Add(dr["id"].ToString() + " - " + dr["fecha"].ToString().Split(' ')[0] + " - " + dr["nota"].ToString());
-                    //}
-
                 }
                 catch (Exception ex)
                 {
@@ -88,12 +74,10 @@ namespace SportGest
         {
             if (tbNuevaNota.Text.Length != 0)
             {
-                DataTable dt = new DataTable();
-
-                using (SqlConnection connection = new SqlConnection(sCnn))
+                using (SQLiteConnection connection = new SQLiteConnection(sCnn))
                 {
 
-                    SqlCommand cmd = new SqlCommand("INSERT into Notas(fecha,nota) VALUES(@fecha,@nota)", connection);
+                    SQLiteCommand cmd = new SQLiteCommand("INSERT into [Notas] (fecha,nota) VALUES(@fecha,@nota)", connection);
                     cmd.CommandType = CommandType.Text;
                     cmd.Parameters.AddWithValue("@fecha", DateTime.Now);
                     cmd.Parameters.AddWithValue("@nota", tbNuevaNota.Text);
@@ -101,25 +85,18 @@ namespace SportGest
                     {
                         connection.Open();
                         int fa = cmd.ExecuteNonQuery();
-                        MessageBox.Show(fa.ToString());
+                        //MessageBox.Show(fa.ToString());
 
 
-                        SqlCommand cmd2 = new SqlCommand("SELECT * FROM Notas;", connection);
+                        SQLiteCommand cmd2 = new SQLiteCommand("SELECT * FROM [Notas];", connection);
                         cmd2.CommandType = CommandType.Text;
-                        SqlDataReader r = cmd2.ExecuteReader();
+                        SQLiteDataReader r = cmd2.ExecuteReader();
                         tbNuevaNota.Clear();
                         ListaMensajes.Items.Clear();
                         while (r.Read())
                         {
                             ListaMensajes.Items.Add(r["id"].ToString() + " - " + r["fecha"].ToString().Split(' ')[0] + " - " + r["nota"].ToString());
                         }
-                        //notasTableAdapter1.Insert(DateTime.Now.Date, tbNuevaNota.Text);
-
-                        //dt = notasTableAdapter1.GetData();
-                        //foreach (DataRow dr in dt.Rows)
-                        //{
-                        //    MessageBox.Show(dr["id"].ToString() + " - " + dr["fecha"].ToString().Split(' ')[0] + " - " + dr["nota"].ToString());
-                        //}
                         connection.Close();
                     }
                     catch (Exception ex)
@@ -169,22 +146,24 @@ namespace SportGest
 
         private void btnEliminarNota_Click(object sender, EventArgs e)
         {
-            //notasTableAdapter1.Delete(int.Parse(ListaMensajes.SelectedItem.ToString().Split('-')[0]));
-            using (SqlConnection connection = new SqlConnection(sCnn))
+            using (SQLiteConnection connection = new SQLiteConnection(sCnn))
             {
-
-                SqlCommand cmd = new SqlCommand("DELETE FROM Notas WHERE id=@id", connection);
+                SQLiteCommand cmd = new SQLiteCommand("DELETE FROM [Notas] WHERE id=@id", connection);
                 cmd.CommandType = CommandType.Text;
-                cmd.Parameters.AddWithValue("@id", ListaMensajes.SelectedItem.ToString().Split('-')[0]);
                 try
                 {
+                    cmd.Parameters.AddWithValue("@id", ListaMensajes.SelectedItem.ToString().Split('-')[0]);
                     connection.Open();
                     int fa = cmd.ExecuteNonQuery();
-                    MessageBox.Show(fa.ToString());
+                    //MessageBox.Show(fa.ToString());
                 }
-                catch (Exception ex)
+                catch (SQLiteException ex)
                 {
                     MessageBox.Show(ex.Message);
+                }
+                catch (NullReferenceException)
+                {
+                    //MessageBox.Show("Seleccionad un partido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 finally
                 {
@@ -202,17 +181,5 @@ namespace SportGest
             HistorialPartidos hp = new HistorialPartidos();
             hp.ShowDialog();
         }
-
-
-
-        //private void tbNuevaNota_Enter(object sender, EventArgs e)
-        //{
-        //    foco_nueva_nota = true;
-        //}
-
-        //private void tbNuevaNota_Leave(object sender, EventArgs e)
-        //{
-        //    foco_nueva_nota = false;
-        //}
     }
 }

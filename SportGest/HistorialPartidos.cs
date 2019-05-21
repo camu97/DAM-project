@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
+using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -23,15 +23,16 @@ namespace SportGest
         private void lblEquipoConvocado_Click(object sender, EventArgs e)
         {
             string[] tit = { "" }, sup = { "" };
-            using (SqlConnection connection = new SqlConnection(sCnn))
+            using (SQLiteConnection connection = new SQLiteConnection(sCnn))
             {
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Partidos WHERE Id=@id", connection);
+                SQLiteCommand cmd = new SQLiteCommand("SELECT * FROM [Partidos] WHERE Id=@id", connection);
                 cmd.CommandType = CommandType.Text;
-                cmd.Parameters.AddWithValue("@id", listPartidos.SelectedItem.ToString().Split('-')[0].Trim());
                 try
                 {
+                    cmd.Parameters.AddWithValue("@id", listPartidos.SelectedItem.ToString().Split('-')[0].Trim());
+
                     connection.Open();
-                    SqlDataReader dr = cmd.ExecuteReader();
+                    SQLiteDataReader dr = cmd.ExecuteReader();
                     while (dr.Read())
                     {
                         //if (dr["Id"].ToString().Equals(listPartidos.SelectedItem.ToString().Split('-')[0].Trim()))
@@ -49,7 +50,7 @@ namespace SportGest
                         MessageBox.Show(titulares.Substring(0, titulares.Length - 1) + "\r\n" + suplentes.Substring(0, suplentes.Length - 1), "Equipo", MessageBoxButtons.OK, MessageBoxIcon.None);
                     }
                 }
-                catch (SqlException exc)
+                catch (SQLiteException exc)
                 {
                     MessageBox.Show(exc.Message);
                 }
@@ -66,20 +67,20 @@ namespace SportGest
 
         private void HistorialPartidos_Load(object sender, EventArgs e)
         {
-            using (SqlConnection connection = new SqlConnection(sCnn))
+            using (SQLiteConnection connection = new SQLiteConnection(sCnn))
             {
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Equipos", connection);
+                SQLiteCommand cmd = new SQLiteCommand("SELECT * FROM [Equipos]", connection);
                 cmd.CommandType = CommandType.Text;
                 try
                 {
                     connection.Open();
-                    SqlDataReader dr = cmd.ExecuteReader();
+                    SQLiteDataReader dr = cmd.ExecuteReader();
                     while (dr.Read())
                     {
                         cbEquipo.Items.Add(dr["nombre"] + " - " + dr["categoria"]);
                     }
                 }
-                catch (SqlException exc)
+                catch (SQLiteException exc)
                 {
                     MessageBox.Show(exc.Message);
                 }
@@ -88,22 +89,22 @@ namespace SportGest
 
         private void lblEstilo_Click(object sender, EventArgs e)
         {
-            using (SqlConnection connection = new SqlConnection(sCnn))
+            using (SQLiteConnection connection = new SQLiteConnection(sCnn))
             {
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Partidos WHERE Id=@id", connection);
+                SQLiteCommand cmd = new SQLiteCommand("SELECT * FROM [Partidos] WHERE Id=@id", connection);
                 cmd.CommandType = CommandType.Text;
-                cmd.Parameters.AddWithValue("@id", listPartidos.SelectedItem.ToString().Split('-')[0].Trim());
                 try
                 {
+                    cmd.Parameters.AddWithValue("@id", listPartidos.SelectedItem.ToString().Split('-')[0].Trim());
                     connection.Open();
-                    SqlDataReader dr = cmd.ExecuteReader();
+                    SQLiteDataReader dr = cmd.ExecuteReader();
                     while (dr.Read())
                     {
                         //    if (dr["Id"].ToString().Equals(listPartidos.SelectedItem.ToString().Split('-')[0].Trim()))
                         MessageBox.Show("Ataque: " + dr["estilo_atq"] + "\r\nDefensa: " + dr["estilo_def"].ToString(), "Estilo de juego");
                     }
                 }
-                catch (SqlException exc)
+                catch (SQLiteException exc)
                 {
                     MessageBox.Show(exc.Message);
                 }
@@ -120,22 +121,22 @@ namespace SportGest
 
         private void lblPosicionamiento_Click(object sender, EventArgs e)
         {
-            using (SqlConnection connection = new SqlConnection(sCnn))
+            using (SQLiteConnection connection = new SQLiteConnection(sCnn))
             {
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Partidos WHERE Id=@id", connection);
+                SQLiteCommand cmd = new SQLiteCommand("SELECT * FROM [Partidos] WHERE Id=@id", connection);
                 cmd.CommandType = CommandType.Text;
-                cmd.Parameters.AddWithValue("@id", listPartidos.SelectedItem.ToString().Split('-')[0].Trim());
                 try
                 {
+                    cmd.Parameters.AddWithValue("@id", listPartidos.SelectedItem.ToString().Split('-')[0].Trim());
                     connection.Open();
-                    SqlDataReader dr = cmd.ExecuteReader();
+                    SQLiteDataReader dr = cmd.ExecuteReader();
                     while (dr.Read())
                     {
                         //    if (dr["Id"].ToString().Equals(listPartidos.SelectedItem.ToString().Split('-')[0].Trim()))
                         MessageBox.Show("Ataque: " + dr["posicion_atq"] + "\r\nDefensa: " + dr["posicion_def"].ToString(), "Posicionamiento");
                     }
                 }
-                catch (SqlException exc)
+                catch (SQLiteException exc)
                 {
                     MessageBox.Show(exc.Message);
                 }
@@ -153,15 +154,15 @@ namespace SportGest
         private void cbEquipo_SelectedIndexChanged(object sender, EventArgs e)
         {
             listPartidos.Items.Clear();
-            using (SqlConnection connection = new SqlConnection(sCnn))
+            using (SQLiteConnection connection = new SQLiteConnection(sCnn))
             {
 
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Partidos", connection);
+                SQLiteCommand cmd = new SQLiteCommand("SELECT * FROM [Partidos]", connection);
                 cmd.CommandType = CommandType.Text;
                 try
                 {
                     connection.Open();
-                    SqlDataReader dr = cmd.ExecuteReader();
+                    SQLiteDataReader dr = cmd.ExecuteReader();
                     while (dr.Read())
                     {
                         if (dr["condicion"].ToString().Equals("Local"))
@@ -180,9 +181,13 @@ namespace SportGest
                         }
                     }
                 }
-                catch (SqlException exc)
+                catch (SQLiteException exc)
                 {
                     MessageBox.Show(exc.Message);
+                }
+                catch (NullReferenceException)
+                {
+                    //MessageBox.Show("Seleccionad un partido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
         }
@@ -194,15 +199,16 @@ namespace SportGest
 
         private void listPartidos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            using (SqlConnection connection = new SqlConnection(sCnn))
+            using (SQLiteConnection connection = new SQLiteConnection(sCnn))
             {
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Partidos WHERE Id=@id", connection);
+                SQLiteCommand cmd = new SQLiteCommand("SELECT * FROM [Partidos] WHERE Id=@id", connection);
                 cmd.CommandType = CommandType.Text;
-                cmd.Parameters.AddWithValue("@id", listPartidos.SelectedItem.ToString().Split('-')[0].Trim());
                 try
                 {
+                    cmd.Parameters.AddWithValue("@id", listPartidos.SelectedItem.ToString().Split('-')[0].Trim());
+
                     connection.Open();
-                    SqlDataReader dr = cmd.ExecuteReader();
+                    SQLiteDataReader dr = cmd.ExecuteReader();
                     while (dr.Read())
                     {
                         //if (dr["Id"].ToString().Equals(listPartidos.SelectedItem.ToString().Split('-')[0].Trim()))
@@ -229,9 +235,13 @@ namespace SportGest
                         tbObservaciones.Text = dr["observaciones"].ToString();
                     }
                 }
-                catch (SqlException exc)
+                catch (SQLiteException exc)
                 {
                     MessageBox.Show(exc.Message);
+                }
+                catch (NullReferenceException)
+                {
+                    //MessageBox.Show("Seleccionad un partido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
         }

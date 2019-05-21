@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
+using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,6 +15,7 @@ namespace SportGest
     {
         public bool editar = false, error = false;
         public string id;
+        private int num;
         string sCnn = Properties.Settings.Default.SportGestConnection;
         public NuevoEquipo()
         {
@@ -33,14 +34,14 @@ namespace SportGest
                 btnAñadirEquipo.Text = "Acpetar cambios";
                 this.Text = "Equipo";
 
-                using (SqlConnection connection = new SqlConnection(sCnn))
+                using (SQLiteConnection connection = new SQLiteConnection(sCnn))
                 {
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM Equipos", connection);
+                    SQLiteCommand cmd = new SQLiteCommand("SELECT * FROM [Equipos]", connection);
                     cmd.CommandType = CommandType.Text;
                     try
                     {
                         connection.Open();
-                        SqlDataReader dr = cmd.ExecuteReader();
+                        SQLiteDataReader dr = cmd.ExecuteReader();
                         while (dr.Read())
                         {
                             if (dr["Id"].ToString().Equals(id))
@@ -53,7 +54,7 @@ namespace SportGest
                             }
                         }
                     }
-                    catch (SqlException exc)
+                    catch (SQLiteException exc)
                     {
                         MessageBox.Show(exc.Message);
                     }
@@ -73,10 +74,18 @@ namespace SportGest
 
         private void btnAñadirEquipo_Click(object sender, EventArgs e)
         {
+            try
+            {
+                num = int.Parse(tbNumero.Text);
+            }
+            catch (FormatException)
+            {
+                num = -1;
+            }
             error = false;
             for (int i = 0; i < this.Controls.Count; i++)
             {
-                if (this.Controls[i] is TextBox && this.Controls[i].Text.Equals("") && !this.Controls[i].Name.Equals("tbObservaciones"))
+                if (this.Controls[i] is TextBox && this.Controls[i].Text.Equals("") && !this.Controls[i].Name.Equals("tbObservaciones") && !this.Controls[i].Name.Equals("tbNumero") && !this.Controls[i].Name.Equals("tbLiga"))
                 {
                     error = true;
                 }
@@ -85,15 +94,22 @@ namespace SportGest
             {
                 if (!editar)
                 {
-                    using (SqlConnection connection = new SqlConnection(sCnn))
+                    using (SQLiteConnection connection = new SQLiteConnection(sCnn))
                     {
                         //equiposAdapter.Insert(tbNombre.Text, cbCategoria.SelectedItem.ToString(), tbLiga.Text, int.Parse(tbNumero.Text), tbObservaciones.Text);
-                        SqlCommand cmd = new SqlCommand("INSERT into Equipos (nombre,categoria,liga,num_jugadores,observaciones) VALUES(@nombre,@categoria,@liga,@numero_jugadores,@observaciones)", connection);
+                        SQLiteCommand cmd = new SQLiteCommand("INSERT into [Equipos] (nombre,categoria,liga,num_jugadores,observaciones) VALUES(@nombre,@categoria,@liga,@numero_jugadores,@observaciones)", connection);
                         cmd.CommandType = CommandType.Text;
                         cmd.Parameters.AddWithValue("@categoria", cbCategoria.Text);
                         cmd.Parameters.AddWithValue("@nombre", tbNombre.Text);
                         cmd.Parameters.AddWithValue("@liga", tbLiga.Text);
-                        cmd.Parameters.AddWithValue("@numero_jugadores", int.Parse(tbNumero.Text));
+                        if (num == -1)
+                        {
+                            cmd.Parameters.AddWithValue("@numero_jugadores", null);
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@numero_jugadores", num);
+                        }
                         cmd.Parameters.AddWithValue("@observaciones", tbObservaciones.Text);
                         try
                         {
@@ -118,9 +134,9 @@ namespace SportGest
                 }
                 else
                 {
-                    using (SqlConnection connection = new SqlConnection(sCnn))
+                    using (SQLiteConnection connection = new SQLiteConnection(sCnn))
                     {
-                        SqlCommand cmd = new SqlCommand("UPDATE Equipos SET " +
+                        SQLiteCommand cmd = new SQLiteCommand("UPDATE [Equipos] SET " +
                             "nombre=@nombre," +
                             "categoria=@categoria," +
                             "liga=@liga," +
@@ -154,7 +170,7 @@ namespace SportGest
             }
             else
             {
-                MessageBox.Show("Algún campo vacío", "Erorr", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Algún campo vacío", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
