@@ -15,3 +15,10 @@
 20/5 - Versión final entregable.
 *Problemas con la base de datos
 21/5 - Versión final. Cambio en la base de datos(Se usaba SQL Server y se cambió a SQLite por problemas técnicos).
+
+
+INSTALACIÓN
+Tras descargar los archivos del repositorio como un archivo comprimido, se deb en descomprimir y encontraremos el programa ejecutable en la ruta:
+'C:\Users\prueba\Desktop\DAM_Project-master\SportGest\bin\Debug\SportGest.exe'
+¡IMPORTANTE! Para ejecutar este programa debemos mantener todos los archivos que están con él.
+Para poder ejecutarlo "aislado" podremos crear un acceso directo al ejecutable de esa carpeta, pero nunca sacarlo de la carpeta 'Debug'.
