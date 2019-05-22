@@ -19,6 +19,6 @@
 
 INSTALACIÓN
 Tras descargar los archivos del repositorio como un archivo comprimido, se deb en descomprimir y encontraremos el programa ejecutable en la ruta:
-'C:\Users\prueba\Desktop\DAM_Project-master\SportGest\bin\Debug\SportGest.exe'
+'DAM_Project-master\SportGest\bin\Debug\SportGest.exe'
 ¡IMPORTANTE! Para ejecutar este programa debemos mantener todos los archivos que están con él.
 Para poder ejecutarlo "aislado" podremos crear un acceso directo al ejecutable de esa carpeta, pero nunca sacarlo de la carpeta 'Debug'.
