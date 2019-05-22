@@ -193,20 +193,6 @@ namespace SportGest
             }
         }
 
-        private void tbFecha_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                int.Parse(tbFecha.Text.Split('/')[0]);
-                int.Parse(tbFecha.Text.Split('/')[1]);
-                int.Parse(tbFecha.Text.Split('/')[2]);
-            }
-            catch (FormatException)
-            {
-                MessageBox.Show("Por favor, introducir una FECHA válida");
-            }
-        }
-
         private void tbTiemposFases_TextChanged(object sender, EventArgs e)
         {
             if (((TextBox)sender).TextLength > 0)

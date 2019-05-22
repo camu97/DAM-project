@@ -221,24 +221,6 @@ namespace SportGest
             }
         }
 
-        private void tbFecha_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                int.Parse(tbFecha.Text.Split('/')[0]);
-                int.Parse(tbFecha.Text.Split('/')[1]);
-                int.Parse(tbFecha.Text.Split('/')[2]);
-            }
-            catch (FormatException)
-            {
-                if (tbFecha.TextLength > 5)
-                {
-                    MessageBox.Show("Por favor, introducir una FECHA válida");
-                }
-            }
-            catch (IndexOutOfRangeException) { }
-        }
-
         private void Partido_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!p_prog)
