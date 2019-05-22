@@ -829,6 +829,7 @@
             this.tbFecha.Name = "tbFecha";
             this.tbFecha.Size = new System.Drawing.Size(100, 26);
             this.tbFecha.TabIndex = 3;
+            this.tbFecha.TextChanged += new System.EventHandler(this.tbFecha_TextChanged);
             // 
             // menuStrip1
             // 

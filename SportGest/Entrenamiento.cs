@@ -193,6 +193,11 @@ namespace SportGest
             }
         }
 
+        private void tbFecha_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void tbTiemposFases_TextChanged(object sender, EventArgs e)
         {
             if (((TextBox)sender).TextLength > 0)

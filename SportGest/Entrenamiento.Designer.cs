@@ -164,7 +164,7 @@
             this.lblObjectivo.ForeColor = System.Drawing.SystemColors.WindowText;
             this.lblObjectivo.Location = new System.Drawing.Point(331, 35);
             this.lblObjectivo.Name = "lblObjectivo";
-            this.lblObjectivo.Size = new System.Drawing.Size(105, 16);
+            this.lblObjectivo.Size = new System.Drawing.Size(100, 16);
             this.lblObjectivo.TabIndex = 7;
             this.lblObjectivo.Text = "Objectivo(s): ";
             // 
@@ -194,7 +194,7 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(332, 75);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(102, 16);
+            this.label4.Size = new System.Drawing.Size(99, 16);
             this.label4.TabIndex = 11;
             this.label4.Text = "Descripción: ";
             // 
@@ -271,7 +271,7 @@
             this.lblCalentamiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCalentamiento.Location = new System.Drawing.Point(10, 35);
             this.lblCalentamiento.Name = "lblCalentamiento";
-            this.lblCalentamiento.Size = new System.Drawing.Size(119, 16);
+            this.lblCalentamiento.Size = new System.Drawing.Size(115, 16);
             this.lblCalentamiento.TabIndex = 22;
             this.lblCalentamiento.Text = "Calentamiento: ";
             // 
@@ -281,7 +281,7 @@
             this.lblCalma.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCalma.Location = new System.Drawing.Point(11, 35);
             this.lblCalma.Name = "lblCalma";
-            this.lblCalma.Size = new System.Drawing.Size(147, 16);
+            this.lblCalma.Size = new System.Drawing.Size(140, 16);
             this.lblCalma.TabIndex = 23;
             this.lblCalma.Text = "Vuelta a la calma:  ";
             // 
@@ -291,7 +291,7 @@
             this.lblPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrincipal.Location = new System.Drawing.Point(6, 33);
             this.lblPrincipal.Name = "lblPrincipal";
-            this.lblPrincipal.Size = new System.Drawing.Size(119, 16);
+            this.lblPrincipal.Size = new System.Drawing.Size(115, 16);
             this.lblPrincipal.TabIndex = 24;
             this.lblPrincipal.Text = "Fase principal: ";
             // 
@@ -855,6 +855,7 @@
             this.tbFecha.Size = new System.Drawing.Size(86, 22);
             this.tbFecha.TabIndex = 1;
             this.tbFecha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbFecha.TextChanged += new System.EventHandler(this.tbFecha_TextChanged);
             // 
             // tbTiempoSesion
             // 

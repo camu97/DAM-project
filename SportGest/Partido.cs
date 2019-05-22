@@ -174,6 +174,11 @@ namespace SportGest
             minCambio3.Enabled = !minCambio3.Enabled;
         }
 
+        private void tbFecha_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void cbCambio4_CheckedChanged(object sender, EventArgs e)
         {
             cbCambio41.Enabled = !cbCambio41.Enabled;

@@ -21,6 +21,15 @@ namespace SportGest
                     if (!File.Exists("SportGest_Database.db3"))
                     {
                         System.Data.SQLite.SQLiteConnection.CreateFile("SportGest_Database.db3");
+                        MessageBox.Show("Para empezar a ultilizar esta aplicación se debe tener en cuenta:\n\n" +
+                           "Para la completa usabilidad del programa se debe crear equipos con sus respectivos jugadores ya que para la preparación de una sesión de entrenamiento o un partido debes elegir qué equipo lo realiza, qué jugadores juegan titulares, etc.\n" +
+                           "\nLa creación de estos equipos o jugadores (así como su posterior edición) se deberá realizar desde 'Gestión de equipo', donde además podremos ver los jugadores que tiene cada uno de los equipos registrados en la aplicación." +
+                           "\n" +
+                           "En las pantallas de entrenamiento y de partido se podrá programar una sesión de entrenamiento (con su objetivo, sus tareas, material ultilizado, etc.) o un partido (seleccionando la forma en la que juega el equipo, su posición en el campo, etc.)\n\n" +
+                           "En el historial de entrenamientos se mostrarán los datos de todos los entrenamientos realizados hasta la fecha.\n" +
+                           "En el historial de partidos se mostrarán los datos de los partidos del equipo seleccionado en la propia ventana." +
+                           "",
+                           "Información de aplicación", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     SQLiteConnection cnn = new SQLiteConnection(Properties.Settings.Default.SportGestConnection);
                     SQLiteCommand cmd = new SQLiteCommand(cnn);
