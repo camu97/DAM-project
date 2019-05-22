@@ -855,7 +855,6 @@
             this.tbFecha.Size = new System.Drawing.Size(86, 22);
             this.tbFecha.TabIndex = 1;
             this.tbFecha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbFecha.TextChanged += new System.EventHandler(this.tbFecha_TextChanged);
             // 
             // tbTiempoSesion
             // 

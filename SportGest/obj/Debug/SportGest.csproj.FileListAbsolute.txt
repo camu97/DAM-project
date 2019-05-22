@@ -24,14 +24,7 @@ C:\Users\javie\Desktop\SportGest\SportGest\bin\Debug\SportGest.exe.manifest
 C:\Users\javie\Desktop\SportGest\SportGest\bin\Debug\SportGest.application
 C:\Users\javie\Desktop\SportGest\SportGest\obj\Debug\SportGest.exe.manifest
 C:\Users\javie\Desktop\SportGest\SportGest\obj\Debug\SportGest.application
-D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGest\bin\Debug\SportGest.exe.config
-D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGest\bin\Debug\SportGest.exe.manifest
-D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGest\bin\Debug\SportGest.application
-D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGest\bin\Debug\SportGest.exe
-D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGest\bin\Debug\SportGest.pdb
-D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGest\bin\Debug\System.Data.SQLite.dll
-D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGest\bin\Debug\System.Data.SQLite.xml
-D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGest\bin\Debug\System.Data.SQLite.dll.config
+D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGest\obj\Debug\SportGest.csprojAssemblyReference.cache
 D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGest\obj\Debug\SportGest.Entrenamiento.resources
 D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGest\obj\Debug\SportGest.GestionEquipo.resources
 D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGest\obj\Debug\SportGest.HistorialEntrenamientos.resources
@@ -44,6 +37,14 @@ D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGes
 D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGest\obj\Debug\SportGest.Properties.Resources.resources
 D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGest\obj\Debug\SportGest.csproj.GenerateResource.cache
 D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGest\obj\Debug\SportGest.csproj.CoreCompileInputs.cache
+D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGest\bin\Debug\SportGest.exe.config
+D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGest\bin\Debug\SportGest.exe.manifest
+D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGest\bin\Debug\SportGest.application
+D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGest\bin\Debug\SportGest.exe
+D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGest\bin\Debug\SportGest.pdb
+D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGest\bin\Debug\System.Data.SQLite.dll
+D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGest\bin\Debug\System.Data.SQLite.xml
+D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGest\bin\Debug\System.Data.SQLite.dll.config
 D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGest\obj\Debug\SportGest.exe.manifest
 D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGest\obj\Debug\SportGest.application
 D:\javie\Dropbox\Ciclo DAM\Segundo\Proyecto final\SportGest\DAM_Project\SportGest\obj\Debug\SportGest.csproj.CopyComplete
