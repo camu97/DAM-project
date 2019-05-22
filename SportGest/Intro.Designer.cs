@@ -47,7 +47,8 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::SportGest.Properties.Resources.campo_3d_intro;
+            this.pictureBox1.BackColor = System.Drawing.Color.Lavender;
+            this.pictureBox1.Image = global::SportGest.Properties.Resources.campo_3d_intro1;
             this.pictureBox1.Location = new System.Drawing.Point(13, 167);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(315, 174);
@@ -99,8 +100,8 @@
             this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(341, 385);
             this.ControlBox = false;
-            this.Controls.Add(this.lblCargando);
             this.Controls.Add(this.pbIntro);
+            this.Controls.Add(this.lblCargando);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblName);
             this.Cursor = System.Windows.Forms.Cursors.WaitCursor;
@@ -108,7 +109,6 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Intro";
-            this.Opacity = 0.8D;
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

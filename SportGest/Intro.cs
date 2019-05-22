@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SQLite;
+using System.Windows.Forms;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace SportGest
 {
@@ -24,9 +18,9 @@ namespace SportGest
             {
                 try
                 {
-                    if (!File.Exists(Directory.GetCurrentDirectory() + "SportGest_Database.db3"))
+                    if (!File.Exists("SportGest_Database.db3"))
                     {
-                        System.Data.SQLite.SQLiteConnection.CreateFile(Directory.GetCurrentDirectory() + "SportGest_Database.db3");
+                        System.Data.SQLite.SQLiteConnection.CreateFile("SportGest_Database.db3");
                     }
                     SQLiteConnection cnn = new SQLiteConnection(Properties.Settings.Default.SportGestConnection);
                     SQLiteCommand cmd = new SQLiteCommand(cnn);

@@ -93,6 +93,16 @@ namespace SportGest.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap campo_3d_intro1 {
+            get {
+                object obj = ResourceManager.GetObject("campo_3d_intro1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap campo_cesped {
             get {
                 object obj = ResourceManager.GetObject("campo_cesped", resourceCulture);
@@ -163,6 +173,16 @@ namespace SportGest.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icono {
+            get {
+                object obj = ResourceManager.GetObject("icono", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap jugador {
             get {
                 object obj = ResourceManager.GetObject("jugador", resourceCulture);
@@ -176,6 +196,16 @@ namespace SportGest.Properties {
         internal static System.Drawing.Bitmap opciones {
             get {
                 object obj = ResourceManager.GetObject("opciones", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap opciones1 {
+            get {
+                object obj = ResourceManager.GetObject("opciones1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -221,6 +251,26 @@ namespace SportGest.Properties {
         }
         
         /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
+        /// </summary>
+        internal static System.Drawing.Icon s_icon {
+            get {
+                object obj = ResourceManager.GetObject("s_icon", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap s_icon1 {
+            get {
+                object obj = ResourceManager.GetObject("s_icon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap seta_amarilla {
@@ -256,6 +306,16 @@ namespace SportGest.Properties {
         internal static System.Drawing.Bitmap setas_grupo {
             get {
                 object obj = ResourceManager.GetObject("setas_grupo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap setas_grupo1 {
+            get {
+                object obj = ResourceManager.GetObject("setas_grupo1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
