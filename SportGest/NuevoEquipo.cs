@@ -80,7 +80,7 @@ namespace SportGest
             }
             catch (FormatException)
             {
-                num = -1;
+                num = 0;
             }
             error = false;
             for (int i = 0; i < this.Controls.Count; i++)
@@ -102,14 +102,7 @@ namespace SportGest
                         cmd.Parameters.AddWithValue("@categoria", cbCategoria.Text);
                         cmd.Parameters.AddWithValue("@nombre", tbNombre.Text);
                         cmd.Parameters.AddWithValue("@liga", tbLiga.Text);
-                        if (num == -1)
-                        {
-                            cmd.Parameters.AddWithValue("@numero_jugadores", null);
-                        }
-                        else
-                        {
-                            cmd.Parameters.AddWithValue("@numero_jugadores", num);
-                        }
+                        cmd.Parameters.AddWithValue("@numero_jugadores", num);
                         cmd.Parameters.AddWithValue("@observaciones", tbObservaciones.Text);
                         try
                         {
@@ -128,9 +121,7 @@ namespace SportGest
                         {
                             connection.Close();
                         }
-
                     }
-                    this.Dispose();
                 }
                 else
                 {
@@ -146,8 +137,9 @@ namespace SportGest
                         cmd.Parameters.AddWithValue("@categoria", cbCategoria.Text);
                         cmd.Parameters.AddWithValue("@nombre", tbNombre.Text);
                         cmd.Parameters.AddWithValue("@liga", tbLiga.Text);
-                        cmd.Parameters.AddWithValue("@numero_jugadores", int.Parse(tbNumero.Text));
+                        cmd.Parameters.AddWithValue("@numero_jugadores", num);
                         cmd.Parameters.AddWithValue("@observaciones", tbObservaciones.Text);
+                        cmd.Parameters.AddWithValue("@id", id);
                         try
                         {
                             connection.Open();
@@ -167,6 +159,7 @@ namespace SportGest
                         }
                     }
                 }
+                this.Dispose();
             }
             else
             {

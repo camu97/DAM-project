@@ -181,6 +181,7 @@
             this.tbNumero.Size = new System.Drawing.Size(27, 20);
             this.tbNumero.TabIndex = 3;
             this.toolTip1.SetToolTip(this.tbNumero, "Número de jugador(a)");
+            this.tbNumero.TextChanged += new System.EventHandler(this.tbNumero_TextChanged);
             // 
             // label7
             // 

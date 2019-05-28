@@ -25,7 +25,7 @@ namespace SportGest
             error = false;
             for (int i = 0; i < this.Controls.Count; i++)
             {
-                if (this.Controls[i] is TextBox && this.Controls[i].Text.Equals("") && !this.Controls[i].Name.Contains("Material"))
+                if (this.Controls[i] is TextBox && this.Controls[i].Text.Equals(""))
                 {
                     error = true;
                 }
@@ -121,7 +121,7 @@ namespace SportGest
             }
             else
             {
-                MessageBox.Show("Revisa todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Revisa todos los campos\r\nRecuerda que todos los campos deben estar cubiertos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

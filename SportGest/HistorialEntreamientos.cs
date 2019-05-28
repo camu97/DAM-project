@@ -15,31 +15,30 @@ namespace SportGest
 
         private void lblCalentamiento_Click(object sender, EventArgs e)
         {
-            using (SQLiteConnection connection = new SQLiteConnection(sCnn))
+            if (listSesiones.SelectedIndices.Count > 0)
             {
-                SQLiteCommand cmd = new SQLiteCommand("SELECT * FROM [Entrenamientos] WHERE Id=@id", connection);
-                cmd.CommandType = CommandType.Text;
-                try
+                using (SQLiteConnection connection = new SQLiteConnection(sCnn))
                 {
-                    cmd.Parameters.AddWithValue("@id", listSesiones.SelectedItem.ToString().Split('|')[0].Trim());
-                    connection.Open();
-                    SQLiteDataReader dr = cmd.ExecuteReader();
-                    while (dr.Read())
+                    SQLiteCommand cmd = new SQLiteCommand("SELECT * FROM [Entrenamientos] WHERE Id=@id", connection);
+                    cmd.CommandType = CommandType.Text;
+                    try
                     {
-                        MessageBox.Show("Duración: " + dr["t_calentamiento"] + "'\r\nTarea:" + dr["calentamiento_descripcion"], "Calentamiento", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        cmd.Parameters.AddWithValue("@id", listSesiones.SelectedItem.ToString().Split('|')[0].Trim());
+                        connection.Open();
+                        SQLiteDataReader dr = cmd.ExecuteReader();
+                        while (dr.Read())
+                        {
+                            MessageBox.Show("Duración: " + dr["t_calentamiento"] + "'\r\nTarea:" + dr["calentamiento_descripcion"], "Calentamiento", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
-                }
-                catch (SQLiteException exc)
-                {
-                    MessageBox.Show(exc.Message);
-                }
-                catch (NullReferenceException)
-                {
-                    //MessageBox.Show("Seleccionad un partido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
-                finally
-                {
-                    connection.Close();
+                    catch (SQLiteException exc)
+                    {
+                        MessageBox.Show(exc.Message);
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
                 }
             }
 
@@ -47,31 +46,30 @@ namespace SportGest
 
         private void lblPrincipal_Click(object sender, EventArgs e)
         {
-            using (SQLiteConnection connection = new SQLiteConnection(sCnn))
+            if (listSesiones.SelectedIndices.Count > 0)
             {
-                SQLiteCommand cmd = new SQLiteCommand("SELECT * FROM [Entrenamientos] WHERE Id=@id", connection);
-                cmd.CommandType = CommandType.Text;
-                try
+                using (SQLiteConnection connection = new SQLiteConnection(sCnn))
                 {
-                    cmd.Parameters.AddWithValue("@id", listSesiones.SelectedItem.ToString().Split('|')[0].Trim());
-                    connection.Open();
-                    SQLiteDataReader dr = cmd.ExecuteReader();
-                    while (dr.Read())
+                    SQLiteCommand cmd = new SQLiteCommand("SELECT * FROM [Entrenamientos] WHERE Id=@id", connection);
+                    cmd.CommandType = CommandType.Text;
+                    try
                     {
-                        MessageBox.Show("Duración: " + dr["t_principal"] + "'\r\nTarea:" + dr["principal_descripcion"], "Calentamiento", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        cmd.Parameters.AddWithValue("@id", listSesiones.SelectedItem.ToString().Split('|')[0].Trim());
+                        connection.Open();
+                        SQLiteDataReader dr = cmd.ExecuteReader();
+                        while (dr.Read())
+                        {
+                            MessageBox.Show("Duración: " + dr["t_principal"] + "'\r\nTarea:" + dr["principal_descripcion"], "Calentamiento", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
-                }
-                catch (SQLiteException exc)
-                {
-                    MessageBox.Show(exc.Message);
-                }
-                catch (NullReferenceException)
-                {
-                    //MessageBox.Show("Seleccionad un partido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
-                finally
-                {
-                    connection.Close();
+                    catch (SQLiteException exc)
+                    {
+                        MessageBox.Show(exc.Message);
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
                 }
             }
         }
@@ -80,29 +78,28 @@ namespace SportGest
         {
             using (SQLiteConnection connection = new SQLiteConnection(sCnn))
             {
-                SQLiteCommand cmd = new SQLiteCommand("SELECT * FROM [Entrenamientos] WHERE Id=@id", connection);
-                cmd.CommandType = CommandType.Text;
-                try
+                if (listSesiones.SelectedIndices.Count > 0)
                 {
-                    cmd.Parameters.AddWithValue("@id", listSesiones.SelectedItem.ToString().Split('|')[0].Trim());
-                    connection.Open();
-                    SQLiteDataReader dr = cmd.ExecuteReader();
-                    while (dr.Read())
+                    SQLiteCommand cmd = new SQLiteCommand("SELECT * FROM [Entrenamientos] WHERE Id=@id", connection);
+                    cmd.CommandType = CommandType.Text;
+                    try
                     {
-                        MessageBox.Show("Duración: " + dr["t_calma"] + "'\r\nTarea:" + dr["calma_descripcion"], "Calentamiento", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        cmd.Parameters.AddWithValue("@id", listSesiones.SelectedItem.ToString().Split('|')[0].Trim());
+                        connection.Open();
+                        SQLiteDataReader dr = cmd.ExecuteReader();
+                        while (dr.Read())
+                        {
+                            MessageBox.Show("Duración: " + dr["t_calma"] + "'\r\nTarea:" + dr["calma_descripcion"], "Calentamiento", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
-                }
-                catch (SQLiteException exc)
-                {
-                    MessageBox.Show(exc.Message);
-                }
-                catch (NullReferenceException)
-                {
-                    //MessageBox.Show("Seleccionad un partido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
-                finally
-                {
-                    connection.Close();
+                    catch (SQLiteException exc)
+                    {
+                        MessageBox.Show(exc.Message);
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
                 }
             }
         }
@@ -137,36 +134,35 @@ namespace SportGest
 
         private void listSesiones_SelectedIndexChanged(object sender, EventArgs e)
         {
-            using (SQLiteConnection connection = new SQLiteConnection(sCnn))
+            if (listSesiones.SelectedIndices.Count > 0)
             {
-                SQLiteCommand cmd = new SQLiteCommand("SELECT * FROM [Entrenamientos] WHERE Id=@id", connection);
-                cmd.CommandType = CommandType.Text;
-                try
+                using (SQLiteConnection connection = new SQLiteConnection(sCnn))
                 {
-                    cmd.Parameters.AddWithValue("@id", listSesiones.SelectedItem.ToString().Split('|')[0].Trim());
-                    connection.Open();
-                    SQLiteDataReader dr = cmd.ExecuteReader();
-                    while (dr.Read())
+                    SQLiteCommand cmd = new SQLiteCommand("SELECT * FROM [Entrenamientos] WHERE Id=@id", connection);
+                    cmd.CommandType = CommandType.Text;
+                    try
                     {
-                        lblFecha.Text = dr["fecha"].ToString();
-                        lblDuracion.Text = dr["duracion"].ToString() + " '";
-                        lblEquipo.Text = dr["equipo"].ToString().Split('-')[0].Trim();
-                        lblCategoria.Text = dr["equipo"].ToString().Split('-')[1].Trim();
-                        lblObjectivo.Text = dr["objetivo"].ToString();
-                        tbDescripción.Text = dr["descripcion"].ToString();
+                        cmd.Parameters.AddWithValue("@id", listSesiones.SelectedItem.ToString().Split('|')[0].Trim());
+                        connection.Open();
+                        SQLiteDataReader dr = cmd.ExecuteReader();
+                        while (dr.Read())
+                        {
+                            lblFecha.Text = dr["fecha"].ToString();
+                            lblDuracion.Text = dr["duracion"].ToString() + " '";
+                            lblEquipo.Text = dr["equipo"].ToString().Split('-')[0].Trim();
+                            lblCategoria.Text = dr["equipo"].ToString().Split('-')[1].Trim();
+                            lblObjectivo.Text = dr["objetivo"].ToString();
+                            tbDescripción.Text = dr["descripcion"].ToString();
+                        }
                     }
-                }
-                catch (SQLiteException exc)
-                {
-                    MessageBox.Show(exc.Message);
-                }
-                catch (NullReferenceException)
-                {
-                    //MessageBox.Show("Seleccionad un partido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
-                finally
-                {
-                    connection.Close();
+                    catch (SQLiteException exc)
+                    {
+                        MessageBox.Show(exc.Message);
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
                 }
             }
         }

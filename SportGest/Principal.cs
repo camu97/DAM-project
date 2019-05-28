@@ -92,7 +92,7 @@ namespace SportGest
                         }
                         connection.Close();
                     }
-                    catch (Exception ex)
+                    catch (SQLiteException ex)
                     {
                         MessageBox.Show(ex.Message);
                     }
@@ -124,12 +124,11 @@ namespace SportGest
 
         private void ListaMensajes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
+            if (ListaMensajes.SelectedIndices.Count < 0)
             {
                 string[] nota_mostrar = ListaMensajes.SelectedItem.ToString().Split('-');
                 tbLeerNotas.Text = nota_mostrar[0] + " - " + nota_mostrar[1] + "\r\n" + nota_mostrar[2];
             }
-            catch (NullReferenceException) { }
         }
 
         private void itemSobre_Click(object sender, EventArgs e)
@@ -139,34 +138,33 @@ namespace SportGest
 
         private void btnEliminarNota_Click(object sender, EventArgs e)
         {
-            using (SQLiteConnection connection = new SQLiteConnection(sCnn))
+            if (ListaMensajes.SelectedIndices.Count > 0)
             {
-                SQLiteCommand cmd = new SQLiteCommand("DELETE FROM [Notas] WHERE id=@id", connection);
-                cmd.CommandType = CommandType.Text;
-                try
+                using (SQLiteConnection connection = new SQLiteConnection(sCnn))
                 {
-                    cmd.Parameters.AddWithValue("@id", ListaMensajes.SelectedItem.ToString().Split('-')[0]);
-                    connection.Open();
-                    int fa = cmd.ExecuteNonQuery();
-                    //MessageBox.Show(fa.ToString());
+                    SQLiteCommand cmd = new SQLiteCommand("DELETE FROM [Notas] WHERE id=@id", connection);
+                    cmd.CommandType = CommandType.Text;
+                    try
+                    {
+                        cmd.Parameters.AddWithValue("@id", ListaMensajes.SelectedItem.ToString().Split('-')[0]);
+                        connection.Open();
+                        int fa = cmd.ExecuteNonQuery();
+                        //MessageBox.Show(fa.ToString());
+                    }
+                    catch (SQLiteException ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
                 }
-                catch (SQLiteException ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                catch (NullReferenceException)
-                {
-                    //MessageBox.Show("Seleccionad un partido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
-                finally
-                {
-                    connection.Close();
-                }
+                ListaMensajes.Items.Remove(ListaMensajes.SelectedItem);
+                ListaMensajes.Refresh();
+                ListaMensajes.SelectedItem = null;
+                tbLeerNotas.Clear();
             }
-            ListaMensajes.Items.Remove(ListaMensajes.SelectedItem);
-            ListaMensajes.Refresh();
-            ListaMensajes.SelectedItem = null;
-            tbLeerNotas.Clear();
         }
 
         private void btnHistorialPartidos_Click(object sender, EventArgs e)

@@ -28,14 +28,10 @@ namespace SportGest
         {
             tbVisitante.ReadOnly = !tbVisitante.ReadOnly;
             tbLocal.Clear();
-            try
+            if (cbEquipo.SelectedItem != null)
             {
                 condicion = "Visitante";
                 tbVisitante.Text = cbEquipo.SelectedItem.ToString();
-            }
-            catch (NullReferenceException exc)
-            {
-                //MessageBox.Show(exc.Message);
             }
         }
 
@@ -43,14 +39,10 @@ namespace SportGest
         {
             tbLocal.ReadOnly = !tbLocal.ReadOnly;
             tbVisitante.Clear();
-            try
+            if (cbEquipo.SelectedItem != null)
             {
                 condicion = "Local";
                 tbLocal.Text = cbEquipo.SelectedItem.ToString();
-            }
-            catch (NullReferenceException exc)
-            {
-                //MessageBox.Show(exc.Message);
             }
         }
 
@@ -252,8 +244,6 @@ namespace SportGest
         {
             if ((listJugadores.SelectedItems.Count == 11 && tipo.Equals("F11")) || (listJugadores.SelectedItems.Count == 8 && tipo.Equals("F8")))
             {
-                //try
-                //{
                 for (int i = 0; i < listJugadores.SelectedItems.Count; i++)
                 {
                     titulares.Add(listJugadores.SelectedItems[i].ToString().Split('-')[1].Trim());
@@ -277,10 +267,6 @@ namespace SportGest
                     suplentes.Substring(0, suplentes.Length - 1);
                 }
                 MessageBox.Show("Titulares y suplentes confirmados", "Equipo de partido", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //}
-                //catch (NullReferenceException nre)
-                //{
-                //}
             }
             else
             {

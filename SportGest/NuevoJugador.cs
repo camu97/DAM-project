@@ -126,7 +126,7 @@ namespace SportGest
                         }
                         catch (FormatException)
                         {
-                            cmd.Parameters.AddWithValue("@numero", int.Parse(tbNumero.Text));
+                            error = true;
                         }
 
 
@@ -216,6 +216,19 @@ namespace SportGest
             else
             {
                 MessageBox.Show("Error en algún campo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void tbNumero_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int.Parse(tbNumero.Text);
+            }
+            catch (FormatException)
+            {
+                error = true;
+
             }
         }
 

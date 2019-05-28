@@ -8,6 +8,7 @@ namespace SportGest
     public partial class GestionEquipo : Form
     {
         string sCnn = Properties.Settings.Default.SportGestConnection;
+        bool todos = true;
         public GestionEquipo()
         {
             InitializeComponent();
@@ -30,10 +31,13 @@ namespace SportGest
         private void GestionEquipo_Load(object sender, EventArgs e)
         {
             cargarEquipos();
+            todos = true;
+            cargarJugadores();
         }
 
         private void listEquipos_SelectedIndexChanged(object sender, EventArgs e)
         {
+            todos = false;
             cargarJugadores();
         }
 
@@ -41,7 +45,7 @@ namespace SportGest
 
         private void listJugadores_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
+            if (listJugadores.SelectedIndices.Count > 0)
             {
                 using (SQLiteConnection connection = new SQLiteConnection(sCnn))
                 {
@@ -57,7 +61,14 @@ namespace SportGest
                             if (dr["nick"].Equals(listJugadores.SelectedItem.ToString().Split('-')[1].Trim()))
                             {
                                 lblNombre.Text = dr["nombre"].ToString();
+                                //try
+                                //{
                                 lblNacimiento.Text = dr["fecha_nacimiento"].ToString().Split(' ')[0];
+                                //}
+                                //catch (FormatException)
+                                //{
+                                //    lblNacimiento.Text = dr["fecha_nacimiento"].ToString();
+                                //}
                                 lblNumero.Text = dr["num"].ToString();
                                 lblPosicion.Text = dr["posicion"].ToString();
                                 tbObservaciones.Text = dr["observaciones"].ToString();
@@ -74,7 +85,6 @@ namespace SportGest
                     }
                 }
             }
-            catch (NullReferenceException) { }
         }
 
         private void atrás_Click(object sender, EventArgs e)
@@ -84,7 +94,7 @@ namespace SportGest
 
         private void btnBorrarJugador_Click(object sender, EventArgs e)
         {
-            try
+            if (listJugadores.SelectedIndices.Count > 0)
             {
                 //jugadoresAdapter.Delete(int.Parse(listJugadores.SelectedItem.ToString().Split('|')[0]));
                 using (SQLiteConnection connection = new SQLiteConnection(sCnn))
@@ -110,15 +120,11 @@ namespace SportGest
                 }
                 cargarJugadores();
             }
-            catch (NullReferenceException)
-            {
-                MessageBox.Show("Debes seleccionar un elemento de la lista");
-            }
         }
 
         private void editarJugador_Click(object sender, EventArgs e)
         {
-            try
+            if (listEquipos.SelectedIndices.Count > 0)
             {
                 NuevoJugador nj = new NuevoJugador();
                 nj.editar = true;
@@ -126,15 +132,12 @@ namespace SportGest
                 nj.ShowDialog();
                 cargarJugadores();
             }
-            catch (NullReferenceException)
-            {
-                MessageBox.Show("Debes seleccionar un elemento de la lista");
-            }
         }
+
 
         private void editarEquipo_Click(object sender, EventArgs e)
         {
-            try
+            if (listEquipos.SelectedIndices.Count > 0)
             {
                 NuevoEquipo ne = new NuevoEquipo();
                 ne.editar = true;
@@ -142,41 +145,36 @@ namespace SportGest
                 ne.ShowDialog();
                 cargarEquipos();
             }
-            catch (NullReferenceException)
-            {
-                MessageBox.Show("Debes seleccionar un elemento de la lista");
-            }
         }
 
         private void borrarEquipo_Click(object sender, EventArgs e)
         {
-            using (SQLiteConnection connection = new SQLiteConnection(sCnn))
+            if (listEquipos.SelectedIndices.Count > 0)
             {
-                try
+                using (SQLiteConnection connection = new SQLiteConnection(sCnn))
                 {
-                    //equiposAdapter.Delete(int.Parse(listEquipos.SelectedItem.ToString().Split('|')[0]));   
+                    try
+                    {
+                        //equiposAdapter.Delete(int.Parse(listEquipos.SelectedItem.ToString().Split('|')[0]));   
 
-                    SQLiteCommand cmd = new SQLiteCommand("DELETE FROM [Equipos] WHERE id=@id", connection);
-                    cmd.CommandType = CommandType.Text;
-                    cmd.Parameters.AddWithValue("@id", listEquipos.SelectedItem.ToString().Split('|')[0]);
-                    connection.Open();
-                    int fa = cmd.ExecuteNonQuery();
-                    //MessageBox.Show(fa.ToString());
+                        SQLiteCommand cmd = new SQLiteCommand("DELETE FROM [Equipos] WHERE id=@id", connection);
+                        cmd.CommandType = CommandType.Text;
+                        cmd.Parameters.AddWithValue("@id", listEquipos.SelectedItem.ToString().Split('|')[0]);
+                        connection.Open();
+                        int fa = cmd.ExecuteNonQuery();
+                        //MessageBox.Show(fa.ToString());
 
-                    cargarEquipos();
+                        cargarEquipos();
 
-                }
-                catch (NullReferenceException)
-                {
-                    MessageBox.Show("Debes seleccionar un elemento de la lista");
-                }
-                catch (SQLiteException exc)
-                {
-                    MessageBox.Show(exc.Message);
-                }
-                finally
-                {
-                    connection.Close();
+                    }
+                    catch (SQLiteException exc)
+                    {
+                        MessageBox.Show(exc.Message);
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
                 }
             }
         }
@@ -197,6 +195,7 @@ namespace SportGest
                     {
                         listEquipos.Items.Add(dr["Id"].ToString() + "| " + dr["nombre"].ToString() + " - " + dr["categoria"].ToString());
                     }
+
                 }
                 catch (SQLiteException ex)
                 {
@@ -214,11 +213,20 @@ namespace SportGest
             listJugadores.Items.Clear();
             using (SQLiteConnection connection = new SQLiteConnection(sCnn))
             {
-                SQLiteCommand cmd = new SQLiteCommand("SELECT * FROM [Jugadores] WHERE equipo=@equipo", connection);
+                SQLiteCommand cmd;
+                if (!todos)
+                {
+                    cmd = new SQLiteCommand("SELECT * FROM [Jugadores] WHERE equipo=@equipo", connection);
+                }
+                else
+                {
+                    cmd = new SQLiteCommand("SELECT * FROM [Jugadores]", connection);
+                }
                 cmd.CommandType = CommandType.Text;
                 try
                 {
-                    cmd.Parameters.AddWithValue("@equipo", listEquipos.SelectedItem.ToString().Split('|')[1].Split('-')[0].Trim()); //10| Alerta A - Alevines
+                    if (!todos)
+                        cmd.Parameters.AddWithValue("@equipo", listEquipos.SelectedItem.ToString().Split('|')[1].Split('-')[0].Trim()); //10| Alerta A - Alevines
 
                     connection.Open();
                     SQLiteDataReader dr = cmd.ExecuteReader();
@@ -228,7 +236,6 @@ namespace SportGest
                         listJugadores.Items.Add(dr["Id"].ToString() + "| " + dr["num"].ToString() + " - " + dr["nick"].ToString());
                     }
                 }
-                catch (NullReferenceException) { }
                 catch (SQLiteException) { }
                 finally
                 {
