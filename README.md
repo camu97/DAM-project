@@ -1,4 +1,8 @@
-# DAM_Proyect
+# Proyecto final de Ciclo Superior en Desarrollo de Aplicaciones Multiplataforma
+Gestor deportivo de un equipo de fútbol.
+Este proyecto se ha creado para poder gestrionar una plantilla, entrenamientos y objetivos de estos.
+Una aplicación creada en C# y utilizando una base de datos SQLite.
+
 
 10/4 - Creada la pantalla principal, la de entrenamiento y de partido.
 11/4 - Creada las pantallas: Seguridad, para el inicio de la aplicación y Gestión del equipo, donde encontraremos una lista de equipos y sus respectivos jugadores.
