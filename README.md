@@ -33,7 +33,7 @@ La aplicación ha sido programada en C#, utilizando una base de datos SQLite.
 
 *Problemas con la base de datos
 
-21/5 - Versión final. Cambio en la base de datos(Se usaba SQL Server y se cambió a SQLite por problemas técnicos).
+21/05 - Versión final. Cambio en la base de datos(Se usaba SQL Server y se cambió a SQLite por problemas técnicos).
 
 ------------
 
